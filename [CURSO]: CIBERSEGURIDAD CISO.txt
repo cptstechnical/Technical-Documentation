@@ -38,10 +38,10 @@
 [🔥Fundamentos de ciberseguridad🔥]:
 
 [😈 Introducción]:
-	# Protección de datos personales : 		Identidad información financiera, historial médico, etc.
-	# Seguridad de las empresas : 			Protección de archivo digitales, prevención de pérdidas financieras.
-	# Infraestructura crítica : 			Protección de sistemas esenciales como enrgía, transporte, comunicaciones.
-	# Confianza en el mundo digital : 		Fomento de un entorno en línea seguro y confiable.
+	# Protección de datos personales : 			Identidad información financiera, historial médico, etc.
+	# Seguridad de las empresas : 				Protección de archivo digitales, prevención de pérdidas financieras.
+	# Infraestructura crítica : 				Protección de sistemas esenciales como enrgía, transporte, comunicaciones.
+	# Confianza en el mundo digital : 			Fomento de un entorno en línea seguro y confiable.
 
 [😈 Importancia de la ciberseguridad]:
 La seguridad rotege la información confidencial, asegurando la continuidad del negocio, protegiendo la infraestructura crítica y protegiendo la privacidad personal:
@@ -50,30 +50,30 @@ La seguridad rotege la información confidencial, asegurando la continuidad del 
 	Conceptos fundamentales: 
 
 Pros y contras de la ciberseguridad::
-	Protección de datos : 				PRO
-	Mantenimiento de la reputación : 		PRO 
-	Seguridad financiera : 				PRO 
-	Mitigación de riesgos : 			PRO
-	Continuidad del negocio : 			PRO
-	Costo de implementación :			CONTRA
-	Complejidad :					CONTRA
-	Potencia de falsa sensación de seguridad :	CONTRA
-	Asignación de recursos : 			CONTRA
-	Mantenimiento continuo :			CONTRA
+	Protección de datos : 					PRO
+	Mantenimiento de la reputación : 			PRO 
+	Seguridad financiera : 					PRO 
+	Mitigación de riesgos : 				PRO
+	Continuidad del negocio : 				PRO
+	Costo de implementación :				CONTRA
+	Complejidad :						CONTRA
+	Potencia de falsa sensación de seguridad :		CONTRA
+	Asignación de recursos : 				CONTRA
+	Mantenimiento continuo :				CONTRA
 
 Triada CIA: 
 	Disponibilidad:: Capacidad de acceder a la información y a los sistemas cuando sea necesario:
-		Redundancia :				Implementar sistemas redundantes y crear copias de seguridad
-		Planes de recuperación ante desastres :	Desarrollar planes de recuperación y probar planes de recuperación
-		Mantenimiento regular :	Realizar mantenimiento preventivo y actualizar sistemas
+		Redundancia :					Implementar sistemas redundantes y crear copias de seguridad
+		Planes de recuperación ante desastres :		Desarrollar planes de recuperación y probar planes de recuperación
+		Mantenimiento regular :				Realizar mantenimiento preventivo y actualizar sistemas
 	Integridad:: Consistencia de la información a lo largo de su ciclo de vida:
-		Controles de cambios :			Registro de cambios y revisión de cambios
-		Sumas de verificación :			Algoritmos de hash y verificación de datos
-		Auditorias :				Auditorias regulares y detección de animalías
-	Confidencialidad:: Protección de la información contra el acceso no autorizado:
-		Controles de acceso :			Autenticación y autorización
-		Cifrado : 				Datos de reposo y datos en transito
-		Políticas de seguridad : 		Políticas claras y políticas de empleados
+		Controles de cambios :				Registro de cambios y revisión de cambios
+		Sumas de verificación :				Algoritmos de hash y verificación de datos
+		Auditorias :					Auditorias regulares y detección de animalías
+	Confidencialidad:: Protección de la información 	contra el acceso no autorizado:
+		Controles de acceso :				Autenticación y autorización
+		Cifrado : 					Datos de reposo y datos en transito
+		Políticas de seguridad : 			Políticas claras y políticas de empleados
 	
 	# Además de esta trada existen otros dos puntos más que podriamos añadir: 	
 	Autenticidad:: Capacidad de verificar la identidad de un usuario:
@@ -296,20 +296,20 @@ Regulación elDAS: Es una normativa de la Unión Europea que regula los servicio
 		# Evaluación de amenazas:			- Identifica las posibles amenazas, (malware, phising).
 		# Vulnerabilidades:				- Evalua las devilidades.
 	# Evaluación:: Evaluación de riesgos y análisis de impacto.
-		# Análisis cualitativo: 			- Clasificación de riesgos en categorías como alto, medio y bajo.
+		# Análisis cualitativo: 			Clasificación de riesgos en categorías como alto, medio y bajo.
 			## Alto impacto
 			## Bajo impacto
 			## Alta probabilidad
 			## Baja probabilidad
-		# Análisis cuantitativo:			- Uso de métricas y modelos para calcular el impacto financiero y la probabilidad de ocurrencia de los riesgos.
+		# Análisis cuantitativo:			Uso de métricas y modelos para calcular el impacto financiero y la probabilidad de ocurrencia de los riesgos.
 			## Riesgos críticos
 			## Riesgos de alta prioridad
 			## Riesgos insinificantes
 			## Riesgos críticos
 		# Mitigación de riesgos:
-			## Controles técnicos:			Firewalls, Sistemas de detección de intrusos, Cifrado de datos.
-			## Controles administrativos:		Políticas de seguridad, Capacitación de empleados (amenazas que pueden llegar a través de ellos), Gestión de acceso.
-			## Planes de respuesta a incidentes:	Preparación para incidentes.
+			## Controles técnicos:			- Firewalls, Sistemas de detección de intrusos, Cifrado de datos.
+			## Controles administrativos:		- Políticas de seguridad, Capacitación de empleados (amenazas que pueden llegar a través de ellos), Gestión de acceso.
+			## Planes de respuesta a incidentes:	- Preparación para incidentes.
 	# Mitigación:: Implementación de medidas de seguridad y (Monitore y revisión).
 		# Auditorías de seguridad:			Evaluzaciónes periódicas de la eficacia de los controles de seguridad.
 		# Actualización de políticas:			Adaptación de las poíticas de seguridad a nuevas amenazas y cambios en el entorno tecnológico.
@@ -409,9 +409,47 @@ https://pilar.ccn-cert.cni.es/pilar/licencia-de-las-soluciones-pilar
 		## Poítica de respuesta a incidentes			Cómo la organización debe responder ante un incidente, contención, investigación, notificación y remediación
 		## Política de privacidadd y protección de datos:	Se centra en el tratamiento adecuado de los datos personales y la información confidencial para cumnpir con las leyes de privacidad como DGPR
 	# Creación de procedimientos de seguridad:
+		## Cómo aplicar parches de seguridad en los sitemas 
+		## Cómo reportar incidentes de seguridad
+		## Cómo realizar copias de seguridad y restauración de datos
+		## Cómo verificar los logs y realizar auditorías
 	# Validación y aprobación:
+		## Aprobación de la alta dirección:			Asegura que la ciberseguridad sea una prioridad en la organización, (presentar política a líderes...)
+		## Pruebas piloto:					Asegurarse de que los procedimientos sean aplicables en la práctica y no afecta negativamente las operaciones comerciales
 	# Implementación y formación:
+		## Sesiones de formación obligatorias
+		## Programas de concienciación en ciberseguridad
+		## Manual de seguridad de fácil acceso para todos los empleados
+	# Desafíos comunes en el desarrollo de políticas y procedimientos de seguridad:
+		## Falta de conciencia y apoyo de la dirección:		A veces la alta dirección no comprende la importancia de la ciberseguridad
+		## Resistencia al cambio:				La implementación de nuevas políticas puede encontrarse con resistencia por parte de los empleados				
+		## Complejidad técnica:					Algunas organizaciones tiene estructuras complejas que puede dificultar la aplicación de políticas de ciberseguridad			
+		## Cumplimiento normativo:				Las organizaciones a menudo están sujetas a múltiples normativas y estándares de seguridad (PCI DSS, HIPPA, GDPR)
+	# Mejores prácticas para el desarrollo de políticas y procemientos de seguridad:
+		## Enfoque basado en el riesgo:				Deben de estar alineadas con el análisis de riesgos de la organización
+		## Colaboración interdepartamental:			El CISO debe colaborar con todos los departamentos de la organización
+		## Políticas claras y concisas:				Deben de ser fáciles de entender y evitar jerga técnica
+		## Monitorización y auditoría:				El CISO debe implementar sistema de monitorización y auditoría
 	# Revisión continua y actualización:
+		## Pueden requerir cambios en las políticas los cambios tecnológicos, nuevas normativas, nuevos riesgos emergentes
+		## El CISO debe implementar un proceso de revisión periodica
+		
+	+---------------------------------------------------------------------------------------+
+	|	# Políticas para el personal técnico o no::					|
+	|	http://incibe.es/								|
+	+---------------------------------------------------------------------------------------+
+
+# Gestión de acceso y control de privilegios::
+# Define quién tiene acceso a qué recursos y en qué nivel.
+	# Definir niveles de acceso
+	# Implementar controles
+	# Asegurdad el cumplimiento
+	# Monitorear y revisar
+
+
+
+
+
 
 
 
