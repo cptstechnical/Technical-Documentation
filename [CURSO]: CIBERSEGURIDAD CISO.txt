@@ -486,6 +486,10 @@ https://pilar.ccn-cert.cni.es/pilar/licencia-de-las-soluciones-pilar
 	# Método de verificación adicional
 	# Autenticación EGZ
 
+	+---------------------------------------------------------------------------------------+
+	|	# Plantillas relacionadas con la seguridad informática ::			|
+	|	https://www.hackmetrix.com/nosotros/						|
+	+---------------------------------------------------------------------------------------+
 
 
 [😈 Desarrollo de políticas y prodecimientos de seguridad]:
