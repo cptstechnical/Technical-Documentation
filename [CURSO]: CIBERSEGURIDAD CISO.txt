@@ -491,6 +491,20 @@ https://pilar.ccn-cert.cni.es/pilar/licencia-de-las-soluciones-pilar
 	|	https://www.hackmetrix.com/nosotros/						|
 	+---------------------------------------------------------------------------------------+
 
+# Protección de datos y privacidad::
+# Las leyes y regulaciones globales establecen estrictos requisitos para el manejo de datos personales y la privacidad
+	# Protección de datos:						Medidas técnicas, medidas organizativas, Prevenir uso indebido, Prevenir pérdida y Prevenir acceso no autorizado
+	# Privacidad:							Recolección de datos, Procesamiento de datos, Compartición de datos y Control del usuario
+
+# GDPR (Reglamento General de Protección de Dato)::
+	# Se publicó en 04/05/2016 y entró en vigor el 25/05/2018, 
+	# Aplica a cualquier organización de UE, no ofrece flexibilidad 
+	# Consta de 11 capítulos relativos a disposiciones derechos transferencia de datos y autoridades de de control
+	# Su incumplimiento resulta en multas d hasta el 4% del ingreso anual o 20 millones de euros (lo que sea mayor)
+
+
+
+
 
 [😈 Desarrollo de políticas y prodecimientos de seguridad]:
 
