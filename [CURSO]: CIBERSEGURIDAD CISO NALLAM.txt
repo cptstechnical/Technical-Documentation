@@ -1,0 +1,449 @@
+=====================================================================
+[🚀Explicación inicial]:
+
+  1 - Fundamentos de ciberseguridad
+  2 - Estrategias y políticas de seguridad 
+  3 - Arquitectura y diseño de seguridad
+	+ Arquitectura de red segura
+	+ Segmentación de redes y gestión de firewalls
+	+ Sistemas de detección y prevención de intrusiones (IDS/IPS)
+	+ Gestión de incidentes y respuesta a brechas de seguridad
+  4 - Gestión de equipos y cultura de ciberseguridad
+  5 - Gestión de incidentes y respuesta ante crisis
+	+ Planificación y preparación para incidentes de cibersegurdiad
+	+ Técnicas de respuesta ante incidentes 
+	+ Recuperación tras ataques y análisis forense 
+	+ Comunicación durante y después de una crisis
+  6 - Cumplimiento normativo y legal
+	+ Leyes y regulaciones de cdiberseguridad
+	+ Gestión de auditorías de seguridad y certificados
+		* Mapeo e inventatariado
+	      	* Pentesting
+	      	* Protocolos
+	      	* Formación y concienciación
+	+ Cumplimiento normativo internacional
+	+ Ley DORA
+	+ ISO 27001., NIST y otros marcos reguladores
+  7 - Seguridad a la nube y nuevas tecnologías 
+	+ Ciberseguridad en entornos cloud
+	+ Gestión de riesgos en plataformas en la nube (AWS, Azure, Google cloud)
+	+ IA y blockchain en ciberseguridad
+  8 - Estrategía integral de seguridad 
+	+ Creación de un plan de seguridad integral para una organización
+	+ Análisis de reisgos y diseño de soluciones específicas
+
+
+
+=====================================================================
+[🔥Fundamentos de ciberseguridad🔥]:
+
+[😈 Introducción]:
+	# Protección de datos personales : 		Identidad información financiera, historial médico, etc.
+	# Seguridad de las empresas : 			Protección de archivo digitales, prevención de pérdidas financieras.
+	# Infraestructura crítica : 			Protección de sistemas esenciales como enrgía, transporte, comunicaciones.
+	# Confianza en el mundo digital : 		Fomento de un entorno en línea seguro y confiable.
+
+[😈 Importancia de la ciberseguridad]:
+La seguridad rotege la información confidencial, asegurando la continuidad del negocio, protegiendo la infraestructura crítica y protegiendo la privacidad personal:
+	Estrategias de salvaguarda:
+	Protección digital:
+	Conceptos fundamentales: 
+
+Pros y contras de la ciberseguridad::
+	Protección de datos : 				PRO
+	Mantenimiento de la reputación : 		PRO 
+	Seguridad financiera : 				PRO 
+	Mitigación de riesgos : 			PRO
+	Continuidad del negocio : 			PRO
+	Costo de implementación :			CONTRA
+	Complejidad :					CONTRA
+	Potencia de falsa sensación de seguridad :	CONTRA
+	Asignación de recursos : 			CONTRA
+	Mantenimiento continuo :			CONTRA
+
+Triada CIA: 
+	Disponibilidad:: Capacidad de acceder a la información y a los sistemas cuando sea necesario:
+		Redundancia :				Implementar sistemas redundantes y crear copias de seguridad
+		Planes de recuperación ante desastres :	Desarrollar planes de recuperación y probar planes de recuperación
+		Mantenimiento regular :	Realizar mantenimiento preventivo y actualizar sistemas
+	Integridad:: Consistencia de la información a lo largo de su ciclo de vida:
+		Controles de cambios :			Registro de cambios y revisión de cambios
+		Sumas de verificación :			Algoritmos de hash y verificación de datos
+		Auditorias :				Auditorias regulares y detección de animalías
+	Confidencialidad:: Protección de la información contra el acceso no autorizado:
+		Controles de acceso :			Autenticación y autorización
+		Cifrado : 				Datos de reposo y datos en transito
+		Políticas de seguridad : 		Políticas claras y políticas de empleados
+	
+	# Además de esta trada existen otros dos puntos más que podriamos añadir: 	
+	Autenticidad:: Capacidad de verificar la identidad de un usuario:
+		Autenticación de dos factores:
+		Certificados digitales:
+		Firmas electrónicas:
+		Establecimiento de confianza: 
+	No-repudio:: Impide que una parte niegue la validez de una acción:
+		Firmas digitales
+		Evidencia de autoría
+		Evidena de marca de tiempo
+		Obligaciones contractuales
+		Acuerdos legales
+
+[😈 Principales amenzas y ataquess]:
+# Otros datos a tener en cuenta sobre los ataques y atacantes:
+	1 - Tácticas de ciberdelincuentes
+	2 - Amenazas evolutivas 
+	3 - Sofisticación de ataques
+	4 - Amenazas a organizaciones
+	5 - Amenazas a individuos
+	6 - Avance tecnológico
+	
+# Malware: Dañan sistemas, roba información o secuestra datos y son virus, gusanos, troyanos y ransomware. 
+	40% por correos electrónicos
+	25% vulnerabilidades
+	35% Descargas
+
+	Phising: Usa ingenería social para codificar contraseñas o datos bancarios. A través de correos falsos simulando web autorizadas. 
+		Revela información > El atacante obtiene el acceso > Consecuencias para la victima
+		Ingeniería social:				Consecuencias devastadoras
+		Engaño:						Robo de identidad
+		Manipulación psicológica:			Pérdidas financieras
+		Contenido engañoso
+		Suplantación de identidad
+		Correos electrónicos falsos
+
+	Ataques de denegación de Servicio (DDOS):: Buscan hacer que un servicio en línea no esté disponible al inundarlo con tráfico.
+		Interrupción del servicio 
+		Perdida eonómica
+		Dispositivos comprometidos
+	Ransomware:: Cifra los archivos de la organización exigiendo un rescate por liberarlos.
+		Copias de seguridad regulares
+		Medidas de seguridad
+	Ataques a la cadena de suministro:: Los ataques a la cadena de suministro se producen cuando los ciberdelincuentes comprometen un proveedor o un socio comercial para acceder a la red de una organización.
+		Dificil de detectar
+		Proveedores comprometidos:			Métodos de infiltración
+		Falta de protocolos de seguridad: 		Ataques phising
+		Filtración inadecuada de proveedores:		Insercción de malware
+		Amenazas internas:				Compromiso del sistema	
+		Robo de credenciales:				Filtraciones de datos
+		Credenciales legitimas:				Impacto organizacional
+	Ingeniería social:: Técnica para manipular a las personas para que divulguen información
+		Tácticas de pretecto:				Falta de concienciación		
+		Suplantación de identidad:			Falta de educación
+		Uso de confianza:				Desconoocimiento de amenazas 
+		Incentivos falsos: 				Protocolos de seguridad
+		Ofertas engañosas:				Programas de captación
+		Tácticas de Baiting:				Medidas preventivas
+
+		¿CÓMO NOS PROTEGEMOS?:
+		Educación y concienciación: Tácticas de ingeniería e identificación
+		Veerificación de identidad: Confirmar identidad de quienes solicitan información confidencial
+		Precaución con ofertas atractivas: Falsas ofertas
+
+[😈 Tipos de vulnerabilidades y riesgos]:
+# Características que permite a un atacante acceder al sistema
+	Vunerabilidades de usuario:: Debilidades que dependen de comportamiento humano
+		Contraseñas débiles:				Susceptibilidad a la ingeniería social
+		Falta de complejidad: (8 caracteres...)		Falta de concienciación
+		Fácil de recordar: 				Naturaleza confiada
+		Políticas de seguridad inadecuadas
+		Sin capacitación regular
+		Falta de capacitación (concienciación)
+	Vulnerabilidades de software:: fallos de códigoque pueden ser explotados
+		Errores de programación::			Falta de actualizaciones de seguridad
+		Errores de sitaxis: (SQLi)			Vulnerabilidades no parcheadas (PNT)
+		Errores de lógica: (XSS)			Software obsoleto (Nueva_versión)
+		Parámetros incorrectos (CL)
+		Configuraciones predeterminadas (Usuario_password_por_defecto)
+		Configuraciones incorrectas
+	Vulnerabilidades de hardware::
+		Fallas de diseño:				Problemas de seguridad física
+		Revisiones de diseño inadecuadas: (Licencias)	Falta de controles de acceso
+		Prácticas de ingeniería deficientes: 		Vigilancia inadecuada
+		Materiales de calidad inferior:			Tecnología obsoleta
+		Fallos en el control de calidad:		Falta de actualizaciones regulares
+		Defectos de fabricación:			Componentes obsoletos
+	Vulnerabilidades de red:: Afectan la infraestructura de red
+		Configuraciones Inseguras:			Falta de segmentación de red
+		Configuraciones predeterminadas:		Cortafuegos insuficientes
+		Cambios mal documentados:			Controles de acceso deasiado amplios
+		Incompatibilidad con nuevos estándares
+		Falta de actualizaciones
+		Protocolos obsoletos
+	Vulnerabilidades de seguridad física:: Accesp físico a los sistemas y datos
+		Controles de acceso isadecuados
+		Falta de sistema de tarjeta de acceso
+		Mala gesntión de sistantes
+		Cerraduras físicas inadecuadas
+		Falta de cifrado
+		Pobre protección de dispositivos portátiles
+
+[😈 Riesgos Técnicos]:
+# involucran fallos en la tecnología como caídas de servidores, fallos de hardware...
+	Caídas de servidores
+	Fallos de hardware
+	Problemas de software
+	Interrupciones operativas
+
+	Riesgo de cumplimiento::
+		Marcos regulativos
+		Políticas organizacionales
+		Normas de la industria
+		Consecuencias legales
+		Daño a la reputación
+	Riesgo de reputación::
+		Imagen organizacional
+		Exposición de datos
+		Confianza del cliente
+	Riesgo financieros::
+		Péridias eonómicas 
+		Incidentes de fraude
+		Interrupciones en el negocio
+	Riesgos operativos::
+		Incidentes de seguridad
+		Pérdida de productividad
+		Pérdida de eficiencia
+
+[😈 Introducción a las normativas y estándares de seguridad (ISO 27001 NIST)]:
+# conjunto de directrices, reglas y procedimientos diseñados para proteger la (triada): confidencialidad, integridad y disponibilidad de la información.
+	Identifiación de riesgos de seguridad 
+	Estableciendo directrices
+	Implementando procedimientos
+	Gestionando riesgos
+	Asegurando el cumplimiento	
+	Logrando la protección de datos
+
+# Importacia de las normativas de seguridad::
+	Cumplimiento legal
+	Protección de datos
+	Reducción de riesgos 
+	Construcción de donfianza
+	Eficiencia operativa
+	Adaptación de tecnológia
+
+# Componentes clave de las normativas de seguridad::
+	Cumplimiento legal y regulatorio
+	Reducción de riesgos
+	Eificiencia operativa
+	Prevención de sanciones y litigios
+	Protección de datos y activos críticos
+	Confianza y credibilidad
+	Adaptación a la innovación tecnológica
+	Fomento de una cultura de seguridad
+
+# pros y contras ::
+	Mitigación de riesgos:					PRO
+	Cumplimiento regulatorio:				PRO
+	Mejoras prácticas:					PRO
+	Reconocimiento global:					PRO
+	Mnatenimiento de la confianza:				PRO
+	Costo de implementación:				CONTRA
+	Complejidad:						CONTRA
+	Asignación de recursos:					CONTRA
+	Potencial de obsolescencia:				CONTRA
+	Carga de cumplimiento:					CONTRA
+
+# La ISO/27001 es un estándar internacional que proporciona un marco para la creación, implementación y gestión de un sistema de gestión de seguridad de la información (SGSI)
+	Establecer políticas de seguridad
+	Implementar medidas de seguridad
+	Monitorear sistemas de seguridad
+	Revisar y mejorar
+
+
+# NIST SP 800-53::
+# NIST (National Institute of Standards and Technology): fue desarrollado en EE.UU para mejorar la ciberseguridad de infraestructuras críticas. Se utiliza a nivel nacional.
+	# Identifica, protege, detecta, responde y recupera.
+	# Propósito: Catálogo de controles y proteger información
+	# Aplicación: Sistemas federales y marco de seguridad
+
+# GDPR (General Data Protection Regulation)::
+# Reglamento general de protección de datos (GDPR): La Unión Europea establece directrices estrictas sobre la protección de datos personales. Su objetivo es proteger la privacidad y los datos personales de los ciudadanos de la UE.
+	# Recopilación de datos:				Consentimiento y límite de próposito
+	# Protección de datos personales: 			Notificaciones e violación de datos y mecanismos de aplicación
+	# Procesamiento de datos:				Derechos de sujeto de datos y minimización de datos
+	# Privacidad:						Derecho de acceso Derecho a la supresión
+
+# PCI DSS (Payment Card Industry Data Security Standard)::
+# PCI DSS: Es un estandar creado por las principales empresas de tarjetas de crédito para proteger las transacciones.
+	# Proteger los datos del titular de la tarjeta
+	# Cifrar las transaciones de datos 
+	# Gestionar vulneravilidades
+	# Monitorear continuamente
+
+# CIS Controls::
+# CIS Controls: Son un conjunto de mejores prácticas desarrolladas par mitigar las amenazas más comunes. Una guía práctica y accionable:
+	# Inventario y control de hardware
+	# Protección contra malware
+	# Gestión de vulnerabilidades
+	# Controles de seguridad priorizados
+
+# Regulación elDAS (Electronic idenfication and Trust Services)::
+Regulación elDAS: Es una normativa de la Unión Europea que regula los servicios de identificación electrónica. 
+	# Firmas electrónicas
+	# Sellos electrónicos
+	# Autenticación segura
+	# Confianza en transacciones digitales
+
+
+=====================================================================
+[🔥Estrategias y políticas de seguridad🔥]:
+
+[😈 Gestión de riesgos]:
+# Gestión de riesgos:: Permite a las organizaciones identificar y reconocer problemas de seguridad en el momento que suceden, mejorar las capacidades para tomas decisiones.
+# Identificar vulnerabilidades:: El primer paso necesario para poder realizar una mejor toma de decisiones acerca de si y cómo mitigar aquellos riesgos.
+
+	# Identificación:: Detección de amenazas e inventario de activos.
+		# Análisis de activos:				- Identifica los activos críticos de la organización.
+		# Evaluación de amenazas:			- Identifica las posibles amenazas, (malware, phising).
+		# Vulnerabilidades:				- Evalua las devilidades.
+	# Evaluación:: Evaluación de riesgos y análisis de impacto.
+		# Análisis cualitativo: 			- Clasificación de riesgos en categorías como alto, medio y bajo.
+			## Alto impacto
+			## Bajo impacto
+			## Alta probabilidad
+			## Baja probabilidad
+		# Análisis cuantitativo:			- Uso de métricas y modelos para calcular el impacto financiero y la probabilidad de ocurrencia de los riesgos.
+			## Riesgos críticos
+			## Riesgos de alta prioridad
+			## Riesgos insinificantes
+			## Riesgos críticos
+		# Mitigación de riesgos:
+			## Controles técnicos:			Firewalls, Sistemas de detección de intrusos, Cifrado de datos.
+			## Controles administrativos:		Políticas de seguridad, Capacitación de empleados (amenazas que pueden llegar a través de ellos), Gestión de acceso.
+			## Planes de respuesta a incidentes:	Preparación para incidentes.
+	# Mitigación:: Implementación de medidas de seguridad y (Monitore y revisión).
+		# Auditorías de seguridad:			Evaluzaciónes periódicas de la eficacia de los controles de seguridad.
+		# Actualización de políticas:			Adaptación de las poíticas de seguridad a nuevas amenazas y cambios en el entorno tecnológico.
+			# Iniciar monitoro y revisión
+			# Ralizar auditorías de seguridad
+			# Actualizar políticas de seguridad
+			# Implemntar medidas de seguridad mejoradas
+
+[Conclusión de gestión de riesgos]:
+La gestión de ciberseguridad es un proceso dinámico y continuo que requiere la participación activa de todos los niveles de la organización:
+	# Beneficios:						Protección de activo digitales, Confianza mejorada del cliente y Reputación mejorada
+	# Proceso dinámico:					Monitoreo continuo y actualizaciones regulares
+	# Enfoque proactivo:					Identificación de riesgos y mitigamos riesgos
+	# Participación activa:					Involucramiento ejecutivo y capacitación de empleados
+
+# Gestión de riesgos - MicroPilar EAR/μPilar
+# μPilar es una herramienta que nos ofrece el CNN para poder analizar analisís de riesgo 
+# Para obtener la licencia con metodología Magerit
+https://pilar-tools.com/magerit/index.html
+# Para obtener una licencia como organismo en contacto con el CNN
+https://pilar.ccn-cert.cni.es/pilar/licencia-de-las-soluciones-pilar
+
+[😈 Análisis de vulnerabilidades]:
+# Es el proceso mediante el cual una organización identifica, clasifica y evalua las debilidades en sus sistemas, redes, aplicaciones y otros activos tecnológicos que podrían ser explotadas por actores maliciosos
+# Para un CISO este análisis es una herramienta clave en la gestión de riesgos, permite identificar y mitigar las debilidades.
+	# Protección de datos
+	# Identificación de vulnerabilidaders
+	# Mitigación de vulnerabilidades
+	# Evaluación de debilidades
+	# Evaluación de procesos 
+	# Evaluación de políticas
+	# Cultura de ciberseguridad
+
+# Dentro del análisis de vulnerabilidades:
+	# Importancia:						Globalización, Interconectividad, Dependencia operativa, (Amenazas y vulverabilidades)
+	# Proceso:						Identificación, Clasificación, Evaluación, Mitigación
+	# Rol del CISO:						Supervisión de implantación, Análisis continuo, Alineación de políticas, Cumplimiento legal
+
+# CISO (Chief Information Security Officer)::
+# El CISO desempeña un papel central en la ciberseguridad, más allá de udebtufucar vulnerabilidades técnicas, seguridad de la información integral, riesgos estratégicos como los operativos.
+	# Prioridades estratégicas 
+	# Gestión de equipos
+	# Evaluación continua y adaptación
+# Desde un CISO, un análisis de vulnerabilidades eficaz debe seguir una metodología bien definida que permita a la organización identificar y mitigar los riesgos:
+	# Identificación de activos:				Colaborar con Departamentos, Documentar activos críticos y Asignar valores a los activos
+	# Evaluación de vulnerabilidades:			Usar herramientas especializadas, Identificar fallos de configuracióin y Encontrar debilidades de software
+	# Análisi de impacto:					Evaluar confidencialidad, Evaluar integridad y Determinar impacto en disponibilidad		
+	# Mitigación y Priorización:				Tratamiento inmediato, Mitigación a medio plazo y Meitigación a largo plazo
+	# Monitoreo continuo y reanálisis:			Detectar nuevas vulnerabilidades, Monitorear intentos de explotación y Revisar políticas de seguridad
+
+	+---------------------------------------------------------------------------------------+
+	|	# CVE (Base de datos de vulnerabilidades conocidas e identificadas)::		|
+	|	https://www.cvedetails.com/							|
+	|	# NVD (base de datos mantenida por el NIST de los Estados Unidos)		|
+	|	https://nvd.nist.gov/								|
+	+---------------------------------------------------------------------------------------+
+
+# Herramientas::
+	# Análisis de vulnerabilidades:				Rápido pero no siempre identifica vulnerabilidades específicas
+		## Qualy
+		## Nessus
+		## OpenVas
+	# Pruebas de intrución (Pentensting):			Visión realista de un atacante, consume tiempo y recursoso
+	# Auditoría manual					Vulnerabilidades complejas y específicas. Requiere expertos y puede ser un proceso largo.
+# Desafíos:: 
+# Un CISO se enfrenta a varios desafíos a la hora de implementar el analisís de vulnerabilidades de manera eficaz:
+	# Cambios en el panorama de amenazas
+	# Limitaciones de recursos
+	# Gestión de parches y actualizaciones
+	# Cumplimiento normativo
+
+# Desarrollo de políticas y Procedimientos de seguridad::
+# Desarrollo de políticas::
+# Para establecer una postura sólida, son la base de la estrategia de seguridad, proporcionando directrices claras, define responsabilidades para los empleados
+# Para un CISO la la creación e implementación de políticas de seguridad coherentes y efectivas es una prioridad clave
+	# Estándares claros:					Conjunto de reglas y directrices que todos los empleados y partes interesadas deben seguir
+	# Protección proactiva:					Mecanismos para prevenir incidentes de seguridad
+	# Cumplimiento normativo:				Aseguran que la organización cumpla con las normativas y reculaciones (GDPR, HIPPA, PCI, DSS, etc)
+	# Respuesta a incidentes:				Plances de acción claros en caso de incidentes
+# Procedimientos de seguridad:: 
+# Describen como implementar y llevar a cabo las políticas, explican los pasos a seguir para cumplir los requisitos establecidos en las políticas.
+# Debe seguir un enfoque estructurado para garantizar que sean comprensibles , aplicables y actualizadas
+	# Evaluación inicial de riesgos:			Para identificar las principales amenazas vulnerabilidades que enfrenta la organización
+		## Análisi de activos:				- Identificación de los activos críticos que necesitan protección
+		## Amenazas y vulnerabilidades:			- Determinación de las amenazas más probables y de las vulnerabilidades internas y externas
+		## Impacto y probabilidad:			- Evaluación del impacto potencial de cada riesgo y la probabilidad de que ocurra
+	# Definición de objetivos de seguridad:			Deben alinearse con las prioridades de negocio y la gestión de riesgos, garantizando que las políticas se enfoquen en proteger lo que más importa a la organización
+		## Proteger la confidencialidad, Integridad y Disponibilidad de la información
+		## Cumplir con las normativas y leyes aplicables
+		## Mitigar el riesgo de ciberataques y violaciones de datos
+	# Desarrollo de políticas de seguridad: 
+		## Política de seguridad de la información:		Protección de la información, como se clasifica, quien tiene acceso y responsabilidades de los empleados 
+		## Política de uso aceptable:				Cómo los emppleados utilizan los activos tecnológicos de manera segura
+		## Política de control de acceso:			Establece los criterios para el acceso del sistema, datos, solo personas autorizadas accedan
+		## Política de gestión de contraseñas			Proporciona pautas sobre la creación, uso y gestión de contraseñas seguras
+		## Politíca de seguridad en la red			Establece las reglas para la protección de la organización, firewalls, VPN, detección de intrusiones
+		## Poítica de respuesta a incidentes			Cómo la organización debe responder ante un incidente, contención, investigación, notificación y remediación
+		## Política de privacidadd y protección de datos:	Se centra en el tratamiento adecuado de los datos personales y la información confidencial para cumnpir con las leyes de privacidad como DGPR
+	# Creación de procedimientos de seguridad:
+	# Validación y aprobación:
+	# Implementación y formación:
+	# Revisión continua y actualización:
+
+
+
+
+[😈 Desarrollo de políticas y prodecimientos de seguridad]:
+
+[😈 Gestión de acceso y control de privilegios]:
+
+[😈 Protección de datos y privacidad (GDPR, CCPA)]:
+
+
+=====================================================================
+[🔥Arquitectura y diseño de seguridad🔥]:
+
+
+
+[🔥Gestión de equipos y cultura de ciberseguridad🔥]:
+***********************************
+
+
+[🔥Gestión de incidentes y respuesta ante crisis🔥]:
+***********************************
+
+
+[🔥Cumplimiento normativo y legal🔥]:
+***********************************
+
+
+[🔥Seguridad a la nube y nuevas tecnologías🔥]:
+***********************************
+
+
+[🔥Estrategía integral de seguridad🔥]:
+***********************************
+
