@@ -472,6 +472,19 @@ https://pilar.ccn-cert.cni.es/pilar/licencia-de-las-soluciones-pilar
 	# Control de acceso basado en atributos (ABAC)			Atributos de usuario, Atributos de recursos y Condiciones ambientales
 	# Control de acceso Just-in- time(JIT)				Solicitudes de accesp temporal, Reducción de riesgos y Escenarios Ejemplo
 
+# Desafíos en la gestión y control de accesos::
+	# Complejidad de la infraestructura:				Problemas de control centralizado, Sistemas dispares y Integración en la nube
+	# Cumplimiento regulatorio:					Autenticación multifactor, Registro de activadores y Requisimos regulatorios
+	# Gestióin de cuentas con privilegios elevados:			Riesgos de administradores, Supervisión de privilegios y Uso apropiado
+	# Cambios en la fuerza laboral:					Revocación de acceso, Ajustes de rol y Alta rotación
+
+# Mejores prácticas para la gestión de acceso y control de privilegios:
+	# Revisiones periódicas de accesos:				Herramienta IAM
+	# Privilegios innecesarios:					Gestión centralizada
+	# Cuentas inactivas:						Automatización de acceos
+	# Reducción de riesgos
+	# Método de verificación adicional
+	# Autenticación EGZ
 
 
 
