@@ -1,0 +1,29 @@
+¿Qué significa el concepto de ciberseguridad?
+Conjunto de técnicas y prácticas diseñadas para proteger sistemas, redes y datos.
+
+¿Cuáles son los principios clave de la seguridad informática conocidos como la Triada CIA?
+Confidencialidad, Integridad y Disponibilidad.
+
+¿Qué es el malware?
+Un software malicioso que puede robar información o dañar sistemas.
+
+¿Qué técnica utiliza el phishing para engañar a las víctimas?
+Enviar correos electrónicos falsos para obtener información confidencial.
+
+¿Cuál es el objetivo principal de un ataque de denegación de servicio (DDoS)?
+Hacer que un servicio en línea sea inaccesible mediante tráfico excesivo.
+
+¿Qué debilidad representa una vulnerabilidad de usuario?
+Susceptibilidad a ataques de ingeniería social y contraseñas débiles.
+
+¿Qué implica el concepto de no repudio en seguridad informática?
+Garantizar que las partes no puedan negar la validez de una acción realizada.
+
+¿Qué describe mejor un ataque a la cadena de suministro?
+El compromiso de un proveedor o socio para acceder a una organización.
+
+¿Qué estándar proporciona un marco para gestionar riesgos de seguridad de la información?
+ISO/IEC 27001.
+
+¿Qué implica el principio de integridad en seguridad informática?
+Mantener la precisión y consistencia de la información a lo largo de su ciclo de vida.
