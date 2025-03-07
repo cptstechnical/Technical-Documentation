@@ -35,7 +35,7 @@
 
 
 =====================================================================
-[🔥Fundamentos de ciberseguridad🔥]:
+[🔥FUNDAMENTOS DE CIBERSEGURIDAD🔥]:
 
 [😈 Introducción]:
 	# Protección de datos personales : 			Identidad información financiera, historial médico, etc.
@@ -285,7 +285,7 @@ Regulación elDAS: Es una normativa de la Unión Europea que regula los servicio
 
 
 =====================================================================
-[🔥Estrategias y políticas de seguridad🔥]:
+[🔥ESTRATEGIAS Y POLÍTICAS DE SEGURIDAD🔥]:
 
 [😈 Gestión de riesgos]:
 # Gestión de riesgos:: Permite a las organizaciones identificar y reconocer problemas de seguridad en el momento que suceden, mejorar las capacidades para tomas decisiones.
@@ -446,10 +446,31 @@ https://pilar.ccn-cert.cni.es/pilar/licencia-de-las-soluciones-pilar
 	# Asegurdad el cumplimiento
 	# Monitorear y revisar
 
+# Se otorga, supervisa y revocan los permisos de acceso de los usuarios a los recursos de información::
+	# Confidencialidad:						Acceso autorizado y Protección de datos
+	# Disponibilidad:						Acceso al sistema y Disponibilidad de recursos
+	# Integridad:							Permisos de modificación y Precisión de datos
 
+# Asegurando la seguridad de los datos y el cumplimiento::
+# Un control efectivo de acceso es vital par prevenir la exposición de datos sensiblesy proteger la organización
+	# Reducción de brechas de seguridad				Minimizando ataques internos
+	# Controlando el acceso a los datos				Restringiendo el acceso al personal necesario
+	# Minimizando la exposición de datos sensibles			Reduciendo el riesgo de acciones maliciosas internas
+	# Normas HIPPA y PCI DSS:					Restringiendo los privilegios de usuario
+	# Requisitos del GPDR:						Limitando el impacto de credenciales comprometidas
+	# Cumplimiento normativas:					Protegiendo contra amenazas
 
-
-
+# Principios fundamentales de la gestión de acceso::
+	# Principio del menos privilegio:				Nivel de acceso y Privilegios
+	# Autenticación y autorización:					Verificación de identidad, (MFA, biometría, tokens...), Permisos específicos y Políticas de acceso
+	# Segregación de funciones:					Sin control total y reducción de riesgos
+	# Auditoria y supervisión:					Monitoreo de accesos, Auditorías regulares y Deteccióin de accesos inusuales
+	
+# Métodos de gestión de acceso::
+	# Gestión de identidades de accesos (IAM)			Gestión centralizada de usuarios, (autenticación y autorización), Políticas de seguridad y Ausitorías de acceso
+	# Control de acceso basado en roles (RBAC)			Asignación de roles, Permisos predefinidos y ejemplos de roles
+	# Control de acceso basado en atributos (ABAC)			Atributos de usuario, Atributos de recursos y Condiciones ambientales
+	# Control de acceso Just-in- time(JIT)				Solicitudes de accesp temporal, Reducción de riesgos y Escenarios Ejemplo
 
 
 
@@ -462,26 +483,31 @@ https://pilar.ccn-cert.cni.es/pilar/licencia-de-las-soluciones-pilar
 
 
 =====================================================================
-[🔥Arquitectura y diseño de seguridad🔥]:
+[🔥ARQUITECTURA Y DISEÑO DE SEGURIDAD🔥]:
 
 
 
-[🔥Gestión de equipos y cultura de ciberseguridad🔥]:
-***********************************
+=====================================================================
+[🔥GESTIÓN DE EQUIPOS Y CULTURA DE SIBERSEDURIDAD🔥]:
 
 
-[🔥Gestión de incidentes y respuesta ante crisis🔥]:
-***********************************
+
+=====================================================================
+[🔥GESTIÓN DE INCIDENTES Y RESPUESTA ANTE CRISIS🔥]:
 
 
-[🔥Cumplimiento normativo y legal🔥]:
-***********************************
+
+=====================================================================
+[🔥CUMPLIMIENTO NORMATIVO Y LEGAL🔥]:
 
 
-[🔥Seguridad a la nube y nuevas tecnologías🔥]:
-***********************************
+
+=====================================================================
+[🔥SEGURIDAD A LA NUBE Y NUEVAS TECNOLOGÍAS🔥]:
 
 
-[🔥Estrategía integral de seguridad🔥]:
-***********************************
+
+=====================================================================
+[🔥ESTRATEGÍA INTEGRAL DE SEGURIDAD🔥]:
+
 
