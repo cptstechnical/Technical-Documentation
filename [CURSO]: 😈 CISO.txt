@@ -510,10 +510,11 @@ https://pilar.ccn-cert.cni.es/pilar/licencia-de-las-soluciones-pilar
 	# Derecho de oposición
 
 # Obligaciones del controlador de datos y el procesador::
-	# Notificaciones de violaciones de seguridad: El GDPR obliga notificar en 72 horas de descubrir una violación de seguridad.
-	# Evaluaciones de impacto de privacidad (PIA): Deben evaluar el impacto para analizar la privacidad del individuo.
-	# Delegado de protección de datos (DPO): 
+	# Notificaciones de violaciones de seguridad: 			El GDPR obliga notificar en 72 horas de descubrir una violación de seguridad.
+	# Evaluaciones de impacto de privacidad (PIA): 			Deben evaluar el impacto para analizar la privacidad del individuo.
+	# Delegado de protección de datos (DPO): 			Un PDO supervisa el departamento para cumplir GDPR y es el punto de contacto de las bases reguladoras
 
+# Guía para iplanta GDPR
 
 [😈 Desarrollo de políticas y prodecimientos de seguridad]:
 
