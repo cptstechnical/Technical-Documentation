@@ -502,8 +502,17 @@ https://pilar.ccn-cert.cni.es/pilar/licencia-de-las-soluciones-pilar
 	# Consta de 11 capítulos relativos a disposiciones derechos transferencia de datos y autoridades de de control
 	# Su incumplimiento resulta en multas d hasta el 4% del ingreso anual o 20 millones de euros (lo que sea mayor)
 
-[6:15]
+# Derecho de los sujetos de datos::
+	# Derecho de acceso
+	# Derecho de rectificación
+	# Derecho de olvido (eliminación)
+	# Derecho a portar los datos
+	# Derecho de oposición
 
+# Obligaciones del controlador de datos y el procesador::
+	# Notificaciones de violaciones de seguridad: El GDPR obliga notificar en 72 horas de descubrir una violación de seguridad.
+	# Evaluaciones de impacto de privacidad (PIA): Deben evaluar el impacto para analizar la privacidad del individuo.
+	# Delegado de protección de datos (DPO): 
 
 
 [😈 Desarrollo de políticas y prodecimientos de seguridad]:
