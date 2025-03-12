@@ -514,7 +514,29 @@ https://pilar.ccn-cert.cni.es/pilar/licencia-de-las-soluciones-pilar
 	# Evaluaciones de impacto de privacidad (PIA): 			Deben evaluar el impacto para analizar la privacidad del individuo.
 	# Delegado de protección de datos (DPO): 			Un PDO supervisa el departamento para cumplir GDPR y es el punto de contacto de las bases reguladoras
 
-# Guía para iplanta GDPR
+# Guía para iplantar GDPR 
+	# Parte 1
+		# Estudiar GDPR:					Principios, Derechos Obligaciones
+		# Evaluando las necesidades del DPO			Procesamiento de datos sistemático, Requisitos de conocimiento, Tipos de DPO
+	# Parte 2
+		# Revisión del manejo de datos:				Se centra en evaluar los procesos de datos actuales para garantizar que se alineen con los requisitos GDPR 
+		# Evaluación de brechas de cumplimienti:		Implica comparar las prácticas de datos existentes con los estándares del GDPR para identificar brechas
+	# Paso 3 
+		# Inventario de datos:					Mapeo de tipos de datos, Identificación de fuentes de datos, Catalocación de sujetos de datos
+		# Evaluación de brechas de cumplimiento:		Realización de DPIAs, Identificación de vulnerabilidades, Evaluación de riesgos
+	# Paso 4 
+		# Políticas de privacidad:				Directrices detalladas par manejar los datos personales de manera segura
+		# Gestión de derechos:					Procedimientos para gestionar y mantener los derechos de los interesados
+		# Respuesta a incidentes:				Planes para abordar y mitigar incidentes de violación de datos
+	# Paso 5
+		# Revisar contratos
+		# Verificar cumplimiento
+	# Paso 6
+		# Determinar la base legal				Identifica la base legal válida para cada actividad de procesamiento de datos
+		# Documenta la base legal 				Asegérate de que cada actividad de procesamiento de datos tenga documentada su base legal y sea fácilmente justificable en caso de auditoría
+	# Parte 7
+		# Desarrollo de política de privacidad			Claridad, Accesibilidad, Detalles de la recopilación de datos, Uso de datos, Derechos de los interesados
+		# Requisitos de consentimiento				Consentimiento especifico, Consentimiento informado, Consentimiento verificable, Consentimiento explícito para datos sensibles
 
 [😈 Desarrollo de políticas y prodecimientos de seguridad]:
 
