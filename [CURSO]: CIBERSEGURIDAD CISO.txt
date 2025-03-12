@@ -491,7 +491,7 @@ https://pilar.ccn-cert.cni.es/pilar/licencia-de-las-soluciones-pilar
 	|	https://www.hackmetrix.com/nosotros/						|
 	+---------------------------------------------------------------------------------------+
 
-# Protección de datos y privacidad::
+# Protección de datos y privacidad (GDPR y CCPA)::
 # Las leyes y regulaciones globales establecen estrictos requisitos para el manejo de datos personales y la privacidad
 	# Protección de datos:						Medidas técnicas, medidas organizativas, Prevenir uso indebido, Prevenir pérdida y Prevenir acceso no autorizado
 	# Privacidad:							Recolección de datos, Procesamiento de datos, Compartición de datos y Control del usuario
