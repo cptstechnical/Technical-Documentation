@@ -563,13 +563,86 @@ https://pilar.ccn-cert.cni.es/pilar/licencia-de-las-soluciones-pilar
 		# Derecho a excluirse de la venta de datos
 		# Derecho a no ser discriminado
 	#Las empresas que están sujetas al CCPA deben cumplir con:
-		# Transparencia:		Las empresas deben formar a los consumidores que datos se recopilan
-		# Respuesta a solicitudes:	Las empresas deben responder a las solicitudes de los consumidores del CCPA dentro de los 45 días
-		# Venta de datos:		Las empresas deben proporcionar un mecanismo para que los consumidores opten por no vender sus datos
+		# Transparencia:					Las empresas deben formar a los consumidores que datos se recopilan
+		# Respuesta a solicitudes:				Las empresas deben responder a las solicitudes de los consumidores del CCPA dentro de los 45 días
+		# Venta de datos:					Las empresas deben proporcionar un mecanismo para que los consumidores opten por no vender sus datos
 
 
 =====================================================================
 [🔥ARQUITECTURA Y DISEÑO DE SEGURIDAD🔥]:
+[😈 Arquitectura de red]:
+# La arquitectura de red segurida es el diseño estructural de una red que incorpora medidas y conttroles de seguridad
+# Proteger la confidencialidad, integridad y disponibilidad de datos y servicios, tanto local como inalámbrico
+# Nivel inalámbrico WIDS/WIPS y cifrado de las estaciones, además de los tres elementos aseguradores del WLAN
+	# Defensa de profundidad
+	# Principio de mínimos privilegios
+	# Seguridad por privilegios
+
+# Arquitectura de red segura
+	# Defensa en profundidad:					Firewalls, Sistemas de detección de intrusiones y Controles de acceso
+	# Seguridad por diseño:						Planificación inicial, Medidas de seguridad integradas y Evaluación continuas
+	# Principio de mínimos privilegios:				Permisos de usuario, Acceso a dispositivos y Derechos de aplicaciones
+
+	# Diseño de red segurda:					
+		# Segmentación de red (VLAN)
+		# Zonas de seguridad
+		# Control de accesod					
+		# Protecciones en las comunicaciones (Firewalls y Sistemas de detección de intrusos)
+
+	# Arquitectura de red segurda:
+		# DMZ:							
+			Zona intermedia entre la red interna y las redes externas, se utiliza un firewall de borde para controlar el tráfico entrante y saliente desde internet hacia la DMZ
+		# LAN de usuarios:
+			Red interna donde se ubica las estaciones de trabajo de los empleados y cualquier euipo, firewalls internos, MFA
+		# LAN de servidores:
+			Servidores críticos para operación del negocio (bases de datosm ERP, CRM...), MFA, VPN
+		# SAN/NAS:
+			Sistemas de almacenamiento en red, firewalls internos y encriptación de datos
+		# Gestión OOB:
+			Red separada y segura par la gestión de la infraestructura de red (routes switches, firewalls), VPNs para el acceso remoto
+		# WI-FI de invitados:
+			Red dedicada para los visitantes, Firewalls y políticas de acceso apropiadas
+
+[😈 Segmentación de redes]:
+# Significa dividir redes grandes en redes más pequeñas de acuerdo con sus funciones y usos, permite aislar segmentos de la red uno de otro
+	# Aislamiento de funciones y datos:				Permite separar las distintas funciones de la organización en segmentos independientes
+	# Control de acceso:						Cada segmento de red puede tener reglas específicas de control de acceso
+	# Protección contra amenazas internas:				Liita el impacto de actores al restringir su acceso a áreas críticas y favilita la monitorización del tráfico
+	# Cumplimiento normativos:					Marcos de cumplimiento normativo, GDPR, PCI, DSS o HIPPA
+
+# Estrategias y técnicas: 
+	# Segmentación física:						Alta seguridad y (Altos cotes y complejidad)
+	# Segmentación Lógica:						Flexibilidad y Fácil de implementar y escalar
+	# Segmentación basada en servicios:				Servicios críticos aislados
+	# Microsegmentación:						Control granular y aumento de complejidad
+
+# Punto de vista de un CISO:
+	# Control de acceso granular
+	# Reducción del riesgo y contención de amenazas
+	# Protección de recursos críticos
+	# Cumplimiento normativo
+	# Monitoreo y respuesta
+	# Rendimiento y reducción de la superficie de ataque
+
+# Beneficios de la segmentación de redes:
+	# Monitoeo y respuesta a incidentes:				IDS/IPS y Monitoreo de tráfico
+	# Cumplimiento normativo:					PCI-DSS, HIPAA y GDPR
+	# Reducción del riesgo y contención de amenazas:		Contención y Mitigación de ransomware
+	# Optimización del rendimiento:					Reducción de congestión de tráfico y Superficie de ataqu reducida
+	# Control de acceso granular:					Menor privilegio y Políticas especifícas
+	# Protección de recursos críticos:				DMZ y Segmentos cíticos
+
+# Firewalls:
+	# Configuración estricta:					Mayor seguridad
+	#Configuración flexible:					Menor seguridad
+
+# [14:05]
+
+
+
+[😈 Sistemas de detección y prevención de intrusiones (IDS/IPS)]:
+[😈Gestión de incidentes y respuesta a brechas de seguridad]:
+
 
 
 
