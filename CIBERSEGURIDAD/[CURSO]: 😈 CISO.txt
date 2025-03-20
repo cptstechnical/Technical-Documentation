@@ -634,7 +634,14 @@ https://pilar.ccn-cert.cni.es/pilar/licencia-de-las-soluciones-pilar
 
 # Firewalls:
 	# Configuración estricta:					Mayor seguridad
-	#Configuración flexible:					Menor seguridad
+	# Configuración flexible:					Menor seguridad
+
+Dos tipos de defensa: 
+	# Defensa equipo a equipo					# Cada equipo de la red de la empresa deve estar perfectamente configurado y será auditado de forma sistemática. Es dificíl.
+	# Defensa perimetral						# Crea una barrera entre la red interna de la organización y el mundo exterior. Canalizando todo el tráfico hostil a través de un único punto.
+# Uno de los componentes mas usados para llevar a cabo estas acciones son los cortafuegos y los proxy.
+
+
 
 # [14:05]
 
