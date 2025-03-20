@@ -935,7 +935,24 @@ WireShark y DinamiteLab :: Para comprobar la red y las vulnerabilidades que tene
 	# Prevención de ataques futuros: 				# Identificar vulnerabilidades y Eliminar vulnerabilidades.
 	# Restauración de sistemas:					# Asegurdad la integridad de los datos y Operación segura.
 
-
+# Recuperación los datos:
+	# Copias de seguridad:						# Incrementales : solo los cambios desde la última copia. Diferenciales : todos los cambios desde la última copia
+	# Verificación de la integridad:				# Una vez restaurados verificar los datos con herramientas como hash para comprobar que no se hayan corrompido.
+	# Priorización:							# Importancia de los datos.
+	# Imagenes de sistema:						# Copia exacta.								
+	# Reconfiguración:						# Una vez restaurado se reconfigura (actualizaciones, parches...).
+	# Pruebas:							# Antes de poner en producción pruebas exhaustivas.
+	# Recopilación de evidencia:					# Logs del sistema
+	# Análisis:							# Herramientas para identificar patrones, anomalías...
+	# Colaboración con las autoridades:				# Aveces, es necesario involucrar a las fuerzas del orden para investigar un incidente.
+	# Plan de comunicación:						#
+	# Transparencia:						#
+	# Gestión de la reputación:					#
+	# Orquestación de la recuperación:				#
+	# Análisis forense:						#
+	# Recuperación de datos:					#
+	
+[15:36 ~ Pero me he dejado las otras definiciones...]
 
 [😈 Análisis forense]:
 [😈 Comunicación durante y después de una crisis]:
