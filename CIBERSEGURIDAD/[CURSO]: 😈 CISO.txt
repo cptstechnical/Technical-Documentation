@@ -641,13 +641,85 @@ Dos tipos de defensa:
 	# Defensa perimetral						# Crea una barrera entre la red interna de la organización y el mundo exterior. Canalizando todo el tráfico hostil a través de un único punto.
 # Uno de los componentes mas usados para llevar a cabo estas acciones son los cortafuegos y los proxy.
 
+# El firewall también puede ser configurado para facilitar la conexión de usuarios remotos a través de túneles seguros utilizando protocolos VPN (IPsec)
 
+# Gestión de firewalls:
+	# Bloqueo de tráfico no autorizado por la organización: 	# Servicios que se deseen restringir, etc
+	# Ocultación de los equipos internos de la organización:	# Invisibles ante ataques del exterior
+	# Resgistro de todo el tráfico entrante y saliente de la red corporativa:
+	# Redirección del tráfico entrante				# DMZ
 
-# [14:05]
+# Los firewalls pueden ser:
+	# Software
+	# Hardware
+	# Basados en la nube
 
+	#: Firewalls de filtrado de paquetes:				# Ventajas : Sencillo y rápido. 			Desventajas : Vulnerable a ataques sofisticados.
+	#: Firewalls de nueva generación:				# Ventajas : Protección integral.			Desventajas : Costoso y pesado en recursos.
+	#: Firewalls basados en la nuebe:				# Ventajas : Escalabilidad y fácil implementación. 	Desventajas : Dependencias de terceros.
+	#: Firewalls de proxy:						# Ventajas : Anonimato y seguridad.			Desventajas : Impacto en el rendimiento
+	#: Firewalls de inspección de estado:				# Ventajas : Más seguro.				Desventajas : Consume más recursos	
+
+# Tipos:
+	# Cortafuegos que actúan a nivel de paquetes de datos
+	# Cortafuegos que actúan a nivel de circuito
+
+	Router WAN <---------------- Firewall ----------------> LAN
+					 |
+					DMZ
+	# Es recomendable configurar los firewall como : Se prohíbe cualquier servicio, excepto quellos que expresamente hayan sido permitidos.
+
+# Mejores prácticas:
+	# Bloquear todo el tráfico
+	# Minimiza las reglas
+	# Inspecciona el tráfico cifrado
+	# Implementa control de acceso basado en identidad 
+	# Deshabilita servicios innecesarios
+	# Realiza control de penetración
+	# Respalda configuraciones
 
 
 [😈 Sistemas de detección y prevención de intrusiones (IDS/IPS)]:
+# Estan diseñados para monitorizar la red en busca de actividades sospechosas y ataques maliciosos, aunque difieren en su capacidad de respuesta.
+
+# [IDS]::
+	# IDS (Sistema de detección de intrusos)	
+		# IDS basado en red (NIDS)
+			# Monitorea todo el tráfico de la red
+			# Ventajas : Detecta amenazas generalizadas
+			# Desventajas : Sin visivilidad en dispositivos especificos
+		# IDS basado en host (HIDS)
+			# Monitorea la actividad del sistema
+			# Ventajas : Monitoreo detallado del sistema
+			# Desventajas : Sin visibilidad en el tráfico externo
+	
+	# Modo de operación (IDS):
+		# Detección basada en firmas
+			# Ineficaz contra nuevas amenazas
+			# Rápido y eficaz
+		# Detección basada en anomalías
+			# Más falsos positivos
+			# Identifica nuevas amenazas
+
+# [IPS]::
+	# IPS
+		# NIPS
+			# Monitorea el tráfico de red
+			# Bloquea paquetes maliciosos
+		# HIPS
+			# Instalado en dispositivos específicos
+			# Bloquea procesos peligrosos
+
+	# Modo de operación (IPS):
+		# Modo de operación (IDS):revención basado en firmas
+			# Mayor número de falsos positivos 
+			# Sebasa en firmas conocidas
+		# Prevención basada en anomalías
+			# Menor número de falsos positivos
+			# Detecta amenazas novedosas
+
+# Dos de los IDS/IPS más famosos son: Snort y Suricata.
+
 [😈Gestión de incidentes y respuesta a brechas de seguridad]:
 
 
