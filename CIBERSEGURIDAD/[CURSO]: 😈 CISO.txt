@@ -721,6 +721,105 @@ Dos tipos de defensa:
 # Dos de los IDS/IPS más famosos son: Snort y Suricata.
 
 [😈Gestión de incidentes y respuesta a brechas de seguridad]:
+# La organización se prepara para los incidentes de seguridad, los identifica y responde a ellos y los resuelve, minimizando su impacto y recuperando el control.
+	# Identificación:						# Detección de anomlías y registro de eventos.
+	# Recuperación:							# Restauración de datos y reconstrucción de sisitemas.
+	# Análisis:							# Revisión post-incidente y medidas preventiivas.
+	# Erradicación:							# Eliminación de malware y cierre de vulnerabilidades
+	# Contención:							# Aislamiento de sistemas y límite de daños
+
+# La gestión de incidentes de seguridad es el proceso por el cual una organización se prepara para los incidentes de seguridad los identifica, los responde y los resuelve, minimizando su impacto.
+
+# Incidentes de seguridad:
+	# Atauqes de malware:					# Infecciones por virus, Spyware y Caballos de troya.
+	# Intrusiones en la red:				# Compromiso del sistema y robos de datos.
+	# Ataques DDOS:							# Interrupción del servicio e inundación del tráfico.
+	# Ataques de ransomwware:				# Encriptación de archivos y solicitud de rescate.
+	# Brechas de datos:						# Acceso no autorizado y exposición de datos sensibles.
+
+# Ciclo de vida:	
+	# Preparación	
+		# Preparación:
+		# Políticas de seguridad claras
+		# Desaroollo de un equipo de respuesta a incidentes (IRT - Incident Response Team)
+		# Herramientas y tecnologías adecuadas
+	# Identificación
+		# Detección temprana
+		# Evaluación del incidente
+		# Escalación adcuada
+	# Contención
+		# Contención a corto plazo
+		# Contención a largo plazo
+	# Erradicación
+		# Identificar el origen del ataque	
+		# Eliminar el acceso del atacante
+		# Parches y actualizaciones
+	# Recuperación	
+		# Restaurar sistemas
+		# Monitorización adicional	
+		# Verificación de integridad
+	# Lecciones aprendidas
+		# Análisis post-incidente
+		# Actualización de políticas y rpocedimientos
+		# Capacitación del equipo
+
+# Equipo de respuesta a incidentes (IRT):
+	# Detección y análisis:					# Identificar amenzas y analizar incidentes.
+	# Documentación:						# Mantener registros y rastros de auditoría.
+	# Comunicación:							# Comunicación interna y comunicación externa.
+	# Contención y erradicación:			# Coodinar repsuesta y implementar soluciones.
+
+# Respuesta a brechas de seguridad:
+	# Confirmar la brecha 
+	# Evaluar el impacto
+	# Notificación (RGDP o Ley de Privacidad de California)
+	# Contener y mitigar
+	# Recuperación
+	# Comunicación
+
+#Herramientas de gestión de incidentes (SIEM):
+	# Elastic
+	# Splunk
+	# AlientvaultOSSIM
+	# Wazuh
+	# Jira service management
+	
+
+=====================================================================
+[🔥GESTIÓN DE EQUIPOS Y CULTURA DE SIBERSEDURIDAD🔥]:
+
+[😈 Gestión de equipos y liderazgo en ciberseguridad]:
+# Parte humana: la colaboración y la conciencia de seguridad lo que realmente marca la digerencia en la prevención de incidentes y en la creación de un entorno seguro.
+# El CISO tiene la responsabilidad de implementar medidas y fomentar cultura sólida de seguridad
+# Contactar con el equipo adecuado.
+
+
+[😈 Capacitación de equipos y liderazgo en ciberseguridad]:
+[😈 Estructura organizacional]:
+
+
+
+
+=====================================================================
+[🔥GESTIÓN DE INCIDENTES Y RESPUESTA ANTE CRISIS🔥]:
+
+
+
+=====================================================================
+[🔥CUMPLIMIENTO NORMATIVO Y LEGAL🔥]:
+
+
+
+=====================================================================
+[🔥SEGURIDAD A LA NUBE Y NUEVAS TECNOLOGÍAS🔥]:
+
+
+
+=====================================================================
+[🔥ESTRATEGÍA INTEGRAL DE SEGURIDAD🔥]:
+
+
+
 
 
 
