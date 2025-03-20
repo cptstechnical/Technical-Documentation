@@ -892,6 +892,7 @@ Dos tipos de defensa:
 	# Gestión de riesgos:						# Archer, LogicGate, ISMS.online, Varoins.
 	# Formación:							# LMS, KnowBe3, Cofense, certificado
 
+
 =====================================================================
 [🔥GESTIÓN DE INCIDENTES Y RESPUESTA ANTE CRISIS🔥]:
 
@@ -977,27 +978,5 @@ WireShark y DinamiteLab :: Para comprobar la red y las vulnerabilidades que tene
 
 
 
-=====================================================================
-[🔥GESTIÓN DE EQUIPOS Y CULTURA DE SIBERSEDURIDAD🔥]:
-
-
-
-=====================================================================
-[🔥GESTIÓN DE INCIDENTES Y RESPUESTA ANTE CRISIS🔥]:
-
-
-
-=====================================================================
-[🔥CUMPLIMIENTO NORMATIVO Y LEGAL🔥]:
-
-
-
-=====================================================================
-[🔥SEGURIDAD A LA NUBE Y NUEVAS TECNOLOGÍAS🔥]:
-
-
-
-=====================================================================
-[🔥ESTRATEGÍA INTEGRAL DE SEGURIDAD🔥]:
 
 
