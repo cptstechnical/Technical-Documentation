@@ -731,10 +731,10 @@ Dos tipos de defensa:
 # La gestión de incidentes de seguridad es el proceso por el cual una organización se prepara para los incidentes de seguridad los identifica, los responde y los resuelve, minimizando su impacto.
 
 # Incidentes de seguridad:
-	# Atauqes de malware:					# Infecciones por virus, Spyware y Caballos de troya.
-	# Intrusiones en la red:				# Compromiso del sistema y robos de datos.
+	# Atauqes de malware:						# Infecciones por virus, Spyware y Caballos de troya.
+	# Intrusiones en la red:					# Compromiso del sistema y robos de datos.
 	# Ataques DDOS:							# Interrupción del servicio e inundación del tráfico.
-	# Ataques de ransomwware:				# Encriptación de archivos y solicitud de rescate.
+	# Ataques de ransomwware:					# Encriptación de archivos y solicitud de rescate.
 	# Brechas de datos:						# Acceso no autorizado y exposición de datos sensibles.
 
 # Ciclo de vida:	
@@ -764,10 +764,10 @@ Dos tipos de defensa:
 		# Capacitación del equipo
 
 # Equipo de respuesta a incidentes (IRT):
-	# Detección y análisis:					# Identificar amenzas y analizar incidentes.
+	# Detección y análisis:						# Identificar amenzas y analizar incidentes.
 	# Documentación:						# Mantener registros y rastros de auditoría.
 	# Comunicación:							# Comunicación interna y comunicación externa.
-	# Contención y erradicación:			# Coodinar repsuesta y implementar soluciones.
+	# Contención y erradicación:					# Coodinar repsuesta y implementar soluciones.
 
 # Respuesta a brechas de seguridad:
 	# Confirmar la brecha 
@@ -792,17 +792,153 @@ Dos tipos de defensa:
 # Parte humana: la colaboración y la conciencia de seguridad lo que realmente marca la digerencia en la prevención de incidentes y en la creación de un entorno seguro.
 # El CISO tiene la responsabilidad de implementar medidas y fomentar cultura sólida de seguridad
 # Contactar con el equipo adecuado.
+# Fomentar la obtención de certificados (CISPP, CISM, CEH, OSCP...)
+# Es importante preparar el equipo para una crisis
 
+# Liderazdgo estratégico del CISO:
+		# Asignación de responsabilidades
+			# Analisis de seguridad	
+			# Ingenieros de redes
+			# Especialistas de cumplimiento
+			# Auditores internos
+		# Métricas y objetivos
+			# Tiempo de respuesta a incidentes	
+			# Reducción de vulnerabildiades
+			# Cumplimiento de auditorías de seguridad
+			# Indicadores clave de desempeño
+		# Comunicación interpartamental
+			# Deparatamento legal
+			# Recursos humanos
+			# Operaciones
+			# Marketing
+		
+# Gestión de equipos de seguridad: Liderazgo (retención y motivación):
+	# Fomentar un ambiente colaborativo:				# Los empleados se sientes valorados y comparten conocimientos.
+	# Reconocer y recompensar					# Incentivos financieros y no financieros para mantener la motivación.
+	# Ofrecer desarrollo profesional				# Rutas claras de crecimiento y acceso a nuevas responsabilidades.
 
+# Cultura de ciberseguridad: 
+	# Programas de formación:					# Detecciones de correo phishing, contraseñas seguras, uso adecuado de móviles. 
+	# Políticas de seguridad claras:				# Los empleados conozcan las normativas como GDPR o CCPA.
+	# Fomentar la responsabilidad individual:			# Cada empleado debe entender su papel en la protección de la organización.
+	# Seguridad por diseño (Security by design):			# Se involucra al equipo de seguridad desde el inicio de los proyecto.
+	# DevSecOps:							# En el desarrollo la seguridad es parte del proceso.
+	# Seguridad como habilitador de negocios:			# Cambiar la percepción de que la seguridad es una barrera y en su lugar posicionarla como un habilitador.
+	
+	# Conciencia de los empleados:					# Falta de capacitación y politicas poco claras
+	# Responsabilidad individual:					# DevSecOps y Seguridad por diseño
+	# Integración en los procesos empresariales:			# Comunicación interna efectiva y Canales de reporte claros
+	# Transparencia y comunicación:					# Actitud proactiva y reportar incidentes
+	
+# Evaluación y adaptación continua:
+	# Auditorías y simulacros:					# Auditorías de seguridad y simulaciones de incidentes.
+	# Actualización de políticas y herramientas			# Actualizaciones regulares.
+	# Retroalimentación constante:					# Feedback de empleados y ajuste de políticas.
+	
 [😈 Capacitación de equipos y liderazgo en ciberseguridad]:
+# Los empleados son el eslabon mas débil, es crucial educar y capacitar a todos los miembros de la organización.
+
+# Objetivos clave de la capacitación en ciberseguridad:
+	# Cumplir con regulaciones:					# Asegurar el cumplimiento de las leyes de protección de datos.
+	# Minimizar el error humano:					# Reducir errores que comprometes la seguridad.
+	# Reconocer ataques:						# Identificar correos electrónicos fraudulentos y sitios web sospechosos.
+	# Prevenir incidentes:						# Adoptar prácticas seguras y proteger infromación sensible.
+
+# Cultura de seguridad: Capacitación
+	# Campañas de sensibilidad:					# Enviar recordatorios periódicos sobre la importacia de seguridad.
+	# Simulaciones de phising:					# Campañas de phishing simuladas.
+	# Programas de gamificación:					# Premiar a los empleados que demuestren un alto nivel.
+# Niveles de capacitación:
+	# Capacitación general para todos los empleados:		# Incluir temas genericos, identificación de correso, contraseñas...
+	# Capacitación específica para ciertos roles:			# dependiendo del departamento habrá distintos ataques.
+	# Capacitación para desarrolladores:				# OWASP, SDLC (seguridad en el ciclo de vida del desarrollo de sogtware).
+
+# Plataformas de aprendizaje en línea (LMS):
+	# Plataformas de simulaicón:					# Hackthebox, Gophish
+	# Cursos en línea y módulos interactivos			# Nallam, Platzi 
+
+# Gophish : simula una campaña de phishing en nuestro departamento de forma gratuita y sencilla. Tambien existen Fortra, terranova
+
+# Para que la capacitación sea clave se debe centrar en:
+	# Phishing:							# Identificar correos electrónicos de phishing y reportar intentos de phishing.
+	# Seguridad móvil y remota:					# Dispositivos móviles seguros y trabajo remoto seguro.
+	# Reporte de incidentes:					# Canales de reporte claros y política de no represalias.
+	# Protección de datos:						# Manejo seguro de datos y Entender los derecho de usuario
+	# Gestión de contraseñas:					# Usar contraseñas fuertess y Implementar MFA.
+
 [😈 Estructura organizacional]:
+# El CISO debe determinar roles principales de la organización
+# Tiene que adaptar un plan de alta dirección
 
+# Equipo de gestión y estrategia (CISO + Analistas de riesgos):
+	# Responsabilidades:						# Diseñas políticas, análisis de riesgo, normativas (ISO 27001...).
+	# Recursos necesarios:						# Software de gestión de riesgos y dashboard de mnétricas.
+# Equipo de operaciones y respuesta:
+	# Responsabilidades:						# Monitoreo de detecciones de amenazas, respuesta de incidentes, análisis forense y aprendizaje post-incidente.
+	# Recursos necesarios:						# SIEM, análisis forense y sandboxes.
+# Equipo de arquitectura y tecnología:
+	# Responsabilidades:						# IAM, IDS/IPS, infraestructuras seguras.
+	# Recursos necesarios:						# PAM, autentificación multifactor, Firewalls próxima gneración.
+# Equipo de cumplimiento y formación:
+	# Responsabilidad:						# Cumplimiento normativo, auditorías internas, promover la concineciación.
+	# Recursos necesarios:						# Plataformas (LMS), Plantillas y herramientas para auditorías (ISMS.online)
+# Equipo de pentesting y auditoría de seguridad:
+	# Responsabilidades:						# Pruebas de penetración, auditorías periódicas.
+	# Recursos necearios:						# Herramientas de pentesting, laboratorios de pruebas.
 
-
+# Herramientas técnicas: 
+	# Monitoreo:							# Splunk, Qradar, CrowdStrike, Carbon Back, Recorded Future, Anomali...
+	# Auditorías:							# Nessus, OpenVAS, Metasploit, BurpSuit,
+	# Gestión de riesgos:						# Archer, LogicGate, ISMS.online, Varoins.
+	# Formación:							# LMS, KnowBe3, Cofense, certificado
 
 =====================================================================
 [🔥GESTIÓN DE INCIDENTES Y RESPUESTA ANTE CRISIS🔥]:
 
+[😈 Planifiacaión y preparación para incidentes]:
+# Plan de respuesta a incidentes mejorado:
+	# Aprender a mejorar
+	# Recuperar sistemas
+	# Erradicar incidente
+	# Contener
+	# Identificar
+	# Preparación para incidentes
+
+# ¿Proque es importante tener un plan de respuesta a incidentes? 
+	# Minimización de daños:					# Reduce la pérdida de datos, el tiempo de inactividad y el impacto financiero.
+	# Protección de la reputación:					# La rapidez y efectividad de la respuesta afectan la reputación ante clientes y socios.
+	# Cumplimiento normativo:					# Cumple con regulaciones como GDPR y CCPA que exigen planes de respuesta a incidentes.
+
+# Tráfico de red:
+	# IDS -> Detectar actividad sospechosa -> Alertar a los administradores.
+	# IPS -> Detectar actividades sospechosa -> Bloquear tráfico malicioso -> Inyección de SQL bloqueada.
+
+# Análisis de logs:
+	# Procesos de revisión de logs:
+		# Logs de servidores
+		# Logs de firewalls
+		# Logs de dispositivos de red
+	# Herramientas SIEM:
+		# Recopilación de datos
+		# Detección de patrones
+
+WireShark y DinamiteLab :: Para comprobar la red y las vulnerabilidades que tenemos. 
+
+#Técnicas de contención:
+	# Segmentación de redes:					# Limitar el acceso de los  atacantes a sistemas críticos.		
+	# Contención a largo plazo					# Garantizar el control completo del icidente antes de restaurar sistemas.
+	# Contención rápida						# Evitar la programación del icidente inmediatamente después de la detección.
+
+[😈 Recuperación tras ataques]:
+#Objetivos de la recuperación de ataques 
+	# Mitigación del impactoorganizacional:				# Minimizar daño reputacional, Reducir pérdidas financieras y Limitar disrupcion operativa.
+	# Prevención de ataques futuros: 				# Identificar vulnerabilidades y Eliminar vulnerabilidades.
+	# Restauración de sistemas:					# Asegurdad la integridad de los datos y Operación segura.
+
+
+
+[😈 Análisis forense]:
+[😈 Comunicación durante y después de una crisis]:
 
 
 =====================================================================
