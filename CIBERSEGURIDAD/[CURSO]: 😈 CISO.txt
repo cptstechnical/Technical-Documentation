@@ -946,16 +946,157 @@ WireShark y DinamiteLab :: Para comprobar la red y las vulnerabilidades que tene
 	# Recopilación de evidencia:					# Logs del sistema
 	# Análisis:							# Herramientas para identificar patrones, anomalías...
 	# Colaboración con las autoridades:				# Aveces, es necesario involucrar a las fuerzas del orden para investigar un incidente.
-	# Plan de comunicación:						#
-	# Transparencia:						#
-	# Gestión de la reputación:					#
-	# Orquestación de la recuperación:				#
-	# Análisis forense:						#
-	# Recuperación de datos:					#
+	# Plan de comunicación:						# Ayuda a que la información sea clara para todos
+	# Transparencia:						# Mantiene la tranparencia con el cliente
+	# Gestión de la reputación:					# Comunicación proactiva para mitigar el daño de la reputación
+	# Orquestación de la recuperación:				# Automatizan el proceso: Ansible, Puppet o Chef
+	# Análisis forense:						# EnCase, FTK, Volatily
+	# Recuperación de datos:					# Software par recuperar datos
 	
-[15:36 ~ Pero me he dejado las otras definiciones...]
+# Planificación de la recuperación:
+	# Criterio de restauración
+	# Disponibilidad de copias de seguridad
+	# Restauración de confianza
+# Proceso de restauración:
+	# Aislamiento de los sistemas comprometidos	
+	# Verificación de las copias de seguridad
+	# Restauración gradual de sistemas
+	# Revisión exhaustiva post-restauración
+
+# Respuesta de incidentes:
+	# Reconfiguración:						# Asegura que los sistemas estén actualizados y seguros después del incidente.
+	# Análisis forense:						# Exame nsistemático para identificar las causas e impactos del ataque
+	# Comunicaión:							# Compartición efectiva de información para mantener la confianza y la tranparencia.
+	# Herramientas y tecnologóas:					# Utiliza herramientas de automatización y análisis para los procesos de recuperación.
+
+# Recuperación e datos según la ISO 27001:
+	# ISO 27001:							# SGSI
+	# ISO 27002:							# Backups y recuperación
+	# Mensaje clave:						# Estar preparado con backups seguros y un plan claro permite recuperar la normalidad rápidamente
+
+# Pruebas de copias regulares::
+# Backup en la nube:
+	# Ventajas: Automatización, disponibilidad y escalabilidad
+	# ISO 12001/12002						# Datos cifrados en transmisión y almacenamiento y autenticación segura.
+# Backup Offline:
+	# Ventajas : Protección contra ataques y control físico de almacenamiento.
+	#ISO 27001/27002						# Los dispositivos se almacenan en lugar seguro y resistentes a espacios físicos.
+
+# Procedimiento general de recuperación:
+	# Evaluar el impacto
+	# Seleccionar el backup adecuado
+	# Restaurar datos
+	# Validar la recuperación
+
+# Pasos de recuperación del GDPR:
+	# Evaluar el impacto
+	# Restaurar datos
+	# Proteger la privacidad
+	# Documentar el incidente
+	# Situación
+	# Acciones según GDPR: (72 Horas)
 
 [😈 Análisis forense]:
+# Proceso de análisis forense digital:
+	# Defensa cibernéticas mejoradas 
+	# Prevenir incidentes futuros
+	# Identificar atacantes
+	# Determinar causa raíz
+	# Analisis
+	# Recopilar evidencias
+	# Incidente de ciberseguridad
+
+# Análisis forense::
+	# Recolección de evidencias:
+		# Aislamiento de sistemas afectados 
+		# Captura de imágenes forense
+		# Recolección de registros y logs
+	# Análisis de evidencia:
+		# Análisis de malware
+		# Revisión de registros
+		# Exámen de dispositivos de almacenamiento
+	# Determinación de la causa raíz:
+		# Vulnerabilidades de software
+		# Errores de configuración
+		# Compromiso de credenciales
+	# Identificación de atacantes
+		# Rastreo de direcciones IP
+		#Análisis de tácticas, técnicas y procedimientos (TTPs)
+
+# Herramientas:
+	# Forense generales
+	# Específicas por entorno
+	# Específicas por función
+
+# Herramientas:
+	# Adquisición de datos: Guymager, P2 eXplorer, Visao, Tableau, Procesing 
+	# Análisis de memoria: Memdump. Linux Memory Grabbel
+	# Análisis de sistema de archivos: Autopsy, Caine, Sleuth Kit, AES
+	# AAnálisis de red: Wireshark, Axence NetTool, Ntop
+
+# Análisis forense de incidentes:
+	# Naturaleza y extensión del ataque:				# Tipo y alcance
+	# Vulnerabilidades explotadas:					# Acciones y fallos
+	# Medidas correctivas adoptadas:				# Soluciones y efectividad
+	# Recomendaciones para futuras prevenciones:			# Capacitación y mejora
+
+# Métodos de adquisición de evidencia digital:
+	# EnCase -> Preservación de datos
+	# FTK -> Interpretación de sistemas de archivos y Velocidad
+	# Procesador de evidencias -> Interfaz gráfica
+
+# Proceso:
+	# Presentación
+	# Documentación
+	# Análisis de evidencias
+	# Persevación de evidencias
+	# Identificación y preparación
+
+# Fases del proceso:
+	# Detección y preparación
+		# Idenfitar incidente
+		# Definir alcance
+		# recolección de herramientas
+	# Documentación
+		# Cadena de custodia
+	 	# Informe de hallazgos
+	# Presentación de resultados
+		# Resumen ejecutivo
+		# Presentación legal
+	# Preservación de la evidencia
+		# Aislar sistema
+		# cAPTURAR IMÁGENES FORENSE
+		# pRESERVAR
+	# Análisis de la evidencia
+		# Revisar archivos registrados
+		# Analizar malware
+		# Buscar patrones de actividad
+
+# Forense digital:
+	# Metodología de "Locard's Exchange Principle"			# establece que cualquier interacción entre un atacante y un sistem dejará rastro.
+	# Intercambio de evidencias					# cuando un atacante interactua con un sistema deja rastro
+	# Aplicación							# archivos temporales, actividad de red no autorizada y modificar el sistema
+	# Metodología de NIST
+		# Colección
+		# Exámen
+		# Análisis
+		# Reporte
+	# Metodología SANS Investigative forensics Toolkit (SIFT):	# herramienta más popular para el forense
+		# Recopilación de evidencia:				# Captura de imágenes
+		# Análisis de archivos:					# Revisión de logs
+		# Examen de memoria:					# Herramientas como 💾 Volatility para analizar el contenido de memoria y descubrir actividad maliciosas
+	# Metología ACPO Good Practice Guide for Digital Evidence
+		# ACPO (Association of Chief Officers):			# Guia del reino unido para la gestión de evidencia digital
+		# Preservación de la evidencia:				# Asegura que se altere la evidencia original
+		# Cadena de custodia:					# Garantiza un registro claro de todos los individuos que han tenido acceso a la evidencia
+	# Metodología SWGDE (Scientific Working Group on Digital Evidence)
+		# Integridad de datos:					# Mantiene la integridad
+		# Herramientas forenses:				# Garantizaa que las herramientas sean utilizadas confiables
+
+# Modelo OSI : Modelo no exclusivo del análisis forense, pero se usa comúnmente en investicaciones de redes
+		# Capa de red:						# Exámina el tráfico, IP y el enrutamiento
+		# Capa de aplicación:					# Analiza programas utilizados
+
 [😈 Comunicación durante y después de una crisis]:
 
 
