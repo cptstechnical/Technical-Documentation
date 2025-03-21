@@ -1098,7 +1098,13 @@ WireShark y DinamiteLab :: Para comprobar la red y las vulnerabilidades que tene
 		# Capa de aplicación:					# Analiza programas utilizados
 
 [😈 Comunicación durante y después de una crisis]:
-
+# Daño minimizado y confianza preservada
+	# Comunicación con el público y las auoridades
+	# Comunicación interna post-crisis
+	# Comunicción con terceros clave
+	# Comunicación con la dirección
+	# Comunicación interna
+	# Crisis de ciberseguridad
 
 =====================================================================
 [🔥CUMPLIMIENTO NORMATIVO Y LEGAL🔥]:
