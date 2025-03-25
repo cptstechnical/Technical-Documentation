@@ -1240,7 +1240,121 @@ Notificar a las autoridades supervisoras : 33 GDPR exige que las brechas de dato
 	# Estandarización global:					# Sin marco unificado y Implementación compleja
 
 [😈 Gestión de auditorías de seguridad y certificados]:
+# Proceso de audítoria y certificación de seguridad:
+	# Políticas de seguridad organizacional
+	# Realizar audítorias internas
+	# Realizar auditorías externas
+	# Identificar vulnerabilidades
+	# Implementar mejoras
+	# Obtener certificaciones de seguridad
+	# Cumplimiento y ventaja competitiva
+
+# Tipos de auditoróias de seguridad:	
+	# Auditoría interna:						# Realizada por el departamento de seguridad y Detectar problemas internos
+	# Auditoría de vulnerabilidades:				# Examinar infraestructura tecnológica
+	# Auditoría externa:						# Llevada a cabo por firmas de consultoría y Validar el estado de ciberseguridad
+	# Auditoría de cumplimiento:					# Cumplimiento de leyes y regulaciones y Estandares específicos de la industria
+
+# Proceso de auditoría de seguridad:
+	# Planeación y definiciñón del alcance
+	# Recoleccxión de información	
+	# Revisión y análisis
+	# Pruebas y validación
+	# Informe de resultados
+	# Seguimiento 
+
+# Mapeo de inventario:
+# Consiste en la identificación y documentación de todos los activos digitales, sistemas de datos de una organización.
+# Inventario de IT:
+	# Hardware	-> ManagerEngine 	-> Beneficios
+	# Software 	-> SolarWinds 		-> Beneficios
+	# Datos 	-> ServiceNow 		-> Beneficios
+	# Usuarios 	-> ServiceNow 		-> Beneficios
+
+# 💾 Lansweeper : web para inventario
+https://www.lansweeper.com/
+
+# Pentensting:
+# Es una técnica esencial en el proceso de auditorías que consiste en realizar ataques simulados a los sistemas para identificar y explotar vulnerabilidades de ciberseguridad.
+	# Informes detallados	
+	# Ataques simulados
+	# Identificación de vulnerabilidades
+	# Evaluación de la postura de ciberseguridad
+# Etapas de pentestign:
+	# Sistema a ser probado
+	# Fase de planificación
+	# Fase de ejecución
+	# Fase de análisis
+	# Fase de informe
+	# Informe de mejora de seguridad
+# Metodologías globales de pruebas de penetración:
+	# OSSTMM
+		# Control de seguridad de red
+			# Probar firewalls
+			# Probar routers
+			# Probar dispositivos de seguridad
+		# Control físico
+			# Evaluar seguridad física
+			# Realizar pruebas físicas
+		# Auditoría de procesos
+			# Revisar implementación
+			# Seguimiento de procesamientos
+		# Control humano
+			# Verificar acceso físico
+			# Comprobar procesamientos de seguridad
+		# Revisión operativa
+			# Evaluar riesgos de phishing
+			# Mitigar riesgos de interacción humana
+	# PTES	
+		# Fases:
+			# Interacción inicial	
+			# Reconocimiento
+			# Modelado de amenazas
+			# Explotación
+			# Exploración
+			# Post- explotación
+			# Informe final
+		# Ventajas:
+			# Cobertura integral
+			# Seguridad técnica
+			# Perspectiva empresarial
+	# Guia de pruebas de OWASP	-> en una tecnología especializada en aplicaciones web, identifica vulnerabilidades específicas de aplicaciones web y sigue las mejores prácticas en la inductria:
+		# Fases:					
+			# Reopilación de información
+			# Pruebas de configuración
+			# Pruebas de autenticación
+			# Pruebas de control de acceso
+			# Pruebas de inyección
+		# Ventajas:
+			# Guía exhaustiva
+			# Actualizaciones regulares
+	# NIST SP 800-115	
+		# Fases:
+			# Planificación
+			# Descubrimiento
+			# Explotación
+			# Post-explotación
+			# Inform
+		# Ventajas:	
+			# Enfoque exhaustivo
+			# Aceptación amplia
+
+# Pentesting: heramientas:
+	# Kali linux:							# Herramienta de seguridad y Entornos de pruebas
+	# Metasploit:							# Automatización y Ejecución
+	# Burp Suit:							# Análisis de seguridad y aplicaciones web
+	# Nessus:							# Evaluación de vulnerabilidades y Verficaciones de cumplimiento
+	# Nmap:								# Descubrir hosts y Descubrir servicios
+	# Parrot:							# Herramientas de seguridad y Entornos de pruebas
+
 [😈 Cumplimiento normativo internacional]:
+
+
+
+
+
+
+
 [😈 Certificación SOC2]:
 [😈 Ley DORA]:
 [😈 ISO 27001, NIST y otros marcos reguladores]:
