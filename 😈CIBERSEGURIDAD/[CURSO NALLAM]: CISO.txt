@@ -1130,22 +1130,29 @@ WireShark y DinamiteLab :: Para comprobar la red y las vulnerabilidades que tene
 	# Reasignar responsabilidades	
 	# Políticas de seguridad mejoradas 
 
-# Comunicación después de una crisis:
+# Comunicación después de una crisis
 # Comunicación interna
 	# Análisis post-mortem						# identificar áreas
 	# Reasignarción de responsabilidades				# ajustar roles
 	# Transparencia:						# informar personal de cambios de politicas
 
-# Comunicación después de una crisis:
+# Comunicación después de una crisis
 # Comunicación con la alta direcicón
 	# Infrome detallado
 	# Plan de acción a largo plazo
 
 # Comunicaición de después de una crisis
-#Comunicación con el p´çublico y partes externas
-	# Transparencia
-	# Apoyo
-	# Coherencia
+# Comunicación con el pÚblico y partes externas
+	# Transparencia:						# informar rápidamente sobre el incidente
+	# Apoyo								# ofrecer soluciones como monitoreo
+	# Coherencia							# mantener un mensaje consistente en todas las plataformas
+
+# Comunicación después de una crisis:
+# Comunicación con las autoridades 
+	
+
+
+
 
 [9:58]
 
