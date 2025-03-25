@@ -1106,6 +1106,8 @@ WireShark y DinamiteLab :: Para comprobar la red y las vulnerabilidades que tene
 	# Comunicación interna
 	# Crisis de ciberseguridad
 
+
+
 =====================================================================
 [🔥CUMPLIMIENTO NORMATIVO Y LEGAL🔥]:
 
