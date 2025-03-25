@@ -1206,18 +1206,58 @@ Notificar a las autoridades supervisoras : 33 GDPR exige que las brechas de dato
 
 =====================================================================
 [🔥CUMPLIMIENTO NORMATIVO Y LEGAL🔥]:
+[😈 Leyes y regulaciones en ciberseguridad]:
+# Leyes y regulaciones en ciberseguridad 
+	# Proposito:							# Proteger información,, Prevenir ataques ciberneticos y Definir responsabilidades
+	# Componentes:							# Regulaciones en privacidad y Requisitos específicos de la industria
+	# Ejemplos:							# GDPR, CCPA y Directiva NIS
+
+# Regulaciones de ciberseguridad:
+	# Protección de privacidad:					# Prevencion de accesos no autorizados, Prevención de uso indebido de datos y Requisito de consentimiento
+	# Prevención de ataques ciberneticos:				# Medidas de control y Minimización del impacto
+	# Transparencia de incidentes:					# Notificación a las autoridades
+	# Responsabilidad de las organizaciones:			# Implementación de medidas Gestión de datos
+	# Cumplimiento y sanciones:					# Multas monetarías, Sanciones civiles y Sanciones penales
+
+# Reglamento general de protección de datos : (GDPR) es una de las leyes de protección de datos más estrictas a nivel mundial. Adoptada por la unión Europea en 2016 regula como las empresas recopilan almacenan y procesan los datos persobnales de los ciudadanos.
+	# Principios clave:						# Consentimiento explícito, Derecho al olvido y Notificación de violaciones
+	# Ámbito:							# Aplicabilidad global
+	# Multas:							# Hasta el 4% de los ingresos globales y 20 Millones de Euros
+
+# Ley de privacidad del consumidor de california (CCPA): es una regulación que otorga a los residentes de California derechos de sus datos personales, inspiradas en GDPR
+	# Derechos clave:						# Derecho a saber, Optar por no participar y Eliminación de datos
+	# Multas:							# Violaciones intencionales y Violaciones no intencionales
+	# Ámbito:							# Integros anuales y Volumen de datos
+
+# La directiva sobtre la seguridad de las redes y la información (NIS Directi ve) fue una de las primeras leyes a nivel europeo que abordó directamente la ciberseguridad, especialmente en el ámbito de infraestructuras críticas:
+	# Ámbito:							# Operadores de servicios esenciales y Proveedores de servicios digitales
+	# Objetivos:							# Mejora de kla respuesta y mejora de la coordinación
+	# Obligaciones:							# Medidas técnicas y Notificación de incidencias 							
+# Regulaciones y desafíos de ciberseguridad:
+	# Regulaciones específicas por sector:				# Regulaciones de la industria financiera, Regulaciones de salud y Normas PCI-DSS
+	# Legislación sobre la IA y Ciberseguridad:			# Uso seguro de IA y IA Ética
+	# Protección de infraestructura crítica:			# Redes de energía, sistemas de agua y telecomunicaciones
+	# Estandarización global:					# Sin marco unificado y Implementación compleja
+
+[😈 Gestión de auditorías de seguridad y certificados]:
+[😈 Cumplimiento normativo internacional]:
+[😈 Certificación SOC2]:
+[😈 Ley DORA]:
+[😈 ISO 27001, NIST y otros marcos reguladores]:
+[😈 Esquema nacional de sefgyuridad - ENS]:
+[😈 Portfolio de Nallam]:
+
 
 
 
 =====================================================================
 [🔥SEGURIDAD A LA NUBE Y NUEVAS TECNOLOGÍAS🔥]:
-
+[😈 ]:
 
 
 =====================================================================
 [🔥ESTRATEGÍA INTEGRAL DE SEGURIDAD🔥]:
-
-
+[😈 ]:
 
 
 
