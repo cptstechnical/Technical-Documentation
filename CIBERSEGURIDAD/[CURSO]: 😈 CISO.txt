@@ -1106,6 +1106,14 @@ WireShark y DinamiteLab :: Para comprobar la red y las vulnerabilidades que tene
 	# Comunicación interna
 	# Crisis de ciberseguridad
 
+# Comunicación durante una crisis
+	# Mejorar la coordinación					# Asegurar comunicación constante entre equipos IT
+	# Definir roles y responsabilidades				# Asignar tareas claras a cada miembro del equipo para evitar duplicidad
+	# Establecer flujo de información				# Crear canal seguro y en tiepo real para compartir actualizaciones
+
+# El CISO debe informar durante uan crisis
+	# Actualizaciones frecuentes					# Permite tomar decisiones rapidas
+	# Lenguaje claro						# Facilita la comprensión
 
 
 =====================================================================
