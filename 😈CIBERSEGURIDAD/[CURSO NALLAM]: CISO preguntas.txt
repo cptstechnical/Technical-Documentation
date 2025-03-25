@@ -79,7 +79,75 @@ Realizar auditorías de seguridad periódicas.
 
 ============================================================================================
 [Tema 3]:
+¿Qué es la gestión de riesgos en ciberseguridad?
+Un enfoque para evaluar y mitigar riesgos asociados con el uso de tecnologías de la información.
 
+¿Qué incluye el primer paso en la gestión de riesgos?
+Identificación de activos, amenazas y vulnerabilidades.
 
+¿Qué controles se mencionan como ejemplos en la mitigación de riesgos?
+Políticas de seguridad y firewalls.
 
+¿Cuál es el propósito de las auditorías de seguridad en la gestión de riesgos?
+Evaluar la eficacia de los controles de seguridad implementados.
 
+¿Qué proceso permite identificar y evaluar debilidades en sistemas, redes y aplicaciones?
+Análisis de vulnerabilidades.
+
+¿Qué herramientas se utilizan para realizar análisis de vulnerabilidades según el PDF?
+Nessus, Qualys y OpenVAS.
+
+¿Qué tipo de análisis proporciona una perspectiva desde el punto de vista de un atacante?
+Pruebas de intrusión (pentesting).	
+
+¿Qué significa el principio del menor privilegio en la gestión de acceso?
+Los usuarios solo tienen acceso a los recursos necesarios para realizar sus funciones.
+
+¿Qué metodología de gestión de acceso asigna permisos basados en roles específicos dentro de una organización?
+Control de acceso basado en roles (RBAC..
+
+============================================================================================
+[Tema 4]:
+¿Cuál es una de las responsabilidades principales del CISO dentro de la gestión de equipos de ciberseguridad?
+Fomentar una cultura sólida de seguridad dentro de la organización.
+
+¿Qué tipo de habilidades debe incluir un equipo de ciberseguridad?
+Habilidades técnicas, analíticas y de gestión.	
+
+¿Qué certificaciones se mencionan como importantes para el desarrollo del equipo de ciberseguridad?
+CISSP, CISM, CEH, OSCP.
+
+¿Qué herramienta se menciona como útil para simulacros de ciberseguridad?
+Matriz ATT&CK
+
+¿Qué enfoque se recomienda para integrar la seguridad en los procesos de desarrollo de software?
+Integrar la seguridad desde el diseño del proyecto.
+
+¿Cuál es el propósito de un programa de concienciación en ciberseguridad?
+Incrementar la comprensión de las amenazas y mejores prácticas entre los empleados.
+
+¿Qué método se menciona para evaluar la preparación de los empleados frente al phishing?
+Simulaciones de phishing.
+
+============================================================================================
+[Tema 5]:
+¿Cuál es el principal objetivo de un plan de preparación para incidentes de ciberseguridad?
+Detectar, responder y recuperarse eficazmente ante incidentes inevitables.
+
+¿Qué herramienta es clave para analizar logs y detectar actividades sospechosas?
+SIEM.
+
+¿Qué método ayuda a identificar patrones inusuales en el comportamiento de usuarios y sistemas?
+Detección basada en anomalías y comportamiento.
+
+¿Qué fase de recuperación se enfoca en restaurar sistemas a un estado seguro y funcional?
+Reconfiguración de sistemas.
+
+¿Qué se utiliza para verificar que los datos restaurados no se hayan corrompido?
+Sumarios de comprobación o herramientas de hash.
+
+¿Qué es una imagen de sistema en el contexto de la recuperación de sistemas?
+Una copia exacta de un sistema en un momento determinado.
+
+¿Qué acción debe realizarse antes de restaurar un sistema comprometido?
+Verificar la integridad del sistema para garantizar que está libre de amenazas.
