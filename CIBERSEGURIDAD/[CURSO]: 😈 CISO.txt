@@ -1147,7 +1147,7 @@ WireShark y DinamiteLab :: Para comprobar la red y las vulnerabilidades que tene
 	# Apoyo
 	# Coherencia
 
-
+[9:58]
 
 =====================================================================
 [🔥CUMPLIMIENTO NORMATIVO Y LEGAL🔥]:
