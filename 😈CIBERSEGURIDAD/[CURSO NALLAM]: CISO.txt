@@ -1149,12 +1149,60 @@ WireShark y DinamiteLab :: Para comprobar la red y las vulnerabilidades que tene
 
 # Comunicación después de una crisis:
 # Comunicación con las autoridades 
-	
+	# Cumplir con las regulares 					# Asegurarse de que todos los reportes y medidas correctivas se realicen según las regulaciones
+	# Colaborar en investigaciones					# Cooperar plenamente con agencias externas proporcionando todas la evidencia necesaria
 
+# Comunicación durante y después de una crisis:
+	# Portavoces designador:					# CISO, CEO y representante legal
+	# Uso de tecnología:						# mensajería encriptada y videoconferencia
+	# Mantener calma y la coherencia:				# Comunicación calmante y mensajería consistente
+	# Mensajes predefínidos:					# plantillas d emensajes y adaptabilidad
+	# Procedimientos de notificación:				# Notificación a empleados, clientes y al público
 
+# Cpmunicación durante y después de una crisis: ISO 27001:
+	# Política de gestión de incidentes
+	# Notificación interna
+	# Gestión de crisis
+# Después de una crisis
+	# Comunicación externa
+	# Reporte a la alta dirección
+# Involucración de datos personales:
+	# Durante la crisis
+		# evaluación de riesgo
+		# Notificación a los afectados (articulo 34)
+	# Después de la crisis
+		# Documentación de la brecha
+		# Colaboración con reguladores
+		# Comunicación a largo plazo
 
+# NIST :: aborda la comunicación como un componente esencial de la gestión de incidentes con un enfoque en la preparación coordinación y mitigación de daños.
 
-[9:58]
+# Preparación : Políticas y planes de comunicación
+	# Definición de roles y reesponsabilidades
+	# Política de comunicación
+# Identificación y priorización del incidente
+	# bajo impacto
+	# criticos
+
+# DURANTE LA CRISIS
+# Notificación interna
+	# 
+# Coordinación con partes externas
+	# Reguladores
+	# clientes y proveedores
+	# agencias gubernamentales
+	# comunidad técnica
+# DESPUÉS DE LA CRISIS
+# informe de incidentes
+# comunicación continua
+# lecciones aprendidas
+# restauración de la confianza
+# plan de comunicación
+# simulacros de incidentes
+# capacitación del personal
+# uso de plantillas
+
+Notificar a las autoridades supervisoras : 33 GDPR exige que las brechas de datos personales se notifiquen a la autoridad de protección de datos dentro de las 72 horas.
 
 =====================================================================
 [🔥CUMPLIMIENTO NORMATIVO Y LEGAL🔥]:
