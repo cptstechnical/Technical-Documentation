@@ -1348,14 +1348,32 @@ https://www.lansweeper.com/
 	# Parrot:							# Herramientas de seguridad y Entornos de pruebas
 
 [😈 Cumplimiento normativo internacional]:
+# Hace referencia al a adhesión de las organizaciones a leyes, regulaciones y estándares globales que buscan proteger los sistemas de información, los datos y la privacidad
+# Son fundamentales para garantizar que las organizaciones gestionen adecuadamente cumplir con las normativas por país.
 
+# Beneficios del cumplimiento con los estándares de ciberseguridad:
+	# Mitigación de riesgos:					# Implementación de mejores prácticas y Riesgos reducidos de ciberataques
+	# Prevención de sanciones:					# Multas regulatorias y regulaciones de protección de datos
+	# Confianza de clientes y socios:				# Reputación mejorada y Relaciones comerciales facilitadas
 
+# Obtener certificaciones de seguridad:
+	# ISO/IEC 27001:						# Implementar sistemas de gestión de seguridad
+	# PCI-DSS:							# Proteger información de titulares de tarjetas
+	# SOC 2:							# Asegurar confidencialidad, integridad y disponibilidad de datos
+	# HIPPA:							# Proteger datos médicos
+	# Cumplimiento de GDPR:						# Gestionar datos personales de manera legal y segura
 
-
-
-
+# Dificultad en el mantenimiento de estándares y certificaciones de ciberseguridad:
+	# Costo:							# Recursos financieros e Inversión de tiempo
+	# Cambios regulatorios:						# Leyes de evolución y Cambios regulatorios
+	# Complejidad técnica:						# Infraestructura grandes y Necesidad de expertos
 
 [😈 Certificación SOC2]:
+
+
+
+
+
 [😈 Ley DORA]:
 [😈 ISO 27001, NIST y otros marcos reguladores]:
 [😈 Esquema nacional de sefgyuridad - ENS]:
