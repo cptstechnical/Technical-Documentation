@@ -1,3 +1,5 @@
+============================================================================================
+[Tema 1]:
 ¿Qué significa el concepto de ciberseguridad?
 Conjunto de técnicas y prácticas diseñadas para proteger sistemas, redes y datos.
 
@@ -27,3 +29,57 @@ ISO/IEC 27001.
 
 ¿Qué implica el principio de integridad en seguridad informática?
 Mantener la precisión y consistencia de la información a lo largo de su ciclo de vida.
+
+============================================================================================
+[Tema 2]:
+¿Cuál es el primer paso en el proceso de gestión de riesgos?
+Identificar los riesgos.	
+
+¿Qué método utiliza un análisis cualitativo de riesgos?
+Clasificar los riesgos en categorías como alto, medio y bajo.
+
+Según hemos visto en el curso ¿qué tipo de controles se consideran administrativos?
+	Políticas de seguridad y capacitación de empleados.
+
+¿Qué herramienta de análisis de vulnerabilidades se menciona como ejemplo de las siguientes durante el curso?
+Nessus.
+
+¿Qué implica el principio del menor privilegio en la gestión de acceso?
+Limitar el acceso de los usuarios a los recursos mínimos necesarios para realizar sus tareas.
+
+¿Qué ventaja ofrece el pentesting sobre otras herramientas de análisis de vulnerabilidades?
+Proporciona una visión realista desde la perspectiva de un atacante.
+
+¿Qué debe hacer un CISO como parte del análisis de vulnerabilidades?
+Asegurarse de implementar procesos que identifiquen y mitiguen debilidades técnicas y no técnicas.
+
+¿Qué tipo de riesgos son gestionados por la implementación de un firewall?
+Riesgos técnicos.
+
+¿Qué define el control de acceso basado en roles (RBAC.?
+Asigna permisos según los roles específicos que ocupan los usuarios dentro de una organización.
+
+¿Cuál es uno de los principales desafíos al realizar análisis de vulnerabilidades?
+Adaptarse al cambio constante en el panorama de amenazas.
+
+¿Qué objetivo tiene una política de uso aceptable?
+Definir cómo los empleados pueden usar los activos tecnológicos de forma segura y responsable.
+
+¿Qué garantiza el proceso de auditoría en la gestión de riesgos?
+Evaluar la eficacia de los controles de seguridad implementados.
+
+¿Qué aspecto regula el GDPR en la protección de datos?
+La recopilación, procesamiento y almacenamiento de datos personales en la Unión Europea.
+
+¿Qué es esencial para implementar un sistema de gestión de acceso robusto?
+Definir claramente quién tiene acceso a qué recursos y en qué nivel.
+
+¿Qué acción incluye el monitoreo continuo en la gestión de riesgos?
+Realizar auditorías de seguridad periódicas.	
+
+============================================================================================
+[Tema 3]:
+
+
+
+
