@@ -1195,12 +1195,12 @@ WireShark y DinamiteLab :: Para comprobar la red y las vulnerabilidades que tene
 # DESPUÉS DE LA CRISIS
 # informe de incidentes
 # comunicación continua
-# lecciones aprendidas
-# restauración de la confianza
-# plan de comunicación
-# simulacros de incidentes
-# capacitación del personal
-# uso de plantillas
+# lecciones aprendidas							# programar una sesión de análisis post-incidente para revisar la efectividad del proceso de comunicación
+# restauración de la confianza						# para incidentes de alto impacto, necesaria para una estrategia pública de comunicación para restaurar la confianza
+# plan de comunicación							# desarollar plan que combine ISO 27001 y GDPR
+# simulacros de incidentes						# simulacros con prácticas interna y externa
+# capacitación del personal						# capacitar a los empleados sobre la importancia de reportar incidentes
+# uso de plantillas							# diseñar plantillas para autoridades y afectados
 
 Notificar a las autoridades supervisoras : 33 GDPR exige que las brechas de datos personales se notifiquen a la autoridad de protección de datos dentro de las 72 horas.
 
