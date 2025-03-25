@@ -1107,13 +1107,46 @@ WireShark y DinamiteLab :: Para comprobar la red y las vulnerabilidades que tene
 	# Crisis de ciberseguridad
 
 # Comunicación durante una crisis
+# Comunicación interna
 	# Mejorar la coordinación					# Asegurar comunicación constante entre equipos IT
 	# Definir roles y responsabilidades				# Asignar tareas claras a cada miembro del equipo para evitar duplicidad
 	# Establecer flujo de información				# Crear canal seguro y en tiepo real para compartir actualizaciones
 
 # El CISO debe informar durante uan crisis
+# Comunicación con la alta dirección
 	# Actualizaciones frecuentes					# Permite tomar decisiones rapidas
 	# Lenguaje claro						# Facilita la comprensión
+
+# El CISO debe informar durante uan crisis
+# Comunicación con terceros claves
+	# Notificar a proveedores y cosios				# Proteger sus sistemas y tomar medidas adecuadas
+	# Notificar a agencias gubernamentales				# Cumplir con la legislación local y evitar sanciones
+
+# Comunicación y evaluación post-crisis:
+	# Fin de la crisis de ciberseguridad
+	# Realizar reunión de recapitulación 
+	# Realizar analisis post mortem
+	# Asegurdad transparencia
+	# Reasignar responsabilidades	
+	# Políticas de seguridad mejoradas 
+
+# Comunicación después de una crisis:
+# Comunicación interna
+	# Análisis post-mortem						# identificar áreas
+	# Reasignarción de responsabilidades				# ajustar roles
+	# Transparencia:						# informar personal de cambios de politicas
+
+# Comunicación después de una crisis:
+# Comunicación con la alta direcicón
+	# Infrome detallado
+	# Plan de acción a largo plazo
+
+# Comunicaición de después de una crisis
+#Comunicación con el p´çublico y partes externas
+	# Transparencia
+	# Apoyo
+	# Coherencia
+
 
 
 =====================================================================
