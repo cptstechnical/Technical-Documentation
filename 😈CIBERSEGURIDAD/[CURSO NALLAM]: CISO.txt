@@ -1369,8 +1369,35 @@ https://www.lansweeper.com/
 	# Complejidad técnica:						# Infraestructura grandes y Necesidad de expertos
 
 [😈 Certificación SOC2]:
+# Es un marco importante, especialmente para empresas tecnologóicas y proveedores de servicios que manejan datos de clientes.
+# Estandar desarrollado por el (Ameriocan Institute of Certified Public Accountants AICPA) diseñada para evaluar que una organizacióncumpla con prácticas de seguridad rigurosas al procesar o almacenar información sensible cliente:
+# Objetivos:
+	# Proteger la confidencialidad
+	# Sitemas de organizaciones sean fiables y seguros
+	# Confianza y socios en la gestión de la informnación
 
+# Cinco principios clave:
+	# Seguridad:							# accesos no autorizados (MFA)
+	# Disponibilidad:						# sistemas disponibles según lo acordado en contratos (SLA), balanceo de carga, planes de continuidad de negocio...
+	# Integridad de procesamiento:					# sistemas procesan datos de forma precisa y autorizada
+	# Confidencialidad						# proteger datos sensibles o confidenciables
+	# Privacidad:							# cumplir con regulaciones como GDPR y CCPA
 
+# Tipos de informes:
+	# Tipo I: Evalúa la existencia y el diseño de controles en un momento específico
+	# Tipo II: Eválua tanto el diseño como la efectividad operativa de los controles durante un período de tiempo (6 y 12 meses) (más completo que el Tipo I)
+
+# ¿Para quién?
+	# Proveedores de SAS : Basadas en la nube
+	# Data centers : gestionan almacenamiento de datos
+	# Compañias financieras : manejan datos sensibles
+	# Empresas de servicios terceros : procesan datos en nombrede otras organizaciones
+
+# Proceso de certificación
+	# Evaluación inicial:						# evaluación de riesgos para identificar las áreas críticas
+	# Implementación de controles:					# controles técnicos y organizativos para cumplir con los TSC seleccionados
+	# Auditoría interna:						# Identificar brechas y remediarlas antes de la auditoría oficial
+	# Auditoría externa:						# El auditor evalua los controles y emnite un informe (Tipo I o Tipo II)
 
 
 
