@@ -1399,10 +1399,128 @@ https://www.lansweeper.com/
 	# Auditoría interna:						# Identificar brechas y remediarlas antes de la auditoría oficial
 	# Auditoría externa:						# El auditor evalua los controles y emnite un informe (Tipo I o Tipo II)
 
-
-
 [😈 Ley DORA]:
+# Ley de resiliencia operativa digital, es una normativa aprobada por la union europea para garantizar que las entidades financieras puedan resistir y recuperarse de incidentes de ciberseguridad
+
+# Cronograma de implantación
+	# 2025: Cumplimiento se vuelve oblogatorio
+	# 2023: Comenzar evaluaciones de brechas para su cumplimiento
+	# 2023: Desarrollar hojas de ruta de demediación
+
+# Objetivos principales:
+	# Resiliencia opperacional digital:				# las instituciones financieras puedan operar incluso durante ciberataques o fallos técnicos
+	# Homogeneización:						# Establece un marco único y obligatorio para todas las entidades financieraas dentro de la UE
+	# Supervisión de proveedores críticos:				# Regula la relación con proveedores de servicios TIC como servicios en la nube
+
+# Aplicación:
+	# instutiones financieras como bancos, empresas de inversión, proveedores de servicios de pago y intermediarios de seguros.
+	# Proveedores TIC relacionados con los anteriores
+
+# Cumplimiento:
+	# Incidentes de ciberseguridad:					# Frecuencia de ciberataques y severidad de los incidentes
+	# Interrupciones tecnólogicas:					# Vulnerabilidades e infraestructura obsoleta
+	# Gestión de riesgos:						# Falta de directrices claras y evaluaciones de riesgo inadecuadas
+	# Preparación y remediación:					# hojas de ruta de remediación y evaluaciones de brechas
+
+# Pilares clave:
+	# Gestión de riesgos:						# Continuidad del negocio, Recuperación ante desastres y Estrategias de comunicación efectivas
+	# Pruebas de resiliencia:					# Pruebas de penetración basadas en amenazas y Pruebas regulares
+	# Compartir información:					# Intercambio de ciberseguridad y consciencia sobre riesgos
+	# informes incidentes:						# Informes armonizados e Informes oportunos
+	# Gestión de riesgos de terceros:				# Proveedores TIC criticos, controles robustos y Estrategías de salida
+
 [😈 ISO 27001, NIST y otros marcos reguladores]:
+# ISO 27001
+	# Principios de seguridad de datos
+	# Protección de activos
+	# Identificación de riesgos
+	# SDistema de gestión de la seguridad de la información (SGSI)
+
+# ISO 27001: Glosario:
+	# Activo de información:					# todo recurso que tiene valir para la organización, como datos, sistemas, procesos o infraestructura
+	# Riesgo:							# posibilidad de que una amenaza explote una vulnerabilidad
+	# Control:							# medida para mitigar o eliminar riesgos
+	# SGSI:								# conjunto de políticas, procesos y controles diseñados para gestionar la seguridad de la información
+
+# Familia de normas:
+	# ISO 27001:							# para sistema de gestión de seguridad de la información
+	# ISO 27002:							# proporciona controles especificos para gestionar riesgos de seguridad
+	# ISO 27005:							# marco para identificar y gestionar riesgos de seguridad de la información
+	# ISO 27701:							# se centra en la gestión de la privacidad y la protección de datos
+	# Otras normas:							# Cubre varios aspectos como la seguridad en la nube y la gestión de incidentes
+
+# ISO 27001: implementación del SGSI sigue el ciclo PDCA (Plan-Do-Check-Act)
+	# Planificar:							# Identificar activos, Identificar amenazas, Identificar vulnerabilidades, Identificar riesgos, Definir alcance y Establecer políticas
+	# Actuar:							# Acciones correctivas y mejora continua
+	# Verificar:							# Monitorear desempeño, Evaluar desempeño y Auditorías internas
+	# Hacer:							# Implementar controles, Capacitar al personal y establecer procedimientos
+
+# ISO 27001: Detalles y estructura:
+	# clausulas introductorias (1-3):				# describe el alcance, referencias normativas y términos clave
+	# clausulas 4: contecto de la organización:			# identificar patrones internos y definir partes interesadas
+	# clausulas 5: liderazgo:					# Compromiso de la alta dirección para liderar el SGSI y nombra su responsable
+	# clausulas 6: planificación:					# realizar análisis de riesgos y establecer objetivos de seguridad alineados con los riesgos
+	# clausulas 7: Apoyo:						# Proveer recursos, capacitar al personal y asegurar comunicación eficaz
+	# clausulas 8: operación:					# implementar y gestionar controles de seguridad
+	# clausulas 9: evaluación del desempeño:			# monitorizar y auditar el SGSI para asegurar su eficiencia
+	# clausulas 10: Mejora:						# Implementar acciones correctivas y buscar la mejora continua.
+
+# ISO 27001: Anexo A: Controles:: enumera 93 controles agrupados en 4 categorías
+	# Controles organizativos : Políticas, roles, gestión de terceros.
+	# Controles de personas : capacitación, gestión de accesos
+	# Controles tecnológicos : firewalls, cifrados
+	# Controles físicos : seguridad en oficinas y centros de datos
+
+# ISO 27001:
+	# ciclo PDCA : Planificar, hacer, verificar y actuar
+	# Monitoreo continuo : monitore continuo, cmecanismos de retroalimentación
+	# Políticas clave: políticas de seguridad claras, procedimientos definidos
+	# Evaluación de riesgos : Evaluación de riesgos y Controles adecuados
+
+# Principales áreas cubiertas:
+	# Políticas de seguridad:
+	# Gestión de activos:
+	# Control de acceso:
+	# Seguridad física:
+	# Protección de datos:
+
+# Beneficios de implementar ISO 27001:
+	# Reducción de riesgos : Protección contra ataques, Prevención de pérdida de datos y Mitigación de amenazas internas
+	# Ventaja competitiva : Diferencia en el mercado, Reputación mejorada, y Atraer clientes
+	# Confianza y reputación : Confianza del cliente, Confianza de socios y Aseguramiento de partes interesadas
+	# Cumplimiento normativo : GDPR, HIPAA y CCPA
+
+# NIST: 
+# conjunto de directrices práctoicas diseñadoo para ayudar a las organizaciones a gestionar de ciberseguridad de manera efectiva.
+	# Objetivos e ciberseguridad:
+		# Mejora la respuesta y recuperación
+		# Proteger activos críticos 
+		# Reducir la publicidad de incidentes
+	# Etructura del marco de ciberseguridad NIST:
+		# Adaptaciones organizacionales personalizadas : perfiles
+		# Niveles de evaluación de madurez : Niveles implementación
+		# Funciones esenciales de la ciberseguridad : núcleo
+
+# NIST: Funciones:
+	# Marco ciberseguridad NIST:
+		# Identificar : Conocimiento de activos y evaluación de riesgos
+		# Responder : Respuesta a incidentes y gestión de incidentes
+		# Recuperar : Planificación de recuperación y estrategías de continuidad
+		# Detectar : Monitoreo de amenazas y detección de anomalías  
+		# Proteger : Implementar salvaguardar y medidas de control
+
+# NIST: Niveles de  implementación
+	# Tier 1: Parcial						# Sin procesos formales y medidas reactivass
+	# Tier 2: informando por riesgos:				# Gestión de riesgos básica y formación limitada
+	# Tier 3: Repetible						# Procesos documentados y prácticas respibles
+	# Ter 4: apadtativo:						# Gestión basada en inteligencia y Aprendizaje continuo
+
+# OTROS MARCOS REGULADORES:
+	# Cobit : Gobernanza y Alineación con objetivos empresariales	
+	# HIPPA : Protección de información de salud regulación de entidadses médicas 
+	# GDPR : Privacidad y Consentimiento
+
+
 [😈 Esquema nacional de sefgyuridad - ENS]:
 [😈 Portfolio de Nallam]:
 
