@@ -1,0 +1,74 @@
+⚠️ .key (Clave privada):
+************************
+No es una CA.
+Es la clave privada del servidor, utilizada para firmar comunicaciones y establecer conexiones seguras. No está asociada con ninguna CA.
+
+⚠️ .csr (Solicitud de firma de certificado):
+********************************************
+No es una CA.
+Es una solicitud que envías a una Autoridad Certificadora para que firme tu certificado. Contiene la clave pública y otros datos sobre tu dominio, pero no es una CA.
+
+⚠️ .crt (Certificado digital):
+****************************
+Puede ser firmado por una CA.
+Es el archivo que contiene el certificado público del servidor, que puede ser firmado por una Autoridad Certificadora (CA). Este archivo .crt es el que los navegadores validan para verificar que el certificado fue firmado por una CA confiable.
+
+-
+1. Autoridad Certificadora (CA)
+********************************
+¿Qué es? Una Autoridad Certificadora (CA) es una entidad de confianza que emite certificados digitales. Las CA validan la identidad de una entidad (como un dominio) antes de emitir un certificado.
+Ejemplos comunes de CA son Let's Encrypt, DigiCert, Comodo, GlobalSign.
+
+2. Cadena de confianza (Chain of Trust)
+*****************************************
+¿Qué es? Los certificados pueden formar una cadena de confianza en la que un certificado raíz de confianza (de la CA) valida otros certificados intermedios, y estos, a su vez, validan los certificados del servidor.
+Certificados intermedios: Si una CA no emite directamente el certificado del servidor, puede emitir un certificado intermedio que se utiliza para crear una cadena que conecte el certificado de tu servidor con la autoridad raíz de confianza.
+Certificado raíz: El certificado raíz es el certificado de la CA principal, y está preinstalado en los navegadores y sistemas operativos. Es el que garantiza que la CA es confiable.
+
+3. Certificados intermedios (Intermediate Certificates)
+********************************************************
+¿Qué es? A veces, las CA emiten certificados intermedios para agregar una capa extra de seguridad y flexibilidad en su infraestructura. Los certificados intermedios vinculan el certificado del servidor con el certificado raíz, creando una cadena de confianza.
+Propósito: La mayoría de los navegadores y sistemas operativos no confían directamente en la clave privada de la CA raíz, sino que confían en los certificados intermedios que luego validan el certificado final del servidor.
+
+4. Certificado de la Autoridad Raíz (Root Certificate)
+*******************************************************
+¿Qué es? El certificado raíz es el primero en la cadena de confianza, y la raíz de toda la verificación. El sistema operativo o navegador contiene una lista de estos certificados preinstalados.
+Propósito: Cuando un navegador confía en una conexión SSL/TLS, verifica que la cadena de certificados termine en una CA raíz confiable.
+
+5. TLS/SSL
+************
+¿Qué es? TLS (Transport Layer Security) y su predecesor SSL (Secure Sockets Layer) son protocolos criptográficos que utilizan certificados digitales para asegurar las comunicaciones entre un cliente y un servidor.
+¿Para qué se usan? Los certificados digitales son fundamentales para habilitar HTTPS en un sitio web, garantizando comunicaciones cifradas.
+
+6. Certificados de validación
+********************************
+Validación de Dominio (DV): El certificado de validación de dominio asegura que el solicitante tiene control sobre el dominio, pero no valida la identidad de la organización.
+Validación de Organización (OV): En este caso, la CA valida la identidad de la organización que solicita el certificado, además de verificar que tenga control sobre el dominio.
+Validación Extendida (EV): El certificado EV ofrece la validación más alta, lo que implica una verificación exhaustiva de la organización, proporcionando una mayor confianza para los usuarios.
+
+7. Cadena de certificados (Certificate Chain)
+*********************************************
+¿Qué es? Una cadena de certificados es la secuencia de certificados que vincula un certificado específico (como el del servidor) con una CA raíz confiable.
+Cuando se instala un certificado en un servidor, es común tener que instalar no solo el archivo .crt, sino también los certificados intermedios que completan la cadena de confianza.
+
+8. Revocación de certificados
+********************************
+¿Qué es? La revocación es el proceso mediante el cual una CA anula un certificado antes de su fecha de vencimiento, por razones como la compromiso de la clave privada, la suspensión del dominio, o el uso indebido.
+Listas de Revocación de Certificados (CRL): Las CRL son archivos publicados por las CA que contienen los certificados revocados.
+OCSP (Online Certificate Status Protocol): Protocolo que permite a los clientes verificar en tiempo real si un certificado ha sido revocado.
+
+9. PFX/P12 (PKCS#12)
+*********************
+¿Qué es? El formato PFX (Personal Information Exchange) o PKCS#12 es un formato de archivo que puede contener tanto el certificado como la clave privada y los certificados intermedios en un solo archivo.
+Uso: Es comúnmente utilizado para exportar e importar certificados completos, especialmente cuando se necesita mover un certificado y su clave privada entre servidores.
+
+10. Clave pública y clave privada
+***********************************
+¿Qué son?
+Clave pública: Es la parte del certificado que se distribuye libremente y se usa para cifrar información o verificar firmas.
+Clave privada: Es la clave secreta que solo debe ser conocida por el propietario del certificado y se utiliza para descifrar información cifrada o firmar digitalmente los datos.
+
+11. SHA (Secure Hash Algorithm)
+*********************************
+¿Qué es? El algoritmo de hash como SHA-256 se usa para crear una huella digital del certificado, que asegura la integridad de los datos del certificado.
+Aplicación en certificados: El hash del certificado se firma digitalmente utilizando la clave privada de la CA. Cuando se recibe el certificado, el cliente puede usar el hash y verificar que no ha sido alterado.
