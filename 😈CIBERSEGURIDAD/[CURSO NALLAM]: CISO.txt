@@ -1520,8 +1520,95 @@ https://www.lansweeper.com/
 	# HIPPA : Protección de información de salud regulación de entidadses médicas 
 	# GDPR : Privacidad y Consentimiento
 
-
 [😈 Esquema nacional de sefgyuridad - ENS]:
+# Es un marco regulador que establece lso principios básicos y requesitos mínimos necesarios para una protección adecuada de los sistemas de información utilizados por las administraciones públicas españolas
+# Su objetivo es garantizar que la información manejada por esto organismos, asi como los servicios digitales que ofrecen sean seguros
+
+ # ENS no solo protege contra atques cibérneticos, sino también contra amenazas contra desastres naturales, errores humanos y fallos técnicos
+
+# Objetivos::
+	# Ataques maliciosos
+	# Errores humanos
+	# Desastres naturales
+	# Fallos técnicos
+
+# El ENS es obligatorio para:
+	# Administraciones públicas:					# Estatal, Autonómica y Local
+	# Organismos y entidades públicas:				# Universidades públicas y empresas públicas
+	# Proveedores de servicios TIC
+
+# Ámbito::
+	# Real decreto 3/2010						# establece los principios generales
+	# Real decreto 951/2015						# actaliza y detalla los requisitos
+	# Ley 39/2015 y Ley 40/2015 					# Enfocadas en la administración electrónica y la enteroperabilidad
+	# ...
+
+# Principios básicos::
+	# Seguridad integral
+		# Confidencial
+		# Integra
+		# Disponible
+		# Trazable
+	# Gestión basada de riesgos
+		# Identificar amenzas
+		# Evaluar vulnerabilidades
+		# Determinar impactos potenciales
+		# Establecer controles
+
+# Requisitos básicos de seguridad::
+	# Organizativos
+		# Políticos de seguridad documentadas
+		# Redes y responsabilidades claros
+		# Formaión continua personal
+	# De protección
+		# Cifrado de datos sensibles
+		# Sistem de detección de intrusos
+	# Operativos
+		# Gestión segura de accesos
+		# Procedimientos de copias de seguridad y restauración
+
+# Requisitos específicos:
+	# Auditoría frecuentes
+	# Implementación de redundancias
+	# Monitoreo continuo
+
+# Proceso de implementación:
+	# Diagnostico inicial
+		# Inventario de activos
+		# Identificación de brechas
+		# Evaluación de riesgos inicial
+	# plan de adecuación
+		# Definición de objetivos
+		# Priorización de acciones
+		# Conograma de implementación
+		# Asignación de responsabilidades
+	# Implantación de medidas
+		# Medidas organizativas
+		# Medidas técnicas
+		# Medidas operativas
+	# Proceso de implementación
+		# Cumplimiento del ENS
+		# Eficiencia de los controles implementados
+		# Corrección de no conformidades
+
+# ENS: Alineación con ISO 27001
+	# ENS
+		# Requisitos de auditoria
+		# Requisitos nacionales especificos
+		# Obligatorio para entidades públicas
+	# ISO 27001
+		# Acreditación internacional
+		# Selección de controles flexible
+		# Voluntario y global
+
+# Monitoreo continuo y mejora
+	# monitoreo continuo
+	# revisión de políticas
+	# capacitación continua
+
+https://ens.ccn.cni.es/es/w
+
+
 [😈 Portfolio de Nallam]:
 
 
