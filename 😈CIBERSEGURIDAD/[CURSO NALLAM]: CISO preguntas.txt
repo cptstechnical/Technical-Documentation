@@ -151,3 +151,131 @@ Una copia exacta de un sistema en un momento determinado.
 
 ¿Qué acción debe realizarse antes de restaurar un sistema comprometido?
 Verificar la integridad del sistema para garantizar que está libre de amenazas.
+
+
+============================================================================================
+[Tema 6]:
+¿Cuál es el principal objetivo de las leyes de ciberseguridad mencionadas en el documento?
+Garantizar la protección de datos sensibles, prevenir ataques y definir responsabilidades.	
+
+¿Qué regulación establece derechos de privacidad para los residentes de California?
+CCPA.
+
+¿Cuál es el enfoque principal de la Ley DORA?
+OWASP Testing Guide
+
+
+¿Qué metodología de pentesting se enfoca en la seguridad de aplicaciones web?
+OWASP Testing Guide
+
+¿Cuál es uno de los principios clave de SOC 2?
+Confidencialidad
+
+¿Qué tipo de informe SOC 2 evalúa la efectividad operativa de los controles durante un período de tiempo?
+Hacer
+
+Según ISO 27001, ¿qué fase del ciclo PDCA implica la implementación de controles de seguridad?
+Hacer
+
+¿Qué documento es clave en el ENS para detallar los controles de seguridad aplicables?
+Declaración de aplicabilidad
+
+¿Cuál es una diferencia clave entre ENS e ISO 27001?
+Monitorización continua
+
+¿Qué aspecto es obligatorio según el ENS 2022 para sistemas críticos?
+Monitorización continua
+
+¿Qué estándar regula la seguridad de la información en EE.UU. y tiene un marco aplicable internacionalmente?
+NIST CSF
+
+¿Qué componente del NIST CSF ayuda a identificar activos críticos y roles de ciberseguridad?
+IDENTIFY
+
+¿Cuál es una de las actualizaciones clave del ENS 2022?
+Introducción de perfiles de cumplimiento específicos
+
+Según SOC 2, ¿qué control garantiza la disponibilidad del sistema?
+Redundancia
+
+¿Qué regula principalmente la Directiva NIS?
+La ciberseguridad de infraestructuras críticas en Europa
+
+============================================================================================
+[Tema 7]:
+¿Cuál es uno de los principales beneficios de la migración a entornos cloud?
+Escalabilidad y eficiencia de costos
+
+Qué medida de seguridad es clave para proteger el acceso a servicios cloud?
+Autenticación multifactor (MFA
+
+ Según el modelo de responsabilidad compartida en la nube, ¿quién es responsable de la configuración de seguridad?
+Ambos, según el modelo compartido
+
+¿Cuál es un principio clave de SOC 2 en entornos cloud?
+Disponibilidad
+
+¿Qué marco regulador incluye funciones como "Identificar, Proteger, Detectar, Responder, Recuperar"?
+NIST CSF
+
+¿Qué herramienta de AWS permite monitorear configuraciones de cumplimiento?
+AWS Config
+
+En DevOps, ¿qué fase incluye la integración de seguridad desde el inicio del ciclo de desarrollo?
+Desarrollo seguro
+
+¿Qué herramienta es útil para detectar vulnerabilidades en bibliotecas de terceros en DevSecOps?
+Dependabot
+
+¿Qué ventaja clave ofrece la inteligencia artificial en ciberseguridad?
+Predicción de amenazas antes de que ocurran
+
+¿Qué tipo de datos son más seguros con blockchain debido a su inmutabilidad?
+Historiales de transacciones y auditorías
+
+¿Qué característica de blockchain elimina la necesidad de intermediarios?
+Descentralización
+
+¿Qué se utiliza para validar configuraciones de seguridad en infraestructura como código (IaC.?
+OpenSCAP
+
+¿Qué herramienta de machine learning detecta anomalías en tiempo real en redes?
+Darktrace
+
+Según la Ley DORA, ¿qué prueba es obligatoria para evaluar la resiliencia operativa digital?
+Simulaciones de desastres
+
+¿Qué ventaja tiene el machine learning para la detección de amenazas?
+Puede analizar grandes cantidades de datos en tiempo real
+
+============================================================================================
+[Tema 8]:
+¿Qué elemento NO es parte de un plan de seguridad integral?
+Exclusivamente soluciones en la nube
+
+Según el enfoque visto en este módulo, ¿qué es lo primero que debe hacerse al crear un plan de seguridad integral?
+Entender el contexto específico de la organización
+
+¿Cuál es el primer paso para desarrollar un plan de seguridad integral?
+Análisis de riesgos
+
+¿Qué herramienta es clave para la detección de anomalías en tiempo real?
+SIEM
+
+¿Qué enfoque de gestión de accesos se recomienda?
+Revisión periódica de privilegios
+
+¿Qué se utiliza para mitigar los riesgos del phishing?
+Filtros avanzados de correo electrónico y simulaciones de phishing
+
+¿Cuál es un ejemplo de control correctivo frente a ransomware?
+Restauración de datos desde backups
+
+¿Qué norma establece el uso del principio de privilegios mínimos?
+ISO 27001
+
+¿Qué incluye la gestión de riesgos según el análisis que hemos visto durante el módulo?
+Identificar activos críticos, amenazas y vulnerabilidades
+
+¿Qué elemento es clave en el enfoque SGSI?
+Ciclo PDCA (Planificar, Hacer, Verificar, Actuar)
