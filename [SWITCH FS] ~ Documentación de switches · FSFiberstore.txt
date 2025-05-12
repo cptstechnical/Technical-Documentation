@@ -1,0 +1,303 @@
+=======[ Comandos switches ]====================================================================
+================================================================================================
+
+## Privilegios en un switch:
+Los switches suelen operar bajo diferentes niveles de privilegios. Estos niveles determinan qué comandos puedes ejecutar:
+  |
+  +-- # Modo usuario (User EXEC): 
+  |  Nivel básico, permite visualizar información básica pero no realizar configuraciones.
+  |     🟩 (Modo por defecto)
+  |
+  +-- # Modo privilegiado (Privileged EXEC): 
+  |  Nivel intermedio, permite ejecutar comandos de diagnóstico y ver configuraciones detalladas.
+  |     🟥 enable
+  |
+  +-- # Modo de configuración global (Global Configuration): 
+  |  Nivel avanzado, permite configurar el switch.
+  |     🟦 config
+  |
+  +-- # Modo de configuración específica (Interface Configuration, Line Configuration, etc.): 
+     Configura detalles específicos como interfaces o líneas de consola.
+        🟪 interface [puerto]
+        🟪 line [tipo] [número]
+
+
+## Lista detallada de comandos y sus usos:
+
+| Comando                                | Nivel de privilegio          | Descripción                                                    |
+|----------------------------------------|------------------------------|----------------------------------------------------------------|
+| enable                                 |🟩 Usuario -> Privilegiado    | Cambia al modo privilegiado.                                   |
+| disable                                |🟥 Privilegiado -> Usuario    | Vuelve al modo usuario.                                        |
+| show interface brief                   |🟥 Privilegiado               | Muestra el estado y configuración de interfaces.               |
+| show running-config                    |🟥 Privilegiado               | Muestra la configuración actual en ejecución.                  |
+| show startup-config                    |🟥 Privilegiado               | Muestra la configuración guardada en memoria NVRAM.            |
+| show mac address-table                 |🟥 Privilegiado               | Lista la tabla MAC completa del switch.                        |
+| show version                           |🟥 Privilegiado               | Muestra información del hardware y versión de software.        |
+| config                                 |🟥 Privilegiado               | Entra al modo configuración global.                            |
+| interface [puerto]                     |🟦 Configuración global       | Selecciona una interfaz específica.                            |
+| description [texto]                    |🟪 Configuración de interfaz  | Añade una descripción al puerto.                               |
+| switchport pvid                        |🟪 Configuración de interfaz  | Configura el puerto en que VLAN va a tener acceso              |
+| switchport mode access                 |🟪 Configuración de interfaz  | Configura el puerto como modo de acceso.                       |
+| switchport mode trunk                  |🟪 Configuración de interfaz  | Configura el puerto como troncal.                              |
+| vlan [ID]                              |🟦 Configuración global       | Crea o selecciona una VLAN.                                    |
+| no vlan [ID]                           |🟦 Configuración global       | Elimina una VLAN específica.                                   |
+| show vlan brief                        |🟥 Privilegiado               | Muestra un resumen de todas las VLANs configuradas.            |
+| line console 0                         |🟦 Configuración global       | Configura la línea de consola.                                 |
+| password [contraseña]                  |🟪 Configuración de línea     | Configura una contraseña para el acceso por consola.           |
+| enable password [contraseña]           |🟦 Configuración global       | Configura una contraseña para el modo privilegiado.            |
+| enable secret [contraseña]             |🟦 Configuración global       | Configura una contraseña cifrada para el modo privilegiado.    |
+| write                                  |🟥 Privilegiado               | Guarda los cambios realizados en la configuración.             |
+| reload                                 |🟥 Privilegiado               | Reinicia el switch.                                            |
+| show logging                           |🟥 Privilegiado               | Muestra el registro de eventos y errores del sistema.          |
+| poe disable				 |🟪 Configuración de interfaz  | Desconectar el POE de la boca registrada.			 |
+| no poe disable			 |🟪 Configuración de interfaz  | Conectar el POE de la boca registrada.			 |
+
+
+## Comandos para archivos:
+
+| Comando                                | Nivel de privilegio          | Descripción                                                    |
+|----------------------------------------|------------------------------|----------------------------------------------------------------|
+| dir /                                  |🟩 Usuario -> Privilegiado    | Comprueba los archivos del switch                              |
+| copy                                   |🟩 Usuario -> Privilegiado    | Migra vía TFTP los archivos indicados                          |
+| delete /                               |🟩 Usuario -> Privilegiado    | Elimina el archivo índicado del switch                         |
+| boot system flash                      |🟥 Privilegiado               | Configura un archivo para inicializar el firware por defecto   |
+
+
+## Conociendo el Core:
+
+| Archivos                               | Descripción                                                    |
+|----------------------------------------|----------------------------------------------------------------|
+| startup-config                         | Archivo encargado de guardar la configuración                  |
+| SYS_CORE_DUMP                          | Archivo encargado de los logs del switch                       |
+| Switch.bin                             | Archivo encargado de inicializar el firmware                   |
+
+| Entornos de red                        | Descripción                                                    |
+|----------------------------------------|----------------------------------------------------------------|
+| Bootstrap                              | Proceso encargado de inicializar el hardware                   |
+| Watch Dog                              | Software que reinicia el dispositivo si ha dejado de responder |
+
+
+## Atajos útiles en el prompt del switch:
+
+| Atajo                                  | Descripción                                                       | Ejemplo                                |
+|----------------------------------------|-------------------------------------------------------------------|----------------------------------------|
+| include                                | Filtrar texto                                                     | show mac address-table | include B3D1  |
+| exclude                                | Excluir texto                                                     | show log | exclude LINK                |
+| begin                                  | Mostrar líneas previas                                            | show log | begin ERROR                 |
+| ?                                      | Muestra opciones disponibles para un comando parcial.             | show ?                                 |
+| Tabulación                             | Completa automáticamente el comando o subcomando.                 | Escribir "sho" y pulsar Tab.           |
+| Ctrl+C                                 | Cancela un comando en ejecución o vuelve al prompt inicial.       | Durante un comando largo.              |
+| Ctrl+Z                                 | Salir al modo privilegiado desde cualquier submodo.               | Desde configuración global.            |
+| Ctrl+A                                 | Mueve el cursor al inicio de la línea actual.                     | En un comando largo.                   |
+| Ctrl+E                                 | Mueve el cursor al final de la línea actual.                      | En un comando largo.                   |
+| Ctrl+U                                 | Borra todo el texto desde el cursor hasta el inicio.              | Editando una línea de comando.         |
+| Up Arrow / Down Arrow                  | Navega por el historial de comandos.                              | Repetir un comando anterior.           |
+| !<número>                              | Repite un comando específico del historial.                       | !10 ejecuta el décimo comando.         |
+| show history                           | Muestra el historial completo de comandos.                        | show history.                          |
+
+
+
+================================================================================================
+## Explicación detallada de comandos y ejemplos:
+
+### Verificación y diagnóstico:
+Estos comandos ayudan a inspeccionar el estado del switch y diagnosticar problemas:
+
+  # show interface brief
+  Muestra un resumen del estado de las interfaces.
+  Ejemplo de salida:
+  ---------------------------------------------------------------
+    Interface              Status         Protocol        VLAN
+    Gi0/1                 connected         up             99
+    Gi0/2                 notconnect       down             1
+  ---------------------------------------------------------------
+
+  # show mac address-table
+  Lista la tabla MAC completa. Puedes filtrar por una dirección específica:
+  ---------------------------------------------------------------
+    show mac address-table | include 1c1a
+  ---------------------------------------------------------------
+
+  # show running-config
+  # show startup-config
+  Muestran la configuración actual y la configuración guardada respectivamente.
+
+
+
+================================================================================================
+### Configuración de interfaces:
+Estos comandos se utilizan para modificar el comportamiento de las interfaces:
+
+  # interface [puerto]
+  Selecciona un puerto específico para configurarlo.
+
+  # description [texto]
+  Añade una descripción útil al puerto, como "Conexión a Servidor" o "Cámara de Seguridad".
+
+  # switchport mode access
+  # switchport mode trunk
+  Configuran un puerto como modo de acceso (para dispositivos finales) o troncal (para interconectar switches).
+
+
+
+================================================================================================
+### Configuración de VLANs
+
+  # Crear una VLAN
+  ---------------------------------------------------------------
+    vlan 20
+    name EMPLEADOS
+    exit
+  ---------------------------------------------------------------
+
+  # Eliminar una VLAN
+  ---------------------------------------------------------------
+    no vlan 20
+  ---------------------------------------------------------------
+
+  # Asignar una VLAN a un puerto
+  ---------------------------------------------------------------
+    interface g0/1
+    switchport mode access
+    switchport access vlan 20
+  ---------------------------------------------------------------
+
+  # Ver todas las VLANs configuradas
+  ---------------------------------------------------------------
+    show vlan brief
+  ---------------------------------------------------------------
+
+
+
+================================================================================================
+### Configuración de seguridad
+
+  # Configurar contraseñas
+  Configurar una contraseña básica para consola:
+  ---------------------------------------------------------------
+    line console 0
+    password mi_contraseña
+    login
+  ---------------------------------------------------------------
+
+  Configurar una contraseña cifrada para el modo privilegiado:
+  ---------------------------------------------------------------
+    enable secret contraseña_segura
+  ---------------------------------------------------------------
+
+  # Filtrar acceso por MAC (opcional)
+  ---------------------------------------------------------------
+    mac address-table static 1c1a.dfb8.b3d1 vlan 20 interface g0/1
+  ---------------------------------------------------------------
+
+
+
+================================================================================================
+## Resolución de problemas y mejores prácticas
+
+  # Guardar siempre los cambios
+  Usa el comando `write` o `copy running-config startup-config` para evitar perder configuraciones tras un reinicio.
+
+  # Diagnosticar problemas comunes
+  Interfaz en estado `err-disabled`:
+  ---------------------------------------------------------------
+     show interfaces status err-disabled
+     no shutdown
+  ---------------------------------------------------------------
+  
+  VLAN no configurada:
+  ---------------------------------------------------------------
+     show vlan brief
+     vlan [ID]
+  ---------------------------------------------------------------
+
+
+
+
+===================================================================================================================================
+===================================================================================================================================
+==============================================[ E J E M P L O S ]==================================================================
+===================================================================================================================================
+
+
+=======[ Ejemplo de como cambiar de VLAN ]=======================================================
+
+enable                                          # accedo al modo privilegiado
+show interface brief                            # muestra el estado y la configuración de todas las interfaces
+(busco la mac a través del router)              # en este ejmplo la mac podria ser: 10-40-57-C0-B3-D1 | el estandar de los switch es mostrar la mac de la siguiente forma 1040.57C0.B3D1
+show mac address-table | include B3D1           # muestra las direcciones MAC filtrando por la última numeración de la mac 
+------------------------------------------
+Vlan    Mac Address       Type       Ports
+----    -----------       ----       -----
+1       1XFa.Df38.R351    DYNAMIC    g0/35      # la interfaz en la que esta conectada esta mac es g0/35
+------------------------------------------
+config                                          # accedo al modo privilegiado, para poder editar la VLAN
+interface g0/35                                 # le digo al switch que voy a atacar sobre la interfaz g0/35, entrando en su boquilla
+description EJEMPLO1-PC                         # le agrego una descripción para que me sea más facíl de reconocerla la proxima vez
+show interface g0/35                            # verifico que la descripción se a cambiado, mostrando solo los datos de la interfaz sobre la que estoy atacando
+shutdown                                        # dejo de hacer link con esa interfaz
+switchport pvid 99                              # una vez que no da señal, le modifico su VLAN 
+no shutdown                                     # le vuelvo a dar señal (link), con la VLAN modificada
+show interface brief                            # muestro otra vez todas las interfaces para asegurarme los cambios
+quit                                            # dejo de atacar la interfaz g0/35, salgo de su boquilla 
+write                                           # guardo los datos para que aunque reinicie persistan
+!                                               # salgo del modo con privilegios y vuelvo al modo usuario
+
+
+
+
+===================================================================================================================================
+===================================================================================================================================
+==============================================[ F I R M W A R E ]==================================================================
+===================================================================================================================================
+
+#############[ CONSOLA ]########################################
+# Para entrar con la boca de consola del switch:
+putty > Serial > COM1 > Speed:
+# si el speed esta mal configurado se verán carácteres raros
+  COM: (puedo comprobarlo desde Administrador de dispositivos)
+  SPEED: 115200
+
+#############[ TFTP ]########################################
+# descargo el programa tftpd64 
+https://pjo2.github.io/tftpd64/
+Current Directory: <Carpeta local pc>
+Server Interface: <IP local pc>
+
+
+# compruebo la memoria del switch y sus archivos 
+# (Si no es suficiente el almacenamiento para migrar el archivo, borro SYS_CORE_DUMP y en el último de los casos Switch.bin que es el archivo que vamos a sustitur)
+dir /
+
+	# primero hago un backup del archivo que voy a eliminar
+	copy flash: tftp:
+
+	# borro el archivo SYS_CORE_DUMP que es el archivo de logs para liberar espacio
+	delete /SYS_CORE_DUMP
+	
+	
+# migro a través de TFTP de mi equipo el nuevo firmware del switch
+# flash: siempre índica el switch físico y tftp en este caso el archivo de nuestro pc
+copy tftp: flash:
+
+# entro con privilegio de configuración
+config 
+
+# configuro el nuevo archivo para que lo lea primero en el arranque 
+boot system flash fw-2.2.0E-94091.bin
+
+  # si es necesario eliminar un boot de arranque lo hago con:
+  no boot system flash fw-2.2.0E-94091.bin
+
+  # en el caso de que quiera eliminar el archivo Switch.bin puedo ponerle el mismo nombre y saltarme este paso (boot system...)
+  # ya que el switch siempre va a buscar el archivo Switch.bin para inicializarse.
+
+# compruebo los cambios 
+quit
+show running-config
+
+# guardo para persistir la configuración
+write 
+
+# reinicio para comprobar cambios
+reboot
