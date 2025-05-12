@@ -1,0 +1,55 @@
+########################################################################################################
+********************************************************************************************************
+🚀 SERVIDORES 
+
+[🧑‍🚀 Tipos de servidores]:
+********************************
+Por arquitectura:
+    Servidor dedicado:          Un servidor físico que está completamente dedicado a un solo cliente o aplicación.
+    Servidor virtual:           Un servidor que se ejecuta en un entorno virtualizado, permitiendo múltiples servidores virtuales en un solo hardware físico (por ejemplo, VPS).
+    Servidor en la nube:        Un servidor que se aloja en la nube y se accede a través de Internet, ofreciendo escalabilidad y flexibilidad.
+Por ubicación:
+    Servidor local:             Un servidor que se encuentra en las instalaciones de una empresa o usuario.
+    Servidor remoto:            Un servidor que se encuentra en una ubicación diferente, a menudo en un centro de datos.
+Por tipo de hardware:
+    Servidor rack:              Diseñado para ser montado en un rack de servidores, optimizando el espacio.
+    Servidor torre:             Tiene una forma similar a una computadora de escritorio y es adecuado para pequeñas empresas o uso doméstico.
+    Servidor blade:             Un tipo de servidor compacto que se inserta en un chasis, permitiendo una alta densidad de servidores en un espacio reducido.
+Por sistema operativo:
+    Servidor Windows:           Utiliza un sistema operativo Windows Server.
+    Servidor Linux:             Utiliza una distribución de Linux (por ejemplo, Ubuntu Server, CentOS).
+
+
+
+
+
+########################################################################################################
+********************************************************************************************************
+🚀 NAS
+TrueNas
+
+
+########################################################################################################
+********************************************************************************************************
+🚀 CPD::
+
+[🧑‍🚀 CABINA]
+********************************
+(Se puede simular por un servidor nfs/iSCSI/SMB)
+La cabina se divide en dos controladoras (que pueden ser más para redes más grandes), por lo que cada servidor tendrá doble toma para cada controladora de la cabina, cuando falle una las peticiones de escritura y lectura se conducen a la otra controladora, 
+(según el fabricante funcionan de forma distinta) pero se conservan los datos al cambiar de controladora. La controladora funciona como NAS/SAN, la cabina puede estar configurada para ofrecer servicios NAS o SAN o en algunos casos (que no es lo normal) ambas funcionalidades de forma híbrida:
+  - El NAS (acceso a archivos) : se presenta como un dispositivo de almacenamiento conectado a la red y ofrece archivos a través de protocolos como NFS, SMB/CIFS, entre otros.
+  - El SAN (acceso a bloques)  : es una red especializada que conecta dispositivos de almacenamiento a servidores, generalmente utilizando protocolos como Fibre Channel o iSCSI.
+
+
+[🔥🧑‍🚀 ARQUITECTURA]
+********************************
+Fibre Channel :: 
+sCASI :: 
+NFS ::
+NFX ::
+
+
+=======================================================================================================
+[INTERESANTES]:
+- JetKVM
