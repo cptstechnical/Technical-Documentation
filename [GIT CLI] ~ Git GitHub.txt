@@ -1,0 +1,222 @@
+# ==================================[ ciclo de vida ]====================================
+
+Directorio ---------------------------- Staging ---------------------------- Repositorio
+git init ------(git add . )------- "valor trackeado" ----(git commit -m" ")------ ' '
+
+# ==================================[ !ciclo de vida ]====================================
+
+
+# git init
+inicia un repositorio de git.
+
+# git config --global user.name "nombre"
+configura el nombre de usuario global para commits.
+
+# git config --global user.email "you@example.com"
+configura el correo electrónico global para commits.
+
+# git config -l
+lista todas las configuraciones de git.
+
+# git add .
+agrega todos los archivos al stage.
+
+# git add index.html
+agrega un archivo específico al stage.
+
+# git status
+muestra el estado de los archivos en el repositorio.
+
+# git commit -m"MENSAJE_DEL_COMMIT"
+guarda los archivos en el repositorio con un mensaje.
+
+# git commit -am"MENSAJE_DEL_COMMIT"
+hace commit con los archivos modificados y eliminados.
+
+# git commit --amend
+agrega cambios al último commit en lugar de crear uno nuevo.
+
+# git log
+muestra el historial de commits.
+
+# git log --all --graph --decorate --oneline
+muestra el historial en un formato gráfico.
+
+# git diff
+muestra diferencias entre dos commits o estados de los archivos.
+
+# git show
+muestra detalles de un commit específico.
+
+# git show index.html
+muestra la historia de un archivo específico.
+
+# git branch
+lista todas las ramas o crea una nueva rama.
+
+# git branch nombredelarama
+crea una nueva rama.
+
+# git branch -r
+muestra las ramas remotas.
+
+# git branch -a
+muestra todas las ramas, locales y remotas.
+
+# git branch -d nombredelarama
+borra una rama local.
+
+# git checkout nombredelarama
+cambia a una rama específica o a una versión anterior de un commit.
+
+# git merge nombredelarama
+fusiona una rama con la actual.
+
+# git merge --abort
+anula el último intento de fusión (merge).
+
+# git remote add origin "URL_DEL_REPOSITORIO"
+configura un origen remoto para el repositorio.
+
+# git remote
+muestra los repositorios remotos.
+
+# git remote -v
+muestra los repositorios remotos con sus URLs.
+
+# git push origin main
+sube la rama main al repositorio remoto.
+
+# git push origin main --allow-unrelated-histories
+primer push para un repositorio sin historial común.
+
+# git pull origin main
+trae cambios del repositorio remoto a la rama actual.
+
+# git clone "URL_DEL_REPOSITORIO"
+clona un repositorio remoto a tu equipo.
+
+# git stash
+guarda cambios temporales sin hacer commit.
+
+# git stash pop
+restaura los cambios guardados con el último stash.
+
+# git stash drop
+borra el último stash.
+
+# git stash list
+muestra los stash guardados.
+
+# git stash branch nombredelarama
+crea una nueva rama y aplica el último stash en ella.
+
+# git rm
+elimina archivos de git sin borrar el historial de versiones.
+
+# git rm --cached
+elimina archivos del stage, pero los mantiene en el disco duro.
+
+# git rm --force
+borra archivos de git y del disco duro.
+
+# git reset --soft
+borra el historial, mantiene los cambios en stage.
+
+# git reset --hard
+borra el historial y todos los cambios, vuelve a un commit específico.
+
+# git reflog
+muestra un resumen detallado de todos los commits y acciones.
+
+# git reset hashdelcommit --hard
+vuelve al estado exacto de un commit específico.
+
+# git cherry-pick hashdelcommit
+trae un commit de otra rama a la rama actual.
+
+# git revert hashdelcommit
+deshace un commit específico sin cambiar la historia.
+
+# git rebase
+integra una rama en otra preservando la historia lineal.
+
+# git clean --dry-run
+simula el borrado de archivos no trackeados.
+
+# git clean -f
+borra archivos no trackeados.
+
+# git tag
+muestra todos los tags del repositorio.
+
+# git tag -a v0.1 -m"mensaje"
+crea un tag con nombre y mensaje.
+
+# git tag -d nombredeltag
+borra un tag local.
+
+# git push origin :refs/tags/nombredeltag
+borra un tag en el repositorio remoto.
+
+# git show-ref --tags
+muestra los tags y sus commits asociados.
+
+# git push origin --tags
+sube todos los tags al repositorio remoto.
+
+# git grep -n palabraabuscar
+busca una palabra en el repositorio y muestra su línea.
+
+# git grep -c palabraabuscar
+muestra la cantidad de veces que aparece una palabra.
+
+# git shortlog -sn --all --no-merges
+muestra un resumen de contribuciones por usuario.
+
+# git config --global alias.stats "shortlog -sn --all --no-merges"
+crea un alias para mostrar estadísticas de commits.
+
+# git blame archivo -L35,60
+muestra quién hizo los cambios en un archivo en líneas específicas.
+
+# alias okamoto="git log --all --graph --decorate --oneline"
+crea un alias para un historial gráfico resumido.
+
+# .gitignore
+archivo para indicar qué archivos o directorios ignorar en el repositorio.
+
+# git push origin main
+sube los cambios de la rama main al repositorio remoto.
+
+# PULL REQUEST
+proceso en GitHub para solicitar la revisión de cambios antes de fusionarlos.
+
+# gitk
+abre una interfaz gráfica con el historial de commits.
+
+# npm install
+instala dependencias de un proyecto clonado.
+
+# readme.md
+archivo de documentación del proyecto.
+
+# git credential-cache exit
+finaliza el almacenamiento en caché de credenciales actual.
+
+# git config --global --unset credential.helper
+elimina la configuración de almacenamiento de credenciales.
+# si no funciona desde windows buscar "Credential Manager" > Credenciales de Windows > (Eliminar las entradas en Credenciales genéricas)
+# 
+
+# ============[ secuencia básica de comandos git ]============
+git init
+git add .
+git commit -m"prueba"
+git push origin main
+
+# ============[ ejemplo de tags a github ]============
+git commit -m "v1.0.29"
+git push -u origin main
+git tag -a v1.0.29 -m "v1.0.29"
+git push --tags
