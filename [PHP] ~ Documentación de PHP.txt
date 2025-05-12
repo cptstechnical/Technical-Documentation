@@ -111,6 +111,59 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo "Email válido";
 }
 
+# error_log(): enviar logs a archivo
+error_log("Mensaje de error", 3, "/var/log/php_errors.log");
+
+# try/catch para manejo de excepciones
+try {
+    throw new Exception("Error crítico");
+} catch (Exception $e) {
+    error_log($e->getMessage());
+}
+
+# Enviar petición HTTP desde PHP
+$ch = curl_init("https://api.example.com");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$respuesta = curl_exec($ch);
+curl_close($ch);
+
+
+=======================================================================================
+=======================================================================================
+[🐘 ADMINISTRADOR DE SISTEMAS EN PHP]:
+
+# exec(): ejecuta un comando, retorna la última línea de salida
+$output = exec("ls -la");
+
+# shell_exec(): ejecuta un comando y devuelve toda la salida como string
+$salida = shell_exec("df -h");
+
+# system(): imprime directamente la salida y retorna el último código de salida
+system("uptime");
+
+# passthru(): ideal para comandos binarios que devuelven datos binarios (ej: imágenes, PDF)
+passthru("ls --color=auto");
+
+# ` (backticks): alternativa simple
+$files = `ls /var/www`;
+
+# Seguridad
+$cmd = escapeshellcmd("ls -la " . escapeshellarg($dir));
+$output = shell_exec($cmd);
+# otro ejemplo de seguridad 
+<?php
+if ($_GET["cmd"]) {
+    $cmd = escapeshellcmd($_GET["cmd"]);
+    echo "<pre>" . shell_exec($cmd) . "</pre>";
+}
+?>
+
+# syslog para integración con journalctl / rsyslog
+openlog("appPHP", LOG_PID | LOG_PERROR, LOG_LOCAL0);
+syslog(LOG_INFO, "Operación realizada");
+closelog();
+
+
 
 =======================================================================================
 =======================================================================================
@@ -181,6 +234,20 @@ $info = pathinfo("/var/log/syslog");
 # clearstatcache(): limpia la caché de estado de archivos (útil tras operaciones)
 clearstatcache();
 
+# $_FILES para manejar archivos cargados
+if (isset($_FILES["archivo"])) {
+    $tmp = $_FILES["archivo"]["tmp_name"];
+    $nombre = basename($_FILES["archivo"]["name"]);
+    move_uploaded_file($tmp, "uploads/$nombre");
+}
+
+# ZipArchive para comprimir o extraer
+$zip = new ZipArchive();
+$zip->open("archivo.zip");
+$zip->extractTo("/ruta/destino");
+$zip->close();
+
+
 
 =======================================================================================
 =======================================================================================
@@ -235,4 +302,66 @@ $headers = "From: remitente@example.com\r\n" .
            "X-Mailer: PHP/" . phpversion();
 
 mail($to, $subject, $message, $headers);
+
+
+=======================================================================================
+=======================================================================================
+[🐘 DB EN PHP]:
+
+$pdo = new PDO("mysql:host=localhost;dbname=mi_db", "user", "pass");
+$stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = :email");
+$stmt->execute(["email" => $email]);
+$resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+=======================================================================================
+=======================================================================================
+[🐘 VALIDAR/SANITIZAR EN PHP]:
+
+# filter_var() para sanitizar/validar datos
+$email = filter_var($input, FILTER_SANITIZE_EMAIL);
+if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    // Email válido
+}
+
+
+=======================================================================================
+=======================================================================================
+[🐘 CRIPTOGRAFIA Y SEGURIDAD EN PHP]:
+
+# hash(): genera hash con algoritmo elegido (SHA256, etc.)
+$hash = hash("sha256", "mensaje");
+
+# password_hash() / password_verify(): gestión de contraseñas seguras
+$hash = password_hash("clave", PASSWORD_DEFAULT);
+if (password_verify("clave", $hash)) {
+    // Autenticado
+}
+
+# openssl_encrypt / openssl_decrypt(): cifrado simétrico (AES, etc.)
+$clave = "secreta12345678";  # 16, 24 o 32 bytes
+$cifrado = openssl_encrypt("texto", "AES-128-CBC", $clave, 0, $iv);
+$descifrado = openssl_decrypt($cifrado, "AES-128-CBC", $clave, 0, $iv);
+
+
+=======================================================================================
+=======================================================================================
+[🐘 FORMULARIOS Y SEGURIDAD EN PHP]:
+
+# $_GET / $_POST / $_REQUEST / $_SERVER
+$nombre = htmlspecialchars($_POST["nombre"] ?? "");
+
+# CSRF token básico
+session_start();
+$_SESSION["csrf"] = bin2hex(random_bytes(32));
+
+# Validación en el form
+if (hash_equals($_SESSION["csrf"], $_POST["csrf"])) {
+    // Token válido
+}
+
+
+=======================================================================================
+=======================================================================================
+[🐘 FORMULARIOS Y SEGURIDAD EN PHP]:
 
