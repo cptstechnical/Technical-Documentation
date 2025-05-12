@@ -1,0 +1,47 @@
+#Abrir el crontab
+crontab -e
+
+# Estructura del crontab:
+#
+# * * * * * <comando_a_ejecutar>
+# - - - - -
+# | | | | |
+# | | | | +--- Día de la semana (0 - 6) (Domingo=0)
+# | | | +----- Mes (1 - 12)
+# | | +------- Día del mes (1 - 31)
+# | +--------- Hora (0 - 23)
+# +----------- Minuto (0 - 59)
+
+# Ver el crontab actual
+crontab -l
+
+# Verificar la ejecución a un archivo
+* * * * * /ruta/al/script.sh >> /ruta/al/log.txt 2>&1
+
+# Verificar la ejecución a un correo
+MAILTO="tu_correo@example.com"
+* * * * * /ruta/al/script.sh
+
+
+===================================================
+## ejemplos:
+# Ejecutar un script cada día a las 2:30 AM:
+# 30 2 * * * /ruta/al/script.sh
+
+# Ejecutar un script cada 15 minutos:
+# */15 * * * * /ruta/al/script.sh
+
+# se ejecutará a las 12:00 AM el 1 de enero y el 1 de julio, sin importar qué día de la semana sea:
+0 0 1 1,7 * curl -s http://tu-dominio.com/tu-script.php
+
+# realiza una solicitud HTTP silenciosa (sin salida ni errores visibles) cada 5 minutos,
+# sin verificar el certificado SSL. La respuesta del servidor se ignora y no se guarda en ningún archivo
+*/5 * * * * wget -q --no-check-certificate -O - "https://prueba.es/controlador/ejecucion" >/dev/null 2>/dev/null
+===================================================
+
+
+###################################################
+###################################################
+
+# los scripts tienen que tener permisos de ejecución
+chmod +x /ruta/al/script.sh
