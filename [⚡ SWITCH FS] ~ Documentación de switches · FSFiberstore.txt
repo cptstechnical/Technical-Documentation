@@ -1,4 +1,4 @@
-=======[ Comandos switches ]====================================================================
+=======[⚡ Comandos switches ]====================================================================
 ================================================================================================
 
 ## Privilegios en un switch:
@@ -98,7 +98,7 @@ Los switches suelen operar bajo diferentes niveles de privilegios. Estos niveles
 
 
 ================================================================================================
-## Explicación detallada de comandos y ejemplos:
+##⚡ Explicación detallada de comandos y ejemplos:
 
 ### Verificación y diagnóstico:
 Estos comandos ayudan a inspeccionar el estado del switch y diagnosticar problemas:
@@ -125,7 +125,7 @@ Estos comandos ayudan a inspeccionar el estado del switch y diagnosticar problem
 
 
 ================================================================================================
-### Configuración de interfaces:
+###⚡Configuración de interfaces:
 Estos comandos se utilizan para modificar el comportamiento de las interfaces:
 
   # interface [puerto]
@@ -141,7 +141,7 @@ Estos comandos se utilizan para modificar el comportamiento de las interfaces:
 
 
 ================================================================================================
-### Configuración de VLANs
+###⚡Configuración de VLANs
 
   # Crear una VLAN
   ---------------------------------------------------------------
@@ -170,7 +170,7 @@ Estos comandos se utilizan para modificar el comportamiento de las interfaces:
 
 
 ================================================================================================
-### Configuración de seguridad
+###⚡Configuración de seguridad
 
   # Configurar contraseñas
   Configurar una contraseña básica para consola:
@@ -193,7 +193,7 @@ Estos comandos se utilizan para modificar el comportamiento de las interfaces:
 
 
 ================================================================================================
-## Resolución de problemas y mejores prácticas
+##⚡Resolución de problemas y mejores prácticas
 
   # Guardar siempre los cambios
   Usa el comando `write` o `copy running-config startup-config` para evitar perder configuraciones tras un reinicio.
@@ -216,7 +216,7 @@ Estos comandos se utilizan para modificar el comportamiento de las interfaces:
 
 ===================================================================================================================================
 ===================================================================================================================================
-==============================================[ E J E M P L O S ]==================================================================
+==============================================[⚡ E J E M P L O S ]==================================================================
 ===================================================================================================================================
 
 
@@ -248,7 +248,7 @@ write                                           # guardo los datos para que aunq
 
 ===================================================================================================================================
 ===================================================================================================================================
-==============================================[ F I R M W A R E ]==================================================================
+==============================================[⚡ F I R M W A R E ]==================================================================
 ===================================================================================================================================
 
 #############[ CONSOLA ]########################################
