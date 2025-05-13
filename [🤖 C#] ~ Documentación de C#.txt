@@ -1,3 +1,37 @@
+=======================================================================================
+=======================================================================================
+[🟣🤖 TEORIA C#]:
+# RunTime
+
+
+=======================================================================================
+=======================================================================================
+[🟣🤖 TIPOS DE DATOS EN C#]:
+
+// int: Enteros de 32 bits (rango: -2,147,483,648 a 2,147,483,647)
+int edad = 30;
+
+// bool: Valores booleanos (true o false)
+bool esAdmin = true;
+
+// float: Números decimales de precisión simple (32 bits) - requiere sufijo 'f'
+float temperatura = 36.6f;
+
+// double: Números decimales de doble precisión (64 bits)
+double peso = 70.45;
+
+// char: Un solo carácter Unicode
+char inicial = 'A';
+
+// string: Cadena de texto (secuencia de caracteres)
+string nombre = "Elliot";
+
+// long: Enteros de 64 bits (rango: ±9 trillones)
+long poblacion = 7800000000L;
+
+// uint: Enteros sin signo de 32 bits (solo positivos)
+uint stock = 100u;
+
 
 =======================================================================================
 =======================================================================================
