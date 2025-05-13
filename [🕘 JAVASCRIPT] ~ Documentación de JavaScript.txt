@@ -1,0 +1,288 @@
+// =======================================================================================
+// [🍝🟨 1. SALIDA Y DEBUG]
+// =======================================================================================
+
+// console.log(): salida estándar
+console.log("Hola Mundo");
+
+// console.dir(): estructura detallada (profundidad, arrays, objetos)
+console.dir({ a: 1, b: [1, 2, 3] }, { depth: null });
+
+// console.error(): errores a stderr
+console.error("Mensaje de error");
+
+// typeof / Array.isArray(): tipo y verificación de array
+console.log(typeof 123);               // number
+console.log(Array.isArray([1, 2, 3])); // true
+
+// try/catch para manejo de excepciones
+try {
+    throw new Error("Error crítico");
+} catch (e) {
+    console.error(e.message);
+}
+
+
+// =======================================================================================
+// [🍝🟨 2. STRINGS]
+// =======================================================================================
+
+// .length: longitud
+console.log("texto".length);
+
+// .substring(): subcadena
+console.log("abcdef".substring(1, 4));  // bcd
+
+// .indexOf(): búsqueda de subcadena
+console.log("hola mundo".indexOf("mundo"));
+
+// .replace(): reemplazo de texto
+console.log("hola mundo".replace("mundo", "admin"));
+
+// .trim(): eliminar espacios
+console.log("   texto   ".trim());
+
+
+// =======================================================================================
+// [🍝🟨 3. ARRAYS]
+// =======================================================================================
+
+const a1 = [1, 2];
+const a2 = [3, 4];
+
+// .push(): añadir al final
+a1.push(5, 6);
+
+// .includes(): buscar elemento
+console.log(a2.includes(3)); // true
+
+// .concat() o spread: fusionar arrays
+const fusion = [...a1, ...a2];
+
+// .join(): array → string
+console.log(["uno", "dos"].join("-"));
+
+// .split(): string → array
+const partes = "uno,dos,tres".split(",");
+
+// .filter(), .map(), .reduce(): manipulación funcional
+const dobles = a1.map(n => n * 2);
+
+
+// =======================================================================================
+// [🍝🟨 4. OBJETOS]
+// =======================================================================================
+
+const user = { nombre: "admin", activo: true };
+
+// "clave" in obj: existencia de clave
+if ("nombre" in user) {
+    console.log(user.nombre);
+}
+
+// delete: eliminar clave
+delete user.activo;
+
+// Object.keys() / Object.values()
+console.log(Object.keys(user));   // ["nombre"]
+console.log(Object.values(user)); // ["admin"]
+
+
+// =======================================================================================
+// [🟨🟨 5. VALIDACIÓN Y SANEAMIENTO]
+// =======================================================================================
+
+// Verificar existencia
+if (typeof variable !== "undefined" && variable !== null) {
+    console.log("Definida");
+}
+
+// Verificar si "vacía"
+if (!"") {
+    console.log("Vacía");
+}
+
+// Validar email con RegEx
+const email = "test@dominio.com";
+if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    console.log("Email válido");
+}
+
+
+// =======================================================================================
+// [🍝🟨 6. JSON]
+// =======================================================================================
+
+const obj = { user: "admin" };
+
+// JSON.stringify(): objeto → string JSON
+const json = JSON.stringify(obj);
+
+// JSON.parse(): string JSON → objeto
+const parsed = JSON.parse(json);
+
+
+// =======================================================================================
+// [🍝🟨 7. FECHAS Y TIEMPO]
+// =======================================================================================
+
+// Date actual en formato ISO
+console.log(new Date().toISOString());
+
+// Timestamp actual en segundos
+console.log(Math.floor(Date.now() / 1000));
+
+// Date.parse(): string → timestamp (milisegundos)
+console.log(Date.parse("2025-01-01") / 1000);
+
+// Formato custom
+const fecha = new Date();
+console.log(`${fecha.getFullYear()}-${fecha.getMonth()+1}-${fecha.getDate()}`);
+
+
+// =======================================================================================
+// [🍝🟨 8. CRIPTOGRAFÍA Y CONTRASEÑAS]
+// =======================================================================================
+
+const crypto = require("crypto");
+const bcrypt = require("bcryptjs");
+
+// Hash SHA256
+const sha = crypto.createHash("sha256").update("mensaje").digest("hex");
+
+// Bcrypt (hash y verificación)
+const hash = bcrypt.hashSync("clave123", 10);
+if (bcrypt.compareSync("clave123", hash)) {
+    console.log("Autenticado");
+}
+
+
+// =======================================================================================
+// [🍝🟨 9. ARCHIVOS (Node.js)]
+// =======================================================================================
+
+const fs = require("fs");
+
+// Leer archivo
+const contenido = fs.readFileSync("log.txt", "utf8");
+
+// Escribir archivo (sobrescribe)
+fs.writeFileSync("log.txt", "nueva entrada\n");
+
+// Añadir al final (append)
+fs.writeFileSync("log.txt", "otra entrada\n", { flag: "a" });
+
+// Verificar existencia
+if (fs.existsSync("config.json")) {
+    console.log("Existe");
+}
+
+// Borrar archivo
+fs.unlinkSync("temp.txt");
+
+// Renombrar archivo
+fs.renameSync("old.txt", "new.txt");
+
+// Crear directorio
+fs.mkdirSync("logs", { recursive: true });
+
+// Eliminar directorio vacío
+fs.rmdirSync("logs");
+
+
+// =======================================================================================
+// [🍝🟨 10. HTTP / REDES]
+// =======================================================================================
+
+// fetch() en navegador
+fetch("https://api.example.com")
+    .then(r => r.json())
+    .then(data => console.log(data))
+    .catch(err => console.error(err));
+
+// En Node.js usar: node-fetch o axios
+// Ejemplo con axios:
+const axios = require("axios");
+axios.get("https://api.example.com")
+    .then(res => console.log(res.data))
+    .catch(err => console.error(err));
+
+
+// =======================================================================================
+// [🍝🟨 11. REDIRECCIONES / CABECERAS (NAVEGADOR)]
+// =======================================================================================
+
+// Redirección
+window.location.href = "https://example.com";
+
+// Cabecera personalizada (solo en server o frameworks como Express)
+// res.setHeader("Content-Type", "application/json");
+
+
+// =======================================================================================
+// [🍝🟨 12. SESIONES Y COOKIES (CLIENTE)]
+// =======================================================================================
+
+// set cookie (cliente)
+document.cookie = "usuario=admin; path=/; max-age=3600";
+
+// leer cookie
+const cookies = document.cookie.split(";").map(c => c.trim());
+console.log(cookies);
+
+// eliminar cookie
+document.cookie = "usuario=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+
+
+// =======================================================================================
+// [🍝🟨 13. SEGURIDAD EN FORMULARIOS]
+// =======================================================================================
+
+// Escapar HTML (para prevenir XSS)
+const sanitizeHTML = (str) => str.replace(/[&<>"']/g, m =>
+    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m])
+);
+
+// CSRF token simulado (almacenado en localStorage/sessionStorage)
+const csrfToken = crypto.randomBytes(32).toString("hex");
+localStorage.setItem("csrf", csrfToken);
+
+// Validación (ejemplo teórico)
+if (localStorage.getItem("csrf") === tokenRecibido) {
+    console.log("CSRF token válido");
+}
+
+
+// =======================================================================================
+// [🍝🟨 14. DOM & EVENTOS (NAVEGADOR)]
+// =======================================================================================
+
+// getElementById / querySelector: selección de nodos
+const el1 = document.getElementById("idElemento");
+const el2 = document.querySelector(".clase");
+
+// querySelectorAll: múltiple selección
+document.querySelectorAll(".items").forEach(item => {
+    console.log(item.textContent);
+});
+
+// Crear y añadir elemento
+const nuevo = document.createElement("div");
+nuevo.textContent = "Nuevo elemento";
+document.body.appendChild(nuevo);
+
+// Modificar contenido
+el1.textContent = "Actualizado";
+el1.innerHTML = "<strong>Con HTML</strong>";
+
+// Añadir evento
+el1.addEventListener("click", () => {
+    console.log("Click detectado");
+});
+
+// Cambiar estilos
+el1.style.color = "red";
+
+// Eliminar elemento
+el1.remove();
+
