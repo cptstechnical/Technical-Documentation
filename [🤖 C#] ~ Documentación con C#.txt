@@ -1,0 +1,251 @@
+
+=======================================================================================
+=======================================================================================
+[🟣🤖 FUNCIONES Y MÉTODOS COMUNES EN C#]:
+
+// Console.WriteLine(): imprime una o varias cadenas
+Console.WriteLine("Hola Mundo");
+
+// GetType(): muestra tipo de dato
+Console.WriteLine(variable.GetType());
+
+// String.Length: longitud de una cadena
+int longitud = "texto".Length;
+
+// Substring(): extrae parte de una cadena
+string parte = "abcdef".Substring(1, 3);  // bcd
+
+// IndexOf(): busca la posición de una subcadena
+int pos = "hola mundo".IndexOf("mundo");
+
+// Replace(): reemplaza texto
+string reemplazo = "hola mundo".Replace("mundo", "admin");
+
+// Split(): divide una cadena en array
+string[] partes = "uno,dos,tres".Split(',');
+
+// Join(): une array en string
+string unido = string.Join("-", partes);
+
+// Trim(): elimina espacios al inicio y final
+string limpio = "  texto  ".Trim();
+
+// Concatenar strings
+string resultado = $"Hola {nombre}";
+
+// Arrays: verificación
+bool contiene = array.Contains(3);
+
+// Diccionario: claves y valores
+var dict = new Dictionary<string, string> { ["user"] = "admin" };
+if (dict.ContainsKey("user")) Console.WriteLine(dict["user"]);
+
+// JSON (requiere System.Text.Json)
+using System.Text.Json;
+string json = JsonSerializer.Serialize(dict);
+var obj = JsonSerializer.Deserialize<Dictionary<string, string>>(json);
+
+// Fecha y hora
+Console.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+long timestamp = DateTimeOffset.Now.ToUnixTimeSeconds();
+DateTime fecha = DateTime.Parse("2025-01-01");
+
+// Try/catch para manejo de excepciones
+try {
+    throw new Exception("Error crítico");
+} catch (Exception ex) {
+    Console.WriteLine(ex.Message);
+}
+
+// Terminar ejecución
+Environment.Exit(1);
+
+
+=======================================================================================
+=======================================================================================
+[🟣🤖 ADMINISTRACIÓN DEL SISTEMA EN C#]:
+
+// Ejecutar comandos del sistema
+using System.Diagnostics;
+string salida;
+using (var proceso = new Process()) {
+    proceso.StartInfo.FileName = "/bin/bash";
+    proceso.StartInfo.Arguments = "-c \"ls -la\"";
+    proceso.StartInfo.RedirectStandardOutput = true;
+    proceso.StartInfo.UseShellExecute = false;
+    proceso.Start();
+    salida = proceso.StandardOutput.ReadToEnd();
+    proceso.WaitForExit();
+}
+Console.WriteLine(salida);
+
+// Seguridad: sanitizar argumentos (básico)
+string safeArg = arg.Replace("\"", "").Replace(";", "");
+
+
+=======================================================================================
+=======================================================================================
+[🟣🤖 MANEJO DE ARCHIVOS EN C#]:
+
+using System.IO;
+
+// Leer contenido completo
+string contenido = File.ReadAllText("log.txt");
+
+// Escribir y añadir contenido
+File.WriteAllText("log.txt", "contenido nuevo");
+File.AppendAllText("log.txt", "otra línea\n");
+
+// Leer línea por línea
+string[] lineas = File.ReadAllLines("archivo.txt");
+
+// Verificar existencia
+if (File.Exists("archivo.txt")) Console.WriteLine("Existe");
+
+// Permisos de archivo (solo básico)
+FileInfo fi = new FileInfo("archivo.txt");
+bool sePuedeLeer = fi.Exists && fi.Length > 0;
+
+// Eliminar, renombrar, copiar
+File.Delete("archivo.tmp");
+File.Move("viejo.txt", "nuevo.txt");
+File.Copy("origen.txt", "destino.txt", overwrite: true);
+
+// Directorios
+Directory.CreateDirectory("logs");
+Directory.Delete("logs", recursive: true);
+
+// Listar archivos
+string[] archivos = Directory.GetFiles("/etc");
+string[] carpetas = Directory.GetDirectories("/etc");
+
+// Filtrado por patrón
+string[] txts = Directory.GetFiles(".", "*.txt");
+
+// Basename, dirname, pathinfo
+string baseName = Path.GetFileName("/ruta/a/archivo.txt");
+string dirName = Path.GetDirectoryName("/ruta/a/archivo.txt");
+string extension = Path.GetExtension("/ruta/a/archivo.txt");
+
+
+=======================================================================================
+=======================================================================================
+[🟣🤖 SESIONES EN ASP.NET CORE]:
+
+// En Startup.cs o Program.cs, agregar servicios de sesión:
+// services.AddSession();
+
+// En controller o middleware:
+HttpContext.Session.SetString("user", "admin");
+string user = HttpContext.Session.GetString("user");
+HttpContext.Session.Remove("user");
+
+
+=======================================================================================
+=======================================================================================
+[🟣🤖 COOKIES EN ASP.NET CORE]:
+
+// Establecer cookie
+Response.Cookies.Append("usuario", "admin", new CookieOptions {
+    Expires = DateTimeOffset.Now.AddHours(1),
+    HttpOnly = true,
+    Secure = true,
+    SameSite = SameSiteMode.Strict
+});
+
+// Leer cookie
+string usuario = Request.Cookies["usuario"];
+
+// Eliminar cookie
+Response.Cookies.Delete("usuario");
+
+
+=======================================================================================
+=======================================================================================
+[🟣🤖 EMAILS EN C#]:
+
+using System.Net.Mail;
+
+var mail = new MailMessage("remitente@example.com", "destino@example.com");
+mail.Subject = "Asunto";
+mail.Body = "Contenido del correo";
+
+var smtp = new SmtpClient("smtp.example.com") {
+    Port = 587,
+    Credentials = new System.Net.NetworkCredential("usuario", "clave"),
+    EnableSsl = true,
+};
+
+smtp.Send(mail);
+
+
+=======================================================================================
+=======================================================================================
+[🟣🤖 BASE DE DATOS EN C#] (SQL Server, MySQL, etc.)
+
+using System.Data;
+using System.Data.SqlClient;
+
+using (var conn = new SqlConnection("Server=localhost;Database=mi_db;User Id=usuario;Password=clave;")) {
+    conn.Open();
+    using (var cmd = new SqlCommand("SELECT * FROM usuarios WHERE email = @correo", conn)) {
+        cmd.Parameters.AddWithValue("@correo", email);
+        using (var reader = cmd.ExecuteReader()) {
+            while (reader.Read()) {
+                Console.WriteLine(reader["nombre"]);
+            }
+        }
+    }
+}
+
+
+=======================================================================================
+=======================================================================================
+[🟣🤖 VALIDAR Y SANITIZAR EN C#]:
+
+using System.Text.RegularExpressions;
+
+// Validar email
+string email = input.Trim();
+bool valido = Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+
+// Escapar HTML
+string limpio = System.Net.WebUtility.HtmlEncode(input);
+
+
+=======================================================================================
+=======================================================================================
+[🟣🤖 CRIPTOGRAFÍA Y SEGURIDAD EN C#]:
+
+// Hash SHA256
+using System.Security.Cryptography;
+using System.Text;
+
+string HashSHA256(string texto) {
+    using var sha = SHA256.Create();
+    byte[] bytes = sha.ComputeHash(Encoding.UTF8.GetBytes(texto));
+    return Convert.ToHexString(bytes);
+}
+
+// BCrypt con BCrypt.Net-Next
+string hash = BCrypt.Net.BCrypt.HashPassword("clave123");
+bool ok = BCrypt.Net.BCrypt.Verify("clave123", hash);
+
+// AES (simétrico)
+using var aes = Aes.Create();
+aes.Key = Encoding.UTF8.GetBytes("clave12345678901"); // 16 bytes
+aes.IV = new byte[16];
+using var enc = aes.CreateEncryptor();
+byte[] cipher = enc.TransformFinalBlock(Encoding.UTF8.GetBytes("texto"), 0, "texto".Length);
+
+
+=======================================================================================
+=======================================================================================
+[🟣🤖 FORMULARIOS Y SEGURIDAD EN ASP.NET]:
+
+// Leer datos
+string nombre = Request.Form["nombre"];
+
+// CSRF con Razor Pages / Controllers
+// Incluir @Html.AntiForgeryToken() en el formulario
+// Validación automática con [ValidateAntiForgeryToken] en el controlador
