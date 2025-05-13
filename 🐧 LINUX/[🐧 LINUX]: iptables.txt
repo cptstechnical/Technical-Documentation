@@ -1,0 +1,61 @@
+============================================================
+[🚀 Configuración ipTables]:
+# Ver reglas actuales
+sudo iptables -L -v -n
+
+# Abrir archivo de iptables v4
+/etc/iptables/rules.v4
+
+# 🔥Sintaxis de reglas
+iptables -t <tabla> -A <cadena> -s <origen> -d <destino> -p <protocolo> --dport <puerto> -j <acción>
+
+# 🔥Tipos de tablas en iptables
+Tabla       | Propósito                                       | Cadenas Comunes               
+------------|-------------------------------------------------|------------------------------
+filter      | Control de tráfico y filtrado de paquetes       | INPUT, OUTPUT, FORWARD      
+nat         | Modificación de direcciones (NAT)               | PREROUTING, POSTROUTING, OUTPUT  
+mangle      | Modificación avanzada de paquetes (QoS, TTL)    | PREROUTING, POSTROUTING, INPUT, OUTPUT, FORWARD  
+raw         | Exclusión del seguimiento de conexiones         | PREROUTING, OUTPUT           
+security    | Aplicación de etiquetas de seguridad            | INPUT, OUTPUT, FORWARD       
+
+# Hacer que las reglas persistan al reiniciar
+systemctl enable iptables
+
+
+============================================================
+============================================================
+[📌 Ejemplos sin tablas]:
+# Permite el acceso a SSH (puerto 22)
+sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+
+# Permitir conexiones entrantes en el puerto 80 (HTTP)
+sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+
+# Bloquear una IP Específica
+sudo iptables -A INPUT -s 192.168.1.100 -j DROP
+
+# Limitar el Número de Conexiones Simultáneas
+sudo iptables -A INPUT -p tcp --syn --dport 22 -m connlimit --connlimit-above 3 -j REJECT
+
+# Detectar y Bloquear Escaneos de Puertos
+sudo iptables -A INPUT -m psd --psd-weight-threshold 21 --psd-delay-threshold 300 --psd-lo-rate-threshold 3 --psd-hi-rate-threshold 25 -j DROP
+
+# Prevenir Ataques de Fuerza Bruta con iptables y fail2ban
+sudo iptables -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --set
+sudo iptables -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --update --seconds 60 --hitcount 5 -j DROP
+
+[📌 Ejemplos con tablas]:
+# Habilitar NAT y Compartir Internet (POSTROUTING)
+sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+
+# Redirigir tráfico del puerto 80 al 8080 (PREROUTING)
+sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
+
+# Marcar paquetes SSH para priorizarlos en QoS (PREROUTING)
+sudo iptables -t mangle -A PREROUTING -p tcp --dport 22 -j MARK --set-mark 1
+
+# Excluir paquetes ICMP del seguimiento de conexiones (PREROUTING)
+sudo iptables -t raw -A PREROUTING -p icmp -j NOTRACK
+
+# Aplicar etiqueta de seguridad a paquetes de salida (OUTPUT)
+sudo iptables -t security -A OUTPUT -p tcp --dport 443 -j SECMARK --selctx system_u:object_r:httpd_t:s0
