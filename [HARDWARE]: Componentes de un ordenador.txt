@@ -1,0 +1,734 @@
+########################################################################################################################################
+#########################################[ CPU-PROCESADORES-2024 ]######################################################################
+########################################################################################################################################
+
+# CPU - procesadores 🔲🖥️
+Primero evaluo un procesador `AMD`
+** RYZEN 7 1700 X **
+
+RYZEN = Segmento de marca comercial
+| Segmento de numeración                | Uso estimado                             |
+|---------------------------------------|------------------------------------------|
+| `AMD ATHLON`                          | la gama más sencilla                     |  
+| `AMD RYZEN`                           | segmento de venta a domicilio            |      
+| `AMD RYZEN PRO`                       | segmento de venta para empresa           |  
+| `AMD RYZEN THREADRIPPER`              | segmento de venta para workstation       |  
+| `AMD EPYC`                            | para servidores y centros de datos       |  
+
+7 = Gama de potencia del procesador:
+| Segmento de numeración                | Gama                    |
+|---------------------------------------|-------------------------|
+| 3                                     | baja                    |      
+| 5                                     | media                   |  
+| 7                                     | alta                    |  
+| 9                                     | muy alta                |  
+| `AMD RYZEN THREADRIPPER`              | super gama alta         | 
+
+1700 X = Numeración del modelo (1700X):
+| Segmento de numeración                | Definición                                                                                                            |
+|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
+| 1 (1.000)                             | generación (1.000 es la más antigua, "1ª generación - 2017"; 7.000 es la más reciente, "5ª generación - 2022")        |  
+| 7                                     | performance level (enlazado a la gama del procesador; en este caso, RYZEN 7)                                          |  
+| 00                                    | representa el modelo, define las capacidades de fábrica                                                               |  
+
+Última letra = Última letra del modelo:
+| Segmento de numeración                  | Definición                                                                                       |
+|-----------------------------------------|--------------------------------------------------------------------------------------------------|
+|  `X`                                    | multiplicador desbloqueado, se puede hacer Overclock                                             |  
+|  `XT`                                   | multiplicador desbloqueado, más potencia                                                         |  
+|                                         | sin sufijo, multiplicador desbloqueado, más económico                                            |  
+|  `G`                                    | tarjeta gráfica integrada, compatible con gaming                                                 |  
+|  `U`                                    | versión para portátiles, eficiencia energética                                                   |  
+|  `X3D`                                  | caché optimizada, ideal para juegos y aplicaciones con uso intensivo de caché                    |  
+
+
+########################################################################################################################################
+
+
+Ahora evaluo un procesador `Intel`
+
+** INTEL CORE I7 - 13700 KS **
+
+INTEL CORE = Segmento de marca comercial
+| Segmento de numeración                | Uso estimado                                                         |
+|---------------------------------------|----------------------------------------------------------------------|
+| `INTEL CORE`                          | segmento de venta a domicilio                                        |      
+| `INTEL XENON`                         | segmento para empresa, servidores y workstations                     |  
+| `INTEL PENTIUM`                       | procesadores de gama baja                                            |  
+| `INTEL CELERON`                       | para tareas ligeras y dispositivos de bajo costo                     |  
+| `INTEL ATOM`                          | bajo consumo energético, dispositivos móviles                        |  
+
+I7 = Gama de potencia del procesador 
+| Segmento de numeración                | Gama                                                                 |
+|---------------------------------------|----------------------------------------------------------------------|
+| `I9`                                  | super gama alta                                                      |  
+| `I7`                                  | gama alta                                                            |  
+| `I5`                                  | gama media                                                           |  
+| `I3`                                  | gama baja                                                            |  
+| `INTEL PENTIUM`                       | procesadores de gama baja                                            |  
+| `INTEL CELERON`                       | tareas ligeras, bajo costo                                           |  
+ 
+
+13700 = Numeración del modelo:
+| Segmento de numeración               | Definición                                                                                                |
+|--------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| 13 (13.000)                          | generación (1ª generación, 500 o 1.000, es la más antigua, 2010; 13ª generación, 13.000, es actual, 2022) |      
+| 700                                  | performance level (enlazado a la gama del procesador; en este caso, I7)                                   |  
+
+KS = Última letra del modelo:
+| Segmento de numeración               | Definición                                                                                    |
+|--------------------------------------|-----------------------------------------------------------------------------------------------|
+|  `KS`                                | multiplicador desbloqueado, se puede hacer Overclock                                          |  
+|  `S`                                 | multiplicador desbloqueado, más potencia                                                      |  
+|   `F`                                | sin tarjeta gráfica integrada                                                                 |  
+|  `G`                                 | tarjeta gráfica integrada, compatible con gaming                                              |  
+|  `T,U,Y`                             | versión para portátiles, eficiencia energética                                                |  
+|  `Intel Core`, `Intel Core 3`, ->
+   `Intel Core 5`, `Intel Core 7`      | gama básica de entrada, sin multiplicador desbloqueado                                        |  
+|  `Intel Core ULTRA`, ->
+   `Intel Core ULTRA 3`, ->
+   `Intel Core ULTRA 5`, ->
+   `Intel Core ULTRA 7`, ->
+   `Intel Core ULTRA 9`                | más potencia, con el multiplicador desbloqueado                                               |  
+|  `Intel Meteor Lake`                 | con VPU (núcleos de IA)                                                                       |  
+
+
+
+
+########################################################################################################################################
+#########################################[ GPU-TARJETA-GRÁFICA-2024 ]###################################################################
+########################################################################################################################################
+
+# GPU tarjetas gráficas 👾🖥️
+Primero evaluo una GPU `AMD`
+** RADEON RX 7800 XT **
+
+RADEON RX = Segmento de marca comercial
+| Segmento de numeración                | Uso estimado                              |
+|---------------------------------------|-------------------------------------------|
+| `AMD Radeon PRO`                      | perfectas para workstation                |      
+| `AMD Radeon RX`                       | gráfica para gaming                       |  
+
+
+7800 = Numeración del modelo de la GPU:
+| (7) - Segmento de numeración               | Gama                                                     |
+|--------------------------------------------|----------------------------------------------------------|
+| 7                                          | generación de la GPU, en este caso RDNA3                 |      
+
+| (8) - Segmento de numeración              | Gama                             |
+|-------------------------------------------|----------------------------------|
+| RX*500                                    | gama más básica                  |      
+| RX*600                                    | gama intermedia                  |      
+| RX*700                                    | gama media                       |      
+| RX*800                                    | gama media-alta                  |      
+| RX*900                                    | gama ultra-extrema               |
+
+| (00) - Segmento de numeración         | Gama                                         |
+|---------------------------------------|----------------------------------------------|
+| 00                                    | gama normal                                  |      
+| 50                                    | gama refinada, con poco Overclock            |      
+
+Última letra = Última letra del modelo:
+| Segmento de numeración                | Definición                                                                                       |
+|---------------------------------------|--------------------------------------------------------------------------------------------------|
+|                                       | sin sufijo, gama más baja del modelo                                                             |  
+|  `XT`                                 | versión estándar                                                                                 |  
+|  `XTX`                                | versión potente                                                                                  |  
+|  `U`                                  | versión para portátiles, eficiencia energética                                                   |  
+|  `X3D`                                | caché optimizada, ideal para juegos y aplicaciones intensivas en caché                           |  
+
+
+Otras propiedades importantes:
+
+`FSR` = Super resolution. Tecnología de reescalado de imagen, prolonga la vida útil del producto.
+`Radeon Rays` = Tecnología de trazado de rayos AMD, permite gráficos realistas de luces, sombras y reflejos en videojuegos. Requiere serie 6 (6.000) o superior.
+
+---
+
+########################################################################################################################################
+#########################################[ ALMACENAMIENTO - DISCO DURO Y SSD ]##########################################################
+########################################################################################################################################
+
+# Almacenamiento - Disco Duro y SSD 💾🎁
+A continuación, se presentan los tipos de almacenamiento disponibles actualmente: `HDD`, `SSD`, y `NVMe SSD`.
+
+[
+   ** Seagate BarraCuda 2TB 7,200 RPM 3.5" HDD **,
+   ** Samsung 970 EVO Plus 1TB NVMe M.2 SSD **
+]
+
+### HDD (Disco Duro Mecánico)
+| Tipo de almacenamiento | Uso estimado                                                                                        |
+|------------------------|-----------------------------------------------------------------------------------------------------|
+| `HDD`                  | Almacenamiento de gran capacidad a bajo costo, adecuado para guardar datos grandes como películas, fotos y copias de seguridad. |
+
+HDD significa `Hard Disk Drive`. Es el tipo más antiguo de almacenamiento y utiliza platos mecánicos giratorios y un cabezal magnético para leer y escribir datos.
+
+| Característica                 | Descripción                                                                                                |
+|--------------------------------|------------------------------------------------------------------------------------------------------------|
+| Capacidad                      | Hasta varios terabytes (TB), proporcionando gran espacio para almacenar archivos                           |
+| Velocidad                      | Relativamente lenta en comparación con SSD y NVMe, comúnmente de 5400 a 7200 revoluciones por minuto (RPM) |
+| Durabilidad                    | Menos resistente al movimiento físico debido a sus partes móviles                                          |
+
+** Seagate BarraCuda 2TB 7,200 RPM 3.5" HDD **
+HDD = Dispositivo de almacenamiento magnético tradicional.
+| Segmento de uso                         | Aplicación recomendada                       |
+|-----------------------------------------|----------------------------------------------|
+| `HDD de 5,400 RPM`                      | uso general, almacenamiento masivo           |
+| `HDD de 7,200 RPM`                      | rendimiento medio, uso en PC y laptops       |
+| `HDD de 10,000 RPM o más`               | rendimiento alto, servidores y workstations  |
+
+#### Clasificación de los HDD según su tipo y capacidad:
+| Tipo                    | Uso y características                                |
+|-------------------------|------------------------------------------------------|
+| `HDD Interno`           | capacidad de 500GB a 10TB, instalado en la PC        |
+| `HDD Externo`           | portátil, se conecta vía USB, capacidad de hasta 8TB |
+
+---
+
+### SSD (Unidad de Estado Sólido)
+| Tipo de almacenamiento | Uso estimado                                                                                                               |
+|------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| `SSD SATA`             | Almacenamiento rápido, adecuado para el sistema operativo y programas de uso frecuente. Se conecta mediante un cable SATA. |
+
+`SSD` significa `Solid State Drive`. Es una unidad de almacenamiento que no contiene partes móviles y, en lugar de discos giratorios, utiliza chips de memoria para guardar los datos.
+
+| Característica                 | Descripción                                                                                               |
+|--------------------------------|-----------------------------------------------------------------------------------------------------------|
+| Capacidad                      | Menor capacidad que los HDD, aunque existen modelos de hasta varios TB                                    |
+| Velocidad                      | Mucho más rápida que los HDD, gracias a su tecnología sin partes móviles                                  |
+| Durabilidad                    | Mayor durabilidad que los HDD, ya que no tiene piezas móviles                                             |
+
+---
+
+### NVMe SSD (Unidad de Estado Sólido NVMe)
+| Tipo de almacenamiento | Uso estimado                                                                                                                   |
+|------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| `NVMe SSD`             | Almacenamiento ultrarrápido, ideal para sistemas avanzados y aplicaciones que requieren alta velocidad de lectura y escritura. |
+
+`NVMe` significa `Non-Volatile Memory Express`. Estos SSD se conectan a través de un puerto PCIe, proporcionando velocidades muy superiores a las de los SSD SATA.
+
+| Característica                 | Descripción                                                                                               |
+|--------------------------------|-----------------------------------------------------------------------------------------------------------|
+| Capacidad                      | Varía según el modelo, comúnmente entre 256GB y 4TB                                                       |
+| Velocidad                      | Extremadamente rápida, supera tanto a HDD como a SSD SATA en velocidad de lectura y escritura             |
+| Durabilidad                    | Muy alta, ideal para equipos donde el rendimiento de almacenamiento es esencial                           |
+
+
+** Samsung 970 EVO Plus 1TB NVMe M.2 SSD **
+SSD = Dispositivo de almacenamiento sin partes móviles, basado en tecnología flash.
+| Componente                | Función                                                                                         |
+|---------------------------|-------------------------------------------------------------------------------------------------|
+| `Memoria NAND`            | Almacena los datos de manera no volátil, tecnología flash rápida y duradera.                    |
+| `Controlador`             | Procesa las operaciones de lectura/escritura entre la computadora y la memoria NAND.            |
+| `DRAM`                    | Memoria caché que acelera las operaciones de acceso a los datos.                                |
+| `Interfaz`                | Determina la velocidad y compatibilidad de conexión (SATA, NVMe, PCIe).                         |
+
+#### Clasificación de los SSD según tecnología de conexión
+| Tipo de SSD               | Velocidad y características                                                   |
+|---------------------------|-------------------------------------------------------------------------------|
+| `SATA SSD`                | 500 MB/s, compatible con la mayoría de PCs y laptops                          |
+| `NVMe SSD`                | hasta 7,000 MB/s, ideal para gaming y alto rendimiento                        |
+| `PCIe SSD`                | velocidades superiores (PCIe 3.0, 4.0, 5.0), para uso avanzado y profesional  |
+
+#### Clasificación de los SSD según formato
+| Tipo                      | Uso y características                                                         |
+|---------------------------|-------------------------------------------------------------------------------|
+| `2.5 pulgadas (SATA)`     | Formato tradicional, fácil instalación en la mayoría de PCs y laptops         |
+| `M.2`                     | Formato compacto, compatible con NVMe y SATA, ideal para laptops y PCs        |
+| `U.2`                     | Para servidores y centros de datos, alta velocidad y durabilidad              |
+| `mSATA`                   | Formato reducido, ideal para dispositivos portátiles ligeros o antiguos       |
+
+---
+
+### Comparativa de velocidad y capacidad
+
+| Tipo         | Velocidad de lectura/escritura  | Capacidad máxima       | Costo por GB                    |
+|--------------|---------------------------------|------------------------|---------------------------------|
+| `HDD`        | 80-160 MB/s                     | Hasta 20 TB o más      | Bajo                            |
+| `SSD`        | 200-550 MB/s                    | Hasta 4 TB o más       | Medio                           |
+| `NVMe`       | 1,000-7,000 MB/s                | Hasta 8 TB o más       | Alto                            |
+
+---
+
+### Características a considerar
+
+1. **Velocidad**: Importante para tiempos de carga de sistemas y aplicaciones.
+2. **Durabilidad**: Los SSD son más resistentes a golpes en comparación con los HDD.
+3. **Capacidad**: Elige según tus necesidades de almacenamiento; los HDD son ideales para almacenamiento masivo, mientras que los SSD son mejores para rendimiento.
+
+`TRIM` = Mantenimiento de la unidad SSD que optimiza el rendimiento y la durabilidad al limpiar bloques de memoria no utilizados.
+`TBW (Terabytes Escritos)` = Indicador de durabilidad de la unidad, relevante para usuarios que manejan grandes volúmenes de datos.
+
+########################################################################################################################################
+#########################################[ RAM - MEMORIA DE ACCESO ALEATORIO ]##########################################################
+########################################################################################################################################
+
+# RAM - Memoria de Acceso Aleatorio 💾🔋
+La RAM es la memoria a corto plazo de un ordenador, que guarda datos de uso inmediato.
+
+** Corsair Vengeance LPX 16GB (2 x 8GB) DDR4-3200 **
+### Tipos de RAM
+| Tipo de RAM                  | Uso y características                                                                   |
+|------------------------------|-----------------------------------------------------------------------------------------|
+| `DDR3`                       | Generación previa, aún en uso en equipos más antiguos. Velocidades hasta 2133 MHz       |
+| `DDR4`                       | Estándar actual en la mayoría de computadoras. Velocidades desde 2133 a 3200+ MHz       |
+| `DDR5`                       | Última generación, mejor rendimiento y eficiencia energética, velocidades desde 4800 MHz|
+
+---
+
+### Clasificación de la RAM según su formato físico
+
+| Formato de RAM                        | Uso y características                                                        |
+|---------------------------------------|------------------------------------------------------------------------------|
+| `DIMM (Dual In-Line Memory Module)`   | Usado en computadoras de escritorio; tamaño estándar                         |
+| `SO-DIMM (Small Outline DIMM)`        | Compacto, usado en laptops y mini PC                                         |
+
+---
+
+### Clasificación de la RAM según su capacidad y configuración
+
+| Capacidad y Configuración   | Aplicación recomendada                                                        |
+|-----------------------------|-------------------------------------------------------------------------------|
+| `4GB - 8GB`                 | Uso básico: navegación, ofimática y tareas ligeras                            |
+| `16GB`                      | Uso intermedio: multitarea, gaming moderado y software de edición ligera      |
+| `32GB o más`                | Uso avanzado: gaming intensivo, edición de video y renderizado 3D             |
+
+---
+
+### Frecuencia y Latencia
+
+| Parámetro                   | Descripción                                                                                 |
+|-----------------------------|---------------------------------------------------------------------------------------------|
+| `Frecuencia`                | Medida en MHz, representa la velocidad de transferencia de la RAM (ej. 2400 MHz, 3200 MHz). |
+| `Latencia CAS`              | Tiempo que tarda en responder la memoria, un valor más bajo implica mayor velocidad.        |
+
+---
+`RAM` significa `Random Access Memory` o `Memoria de Acceso Aleatorio`. Es un tipo de memoria volátil que solo guarda información mientras el ordenador está encendido.
+
+| Característica                 | Descripción                                                                                           |
+|--------------------------------|-------------------------------------------------------------------------------------------------------|
+| Capacidad                      | Suele estar entre 4GB y 64GB, dependiendo de la necesidad (gaming, edición, etc.)                     |
+| Velocidad                      | Medida en MHz (megahercios), afecta la rapidez de procesamiento de tareas                             |
+| Tipo de ranura                 | DDR4 y DDR5 son ranuras diferentes, y no son compatibles entre sí                                     |
+| Latencia                       | Representa el tiempo que tarda en acceder a datos; menor latencia equivale a mayor rapidez            |
+
+---
+
+### DDR4 y DDR5: Diferencias clave
+| Tipo                          | Velocidad (aprox.)                    | Voltaje                | Usos recomendados                          |
+|-------------------------------|---------------------------------------|------------------------|--------------------------------------------|
+| `DDR4`                        | 1600 a 3200 MHz                       | 1.2V                   | Uso general y gaming                       |
+| `DDR5`                        | 4800 a 6400 MHz                       | 1.1V                   | Uso en PC de alto rendimiento y servidores |
+
+DDR4 sigue siendo el tipo de RAM más común, pero DDR5 está ganando popularidad por su velocidad superior y su menor consumo energético.
+
+`XMP (Extreme Memory Profile)` = Perfil de memoria avanzada que permite overclock automático para un mejor rendimiento.
+`ECC (Error-Correcting Code)` = Memoria con corrección de errores, usada en servidores y estaciones de trabajo para mayor estabilidad.
+
+
+#########################################################################################################################################
+#############################################[ PLACAS BASE Y CHIPSETS ]##################################################################
+#########################################################################################################################################
+
+# Placas Base y Chipsets 🖧🐇
+La placa base es la plataforma donde se conectan todos los componentes del ordenador, desde el procesador hasta el almacenamiento.
+
+** ASUS ROG STRIX B550-F GAMING (Wi-Fi) ATX **
+### Tipos de placas base y tamaños
+
+| Tipo                       | Uso estimado                                                                 |
+|----------------------------|------------------------------------------------------------------------------|
+| `ATX`                      | Placa base de tamaño estándar, con buena cantidad de puertos y ranuras       |
+| `Micro-ATX`                | Placa más pequeña que ATX, pero con menos puertos y ranuras                  |
+| `Mini-ITX`                 | Placa compacta, ideal para ordenadores pequeños; limita la cantidad de expansión|
+
+---
+
+### Chipset: controladores en la placa base
+
+El chipset es un conjunto de chips en la placa base que gestionan las comunicaciones entre el procesador y los demás componentes. Hay distintas gamas de chipsets:
+
+| Marca            | Chipset de gama baja                 | Chipset de gama media                  | Chipset de gama alta                     |
+|------------------|--------------------------------------|----------------------------------------|------------------------------------------|
+| `Intel`          | H610                                 | B660                                   | Z690, Z790                               |
+| `AMD`            | A320                                 | B450, B550                             | X570, X670                               |
+
+**Características de cada gama**:
+- **Gama baja**: Ideal para uso doméstico básico, sin soporte para overclocking ni múltiples GPUs.
+- **Gama media**: Buena para gaming y productividad, permite más conexiones y, en algunos casos, soporte para overclocking limitado.
+- **Gama alta**: Para entusiastas y profesionales; permite overclocking, múltiples GPUs y almacenamiento de alta velocidad.
+
+
+### Clasificación de los Chipsets según su gama
+
+| Gama del Chipset          | Características y uso recomendado                                                    |
+|---------------------------|--------------------------------------------------------------------------------------|
+| `Chipsets de gama baja`   | Funciones básicas, ideal para tareas de oficina y uso doméstico                      |
+| `Chipsets de gama media`  | Funcionalidades de rendimiento moderado, ideal para gaming y multitarea              |
+| `Chipsets de gama alta`   | Máximo rendimiento y características avanzadas, recomendado para gaming y overclock  |
+
+---
+
+### Ejemplos de Chipsets populares (Intel y AMD)
+
+#### Intel Chipsets
+
+| Chipset                    | Gama y características                                                               |
+|----------------------------|--------------------------------------------------------------------------------------|
+| `Intel B560`               | Gama media, ideal para gaming sin overclock y uso general                            |
+| `Intel Z590`               | Gama alta, soporte de overclock y múltiples ranuras de expansión                     |
+| `Intel H510`               | Gama baja, funcionalidades básicas, sin overclock                                    |
+
+#### AMD Chipsets
+
+| Chipset                    | Gama y características                                                               |
+|----------------------------|--------------------------------------------------------------------------------------|
+| `AMD B550`                 | Gama media, compatible con PCIe 4.0, ideal para gaming                               |
+| `AMD X570`                 | Gama alta, PCIe 4.0 completo, múltiples opciones de expansión                        |
+| `AMD A520`                 | Gama baja, sin soporte de overclock, adecuado para tareas básicas                    |
+
+---
+
+### Clasificación de las Placas Base según sus características adicionales
+
+| Característica adicional   | Descripción                                                                          |
+|----------------------------|--------------------------------------------------------------------------------------|
+| `Soporte de overclock`     | Permite aumentar el rendimiento de CPU y RAM, disponible en chipsets de gama alta    |
+| `Wi-Fi integrado`          | Conectividad inalámbrica sin necesidad de tarjetas adicionales                       |
+| `Bluetooth`                | Conexión inalámbrica para periféricos                                                |
+| `PCIe 4.0 / PCIe 5.0`      | Ranuras de expansión de alta velocidad para tarjetas gráficas y almacenamiento       |
+
+---
+
+Otras características importantes
+
+`BIOS UEFI` = Interfaz moderna para configurar el hardware de la placa base, reemplaza la BIOS tradicional.
+`VRM (Voltage Regulator Module)` = Módulo de regulación de voltaje, importante para estabilidad en overclocking y rendimiento estable de la CPU.
+
+
+########################################################################################################################################
+#############################################[ SISTEMAS DE REFRIGERACIÓN Y CHASIS ]#####################################################
+########################################################################################################################################
+
+# Sistemas de Refrigeración y Chasis ❄️❄️
+La refrigeración mantiene los componentes en buenas condiciones de temperatura, evitando el sobrecalentamiento.
+
+[
+   ** Cooler Master Hyper 212 RGB Black Edition **,
+   ** NZXT H510 Compact ATX Mid Tower **
+]
+
+** Cooler Master Hyper 212 RGB Black Edition **
+### Sistemas de Refrigeración
+
+| Tipo de Sistema               | Características y Aplicación                                                           |
+|-------------------------------|----------------------------------------------------------------------------------------|
+| `Refrigeración por Aire`      | Uso común, económico, fácil instalación, incluye disipador y ventilador                |
+| `Refrigeración Líquida AIO`   | Sistema de circuito cerrado, fácil instalación, buen rendimiento para CPUs de gama alta|
+| `Refrigeración Personalizada` | Sistema de circuito abierto, máxima eficiencia, usado en PCs de alto rendimiento       |
+
+**Características adicionales**:
+- **Refrigeración por aire**: Utiliza ventiladores para mover el aire caliente hacia afuera del chasis. Ideal para ordenadores de oficina y gaming moderado.
+- **Refrigeración líquida**: Usa un líquido especial para transferir el calor del procesador a un radiador. Ideal para ordenadores de gaming avanzado y tareas intensivas de CPU/GPU.
+
+#### Componentes de los Sistemas de Refrigeración por Aire
+
+| Componente                  | Función                                                                                |
+|-----------------------------|----------------------------------------------------------------------------------------|
+| `Disipador`                 | Bloque de metal que disipa el calor de la CPU                                          |
+| `Ventilador`                | Ventila el calor generado, mejorando el flujo de aire en el chasis                     |
+
+#### Componentes de los Sistemas de Refrigeración Líquida
+
+| Componente                  | Función                                                                                 |
+|-----------------------------|-----------------------------------------------------------------------------------------|
+| `Bloque de Agua`            | Absorbe el calor de la CPU o GPU y lo transfiere al líquido                             |
+| `Radiador`                  | Disipa el calor del líquido mediante ventiladores                                       |
+| `Bomba`                     | Circula el líquido a través del sistema                                                 |
+| `Tuberías`                  | Conducen el líquido a través de todo el circuito de refrigeración                       |
+
+---
+
+
+** NZXT H510 Compact ATX Mid Tower **
+### Clasificación de los Chasis según su Tamaño y Compatibilidad
+
+| Tamaño del Chasis           | Aplicación y Compatibilidad                                                             |
+|-----------------------------|-----------------------------------------------------------------------------------------|
+| `Full Tower`                | Compatibilidad con placas ATX/EATX, amplia capacidad de expansión y espacio interno     |
+| `Mid Tower`                 | Formato común para placas ATX, balance entre espacio y tamaño                           |
+| `Mini Tower`                | Diseñado para placas Micro-ATX y Mini-ITX, ideal para espacios reducidos                |
+| `Small Form Factor (SFF)`   | Formato ultra compacto, ideal para PCs portátiles o de factor de forma pequeño          |
+
+---
+
+### Características Adicionales de los Chasis
+
+| Característica                 | Descripción                                                                             |
+|--------------------------------|-----------------------------------------------------------------------------------------|
+| `Panel Frontal I/O`            | Conectividad en el panel frontal, incluye puertos USB, audio y botones de encendido     |
+| `Ventanas de Cristal Templado` | Paneles laterales que permiten ver los componentes internos                             |
+| `Iluminación RGB`              | Personalización con efectos de luz en ventiladores, tiras LED, etc.                     |
+| `Filtros de Polvo`             | Protegen los componentes internos del polvo, se colocan en entradas de ventilación      |
+
+---
+
+Otras características importantes
+
+`Flujo de Aire` = Esquema de circulación de aire dentro del chasis, esencial para mantener temperaturas óptimas.
+`Gestión de Cables` = Espacios y características en el chasis para organizar y ocultar cables, mejorando el flujo de aire y la estética.
+
+**Factores clave al elegir un chasis**:
+1. **Tamaño**: Depende de los componentes que se vayan a instalar, como el tipo de placa base y la cantidad de tarjetas de expansión.
+2. **Flujo de aire**: Importante para la refrigeración; algunos chasis incluyen ventiladores adicionales para mejorar el flujo.
+3. **Compatibilidad con refrigeración**: Los chasis más grandes permiten refrigeración líquida o más ventiladores.
+
+########################################################################################################################################
+#############################################[ FUENTE DE ALIMENTACIÓN (PSU) ]###########################################################
+########################################################################################################################################
+
+# Fuente de Alimentación 🔌🔌
+Evaluamos los tipos y características de las fuentes de alimentación, esenciales para proporcionar energía estable y eficiente a los componentes de la computadora.
+
+** Corsair RM750x 750W 80 PLUS Gold Full Modular **
+### Tipos de PSU según su Factor de Forma
+
+| Factor de Forma             | Uso y Compatibilidad                                                                        |
+|-----------------------------|---------------------------------------------------------------------------------------------|
+| `ATX`                       | Estándar para la mayoría de PCs de escritorio                                               |
+| `SFX`                       | Compacto, diseñado para chasis de factor de forma pequeño (SFF)                             |
+| `TFX`                       | Usado en PCs de tamaño reducido, menos común                                                |
+
+---
+
+### Clasificación de PSU según su Capacidad de Potencia
+
+| Capacidad de Potencia       | Aplicación recomendada                                                                     |
+|-----------------------------|--------------------------------------------------------------------------------------------|
+| `400W - 600W`               | Suficiente para equipos básicos y de bajo consumo                                          |
+| `600W - 800W`               | Adecuado para sistemas de gama media y gaming moderado                                     |
+| `800W - 1000W o más`        | Recomendado para sistemas de gama alta, configuraciones multi-GPU o con overclock          |
+
+---
+
+### Clasificación de PSU según su Certificación de Eficiencia (80 PLUS)
+
+| Certificación 80 PLUS       | Eficiencia y características                                                               |
+|-----------------------------|--------------------------------------------------------------------------------------------|
+| `80 PLUS White`             | 80% de eficiencia mínima, estándar básico                                                  |
+| `80 PLUS Bronze`            | 82-85% de eficiencia, adecuado para PCs de uso general                                     |
+| `80 PLUS Silver`            | 85-88% de eficiencia, menos común                                                          |
+| `80 PLUS Gold`              | 87-90% de eficiencia, ideal para gaming y eficiencia energética                            |
+| `80 PLUS Platinum`          | 90-92% de eficiencia, recomendado para sistemas de alta eficiencia                         |
+| `80 PLUS Titanium`          | 92-94% de eficiencia, nivel más alto, ideal para entornos profesionales y servidores       |
+
+---
+
+### Clasificación de PSU según su Tipo de Cableado
+
+| Tipo de Cableado            | Descripción y ventajas                                                                     |
+|-----------------------------|--------------------------------------------------------------------------------------------|
+| `Cableado Fijo`             | Cables integrados, ideal para sistemas económicos                                          |
+| `Semi-Modular`              | Algunos cables son removibles, mejora la gestión de cables                                 |
+| `Full Modular`              | Todos los cables son removibles, facilita la instalación y organización                    |
+
+---
+
+Otras características importantes
+
+`PFC Activo (Power Factor Correction)` = Mejora la eficiencia y reduce el desperdicio de energía, común en PSU de mayor calidad.
+`Protección de Sobretensión y Cortocircuito` = Protección integrada para evitar daños en el sistema en caso de fallas eléctricas.
+
+
+########################################################################################################################################
+#############################################[ MONITORES Y DISPLAY ]##################################################################
+########################################################################################################################################
+
+# Monitores y Display 🖥️🖥️
+Los monitores son esenciales para la interacción con el ordenador y su rendimiento puede impactar en la experiencia del usuario.
+
+### Tipos de monitores
+
+| Tipo de monitor          | Uso estimado                                                                                             |
+|--------------------------|----------------------------------------------------------------------------------------------------------|
+| `LCD`                    | Común en oficinas y hogares; buena calidad de imagen y consumo energético bajo                           |
+| `LED`                    | Variante del LCD que usa tecnología de diodos para iluminar, mayor brillo                                |
+| `OLED`                   | Excelente calidad de imagen, negros profundos y colores vibrantes                                        |
+| `Gaming`                 | Monitores con alta tasa de refresco (144Hz o más) y tiempos de respuesta rápidos; ideales para jugadores |
+
+########################################################################################################################################
+#########################################[ MONITORES-Y-DISPLAY-2024 ]####################################################################
+########################################################################################################################################
+
+# Monitores y Display 🖥️
+Evaluamos los tipos de monitores y sus características clave para adaptarse a diferentes usos, como gaming, diseño, y uso general.
+
+** LG UltraGear 27GN950-B 27" 4K UHD Nano IPS 144Hz **
+### Tipos de Monitores según su Uso
+
+| Tipo de Monitor              | Características y Aplicación                                                                   |
+|------------------------------|------------------------------------------------------------------------------------------------|
+| `Monitores para Oficina`     | Resolución Full HD, 60Hz, buena relación calidad-precio para tareas de productividad           |
+| `Monitores para Gaming`      | Alta tasa de refresco (120Hz+), baja latencia, tecnologías de sincronización (G-Sync, FreeSync)|
+| `Monitores para Diseño`      | Resoluciones altas (2K, 4K), excelente precisión de color y amplia gama cromática              |
+| `Monitores UltraWide`        | Relación de aspecto amplia (21:9 o 32:9), ideal para multitarea o experiencias inmersivas      |
+
+---
+
+### Clasificación de Monitores según su Resolución
+
+| Resolución                   | Descripción y uso recomendado                                                         |
+|------------------------------|---------------------------------------------------------------------------------------|
+| `Full HD (1920x1080)`        | Suficiente para uso general y gaming básico                                           |
+| `QHD / 2K (2560x1440)`       | Detalle mejorado, ideal para gaming y productividad                                   |
+| `4K UHD (3840x2160)`         | Alta resolución, ideal para diseño y contenido multimedia de alta calidad             |
+| `5K y 8K`                    | Uso profesional y de alta precisión, ideal para edición de video y diseño avanzado    |
+
+---
+
+### Clasificación de Monitores según su Tipo de Panel
+
+| Tipo de Panel                | Características y Aplicación                                                                 |
+|------------------------------|----------------------------------------------------------------------------------------------|
+| `IPS (In-Plane Switching)`   | Amplios ángulos de visión y buena precisión de color, ideal para diseño y trabajo de oficina |
+| `TN (Twisted Nematic)`       | Tiempo de respuesta rápido, menor calidad de color y ángulos de visión, adecuado para gaming |
+| `VA (Vertical Alignment)`    | Buen contraste y negros profundos, balance entre IPS y TN, adecuado para multimedia          |
+| `OLED`                       | Negros puros y colores vivos, ideal para multimedia y gaming, costo elevado                  |
+
+---
+
+### Clasificación de Monitores según su Tasa de Refresco
+
+| Tasa de Refresco             | Uso recomendado                                                                       |
+|------------------------------|---------------------------------------------------------------------------------------|
+| `60Hz`                       | Suficiente para uso general y tareas de oficina                                       |
+| `75Hz - 144Hz`               | Ideal para gaming casual e intermedio                                                 |
+| `165Hz - 240Hz o más`        | Experiencia de gaming avanzada, recomendado para juegos competitivos                  |
+
+---
+
+Otras características importantes
+
+`HDR (High Dynamic Range)` = Mejora el rango de color y contraste, ideal para contenido multimedia y gaming inmersivo.
+`Sincronización Adaptativa (G-Sync y FreeSync)` = Elimina el desgarro de pantalla y mejora la fluidez en juegos al sincronizar la tasa de refresco con la tarjeta gráfica.
+
+### Características a considerar
+1. **Tasa de refresco**: Medida en Hz, determina cuántas veces se actualiza la imagen por segundo (importante para gaming).
+2. **Tiempo de respuesta**: Tiempo que tarda un pixel en cambiar de color; más bajo es mejor para juegos.
+3. **Conectividad**: Tipos de puertos (HDMI, DisplayPort, USB-C) disponibles para conectar con otros dispositivos.
+
+########################################################################################################################################
+#############################################[ MARCAS DE ORDENADOR Y COMPONENTES ]######################################################
+########################################################################################################################################
+
+# Marcas de Ordenador y Componentes 💻🎆
+Hay varias marcas que se destacan en el mercado de ordenadores y componentes, ofreciendo calidad y rendimiento en diferentes gamas.
+
+** MSI Stealth GS66 **
+### Principales marcas de ordenadores
+
+| Marca                      | Descripción                                                                    |
+|----------------------------|--------------------------------------------------------------------------------|
+| `Dell`                     | Conocida por su fiabilidad en ordenadores de oficina y portátiles              |
+| `HP`                       | Ofrece una amplia gama de PCs y portátiles, desde básicos hasta gaming         |
+| `Lenovo`                   | Destaca en portátiles y estaciones de trabajo, buenas opciones para empresas   |
+| `Apple`                    | Reconocida por sus ordenadores Mac, alta calidad y ecosistema optimizado       |
+| `Asus`                     | Innovador en hardware, ideal para gaming y componentes de alto rendimiento     |
+| `Acer`                     | Variedad de modelos, desde básicos hasta gaming, buena relación calidad-precio |
+
+---
+
+### Principales marcas de componentes
+
+| Marca                       | Descripción y Especialización                                                            |
+|-----------------------------|------------------------------------------------------------------------------------------|
+| `NVIDIA`                   | Líder en el mercado de GPUs, innovadora en tecnologías de renderizado y gaming.           |
+| `AMD`                      | Competidor de NVIDIA, ofrece CPUs y GPUs con alto rendimiento y valor.                    |
+| `Corsair`                  | Especializada en memoria RAM, fuentes de alimentación y periféricos.                      |
+| `Cooler Master`            | Ofrece soluciones de refrigeración, chasis y fuentes de alimentación de alto rendimiento. |
+| `Seagate`                  | Famosa por sus discos duros mecánicos y SSDs, conocida por su fiabilidad.                 |
+| `Western Digital`          | Ofrece una variedad de soluciones de almacenamiento, incluidos HDDs y SSDs.               |
+| `G.Skill`                  | Reconocida por su memoria RAM de alto rendimiento, ideal para gaming y overclocking.      |
+| `Logitech`                 | Destaca en la fabricación de periféricos, incluyendo ratones, teclados y auriculares.     |
+
+---
+
+### Clasificación de Marcas por Segmento de Mercado
+
+| Segmento de Mercado         | Marcas destacadas                                                                      |
+|-----------------------------|----------------------------------------------------------------------------------------|
+| `Gaming`                    | `ASUS (ROG)`, `MSI`, `Razer`, `Acer (Predator)`                                        |
+| `Oficina y Productividad`   | `Dell`, `HP`, `Lenovo`, `Acer`                                                         |
+| `Creativos y Profesionales` | `Apple`, `Microsoft Surface`, `Dell (XPS)`                                             |
+| `Componentes`               | `NVIDIA`, `AMD`, `Corsair`, `Cooler Master`, `Seagate`, `Western Digital`              |
+
+---
+
+Otras características importantes
+
+`Soporte Técnico` = Importancia del servicio al cliente y soporte post-venta, esencial para la satisfacción del usuario.
+`Garantía y Fiabilidad` = Periodo de garantía y la reputación de la marca, factores clave en la decisión de compra de componentes y equipos.
+
+### Factores a considerar al elegir una marca
+
+1. **Reputación**: Investiga la calidad y fiabilidad de la marca.
+2. **Soporte**: Asegúrate de que ofrecen buen servicio al cliente y garantías.
+3. **Rendimiento**: Lee reseñas y comparativas para elegir componentes que se ajusten a tus necesidades.
+
+
+
+########################################################################################################################################
+#############################################[ ACCESORIOS Y PERIFÉRICOS ]################################################################
+########################################################################################################################################
+
+# Accesorios y Periféricos 🖱️⌨️
+Los periféricos son componentes adicionales que mejoran la funcionalidad y la experiencia del usuario.
+
+**Logitech G Pro Wireless Gaming Mouse** 
+
+### Tipos de Accesorios y Periféricos
+
+| Tipo de Periférico          | Descripción y Aplicación                                                                          |
+|-----------------------------|---------------------------------------------------------------------------------------------------|
+| `Ratones`                   | Dispositivos de entrada que permiten el control del cursor, pueden ser ópticos o láser.           |
+| `Teclados`                  | Teclados mecánicos o de membrana, esenciales para la entrada de datos.                            |
+| `Monitores`                 | Pantallas externas que mejoran la visualización, pueden ser de diferentes tamaños y resoluciones. |
+| `Auriculares`               | Dispositivos de audio que pueden incluir micrófonos, utilizados para gaming y comunicación.       |
+| `Altavoces`                 | Sistemas de audio externos que mejoran la calidad de sonido de los ordenadores.                   |
+| `Cámaras Web`               | Utilizadas para videoconferencias y streaming, varían en calidad y características.               |
+| `Controladores de Juegos`   | Dispositivos específicos para gaming, como joysticks y gamepads.                                  |
+
+---
+
+### Clasificación de Periféricos según su Uso
+
+| Uso                         | Periféricos Recomendados                                                                  |
+|-----------------------------|-------------------------------------------------------------------------------------------|
+| `Gaming`                    | Ratones y teclados mecánicos con retroiluminación, auriculares con sonido envolvente.     |
+| `Oficina`                   | Teclados ergonómicos, ratones inalámbricos, cámaras web para videoconferencias.           |
+| `Creativos`                 | Tabletas gráficas, monitores de alta resolución, auriculares de estudio.                  |
+
+---
+
+### Características Importantes de Periféricos
+
+| Característica              | Descripción                                                                                 |
+|-----------------------------|---------------------------------------------------------------------------------------------|
+| `Conectividad`              | Puede ser por cable (USB) o inalámbrica (Bluetooth, RF), afectando la portabilidad.         |
+| `Ergonomía`                 | Diseño que proporciona comodidad en el uso prolongado, importante para usuarios frecuentes. |
+| `Personalización`           | Posibilidad de programar teclas o ajustar configuraciones a través de software.             |
+| `Retroiluminación`          | Característica en teclados y ratones, mejora la visibilidad en ambientes oscuros.           |
+
+---
+
+Otras características importantes
+
+`Compatibilidad` = Importante verificar la compatibilidad con el sistema operativo y hardware existente.
+`Rendimiento` = Evaluar la velocidad de respuesta y la precisión, especialmente en dispositivos de gaming.
+
+### Consideraciones para elegir periféricos
+
+1. **Compatibilidad**: Asegúrate de que sean compatibles con tu sistema operativo.
+2. **Ergonomía**: Teclados y ratones ergonómicos pueden prevenir molestias a largo plazo.
+3. **Características adicionales**: Busca características como retroiluminación, botones programables, y calidad de sonido en altavoces.
