@@ -26,11 +26,11 @@ Por sistema operativo:
 🚀 CPD::
 
 =======================================================================================================
-[🧑‍🚀 CABINA]
+[🧑‍🚀 CABINA DE ALMACENAMIENTO]
 ********************************
 (Se puede simular por un servidor nfs/iSCSI/SMB)
 La cabina se divide en dos controladoras (que pueden ser más para redes más grandes), por lo que cada servidor tendrá doble toma para cada controladora de la cabina, cuando falle una las peticiones de escritura y lectura se conducen a la otra controladora, 
-(según el fabricante funcionan de forma distinta) pero se conservan los datos al cambiar de controladora. La controladora funciona como NAS/SAN, la cabina puede estar configurada para ofrecer servicios NAS o SAN o en algunos casos (que no es lo normal) ambas funcionalidades de forma híbrida:
+(según el fabricante funcionan de forma distinta) pero se conservan los datos al cambiar de controladora. La controladora funciona como NAS/SAN, la cabina puede estar configurada para ofrecer servicios NAS o SAN o en algunos casos ambas funcionalidades de forma híbrida (la última no es lo normal):
   - El NAS (acceso a archivos) : se presenta como un dispositivo de almacenamiento conectado a la red y ofrece archivos a través de protocolos como NFS, SMB/CIFS, entre otros.
   - El SAN (acceso a bloques)  : es una red especializada que conecta dispositivos de almacenamiento a servidores, generalmente utilizando protocolos como Fibre Channel o iSCSI.
 
