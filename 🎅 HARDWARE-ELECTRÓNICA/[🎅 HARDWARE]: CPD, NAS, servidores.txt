@@ -32,7 +32,7 @@ TrueNas
 ########################################################################################################
 ********************************************************************************************************
 🚀 CPD::
-
+=======================================================================================================
 [🧑‍🚀 CABINA]
 ********************************
 (Se puede simular por un servidor nfs/iSCSI/SMB)
@@ -42,12 +42,49 @@ La cabina se divide en dos controladoras (que pueden ser más para redes más gr
   - El SAN (acceso a bloques)  : es una red especializada que conecta dispositivos de almacenamiento a servidores, generalmente utilizando protocolos como Fibre Channel o iSCSI.
 
 
-[🔥🧑‍🚀 ARQUITECTURA]
+=======================================================================================================
+[🔥🧑‍🚀 PROTOCOLOS Y ARQUITECTURA]:
+
+🧠 Clasificación rápida:
 ********************************
-Fibre Channel :: 
-sCASI :: 
-NFS ::
-NFX ::
+Tipo	    Protocolos / Tecnologías
+SAN	        FC, iSCSI, FCoE, NVMe-oF, AoE
+NAS	        NFS, SMB/CIFS
+DAS	        SCSI, SATA, SAS, NVMe local
+
+🧠 Enumeración:
+********************************
+1. Fibre Channel (FC)
+- SAN de alto rendimiento sobre red dedicada.
+- Bajo retardo, alta disponibilidad.
+
+2. iSCSI
+- Encapsula SCSI sobre IP.
+- SAN sobre Ethernet (más barato que FC).
+
+3. SCSI (clásico / paralelo / SAS)
+- Usado localmente o en backends (e.g., discos SAS).
+
+4. NFS (Network File System)
+- Compartición de archivos por red (NAS).
+- Muy usado en entornos UNIX/Linux.
+
+5. SMB/CIFS
+- Compartición de archivos en entornos Windows (NAS).
+- Soporta autenticación y permisos NTFS.
+
+6. NVMe over Fabrics (NVMe-oF)
+- Alto rendimiento como NVMe, pero por red.
+- Puede ir sobre TCP, RoCE, FC.
+
+7. ATA over Ethernet (AoE)
+- Bloque sobre Ethernet.
+- Simpler que iSCSI, pero menos flexible.
+
+8. ZFS over iSCSI/NFS
+- Combinación de ZFS como sistema de ficheros + protocolo de red.
+
+
 
 
 =======================================================================================================
