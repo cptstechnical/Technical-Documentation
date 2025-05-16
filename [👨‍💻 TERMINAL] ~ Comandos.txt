@@ -1,13 +1,20 @@
 ======================================================================================================
 [👨‍💻 WINDOWS]::
 # Desde CMD:
-ping -a <dirección_ip o host>                    # realiza un ping mostrando su hostname
+ping -a <dirección_ip o host>                    # realiza un ping mostrando su hostname.
 nslookup <dirección_ip>                          # resuelve una dirección IP a un nombre de dominio (host), consultando el servidor DNS.
 netstat                                          # muestra las conexiones de red activas, puertos de escucha y estadísticas de red en el sistema.
 arp -a                                           # muestra la tabla ARP (Address Resolution Protocol) que asocia direcciones IP con direcciones MAC en la red local.
 
 ======================================================================================================
 [👨‍💻 LINUX]::
+
+------------------------------------------------------------------------------------------------------
+[SSL/TLS]:
 openssl s_client -connect <IP>:443               # muestra información sobre el SSL/TLS
 
-
+------------------------------------------------------------------------------------------------------
+[Comandos de archivos]:
+lsattr                                            # para buscar los archivos de un sistema de archivos (i: Inmutable, a: Adjuntable, d: No se puede eliminar, s: Seguridad).
+chattr -i Carpeta/                                # cambiar los atributos de los archivos en un sistema de archivos.
+lsof | grep "Gestión de clientes"                 # muestra una lista de archivos abiertoa.
