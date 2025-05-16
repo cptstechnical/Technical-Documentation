@@ -10,6 +10,10 @@ arp -a                                           # muestra la tabla ARP (Address
 [👨‍💻 LINUX]::
 ln -s <RUTA_ARCHIVO> <RUTA_SIMBOLO>              # enlace simbólico (soft link): archivos simbolicos
 ln                                               # enlace duro (hard link): 
+top
+htop
+vmstat
+iostat
 
 ------------------------------------------------------------------------------------------------------
 [SSL/TLS]:
