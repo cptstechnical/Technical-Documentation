@@ -8,6 +8,8 @@ arp -a                                           # muestra la tabla ARP (Address
 
 ======================================================================================================
 [👨‍💻 LINUX]::
+ln -s <RUTA_ARCHIVO> <RUTA_SIMBOLO>              # enlace simbólico (soft link): archivos simbolicos
+ln                                               # enlace duro (hard link): 
 
 ------------------------------------------------------------------------------------------------------
 [SSL/TLS]:
@@ -18,3 +20,9 @@ openssl s_client -connect <IP>:443               # muestra información sobre el
 lsattr                                            # para buscar los archivos de un sistema de archivos (i: Inmutable, a: Adjuntable, d: No se puede eliminar, s: Seguridad).
 chattr -i Carpeta/                                # cambiar los atributos de los archivos en un sistema de archivos.
 lsof | grep "Gestión de clientes"                 # muestra una lista de archivos abiertoa.
+
+
+======================================================================================================
+[👨‍💻 PAQUETES DE INSTALACIÓN EN LINUX]::
+Greenbone                                         # https://greenbone.github.io/ : Plataforma integral de gestión y escaneo de vulnerabilidades de red con base de datos propia y soporte para múltiples sistemas.
+Vuls                                              # https://vuls.io/ : Herramienta ligera y automatizada de escaneo de vulnerabilidades enfocada en sistemas Linux/Unix usando datos públicos externos.
