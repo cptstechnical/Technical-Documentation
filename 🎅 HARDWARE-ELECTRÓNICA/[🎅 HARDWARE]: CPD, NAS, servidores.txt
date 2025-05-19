@@ -26,7 +26,7 @@ Por sistema operativo:
 🚀 CPD::
 
 =======================================================================================================
-[🧑‍🚀 CABINA DE ALMACENAMIENTO]
+[🔥🧑‍🚀 CABINA DE ALMACENAMIENTO]
 ********************************
 (Se puede simular por un servidor nfs/iSCSI/SMB)
 La cabina se divide en dos controladoras (que pueden ser más para redes más grandes), por lo que cada servidor tendrá doble toma para cada controladora de la cabina, cuando falle una las peticiones de escritura y lectura se conducen a la otra controladora, 
@@ -77,6 +77,7 @@ DAS	        SCSI, SATA, SAS, NVMe local
 8. ZFS over iSCSI/NFS
 - Combinación de ZFS como sistema de ficheros + protocolo de red.
 
+
 =======================================================================================================
 [INTERESANTES]:
 - JetKVM
@@ -88,14 +89,16 @@ DAS	        SCSI, SATA, SAS, NVMe local
 🚀 NAS::
 
 =======================================================================================================
-[🧑‍🚀 Tipos de NAS]:
+[🔥🧑‍🚀 Tipos de NAS]:
+
+🧠 Tipos:
 ********************************
 +------------------------------+------------------------+-------------------------------+----------------------------------------------------------------------------------+---------------------------------------------+
 | Tipo NAS                     | Arquitectura           | Ubicación                     | Tipo de Hardware                                                                 | Sistema Operativo                           |
 +------------------------------+------------------------+-------------------------------+----------------------------------------------------------------------------------+---------------------------------------------+
 | Doméstico                    | ARM                    | Hogar                         | 1–2 bahías, RAM fija (0.5–1 GB), 1 GbE, sin RAID avanzado                        | DSM Lite (Synology), QTS básico (QNAP)      |
 | SOHO                         | x86 (Celeron/Pentium)  | Home Office / Pequeña oficina | 2–4 bahías, RAM ampliable, 1–2x 1/2.5 GbE, RAID 1/5, Docker/VMs ligeras          | DSM/QTS con apps, soporte Docker/VM         |
-| SMB (PyME)                   | x86 (Celeron/Pentium)  | Oficina pequeña/mediana       | 4–8 bahías, RAID 5/6, AES-NI, 2.5–10 GbE, snapshots avanzados                    | DSM/QTS/QuTS hero (algunos ZFS)             |        # SMB no es del protocolos si no de (Small and Medium Business).
+| SMB (PyME)                   | x86 (Celeron/Pentium)  | Oficina pequeña/mediana       | 4–8 bahías, RAID 5/6, AES-NI, 2.5–10 GbE, snapshots avanzados                    | DSM/QTS/QuTS hero (algunos ZFS)             |    # SMB no es del protocolo si no de (Small and Medium Business).
 | Enterprise                   | x86-64 (Xeon/EPYC)     | Centro TI empresarial         | ≥ 12 bahías, ECC, SAS, PSU redundante, 10–25 GbE/Fibre Channel, RAID HW          | DSM (Enterprise), QuTS hero, ONTAP (ZFS)    |
 | Datacenter / Hyperscale      | x86-64 (bare-metal)    | Data center                   | Racks 4U–6U, petabyte scale, InfiniBand/100 GbE, Ceph/S3, JBOD                   | Ceph, GlusterFS, MinIO, OpenStack           |
 | Industrial / Edge            | ARM / x86 fanless      | Industriales / Remotos        | Ultra-compacto, resistente, LTE/5G, GPU para CCTV                                | QTS Industrial, Linux embebido, DVA OS      |
@@ -103,4 +106,28 @@ DAS	        SCSI, SATA, SAS, NVMe local
 | Appliance Virtualización     | x86-64 (i7/Xeon)       | TI con virtualización         | Hipervisores integrados, VMs, NFS/iSCSI, almacenamiento compartido               | DSM + VMM, QuTS + Virtualization Station    |
 +------------------------------+------------------------+-------------------------------+----------------------------------------------------------------------------------+---------------------------------------------+
 
+🧠 Protocolos:
+********************************
++----------------+---------------------------+----------------------------+
+|   Categoría    |        Protocolo          |        Uso común           |
++----------------+---------------------------+----------------------------+
+| Archivos       | SMB/CIFS                  | Entornos Windows           |
+|                | NFS                       | Linux/Unix                 |
+|                | AFP (obsoleto)            | macOS antiguos             |
+|                | FTP / SFTP                | Transferencias remotas     |
++----------------+---------------------------+----------------------------+
+| Almacenamiento | iSCSI                     | Acceso a nivel de bloque   |
+| (bloque)       | Fibre Channel             | Entornos enterprise        |
++----------------+---------------------------+----------------------------+
+| Sistemas       | ZFS (filesystem + red)    | Integridad avanzada, uso   |
+| de archivos    |                           | combinado con iSCSI/NFS    |
++----------------+---------------------------+----------------------------+
+| Administración | HTTP / HTTPS              | GUI del NAS                |
+| y control      | SSH                       | Acceso CLI seguro          |
+|                | SNMP                      | Monitorización remota      |
+|                | Syslog                    | Registro de eventos        |
++----------------+---------------------------+----------------------------+
+| Cloud / Object | WebDAV                    | Acceso remoto por web      |
+| storage        | Amazon S3 / compatible    | Object storage, backup     |
++----------------+---------------------------+----------------------------+
 
