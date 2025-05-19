@@ -40,10 +40,10 @@ La cabina se divide en dos controladoras (que pueden ser más para redes más gr
 
 🧠 Clasificación rápida:
 ********************************
-Tipo        Protocolos / Tecnologías
-SAN	        FC, iSCSI, FCoE, NVMe-oF, AoE
-NAS	        NFS, SMB/CIFS
-DAS	        SCSI, SATA, SAS, NVMe local
+Tipo       Protocolos / Tecnologías
+SAN        FC, iSCSI, FCoE, NVMe-oF, AoE
+NAS        NFS, SMB/CIFS
+DAS        SCSI, SATA, SAS, NVMe local
 
 🧠 Enumeración:
 ********************************
