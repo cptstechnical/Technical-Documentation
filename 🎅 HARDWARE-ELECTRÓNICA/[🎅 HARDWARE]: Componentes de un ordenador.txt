@@ -53,7 +53,7 @@ INTEL CORE = Segmento de marca comercial
 | Segmento de numeración                | Uso estimado                                                         |
 |---------------------------------------|----------------------------------------------------------------------|
 | `INTEL CORE`                          | segmento de venta a domicilio                                        |      
-| `INTEL XENON`                         | segmento para empresa, servidores y workstations                     |  
+| `INTEL XEON`                          | segmento para empresa, servidores y workstations                     |  
 | `INTEL PENTIUM`                       | procesadores de gama baja                                            |  
 | `INTEL CELERON`                       | para tareas ligeras y dispositivos de bajo costo                     |  
 | `INTEL ATOM`                          | bajo consumo energético, dispositivos móviles                        |  
