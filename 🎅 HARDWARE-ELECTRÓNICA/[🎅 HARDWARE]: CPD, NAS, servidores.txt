@@ -3,7 +3,7 @@
 🚀 SERVIDORES::
 
 =======================================================================================================
-[🧑‍🚀 Tipos de servidores]:
+[🔥🧑‍🚀 TIPOS DE SERVIDORES]:
 ********************************
 Por arquitectura:
     Servidor dedicado:          Un servidor físico que está completamente dedicado a un solo cliente o aplicación.
@@ -108,26 +108,26 @@ DAS        SCSI, SATA, SAS, NVMe local
 
 🧠 Protocolos:
 ********************************
-+----------------+---------------------------+----------------------------+
-|   Categoría    |        Protocolo          |        Uso común           |
-+----------------+---------------------------+----------------------------+
-| Archivos       | SMB/CIFS                  | Entornos Windows           |
-|                | NFS                       | Linux/Unix                 |
-|                | AFP (obsoleto)            | macOS antiguos             |
-|                | FTP / SFTP                | Transferencias remotas     |
-+----------------+---------------------------+----------------------------+
-| Almacenamiento | iSCSI                     | Acceso a nivel de bloque   |
-| (bloque)       | Fibre Channel             | Entornos enterprise        |
-+----------------+---------------------------+----------------------------+
-| Sistemas       | ZFS (filesystem + red)    | Integridad avanzada, uso   |
-| de archivos    |                           | combinado con iSCSI/NFS    |
-+----------------+---------------------------+----------------------------+
-| Administración | HTTP / HTTPS              | GUI del NAS                |
-| y control      | SSH                       | Acceso CLI seguro          |
-|                | SNMP                      | Monitorización remota      |
-|                | Syslog                    | Registro de eventos        |
-+----------------+---------------------------+----------------------------+
-| Cloud / Object | WebDAV                    | Acceso remoto por web      |
-| storage        | Amazon S3 / compatible    | Object storage, backup     |
-+----------------+---------------------------+----------------------------+
++----------------+---------------------------+----------------------------+-------+
+|   Categoría    |        Protocolo          |        Uso común           | Tipo  |
++----------------+---------------------------+----------------------------+-------+
+| Archivos       | SMB/CIFS                  | Entornos Windows           | NAS   |
+|                | NFS                       | Linux/Unix                 | NAS   |
+|                | AFP (obsoleto)            | macOS antiguos             | NAS   |
+|                | FTP / SFTP                | Transferencias remotas     | NAS*  |
++----------------+---------------------------+----------------------------+-------+
+| Almacenamiento | iSCSI                     | Acceso a nivel de bloque   | SAN   |
+| (bloque)       | Fibre Channel             | Entornos enterprise        | SAN   |
++----------------+---------------------------+----------------------------+-------+
+| Sistemas       | ZFS (filesystem + red)    | Integridad avanzada, uso   | NAS** |
+| de archivos    |                           | combinado con iSCSI/NFS    |       |
++----------------+---------------------------+----------------------------+-------+
+| Administración | HTTP / HTTPS              | GUI del NAS                | NAS   |
+| y control      | SSH                       | Acceso CLI seguro          | NAS   |
+|                | SNMP                      | Monitorización remota      | NAS   |
+|                | Syslog                    | Registro de eventos        | NAS   |
++----------------+---------------------------+----------------------------+-------+
+| Cloud / Object | WebDAV                    | Acceso remoto por web      | NAS   |
+| storage        | Amazon S3 / compatible    | Object storage, backup     | NAS   |
++----------------+---------------------------+----------------------------+-------+
 
