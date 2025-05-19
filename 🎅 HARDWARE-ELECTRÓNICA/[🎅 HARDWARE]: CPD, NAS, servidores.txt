@@ -88,6 +88,19 @@ DAS	        SCSI, SATA, SAS, NVMe local
 🚀 NAS::
 
 =======================================================================================================
-[SERVICIOS]:
-TrueNas
+[🧑‍🚀 Tipos de NAS]:
+********************************
++------------------------------+------------------------+-------------------------------+----------------------------------------------------------------------------------+---------------------------------------------+
+| Tipo NAS                     | Arquitectura           | Ubicación                     | Tipo de Hardware                                                                 | Sistema Operativo                           |
++------------------------------+------------------------+-------------------------------+----------------------------------------------------------------------------------+---------------------------------------------+
+| Doméstico                    | ARM                    | Hogar                         | 1–2 bahías, RAM fija (0.5–1 GB), 1 GbE, sin RAID avanzado                        | DSM Lite (Synology), QTS básico (QNAP)      |
+| SOHO                         | x86 (Celeron/Pentium)  | Home Office / Pequeña oficina | 2–4 bahías, RAM ampliable, 1–2x 1/2.5 GbE, RAID 1/5, Docker/VMs ligeras          | DSM/QTS con apps, soporte Docker/VM         |
+| SMB (PyME)                   | x86 (Celeron/Pentium)  | Oficina pequeña/mediana       | 4–8 bahías, RAID 5/6, AES-NI, 2.5–10 GbE, snapshots avanzados                    | DSM/QTS/QuTS hero (algunos ZFS)             |        # SMB no es del protocolos si no de (Small and Medium Business).
+| Enterprise                   | x86-64 (Xeon/EPYC)     | Centro TI empresarial         | ≥ 12 bahías, ECC, SAS, PSU redundante, 10–25 GbE/Fibre Channel, RAID HW          | DSM (Enterprise), QuTS hero, ONTAP (ZFS)    |
+| Datacenter / Hyperscale      | x86-64 (bare-metal)    | Data center                   | Racks 4U–6U, petabyte scale, InfiniBand/100 GbE, Ceph/S3, JBOD                   | Ceph, GlusterFS, MinIO, OpenStack           |
+| Industrial / Edge            | ARM / x86 fanless      | Industriales / Remotos        | Ultra-compacto, resistente, LTE/5G, GPU para CCTV                                | QTS Industrial, Linux embebido, DVA OS      |
+| All-Flash / Cache            | x86-64 alto rendimiento| Centros de datos exigentes    | SSD/NVMe, latencia baja, IOPS muy altas, 10–100 GbE                              | QuTS hero, ONTAP AFF, Purity OS (ZFS)       |
+| Appliance Virtualización     | x86-64 (i7/Xeon)       | TI con virtualización         | Hipervisores integrados, VMs, NFS/iSCSI, almacenamiento compartido               | DSM + VMM, QuTS + Virtualization Station    |
++------------------------------+------------------------+-------------------------------+----------------------------------------------------------------------------------+---------------------------------------------+
+
 
