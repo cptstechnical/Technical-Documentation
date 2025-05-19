@@ -1,7 +1,0 @@
-============================================================================================
-[🧱🐘 PHP FRAMEWORK ROUTER]:
-# No tiene router, el primer slash es el controldor y los siguientes los parámetros
-prueba.com/controller/param1/param2
-
-============================================================================================
-[🧱🐘 PHP FRAMEWORK LIBRERIAS]:
