@@ -1,6 +1,6 @@
 =======================================================================================
 =======================================================================================
-[🐘🐘 FUNCIONES Y MÉTODOS COMUNES]:
+[🐘⚙️ FUNCIONES Y MÉTODOS COMUNES]:
 
 # echo(): imprime una o varias cadenas
 echo "Hola Mundo";
@@ -130,7 +130,7 @@ curl_close($ch);
 
 =======================================================================================
 =======================================================================================
-[🐘🐘 ADMINISTRADOR DE SISTEMAS EN PHP]:
+[🐘⚙️ ADMINISTRADOR DE SISTEMAS EN PHP]:
 
 # exec(): ejecuta un comando, retorna la última línea de salida
 $output = exec("ls -la");
@@ -167,7 +167,7 @@ closelog();
 
 =======================================================================================
 =======================================================================================
-[🐘🐘 MANEJO DE ARCHIVOS EN PHP]:
+[🐘⚙️ MANEJO DE ARCHIVOS EN PHP]:
 
 # file_get_contents(): lee todo el contenido de un archivo (modo lectura simple)
 $contenido = file_get_contents("log.txt");
@@ -251,7 +251,7 @@ $zip->close();
 
 =======================================================================================
 =======================================================================================
-[🐘🐘 SESIONES EN PHP]:
+[🐘⚙️ SESIONES EN PHP]:
 
 # session_start(): inicia la sesión (debe ir antes de cualquier salida)
 session_start();
@@ -268,7 +268,7 @@ session_destroy();
 
 =======================================================================================
 =======================================================================================
-[🐘🐘 COOKIES EN PHP]:
+[🐘⚙️ COOKIES EN PHP]:
 
 # setcookie(): crea una cookie (debe ejecutarse antes de enviar salida al navegador)
 setcookie("usuario", "admin", time() + 3600, "/");
@@ -291,7 +291,7 @@ setcookie("secure_token", "valor", [
 
 =======================================================================================
 =======================================================================================
-[🐘🐘 EMAILS EN PHP]:
+[🐘⚙️ EMAILS EN PHP]:
 
 # mail(): envía un correo electrónico simple (requiere configuración en php.ini / sendmail/postfix)
 $to      = "destino@example.com";
@@ -306,7 +306,7 @@ mail($to, $subject, $message, $headers);
 
 =======================================================================================
 =======================================================================================
-[🐘🐘 DB EN PHP]:
+[🐘⚙️ DB EN PHP]:
 
 $pdo = new PDO("mysql:host=localhost;dbname=mi_db", "user", "pass");
 $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = :email");
@@ -316,7 +316,7 @@ $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 =======================================================================================
 =======================================================================================
-[🐘🐘 VALIDAR/SANITIZAR EN PHP]:
+[🐘⚙️ VALIDAR/SANITIZAR EN PHP]:
 
 # filter_var() para sanitizar/validar datos
 $email = filter_var($input, FILTER_SANITIZE_EMAIL);
@@ -327,7 +327,7 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
 =======================================================================================
 =======================================================================================
-[🐘🐘 CRIPTOGRAFIA Y SEGURIDAD EN PHP]:
+[🐘⚙️ CRIPTOGRAFIA Y SEGURIDAD EN PHP]:
 
 # hash(): genera hash con algoritmo elegido (SHA256, etc.)
 $hash = hash("sha256", "mensaje");
@@ -346,7 +346,7 @@ $descifrado = openssl_decrypt($cifrado, "AES-128-CBC", $clave, 0, $iv);
 
 =======================================================================================
 =======================================================================================
-[🐘🐘 FORMULARIOS Y SEGURIDAD EN PHP]:
+[🐘⚙️ FORMULARIOS Y SEGURIDAD EN PHP]:
 
 # $_GET / $_POST / $_REQUEST / $_SERVER
 $nombre = htmlspecialchars($_POST["nombre"] ?? "");
