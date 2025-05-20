@@ -130,82 +130,6 @@ curl_close($ch);
 
 #=======================================================================================
 #=======================================================================================
-[🐘⚙️ PHP EN SCRIPTS DE LÍNEA DE COMANDOS LINUX]:
-# Para ejecutar scripts PHP desde consola:
-# php script.php
-
-# Variables de entorno y argumentos en consola
-echo "Argumentos recibidos:\n";
-foreach ($argv as $i => $arg) {
-    echo "argv[$i] = $arg\n";
-}
-
-# Leer entrada estándar (stdin) para interactuar con otros comandos
-$stdin = fopen('php://stdin', 'r');
-echo "Escribe algo: ";
-$line = fgets($stdin);
-echo "Entrada recibida: " . trim($line) . "\n";
-
-# Ejecutar comandos del sistema (útil para tareas administrativas)
-$output = shell_exec('uptime');
-echo "Uptime del sistema:\n$output";
-
-# Otra forma de ejecutar comandos y obtener salida en array línea por línea
-exec('ls -la /var/www', $salida, $estado);
-if ($estado === 0) {
-    echo "Listado /var/www:\n";
-    foreach ($salida as $linea) {
-        echo "$linea\n";
-    }
-}
-
-# Escribir logs en archivos para auditoría o seguimiento
-file_put_contents('/var/log/mi_script_php.log', date('Y-m-d H:i:s') . " - Script ejecutado\n", FILE_APPEND);
-
-# Manejo de señales (SIGTERM, SIGINT) para terminar scripts correctamente (PHP 7+)
-pcntl_signal(SIGTERM, function() {
-    echo "Recibida señal SIGTERM, terminando...\n";
-    exit(0);
-});
-pcntl_signal(SIGINT, function() {
-    echo "Recibida señal SIGINT, terminando...\n";
-    exit(0);
-});
-
-# Loop principal con manejo de señales (ejemplo básico)
-while (true) {
-    pcntl_signal_dispatch();
-    sleep(1);
-}
-
-# Conexión a base de datos desde CLI para tareas de mantenimiento
-$pdo = new PDO("mysql:host=localhost;dbname=mi_db", "usuario", "pass");
-$stmt = $pdo->query("SELECT COUNT(*) FROM usuarios");
-$total = $stmt->fetchColumn();
-echo "Total usuarios: $total\n";
-
-# Lectura y escritura de archivos para automatización
-file_put_contents('/tmp/estado.txt', "Estado OK\n");
-$estado = file_get_contents('/tmp/estado.txt');
-echo "Estado: $estado\n";
-
-# Seguridad: evitar ejecución de comandos con entrada no validada
-$user_input = escapeshellarg($argv[1] ?? '');
-$output = shell_exec("grep $user_input /var/log/syslog");
-echo $output;
-
-# Ejemplo para crear scripts ejecutables
-# En la terminal:
-# echo '#!/usr/bin/php' > mi_script.php
-# cat >> mi_script.php  # Pega código PHP aquí
-# chmod +x mi_script.php
-# ./mi_script.php
-
-# Esto permite ejecutar el script PHP como un binario más en Linux
-
-
-#=======================================================================================
-#=======================================================================================
 [🐘⚙️ ADMINISTRADOR DE SISTEMAS EN PHP]:
 
 # exec(): ejecuta un comando, retorna la última línea de salida
@@ -436,3 +360,77 @@ if (hash_equals($_SESSION["csrf"], $_POST["csrf"])) {
 }
 
 
+#=======================================================================================
+#=======================================================================================
+[🐘⚙️ PHP EN SCRIPTS DE LÍNEA DE COMANDOS LINUX]:
+# Para ejecutar scripts PHP desde consola:
+# php script.php
+
+# Variables de entorno y argumentos en consola
+echo "Argumentos recibidos:\n";
+foreach ($argv as $i => $arg) {
+    echo "argv[$i] = $arg\n";
+}
+
+# Leer entrada estándar (stdin) para interactuar con otros comandos
+$stdin = fopen('php://stdin', 'r');
+echo "Escribe algo: ";
+$line = fgets($stdin);
+echo "Entrada recibida: " . trim($line) . "\n";
+
+# Ejecutar comandos del sistema (útil para tareas administrativas)
+$output = shell_exec('uptime');
+echo "Uptime del sistema:\n$output";
+
+# Otra forma de ejecutar comandos y obtener salida en array línea por línea
+exec('ls -la /var/www', $salida, $estado);
+if ($estado === 0) {
+    echo "Listado /var/www:\n";
+    foreach ($salida as $linea) {
+        echo "$linea\n";
+    }
+}
+
+# Escribir logs en archivos para auditoría o seguimiento
+file_put_contents('/var/log/mi_script_php.log', date('Y-m-d H:i:s') . " - Script ejecutado\n", FILE_APPEND);
+
+# Manejo de señales (SIGTERM, SIGINT) para terminar scripts correctamente (PHP 7+)
+pcntl_signal(SIGTERM, function() {
+    echo "Recibida señal SIGTERM, terminando...\n";
+    exit(0);
+});
+pcntl_signal(SIGINT, function() {
+    echo "Recibida señal SIGINT, terminando...\n";
+    exit(0);
+});
+
+# Loop principal con manejo de señales (ejemplo básico)
+while (true) {
+    pcntl_signal_dispatch();
+    sleep(1);
+}
+
+# Conexión a base de datos desde CLI para tareas de mantenimiento
+$pdo = new PDO("mysql:host=localhost;dbname=mi_db", "usuario", "pass");
+$stmt = $pdo->query("SELECT COUNT(*) FROM usuarios");
+$total = $stmt->fetchColumn();
+echo "Total usuarios: $total\n";
+
+# Lectura y escritura de archivos para automatización
+file_put_contents('/tmp/estado.txt', "Estado OK\n");
+$estado = file_get_contents('/tmp/estado.txt');
+echo "Estado: $estado\n";
+
+# Seguridad: evitar ejecución de comandos con entrada no validada
+$user_input = escapeshellarg($argv[1] ?? '');
+$output = shell_exec("grep $user_input /var/log/syslog");
+echo $output;
+
+# Ejemplo para crear scripts ejecutables
+# En la terminal:
+# echo '#!/usr/bin/php' > mi_script.php
+# cat >> mi_script.php  # Pega código PHP aquí
+# chmod +x mi_script.php
+# ./mi_script.php
+
+# Esto permite ejecutar el script PHP como un binario más en Linux
