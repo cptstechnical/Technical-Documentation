@@ -1,4 +1,5 @@
 ======================================================================================================
+======================================================================================================
 [👨‍💻 WINDOWS]::
 # Desde CMD:
 ping -a <dirección_ip o host>                    # realiza un ping mostrando su hostname.
@@ -6,6 +7,7 @@ nslookup <dirección_ip>                          # resuelve una dirección IP a
 netstat                                          # muestra las conexiones de red activas, puertos de escucha y estadísticas de red en el sistema.
 arp -a                                           # muestra la tabla ARP (Address Resolution Protocol) que asocia direcciones IP con direcciones MAC en la red local.
 
+======================================================================================================
 ======================================================================================================
 [👨‍💻 LINUX]::
 ln -s <RUTA_ARCHIVO> <RUTA_SIMBOLO>              # enlace simbólico (soft link): archivos simbolicos
