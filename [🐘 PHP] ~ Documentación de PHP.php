@@ -218,6 +218,9 @@ rmdir("logs");
 # scandir(): lista archivos/directorios
 $archivos = scandir("/etc");
 
+# comprueba que sea una carpeta
+is_dir('./prueba')
+
 # glob(): busca archivos con patrón (similar a shell)
 $txts = glob("*.txt");
 
