@@ -6,10 +6,15 @@
 //=======================================================================================
 //=======================================================================================
 [🟣🤖 ARQUITECTURA EN C#]:
-# Existen varios tipos de arquitecturas en C#, pero la más utilizada con C# es arquitectura por capas
+## Existen varios tipos de arquitecturas en C#, pero la más utilizada con C# es arquitectura por capas
+    
+    // 🐘 Equivalente a las vistas.
     - Capa de Presentación:                     interfaz de usuario, es la responsable de interactuar con el usuario. Aquí se manejan las vistas y la lógica de presentación.
-    - Capa de Negocio (o Lógica de Negocio):    contiene la lógica de la aplicación y las reglas de negocio. (Equivalente al controlador).
+    // 🐘 Equivalente al controlador.
+    - Capa de Negocio (o Lógica de Negocio):    contiene la lógica de la aplicación y las reglas de negocio.
+    // 🐘 Equivalente a la configuración con la db
     - Capa de Acceso a Datos:                   gestiona la comunicación con la base de datos o cualquier otro sistema de almacenamiento de datos.
+    // 🐘 Equivalente al modelo
     - Capa de Datos:                            aunque a veces se considera parte de la capa de acceso a datos, esta capa se refiere específicamente a la base de datos o al sistema de almacenamiento donde se guardan los datos, además, en el caso de trabajar con objetos también irán las entidades. 
 
 
@@ -18,7 +23,7 @@
 [🟣🤖 TIPADO EN C#]:
 ## La manera en la que voy a trabajar va a ser con objetos:
 
-# Tipos primitivos por valor
+// Tipos primitivos por valor
 +----------+-------------------+----------+---------------------+
 | Tipo C#  | Alias .NET        | Tamaño   | Ejemplo             |
 +----------+-------------------+----------+---------------------+
@@ -37,7 +42,7 @@
 | bool     | System.Boolean    | 1 bit    | bool b = true;      |
 +----------+-------------------+----------+---------------------+
 
-# Tipos por referencia
+// Tipos por referencia
 +------------+-----------------------------------------+
 | Tipo       | Descripción                             |
 +------------+-----------------------------------------+
@@ -50,7 +55,7 @@
 | array[]    | Arreglo de cualquier tipo               |
 +------------+-----------------------------------------+
 
-# Para objetos
+// Para objetos
 +----------------------------+--------------------------------------------------+
 | Tipo                       | Descripción                                      |
 +----------------------------+--------------------------------------------------+
@@ -70,7 +75,7 @@
 | Exception                  | Tipo base para errores                           |
 +----------------------------+--------------------------------------------------+
     
-# Tipos especiales
+// Tipos especiales
 +-----------+----------------------------------------------+
 | Tipo      | Descripción                                  |
 +-----------+----------------------------------------------+
@@ -82,7 +87,7 @@
 | struct    | Estructura personalizada por valor           |
 +-----------+----------------------------------------------+
 
-# Genéricos y colecciones
+// Genéricos y colecciones
 +--------------------------+-------------------------------+
 | Tipo                    | Uso                            |
 +--------------------------+-------------------------------+
