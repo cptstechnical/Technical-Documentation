@@ -3,7 +3,16 @@
 [🟣🤖 TEORIA C#]:
 // RunTime
 
-
+//=======================================================================================
+//=======================================================================================
+[🟣🤖 ARQUITECTURA EN C#]:
+# Existen varios tipos de arquitecturas en C#, pero la más utilizada con C# es arquitectura por capas
+    - Capa de Presentación:                     interfaz de usuario, es la responsable de interactuar con el usuario. Aquí se manejan las vistas y la lógica de presentación.
+    - Capa de Negocio (o Lógica de Negocio):    contiene la lógica de la aplicación y las reglas de negocio. (Equivalente al controlador).
+    - Capa de Acceso a Datos:                   gestiona la comunicación con la base de datos o cualquier otro sistema de almacenamiento de datos.
+    - Capa de Datos:                            aunque a veces se considera parte de la capa de acceso a datos, esta capa se refiere específicamente a la base de datos o al sistema de almacenamiento donde se guardan los datos, además, en el caso de trabajar con objetos también irán las entidades.
+    - 
+    
 //=======================================================================================
 //=======================================================================================
 [🟣🤖 TIPOS DE DATOS EN C#]:
