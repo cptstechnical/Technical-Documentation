@@ -1,7 +1,8 @@
 //=======================================================================================
 //=======================================================================================
 [🟣🤖 TEORIA C#]:
-// RunTime
+# runTime: momento en que el programa se está ejecutando. Durante este tiempo, el código ya ha sido compilado y se está ejecutando en la máquina.
+# ambiente de ejecución: conjunto de condiciones y configuraciones bajo las cuales se ejecuta un programa. Esto incluye el sistema operativo, la versión del CLR, las bibliotecas disponibles, y cualquier configuración específica del entorno (como variables de entorno).
 
 //=======================================================================================
 //=======================================================================================
