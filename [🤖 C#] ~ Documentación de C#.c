@@ -12,7 +12,91 @@
     - Capa de Acceso a Datos:                   gestiona la comunicación con la base de datos o cualquier otro sistema de almacenamiento de datos.
     - Capa de Datos:                            aunque a veces se considera parte de la capa de acceso a datos, esta capa se refiere específicamente a la base de datos o al sistema de almacenamiento donde se guardan los datos, además, en el caso de trabajar con objetos también irán las entidades. 
 
+
+//=======================================================================================
+//=======================================================================================
+[🟣🤖 TIPADO EN C#]:
+## La manera en la que voy a trabajar va a ser con objetos:
+
+# Tipos primitivos por valor
++----------+-------------------+----------+---------------------+
+| Tipo C#  | Alias .NET        | Tamaño   | Ejemplo             |
++----------+-------------------+----------+---------------------+
+| byte     | System.Byte       | 1 byte   | byte a = 255;       |
+| sbyte    | System.SByte      | 1 byte   | sbyte b = -128;     |
+| short    | System.Int16      | 2 bytes  | short s = -32000;   |
+| ushort   | System.UInt16     | 2 bytes  | ushort us = 65000;  |
+| int      | System.Int32      | 4 bytes  | int i = 42;         |
+| uint     | System.UInt32     | 4 bytes  | uint ui = 42000;    |
+| long     | System.Int64      | 8 bytes  | long l = 1L;        |
+| ulong    | System.UInt64     | 8 bytes  | ulong ul = 1UL;     |
+| float    | System.Single     | 4 bytes  | float f = 1.2f;     |
+| double   | System.Double     | 8 bytes  | double d = 3.14;    |
+| decimal  | System.Decimal    | 16 bytes | decimal m = 1.2m;   |
+| char     | System.Char       | 2 bytes  | char c = 'A';       |
+| bool     | System.Boolean    | 1 bit    | bool b = true;      |
++----------+-------------------+----------+---------------------+
+
+# Tipos por referencia
++------------+-----------------------------------------+
+| Tipo       | Descripción                             |
++------------+-----------------------------------------+
+| string     | Cadena de texto inmutable               |
+| object     | Tipo base de todos los objetos          |
+| dynamic    | Tipo dinámico (resuelto en runtime)     |
+| class      | Clase personalizada                     |
+| interface  | Contrato de comportamiento              |
+| delegate   | Puntero a método                        |
+| array[]    | Arreglo de cualquier tipo               |
++------------+-----------------------------------------+
+
+# Para objetos
++----------------------------+--------------------------------------------------+
+| Tipo                       | Descripción                                      |
++----------------------------+--------------------------------------------------+
+| object                     | Tipo base de todos los tipos (referencia)        |
+| string                     | Cadena de texto inmutable                        |
+| dynamic                    | Tipo dinámico (resuelto en tiempo de ejecución)  |
+| class                      | Clase definida por el usuario                    |
+| interface                  | Contrato de implementación                       |
+| delegate                   | Referencia a método                              |
+| array[]                    | Colección de objetos                             |
+| List<object>               | Lista dinámica de objetos                        |
+| Dictionary<object, object> | Diccionario de clave-valor                       |
+| HashSet<object>            | Conjunto sin duplicados                          |
+| Task<object>               | Resultado asincrónico                            |
+| Tuple<object>              | Agrupación de múltiples objetos                  |
+| record                     | Tipo inmutable (ideal para datos)                |
+| Exception                  | Tipo base para errores                           |
++----------------------------+--------------------------------------------------+
     
+# Tipos especiales
++-----------+----------------------------------------------+
+| Tipo      | Descripción                                  |
++-----------+----------------------------------------------+
+| var       | Tipado implícito (inferencia en compilación) |
+| T?        | Nullable (acepta null, ej: int?, bool?)      |
+| Tuple<>   | Tupla de múltiples valores                   |
+| record    | Tipo inmutable (C# 9+)                       |
+| enum      | Enumeración (conjunto de constantes)         |
+| struct    | Estructura personalizada por valor           |
++-----------+----------------------------------------------+
+
+# Genéricos y colecciones
++--------------------------+-------------------------------+
+| Tipo                    | Uso                            |
++--------------------------+-------------------------------+
+| List<T>                 | Lista dinámica                 |
+| Dictionary<TKey, TValue>| Mapa clave-valor               |
+| HashSet<T>              | Conjunto sin duplicados        |
+| Queue<T>                | Cola FIFO                      |
+| Stack<T>                | Pila LIFO                      |
+| Task<T>                 | Resultado asincrónico          |
+| Func<T, TResult>        | Delegado genérico              |
+| Action<T>               | Delegado sin retorno           |
++--------------------------+-------------------------------+
+
+
 //=======================================================================================
 //=======================================================================================
 [🟣🤖 TIPOS DE DATOS EN C#]:
