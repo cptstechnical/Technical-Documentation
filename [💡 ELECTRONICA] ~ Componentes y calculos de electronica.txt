@@ -4,7 +4,21 @@
 
 ===========================================================================================
 [💡⚡ FUNCIONALIDAD Y TEORIA]:
-
+- Resistencia:            Limita o divide la corriente en el circuito.
+- Condensador:            Almacena y libera energía; filtra ruido y estabiliza voltaje.
+- Diodo:                  Permite el paso de corriente en una sola dirección.
+- LED:                    Diodo que emite luz al conducir.
+- Transistor:             Amplifica o conmuta señales electrónicas.
+- Relé:                   Interruptor controlado eléctricamente para cargas altas.
+- Optoacoplador:          Aísla circuitos usando luz entre entrada y salida.
+- Regulador de voltaje:   Mantiene un voltaje constante de salida.
+- Microcontrolador:       Unidad lógica que ejecuta el programa del PLC.
+- Cristal oscilador:      Proporciona una señal de reloj precisa.
+- Fusible:                Protege el circuito abriéndose por sobrecorriente.
+- Pulsador / botón:       Permite entrada manual momentánea.
+- Sensor:                 Convierte una magnitud física en señal eléctrica.
+- Inductor:               Almacena energía en un campo magnético, filtra señales.
+- Zener:                  Diodo que regula voltaje al conducir en inversa a cierto valor.
 
 ===========================================================================================
 [💡⚡ CALCULOS Y ECUACIONES]:
