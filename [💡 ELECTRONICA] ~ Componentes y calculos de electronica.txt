@@ -4,21 +4,82 @@
 
 ===========================================================================================
 [💡⚡ FUNCIONALIDAD Y TEORIA]:
-- Resistencia:            Limita o divide la corriente en el circuito.
-- Condensador:            Almacena y libera energía; filtra ruido y estabiliza voltaje.
-- Diodo:                  Permite el paso de corriente en una sola dirección.
-- LED:                    Diodo que emite luz al conducir.
-- Transistor:             Amplifica o conmuta señales electrónicas.
-- Relé:                   Interruptor controlado eléctricamente para cargas altas.
-- Optoacoplador:          Aísla circuitos usando luz entre entrada y salida.
-- Regulador de voltaje:   Mantiene un voltaje constante de salida.
-- Microcontrolador:       Unidad lógica que ejecuta el programa del PLC.
-- Cristal oscilador:      Proporciona una señal de reloj precisa.
-- Fusible:                Protege el circuito abriéndose por sobrecorriente.
-- Pulsador / botón:       Permite entrada manual momentánea.
-- Sensor:                 Convierte una magnitud física en señal eléctrica.
-- Inductor:               Almacena energía en un campo magnético, filtra señales.
-- Zener:                  Diodo que regula voltaje al conducir en inversa a cierto valor.
+- 🔋 Resistencia: Limita o divide la corriente en el circuito.
+        + Fijas: Valor constante (carbono, metal film, SMD).
+        + Variables (potenciómetros): Ajustables manualmente.
+        + NTC/PTC: Resistencias dependientes de temperatura.
+
+- 🔋 Condensador: Almacena y libera energía; filtra ruido y estabiliza voltaje.
+        + Cerámicos: Pequeños, no polarizados, alta frecuencia.
+        + Electrolíticos: Alta capacidad, polarizados, filtrado.
+        + Tántalo: Estables, polarizados, más caros.
+
+        + Film (poliéster, polipropileno): Alta precisión, no polarizados.
+- 🔋 Diodo: Permite el paso de corriente en una sola dirección.
+        + Rectificador (1N400x): Corriente directa.
+        + Zener: Diodo que regula voltaje al conducir en inversa a cierto valor.
+        + Schottky: Caída de voltaje baja, rápida.
+        + LED: Diodo emisor de luz.
+        + TVS: Protección contra picos de tensión.
+
+- 🔋 LED: Diodo que emite luz al conducir.
+        + Estándar (rojo, verde, azul...)
+        + Alta potencia
+        + Infrarrojo
+        + RGB
+        + SMD / THT
+
+- 🔋 Transistor: Amplifica o conmuta señales electrónicas.
+        + BJT (NPN/PNP): Corriente controlada.
+        + MOSFET (N/P-Channel): Tensión controlada.
+        + IGBT: Alta potencia (industria).
+        + Darlington: Ganancia de corriente alta.
+
+- 🔋 Relé: Interruptor controlado eléctricamente para cargas altas.
+        + Electromecánicos: Contactos físicos, AC/DC.
+        + Estáticos (SSR): Semiconductores, sin partes móviles.
+        + Miniatura / industriales / de estado sólido
+
+- 🔋 Optoacoplador: Aísla circuitos usando luz entre entrada y salida.
+        + Salida transistor
+        + Salida triac (AC)
+        + Alta velocidad (para señales digitales rápidas)
+
+- 🔋 Regulador de voltaje: Mantiene un voltaje constante de salida.
+        + Lineales (7805, LM317): Simples, disipan calor.
+        + Conmutados (step-down/step-up): Eficientes, complejos.
+        + LDO (Low Dropout): Regulación con bajo margen de caída.
+
+- 🔋 Microcontrolador: Unidad lógica que ejecuta el programa del PLC.
+        + 8-bit (AVR, PIC, 8051)
+        + 32-bit (ARM Cortex-M, ESP32, STM32)
+        + Integrados en PLC o SoCs
+
+- 🔋 Cristal oscilador: Proporciona una señal de reloj precisa.
+        + Cristal de cuarzo: Precisión estándar.
+        + Osciladores cerámicos: Más baratos, menos precisos.
+        + RTC (Real Time Clock): Baja frecuencia, muy estables.
+
+- 🔋 Fusible: Protege el circuito abriéndose por sobrecorriente.
+        + Rápidos: Protegen componentes sensibles.
+        + Lentos: Soportan picos momentáneos.
+        + Rearmables (PTC): Se auto-recuperan.
+
+- 🔋 Pulsador / botón: Permite entrada manual momentánea.
+        + Normal Abierto (NO) / Cerrado (NC)
+        + Mecánicos / táctiles
+        + Montaje THT / SMD / panel
+
+- 🔋 Sensor: Convierte una magnitud física en señal eléctrica.
+        + Digitales: Detección ON/OFF (ej. infrarrojos, reed).
+        + Analógicos: Miden variables (temperatura, luz, voltaje).
+        + Comunicación digital (I2C, SPI, UART): Avanzados (IMU, gas, etc).
+
+- 🔋 Inductor: Almacena energía en un campo magnético, filtra señales.
+        + Bobinas de potencia
+        + Toroidales
+        + SMD
+        + Filtros EMI
 
 ===========================================================================================
 [💡⚡ CALCULOS Y ECUACIONES]:
