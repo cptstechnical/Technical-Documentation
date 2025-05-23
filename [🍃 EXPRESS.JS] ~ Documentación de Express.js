@@ -1,7 +1,6 @@
 //=======================================================================================
 //=======================================================================================
-// [🟩⚙️ FUNCIONES Y MÉTODOS COMUNES EN NODE.JS CON EXPRESS]:
-
+// [🍃⚙️ FUNCIONES Y MÉTODOS COMUNES EN NODE.JS CON EXPRESS]:
 // Importar módulos esenciales
 const express = require('express');
 const app = express();
@@ -46,8 +45,7 @@ app.listen(port, () => {
 
 //=======================================================================================
 //=======================================================================================
-// [🟩⚙️ ADMINISTRACIÓN DE SISTEMAS / EJECUCIÓN DE COMANDOS]:
-
+// [🍃⚙️ ADMINISTRACIÓN DE SISTEMAS / EJECUCIÓN DE COMANDOS]:
 const { exec, execSync } = require('child_process');
 
 // Ejecutar comando async
@@ -80,8 +78,7 @@ exec(`grep ${safeInput} /var/log/syslog`, (e, out) => {
 
 //=======================================================================================
 //=======================================================================================
-// [🟩⚙️ MANEJO DE ARCHIVOS]:
-
+// [🍃⚙️ MANEJO DE ARCHIVOS]:
 const fs = require('fs');
 const path = require('path');
 
@@ -128,8 +125,7 @@ console.log(path.dirname('/ruta/a/archivo.txt'));  // /ruta/a
 
 //=======================================================================================
 //=======================================================================================
-// [🟩⚙️ SESIONES Y COOKIES (con express-session y cookie-parser)]:
-
+// [🍃⚙️ SESIONES Y COOKIES (con express-session y cookie-parser)]:
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 
@@ -164,8 +160,7 @@ app.get('/logout', (req, res) => {
 
 //=======================================================================================
 //=======================================================================================
-// [🟩⚙️ CONEXIONES A BD (ejemplo con MySQL usando mysql2)]:
-
+// [🍃⚙️ CONEXIONES A BD (ejemplo con MySQL usando mysql2)]:
 const mysql = require('mysql2/promise');
 
 async function conectar() {
@@ -187,8 +182,7 @@ conectar().catch(console.error);
 
 //=======================================================================================
 //=======================================================================================
-// [🟩⚙️ VALIDACIÓN Y SANITIZACIÓN]:
-
+// [🍃⚙️ VALIDACIÓN Y SANITIZACIÓN]:
 const validator = require('validator');
 
 const email = 'test@dominio.com';
@@ -203,8 +197,7 @@ console.log(safeEmail);
 
 //=======================================================================================
 //=======================================================================================
-// [🟩⚙️ CRIPTOGRAFÍA Y SEGURIDAD]:
-
+// [🍃⚙️ CRIPTOGRAFÍA Y SEGURIDAD]:
 const crypto = require('crypto');
 
 // Hash SHA-256
@@ -252,8 +245,7 @@ console.log({ cifrado, descifrado });
 
 //=======================================================================================
 //=======================================================================================
-// [🟩⚙️ MANEJO DE FORMULARIOS Y CSRF]:
-
+// [🍃⚙️ MANEJO DE FORMULARIOS Y CSRF]:
 const csurf = require('csurf');
 const cookieParser2 = require('cookie-parser');
 
@@ -275,8 +267,7 @@ app.post('/process', csrfProtection, (req, res) => {
 
 //=======================================================================================
 //=======================================================================================
-// [🟩⚙️ EJECUTAR SCRIPT NODE DESDE CONSOLA]:
-
+// [🍃⚙️ EJECUTAR SCRIPT NODE DESDE CONSOLA]:
 // node script.js arg1 arg2
 
 console.log('Argumentos:');
@@ -295,8 +286,7 @@ rl.question('Escribe algo: ', (answer) => {
 
 //=======================================================================================
 //=======================================================================================
-// [🟩⚙️ LOGS Y MONITORIZACIÓN]:
-
+// [🍃⚙️ LOGS Y MONITORIZACIÓN]:
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -316,8 +306,7 @@ logger.error('Mensaje de error');
 
 //=======================================================================================
 //=======================================================================================
-// [🟩⚙️ RECOMENDACIONES DE SEGURIDAD]:
-
+// [🍃⚙️ RECOMENDACIONES DE SEGURIDAD]:
 // - Usar helmet para hardening HTTP headers
 // - Validar y sanitizar toda entrada de usuario (validator.js)
 // - Manejar errores con try/catch y middleware de errores en Express
