@@ -23,11 +23,11 @@
         + TVS: Protección contra picos de tensión.
 
 - 🔋 LED: Diodo que emite luz al conducir.
-        + Estándar (rojo, verde, azul...)
-        + Alta potencia
-        + Infrarrojo
-        + RGB
-        + SMD / THT
+        + Estándar (rojo, verde, azul...): LED básico con un solo color visible.
+        + Alta potencia: LED muy brillante para iluminación.
+        + Infrarrojo: Emite luz no visible para sensores.
+        + RGB: Combina rojo, verde y azul para colores variables.
+        + SMD / THT: Montaje en superficie o a través de agujero.
 
 - 🔋 Transistor: Amplifica o conmuta señales electrónicas.
         + BJT (NPN/PNP): Corriente controlada.
