@@ -1,0 +1,64 @@
+#=======================================================================================
+#=======================================================================================
+[🐘🪶 DOCUMENTACIÓN TÉCNICA · .htaccess]:
+
+# ¿Qué es .htaccess?
+# Archivo de configuración de Apache para controlar redirecciones, reescrituras, seguridad, permisos y más.
+
+#=======================================================================================
+[🐘🪶 Uso básico con PHP y frameworks]:
+# Reescritura para dirigir todas las solicitudes a index.php (muy usado en frameworks)
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
+
+# Explicación:
+# RewriteEngine On      -> Activa mod_rewrite
+# RewriteCond           -> Si no es archivo o directorio físico
+# RewriteRule           -> Redirige todo a index.php, manteniendo query strings (QSA), regla última (L)
+
+#=======================================================================================
+[🐘🪶 Control de acceso y seguridad]:
+# Denegar acceso a archivos sensibles, por ejemplo .env
+
+<Files ".env">
+  Require all denied
+</Files>
+
+# Proteger carpetas con contraseña básica
+AuthType Basic
+AuthName "Restricted Access"
+AuthUserFile /ruta/a/.htpasswd
+Require valid-user
+
+#=======================================================================================
+[🐘🪶 Redirecciones comunes]:
+# Redirigir HTTP a HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+#=======================================================================================
+[🐘🪶 Configuraciones útiles]:
+# Forzar index.php como archivo principal
+DirectoryIndex index.php index.html
+
+# Limitar tamaño máximo para subida de archivos PHP
+php_value upload_max_filesize 10M
+php_value post_max_size 12M
+
+#=======================================================================================
+[🐘🪶 Comandos útiles en .htaccess]:
+# RewriteEngine On|Off       -> Activa o desactiva mod_rewrite
+# RewriteCond                -> Condiciones para reglas de reescritura
+# RewriteRule                -> Reglas para redirigir URLs
+# Order Allow,Deny           -> Control acceso antiguo (Apache 2.2)
+# Require all granted|denied -> Control acceso moderno (Apache 2.4+)
+# ErrorDocument              -> Página personalizada de error
+# AddType                    -> Añade tipos MIME personalizados
+# Header set                 -> Añade encabezados HTTP para seguridad o cacheo
+
+#=======================================================================================
+#=======================================================================================
