@@ -1,9 +1,9 @@
 ===========================================================================================
-[🎅🎛️⚡ COMPONENTES]:
+[🎅⚡ COMPONENTES]:
 
 
 ===========================================================================================
-[🎅🎛️⚡ FUNCIONALIDAD Y TEORIA]:
+[🎅⚡ FUNCIONALIDAD Y TEORIA]:
 - 🔋 Resistencia: Limita o divide la corriente en el circuito.
         + Fijas: Valor constante (carbono, metal film, SMD).
         + Variables (potenciómetros): Ajustables manualmente.
@@ -82,6 +82,6 @@
         + Filtros EMI
 
 ===========================================================================================
-[🎅🎛️⚡ CALCULOS Y ECUACIONES]:
+[🎅⚡ CALCULOS Y ECUACIONES]:
 
 
