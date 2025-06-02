@@ -52,44 +52,132 @@
 # Funciona a nivel de dominio y bosque, usando RPC y SMTP (solo entre sitios).
 
 ==================================================  
-[🌐 Comandos útiles en PowerShell para AD]:
-# Importar módulo Active Directory
-Import-Module ActiveDirectory
-
-# Listar controladores de dominio
-Get-ADDomainController -Filter *
-
-# Ver roles FSMO actuales (nivel dominio)
-Get-ADDomain | Select-Object -ExpandProperty FSMORoleOwner
-
-# Ver roles FSMO actuales (nivel bosque)
-Get-ADForest | Select-Object -ExpandProperty FSMORoleOwner
-
-# Ver dominios en el bosque
-Get-ADForest | Select-Object Domains
-
-# Consultar Global Catalog servers
-Get-ADDomainController -Filter {IsGlobalCatalog -eq $true}
-
-# Crear OU
-New-ADOrganizationalUnit -Name "Ventas" -Path "DC=midominio,DC=com"
-
-# Crear usuario
-New-ADUser -Name "Juan Perez" -SamAccountName jperez -UserPrincipalName jperez@midominio.com -AccountPassword (Read-Host -AsSecureString "Password") -Enabled $true
-
-# Comprobar estado del servicio AD DS
-Get-Service -Name ntds
-
-# Comprobar la replicación entre DCs
-Repadmin /replsummary
-
-# Forzar replicación
-Repadmin /syncall
-
-==================================================  
 [🌐 Seguridad en Active Directory]:
 # Limitar acceso a controladores de dominio con firewalls.
 # Usar delegación mínima de privilegios.
 # Aplicar auditoría para seguimiento de cambios.
 # Habilitar MFA para usuarios privilegiados.
 # Mantener actualizado el sistema y parches de seguridad.
+
+
+**************************************************************************************************************
+**************************************************************************************************************
+
+==================================================
+[🌐🍃 Requisitos previos]:
+# - Tener Windows Server 2025 instalado y actualizado.
+# - Nombre del servidor configurado correctamente.
+# - IP fija configurada (no DHCP).
+# - Sufijo DNS configurado (ej. empresa.local).
+# - Conexión a red LAN.
+
+==================================================
+[🌐🍃 1: Renombrar el servidor (opcional)]:
+# Abrir "Server Manager" (Administrador del servidor)
+# Ir a: Local Server > Computer Name > click en el nombre
+# Click en "Change"
+# Escribir el nuevo nombre del servidor (ej: DC01)
+# Aceptar y reiniciar
+
+==================================================
+[🌐🍃 2: Configurar IP estática y DNS]:
+# Ir a "Control Panel" > Network and Sharing Center > Change adapter settings
+# Click derecho en el adaptador > Propiedades
+# Seleccionar "Protocolo de Internet versión 4 (TCP/IPv4)" > Propiedades
+
+# Configurar:
+#   - IP: 192.168.X.X (según tu red)
+#   - Máscara: 255.255.255.0
+#   - Gateway: la IP de tu router
+#   - DNS preferido: la IP del servidor (ej: 192.168.X.X)
+
+# Aceptar y cerrar.
+
+==================================================
+[🌐🍃 3: Instalar el rol de Active Directory Domain Services (AD DS)]:
+# Abrir "Server Manager"
+# Click en "Add roles and features"
+
+# Asistente de instalación:
+# - Type: Role-based or feature-based
+# - Server: Seleccionar el servidor actual
+# - Roles: Marcar "Active Directory Domain Services"
+# - Aceptar las dependencias
+# - Next hasta "Install"
+# - Esperar instalación (NO cerrar)
+
+==================================================
+[🌐🍃 4: Promover el servidor a controlador de dominio]:
+# En "Server Manager", click en el aviso amarillo: "Promote this server to a domain controller"
+
+# Elegir:
+#   - "Add a new forest" (si es el primer dominio)
+#   - Root domain name: ejemplo: empresa.local
+
+# Domain Controller Options:
+#   - Domain functional level: Windows Server 2025
+#   - Forest functional level: Windows Server 2025
+#   - Marcar: DNS server
+#   - Establecer contraseña del modo de restauración (DSRM)
+
+# NetBIOS: dejar sugerido o cambiar
+# Paths: dejar por defecto
+# Confirmar y click en "Install"
+# El servidor se reiniciará automáticamente
+
+==================================================
+[🌐🍃 5: Verificar instalación de Active Directory]:
+# Después del reinicio:
+# Abrir "Server Manager"
+# Confirmar que el rol AD DS está instalado y sin errores
+
+# Abrir "Active Directory Users and Computers"
+# Verificar que el dominio (empresa.local) aparece
+
+==================================================
+[🌐🍃 6: Crear una Unidad Organizativa (OU)]:
+# En "Active Directory Users and Computers":
+# Click derecho sobre el dominio > New > Organizational Unit
+# Nombre: Ej. Departamentos o Usuarios
+
+==================================================
+[🌐🍃 7: Crear un usuario de dominio]:
+# Click derecho sobre la OU > New > User
+# Completar nombre, login y contraseña
+# Marcar: "User must change password at next logon" (opcional)
+
+==================================================
+[🌐🍃 8: Agregar un equipo al dominio]:
+# En el cliente (PC con Windows Pro o Enterprise):
+# Panel de control > Sistema > Cambiar configuración > Nombre del equipo
+# Click en "Cambiar" > Seleccionar "Dominio"
+# Escribir el dominio (ej: empresa.local)
+# Ingresar usuario admin del dominio
+# Aceptar, reiniciar el cliente
+
+==================================================
+[🌐🍃 9: Crear y vincular una GPO básica]:
+# Abrir "Group Policy Management"
+# Click derecho en el dominio o OU > Create a GPO
+# Nombre: PolíticaSeguridad
+# Click derecho > Editar
+# Ejemplo: desactivar acceso al panel de control
+#   User Config > Policies > Admin Templates > Control Panel > Prohibit access = Enabled
+
+==================================================
+[🌐🍃 10: Verificar replicación y funcionalidad]:
+# Desde el servidor:
+# Abrir PowerShell
+Repadmin /replsummary
+Dcdiag /v
+
+# Comprobar que todo esté sincronizado y sin errores
+
+==================================================
+[🌐🍃 Notas finales]:
+# - Este proceso crea un bosque con un dominio raíz.
+# - El DNS se instala por defecto, ya que AD lo requiere.
+# - El servidor ahora funciona como DC y DNS para la red.
+# - Se recomienda configurar backups, auditorías y políticas de seguridad tras la instalación.
+
+
