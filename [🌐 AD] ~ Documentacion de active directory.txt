@@ -1,0 +1,95 @@
+==================================================  
+[🌐 Introducción a Active Directory]:
+# Active Directory (AD) es un servicio de directorio de Microsoft usado para administrar redes, usuarios, equipos, permisos y políticas en un dominio.
+
+==================================================  
+[🌐 Bosques (Forests) y Dominios]:
+# Un **bosque** es el límite de seguridad y administración más alto en AD, agrupa uno o más dominios.
+# Un **dominio** es una unidad administrativa con una base de datos de objetos propia y límites de seguridad.
+# Los dominios dentro de un bosque están conectados mediante relaciones de confianza transitiva.
+
+==================================================  
+[🌐 Controladores de Dominio (Domain Controllers)]:
+# Son servidores que ejecutan AD DS y almacenan la base de datos del dominio.
+# Autentican usuarios y gestionan políticas de seguridad.
+
+==================================================  
+[🌐 Roles FSMO (Flexible Single Master Operations)]:
+# AD tiene 5 roles FSMO que son únicos en el bosque o dominio para evitar conflictos.
+
+# Roles a nivel bosque:
+#  - Schema Master
+#  - Domain Naming Master
+
+# Roles a nivel dominio:
+#  - RID Master
+#  - PDC Emulator
+#  - Infrastructure Master
+
+==================================================  
+[🌐 Catálogo Global (Global Catalog)]:
+# El GC contiene una copia parcial de todos los objetos en el bosque con los atributos más usados.
+# Facilita búsquedas y el inicio de sesión en entornos multi-dominio.
+
+==================================================  
+[🌐 Unidades Organizativas (OUs)]:
+# Son contenedores para organizar objetos dentro de un dominio.
+# Facilitan la delegación de permisos y la aplicación de GPOs.
+
+==================================================  
+[🌐 Políticas de Grupo (GPOs)]:
+# GPOs permiten administrar configuraciones y políticas de seguridad centralizadas.
+# Se aplican a sitios, dominios y OUs.
+
+==================================================  
+[🌐 Servicios LDAP]:
+# AD usa LDAP como protocolo para consultas y modificaciones en la base de datos.
+# El puerto estándar es 389 para LDAP y 636 para LDAP sobre SSL (LDAPS).
+
+==================================================  
+[🌐 Replicación]:
+# La replicación sincroniza cambios entre controladores de dominio.
+# Funciona a nivel de dominio y bosque, usando RPC y SMTP (solo entre sitios).
+
+==================================================  
+[🌐 Comandos útiles en PowerShell para AD]:
+# Importar módulo Active Directory
+Import-Module ActiveDirectory
+
+# Listar controladores de dominio
+Get-ADDomainController -Filter *
+
+# Ver roles FSMO actuales (nivel dominio)
+Get-ADDomain | Select-Object -ExpandProperty FSMORoleOwner
+
+# Ver roles FSMO actuales (nivel bosque)
+Get-ADForest | Select-Object -ExpandProperty FSMORoleOwner
+
+# Ver dominios en el bosque
+Get-ADForest | Select-Object Domains
+
+# Consultar Global Catalog servers
+Get-ADDomainController -Filter {IsGlobalCatalog -eq $true}
+
+# Crear OU
+New-ADOrganizationalUnit -Name "Ventas" -Path "DC=midominio,DC=com"
+
+# Crear usuario
+New-ADUser -Name "Juan Perez" -SamAccountName jperez -UserPrincipalName jperez@midominio.com -AccountPassword (Read-Host -AsSecureString "Password") -Enabled $true
+
+# Comprobar estado del servicio AD DS
+Get-Service -Name ntds
+
+# Comprobar la replicación entre DCs
+Repadmin /replsummary
+
+# Forzar replicación
+Repadmin /syncall
+
+==================================================  
+[🌐 Seguridad en Active Directory]:
+# Limitar acceso a controladores de dominio con firewalls.
+# Usar delegación mínima de privilegios.
+# Aplicar auditoría para seguimiento de cambios.
+# Habilitar MFA para usuarios privilegiados.
+# Mantener actualizado el sistema y parches de seguridad.
