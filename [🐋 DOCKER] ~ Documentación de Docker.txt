@@ -31,6 +31,33 @@ sudo systemctl start docker
 sudo systemctl enable docker
 
 #=========================================================================================================================
+[🐋 CONTENEDOR DOCKER NORMAL SIN DOCKER-COMPOSE]:
+# Este ejemplo no se utilzia si no se utilzia docker-compose
+
+# Docker intenta buscar la imagen localmente. Si no la encuentra, la descarga desde Docker Hub (requiere Internet) y la guarda entre imagenes guardadas.
+# Voy a crear una carpeta /Docker-volume en cada contenedor para agregar los datos de configuración necesarios 
+#docker run -d --network bridge -it --name vm1-smb -v vol-vm1-smb:/docker-volume -p 445:445 debian bash
+docker run -d --network host -it --name vm1-smb -v vol-vm1-smb:/docker-volume debian bash
+  
+  # listo todas las redes disponibles de docker 
+  docker network ls
+
+  # Comprobar imágenes instaladas
+  docker images
+
+  # lista los contenedores 
+  docker ps -a
+
+  # para inicializar contenedor
+  docker start -i vm1
+  
+  # para borrar contenedor
+  docker rm vm1
+
+  # dejar encendido el servidor en segundo plano
+  docker start vm1-smb
+
+#=========================================================================================================================
 [🐋🔥VOLUMENES]:
 # creo un volumen 
 # Con docker-compose le mando crear un volumen por lo que una vez generada la máquina no es necesario crear su volumen, así que este apartado me lo salto
@@ -103,3 +130,13 @@ docker ps -a
 
 # acceder al contenedor 
 docker exec -it vm1-samba bash
+
+#=========================================================================================================================
+[🐋🔥UNA VEZ YA CREADO EL SERVIDOR]:
+# inicializo el contenedor 
+docker start vm1-samba
+
+# en el ejemplo de un servidor samba pas olo siguiente para obtener la IP después de iniciar el contenedor
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' vm1-samba
+    # 172.17.0.2
+
