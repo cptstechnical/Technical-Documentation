@@ -73,65 +73,73 @@
 
 ==================================================
 [🌐🍃 1: Renombrar el servidor (opcional)]:
-# Abrir "Server Manager" (Administrador del servidor)
-# Ir a: Local Server > Computer Name > click en el nombre
+# Abrir "Server Manager" 
+Administrador del servidor
+
+# Ir a: 
+Local Server > Computer Name > click en el nombre
 # Click en "Change"
+
 # Escribir el nuevo nombre del servidor (ej: DC01)
-# Aceptar y reiniciar
+Aceptar y reiniciar
 
 ==================================================
 [🌐🍃 2: Configurar IP estática y DNS]:
-# Ir a "Control Panel" > Network and Sharing Center > Change adapter settings
+# Ir a 
+"Control Panel" > Network and Sharing Center > Change adapter settings
+
 # Click derecho en el adaptador > Propiedades
-# Seleccionar "Protocolo de Internet versión 4 (TCP/IPv4)" > Propiedades
+"Protocolo de Internet versión 4 (TCP/IPv4)" > Propiedades
 
 # Configurar:
-#   - IP: 192.168.X.X (según tu red)
-#   - Máscara: 255.255.255.0
-#   - Gateway: la IP de tu router
-#   - DNS preferido: la IP del servidor (ej: 192.168.X.X)
+   - IP: 192.168.X.X (según tu red)
+   - Máscara: 255.255.255.0
+   - Gateway: la IP de tu router
+   - DNS preferido: la IP del servidor (ej: 192.168.X.X)
 
-# Aceptar y cerrar.
+Aceptar y cerrar.
 
 ==================================================
 [🌐🍃 3: Instalar el rol de Active Directory Domain Services (AD DS)]:
 # Abrir "Server Manager"
-# Click en "Add roles and features"
+"Add roles and features"
 
 # Asistente de instalación:
-# - Type: Role-based or feature-based
-# - Server: Seleccionar el servidor actual
-# - Roles: Marcar "Active Directory Domain Services"
-# - Aceptar las dependencias
-# - Next hasta "Install"
-# - Esperar instalación (NO cerrar)
+ - Type: Role-based or feature-based
+ - Server: Seleccionar el servidor actual
+ - Roles: Marcar "Active Directory Domain Services"
+ - Aceptar las dependencias
+ - Next hasta "Install"
+ - Esperar instalación (NO cerrar)
 
 ==================================================
 [🌐🍃 4: Promover el servidor a controlador de dominio]:
-# En "Server Manager", click en el aviso amarillo: "Promote this server to a domain controller"
+# En "Server Manager", click en el aviso amarillo: 
+"Promote this server to a domain controller"
 
 # Elegir:
-#   - "Add a new forest" (si es el primer dominio)
-#   - Root domain name: ejemplo: empresa.local
+   - "Add a new forest" (si es el primer dominio)
+   - Root domain name: ejemplo: empresa.local
 
 # Domain Controller Options:
-#   - Domain functional level: Windows Server 2025
-#   - Forest functional level: Windows Server 2025
-#   - Marcar: DNS server
-#   - Establecer contraseña del modo de restauración (DSRM)
+   - Domain functional level: Windows Server 2025
+   - Forest functional level: Windows Server 2025
+   - Marcar: DNS server
+   - Establecer contraseña del modo de restauración (DSRM)
 
 # NetBIOS: dejar sugerido o cambiar
 # Paths: dejar por defecto
-# Confirmar y click en "Install"
+# Confirmar 
+click en "Install"
 # El servidor se reiniciará automáticamente
 
 ==================================================
 [🌐🍃 5: Verificar instalación de Active Directory]:
 # Después del reinicio:
-# Abrir "Server Manager"
+"Server Manager"
 # Confirmar que el rol AD DS está instalado y sin errores
 
-# Abrir "Active Directory Users and Computers"
+"Active Directory Users and Computers"
 # Verificar que el dominio (empresa.local) aparece
 
 ==================================================
@@ -144,25 +152,26 @@
 [🌐🍃 7: Crear un usuario de dominio]:
 # Click derecho sobre la OU > New > User
 # Completar nombre, login y contraseña
-# Marcar: "User must change password at next logon" (opcional)
+[x] "User must change password at next logon"
 
 ==================================================
 [🌐🍃 8: Agregar un equipo al dominio]:
 # En el cliente (PC con Windows Pro o Enterprise):
-# Panel de control > Sistema > Cambiar configuración > Nombre del equipo
+Panel de control > Sistema > Cambiar configuración > Nombre del equipo
 # Click en "Cambiar" > Seleccionar "Dominio"
 # Escribir el dominio (ej: empresa.local)
 # Ingresar usuario admin del dominio
-# Aceptar, reiniciar el cliente
+Aceptar, reiniciar el cliente
 
 ==================================================
 [🌐🍃 9: Crear y vincular una GPO básica]:
-# Abrir "Group Policy Management"
+# Abrir 
+"Group Policy Management"
 # Click derecho en el dominio o OU > Create a GPO
 # Nombre: PolíticaSeguridad
 # Click derecho > Editar
 # Ejemplo: desactivar acceso al panel de control
-#   User Config > Policies > Admin Templates > Control Panel > Prohibit access = Enabled
+   User Config > Policies > Admin Templates > Control Panel > Prohibit access = Enabled
 
 ==================================================
 [🌐🍃 10: Verificar replicación y funcionalidad]:
