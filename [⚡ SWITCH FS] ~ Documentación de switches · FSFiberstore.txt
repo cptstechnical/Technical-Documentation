@@ -191,6 +191,21 @@ Estos comandos se utilizan para modificar el comportamiento de las interfaces:
   ---------------------------------------------------------------
 
 
+================================================================================================
+##⚡Reiniciar con switch POE
+
+  # antes de reiniciar el POE desconecto la boca
+  ---------------------------------------------------------------
+   conf
+   interface g0/3
+   shutdown
+   poe disable
+  # vuelvo a encender el POE y conectar la boca
+  ---------------------------------------------------------------                                    
+   no poe disable
+   no shutdown
+   show interface brief
+  ---------------------------------------------------------------
 
 ================================================================================================
 ##⚡Resolución de problemas y mejores prácticas
