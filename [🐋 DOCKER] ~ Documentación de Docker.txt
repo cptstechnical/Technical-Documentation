@@ -1,0 +1,105 @@
+#=========================================================================================================================
+[🐋WHITE WHALE]::
+# Guia de instalación debian       : https://docs.docker.com/engine/install/debian/
+# Guía de instalación volumenes    : https://docs.docker.com/storage/volumes/
+
+#=========================================================================================================================
+[🐋INSTALACIÓN]:
+# si tengo instalado docker desinstalo todos los paquetes en conflicto
+for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+
+# instalar repositorio de Docker
+  # Agregue la clave GPG oficial de Docker
+  sudo apt-get update
+  sudo apt-get install ca-certificates curl
+  sudo install -m 0755 -d /etc/apt/keyrings
+  sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+  sudo chmod a+r /etc/apt/keyrings/docker.asc
+  
+  # Agregar el repositorio a las fuentes de Apt
+  echo \
+    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+    sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  sudo apt-get update
+
+# instalar última versión docker
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+# inicializao docker y lo activo al iniciar la sesión
+sudo systemctl start docker
+sudo systemctl enable docker
+
+#=========================================================================================================================
+[🐋🔥VOLUMENES]:
+# creo un volumen 
+# Con docker-compose le mando crear un volumen por lo que una vez generada la máquina no es necesario crear su volumen, así que este apartado me lo salto
+
+## 🧑‍🎓 Volúmenes de Docker: Para que los cambios en tus contenedores sean persistentes, debes utilizar volúmenes de Docker. Los volúmenes permiten que los datos se mantengan incluso cuando el contenedor se detenga o se elimine.
+# docker volume create docker-compose_vol-vm1-samba
+
+  # inspecciono volumenes para ver las propiedades
+  # docker volume inspect docker-compose_vol-vm1-samba
+
+  # lista los volumenes 
+  # docker volume ls
+
+  # eliminar un volumen
+  # docker volume rm docker-compose_vol-vm1-samba
+
+  # eliminar docker-compose
+  docker ps -a
+  docker stop vm1-smb
+  docker rm vm1-smb
+  # si es necesario elimino el volumen y la imagen docker
+  # rm /docker-compose/docker-compose-samba.yml
+
+#=========================================================================================================================
+[🐋🔥DOCKER COMPOSE]:
+# instalo jq necesario para completar la instalación de docker-compose
+apt install jq 
+
+# Me descargo docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.20.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+# Doy permisos de ejecución
+sudo chmod +x /usr/local/bin/docker-compose
+
+# Compruebo que se a instalado
+docker-compose --version
+
+# creo una carpeta para los archivos docker-compose
+mkdir docker-compose
+
+# Creo el archivo .yml para el archivo docker-compose
+# el archivo por defecto es docker-compose.yml
+nano docker-compose-samba.yml
+------------------------------------------------------------------------------------------------------------------------------------
+      version: "3.9"  # Puedes usar la versión que prefieras, pero 3.9 es una versión reciente y estable.
+      
+      services:
+        vm1-samba:
+          image: debian  # Usamos la imagen de Debian
+          restart: always  # Esta opción asegura que el contenedor se reinicie automáticamente
+          hostname: vm1-samba.whitewhale.local  # Agrego un nombre del host para distinguirlo del servidor principal
+          container_name: vm1-samba  # El nombre del contenedor será vm1-samba
+          command: bash  # Comando que se ejecutará cuando el contenedor se inicie
+          network_mode: host  # El contenedor usará la red del host para comportarse como un único servidor
+          volumes:
+            - vol-vm1-samba:/docker-volume  # Montamos el volumen en el contenedor
+          tty: true  # Mantiene el contenedor en ejecución (similar a -it)
+          stdin_open: true  # Permite interacción con el contenedor (similar a -it)
+      
+      volumes:
+        vol-vm1-samba:  # Definimos el volumen que usaremos
+------------------------------------------------------------------------------------------------------------------------------------
+
+# Lanzo el contenedor que por defecto docker-compose up -d lanzará docker-compose.override.yml y docker-compose.yml
+docker-compose -f docker-compose-samba.yml up -d
+
+# Compruebo que está lanzado
+docker ps
+docker ps -a
+
+# acceder al contenedor 
+docker exec -it vm1-samba bash
