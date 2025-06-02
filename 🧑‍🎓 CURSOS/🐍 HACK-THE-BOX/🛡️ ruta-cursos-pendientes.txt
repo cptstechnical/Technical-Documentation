@@ -1,5 +1,5 @@
-Certificación avanzada en pruebas de penetración web (CBBH)::
-*************************************************************
+🛡️ Certificación avanzada en pruebas de penetración web (CBBH)::
+*****************************************************************
 [ ] Ataques de inyección
 [ ] Introducción a la inyección NoSQL
 [ ] Ataque a los mecanismos de autenticación
@@ -17,8 +17,8 @@ Certificación avanzada en pruebas de penetración web (CBBH)::
 [ ] Errores de lógica de parámetros
 
 
-Certificación de Análisis de Seguridad (CDSA)::
-***********************************************
+🛡️ Certificación de Análisis de Seguridad (CDSA)::
+***************************************************
 [ ] Proceso de manejo de incidentes
 [ ] Fundamentos de monitoreo de seguridad y SIEM
 [ ] Registros de eventos de Windows y detección de problemas
@@ -36,8 +36,8 @@ Certificación de Análisis de Seguridad (CDSA)::
 [ ] Informes de incidentes de seguridad
 
 
-Certificación de pruebas de penetración (CPTS)::
-************************************************
+🛡️ Certificación de pruebas de penetración (CPTS)::
+****************************************************
 [ ] Proceso de prueba de penetración
 [ ] Empezando
 [ ] Enumeración de red con Nmap
@@ -68,8 +68,8 @@ Certificación de pruebas de penetración (CPTS)::
 [ ] Ataques a redes empresariales
 
 
-Certificación de caza de recompensas por errores (CWEE)::
-*********************************************************
+🛡️ Certificación de caza de recompensas por errores (CWEE)::
+*************************************************************
 [ ] Solicitudes web
 [ ] Introducción a las aplicaciones web
 [ ] Uso de servidores proxy web
