@@ -191,6 +191,7 @@ Estos comandos se utilizan para modificar el comportamiento de las interfaces:
   ---------------------------------------------------------------
 
 
+
 ================================================================================================
 ##⚡Reiniciar con switch POE
 
@@ -206,6 +207,8 @@ Estos comandos se utilizan para modificar el comportamiento de las interfaces:
    no shutdown
    show interface brief
   ---------------------------------------------------------------
+
+
 
 ================================================================================================
 ##⚡Resolución de problemas y mejores prácticas
