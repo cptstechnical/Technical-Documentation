@@ -1,0 +1,4 @@
+- input: tráfico dirigido al router.
+- output: tráfico generado por el router.
+- forward: tráfico que atraviesa el router, de una red a otra.
+
