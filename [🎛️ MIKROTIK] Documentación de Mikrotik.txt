@@ -1,6 +1,36 @@
+=========================================================================================================================
+[✅ IP > Firewall]:
+
 Cadena (Chain)             ¿Qué filtra?	                              Ejemplo de uso
-=============================================================================================================================
-input                      Tráfico destinado al router                Permitir SSH/Winbox/ICMP al router
-forward                    Tráfico que pasa a través del router       Filtrar tráfico LAN → WAN / WAN → LAN
+-------------------------------------------------------------------------------------------------------------------------
+input                      Tráfico destinado al router                Permitir SSH/Winbox/ICMP al router.
+forward                    Tráfico que pasa a través del router       Filtrar tráfico LAN → WAN / WAN → LAN.
 output                     Tráfico generado por el router             Controlar actualizaciones o pings del propio router
+                                                                      -(se suele utilizar para bloquear actualizaciones).
+
+
+✅ Ejemplos rápidos:
+******************************************************************
+✅ 1. INPUT → Tráfico AL router (servicios del router)
+📌 Ejemplo 1: Permitir acceso SSH al router desde una IP concreta
+📌 Ejemplo 2: Permitir Winbox desde red local
+💡📡 Es el que utilizo para permitir servicios al mikrotik 
+
+✅ 2. FORWARD → Tráfico que PASA a través del router
+📌 Ejemplo 1: Permitir que LAN navegue por Internet
+📌 Ejemplo 2: Bloquear que LAN acceda a una IP específica
+💡🧱 Es el que se utiliza como firewall de servicios en red 
+
+✅ 3. OUTPUT → Tráfico generado POR el router
+📌 Ejemplo 1: Bloquear que el router haga ping a Internet
+📌 Ejemplo 2: Bloquear actualizaciones del router
+💡 Es el menos utilizado, para permitir desde el mikrotik
+
+
+✅ ejemplo de uso:
+******************************************************************
+Usuario → Router → input
+Router → Usuario → output
+Red → Router → Red → forward
+
 
