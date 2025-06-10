@@ -130,6 +130,23 @@ curl_close($ch);
 
 #=======================================================================================
 #=======================================================================================
+[🐘⚙️ CREAR OBJETO PHP]:
+// Este es un objeto genérico
+$Fichaje = new stdClass();
+$Fichaje->No = $this->session->No;
+$Fichaje->Sistema = 'prueba';
+$Fichaje->Terminal = 78;
+$Fichaje->Tipo = $this->Post->selector;
+$Fichaje->Fecha = date('Y-m-d H:i:s');
+$Fichaje->DesdeIP = $_SERVER['REMOTE_ADDR'];
+$Fichaje->Jornada = CalcularPosition($Fichaje->Fecha, $Fichaje->Tipo);
+
+// envío el objeto
+$this->ModeloFichajes->Insert($Fichaje)
+
+    
+#=======================================================================================
+#=======================================================================================
 [🐘⚙️ ADMINISTRADOR DE SISTEMAS EN PHP]:
 
 # exec(): ejecuta un comando, retorna la última línea de salida
