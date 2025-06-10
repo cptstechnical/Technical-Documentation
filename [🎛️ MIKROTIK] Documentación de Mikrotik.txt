@@ -1,6 +1,6 @@
-Cadena (Chain)	          ¿Qué filtra?	                              Ejemplo de uso
+Cadena (Chain)             ¿Qué filtra?	                              Ejemplo de uso
 =============================================================================================================================
-input	                    Tráfico destinado al router	                Permitir SSH/Winbox/ICMP al router
-forward	                  Tráfico que pasa a través del router	      Filtrar tráfico LAN → WAN / WAN → LAN
-output	                  Tráfico generado por el router	            Controlar actualizaciones o pings del propio router
+input                      Tráfico destinado al router                Permitir SSH/Winbox/ICMP al router
+forward                    Tráfico que pasa a través del router       Filtrar tráfico LAN → WAN / WAN → LAN
+output                     Tráfico generado por el router             Controlar actualizaciones o pings del propio router
 
