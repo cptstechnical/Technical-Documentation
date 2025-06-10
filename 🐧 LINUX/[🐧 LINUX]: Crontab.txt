@@ -1,4 +1,7 @@
-#Abrir el crontab
+## configurar cron a través de usuario (si utilizo siempre super, siempre será el mismo)
+****************************************************************************************
+
+# abrir crontab
 crontab -e
 
 # Estructura del crontab:
@@ -18,10 +21,14 @@ crontab -l
 # Verificar la ejecución a un archivo
 * * * * * /ruta/al/script.sh >> /ruta/al/log.txt 2>&1
 
-# Verificar la ejecución a un correo
+# Verificar la ejecución a un correo · si el comando genera salida la recibirás en ese email
 MAILTO="tu_correo@example.com"
 * * * * * /ruta/al/script.sh
 
+# cada cinco minutos de cada hora (es decir, 12 veces por hora)
+*/5 * * * *
+# en el minuto cinco de cada hora (es decir, una vez por hora)
+5 * * * *
 
 ===================================================
 ## ejemplos:
@@ -45,3 +52,8 @@ MAILTO="tu_correo@example.com"
 
 # los scripts tienen que tener permisos de ejecución
 chmod +x /ruta/al/script.sh
+
+
+
+
+
