@@ -4,7 +4,7 @@
 [🐘⚙️ MIS SOLUCIONES PHP]:
 ## Para quitar el string a un array de objetos::
 // $Tarea->Datos = "[{"ID":"554", ... }]";
-$json = trim($Tarea->Datos);                        # Sin espacios
+$json = trim($Tarea->Datos);                        # Sin espacios al inicio y al final
 $json = str_replace(["\n", "\r"], '', $json);       # Elimina saltos de línea
 $Permisos = json_decode($json);                     # Convierte Json en un objeto
 $PermisoUno = Permisos[0];
