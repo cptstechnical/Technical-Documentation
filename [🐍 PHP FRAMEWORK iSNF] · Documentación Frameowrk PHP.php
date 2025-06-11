@@ -1,4 +1,5 @@
 <?php
+# Tipos de Frameworks (iFOT e iSNF):
 # 🐘 iFOT · Interactive Framework for Open Technologies
 # 🐍 iSNF · 
 #=======================================================================================
