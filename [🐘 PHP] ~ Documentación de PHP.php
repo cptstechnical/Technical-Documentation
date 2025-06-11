@@ -7,8 +7,8 @@
 $json = trim($Tarea->Datos);                        # Sin espacios
 $json = str_replace(["\n", "\r"], '', $json);       # Elimina saltos de línea
 $Permisos = json_decode($json);                     # Convierte Json en un objeto
-// $Permiso = Permisos[0];
-// echo $Permiso->ID;
+$PermisoUno = Permisos[0];
+echo $PermisoUno->ID;
 
 
 #=======================================================================================
