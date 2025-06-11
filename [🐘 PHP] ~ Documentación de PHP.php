@@ -1,6 +1,18 @@
 <?php
 #=======================================================================================
 #=======================================================================================
+[🐘⚙️ MIS SOLUCIONES PHP]:
+## Para quitar el string a un array de objetos::
+// $Tarea->Datos = "[{"ID":"554", ... }]";
+$json = trim($Tarea->Datos);                        # Sin espacios
+$json = str_replace(["\n", "\r"], '', $json);       # Elimina saltos de línea
+$Permisos = json_decode($json);                     # Convierte Json en un objeto
+// $Permiso = Permisos[0];
+// echo $Permiso->ID;
+
+
+#=======================================================================================
+#=======================================================================================
 [🐘⚙️ FUNCIONES Y MÉTODOS COMUNES]:
 # echo(): imprime una o varias cadenas
 echo "Hola Mundo";
