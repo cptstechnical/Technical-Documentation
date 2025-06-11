@@ -84,7 +84,10 @@ if (array_key_exists("user", $hash)) {
 $json = json_encode($hash);
 
 # json_decode(): convierte JSON a array/objeto PHP
-$obj = json_decode($json, true);  # true = array asociativo
+$obj = json_decode($json, true);  # true = array asociativo, sin el parámetro de true para objeto
+
+#convierte un valor a entero (int)
+intval($ID)
 
 # file_get_contents(): lee archivos o URLs
 $data = file_get_contents("file.txt");
