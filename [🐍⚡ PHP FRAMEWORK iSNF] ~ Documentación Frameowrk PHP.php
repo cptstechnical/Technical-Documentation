@@ -1,7 +1,7 @@
 <?php
 # Tipos de Frameworks (iFOT e iSNF):
 # 🐘 iFOT · Interactive Framework for Open Technologies
-# 🐍 iSNF · 
+# 🐍 iSNF · Systems Integration and New Features
 #=======================================================================================
 #=======================================================================================
 [🐍⚡ MVC MODAL]:
