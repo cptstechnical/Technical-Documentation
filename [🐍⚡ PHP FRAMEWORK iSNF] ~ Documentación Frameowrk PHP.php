@@ -11,9 +11,9 @@
 ## 🔴 /app/routers/web.php
 #------------------------------------------------------------------
 //Definir controladores
-require_once('./iPSOF/controllers/landingPageController.php');
-require_once('./iPSOF/controllers/exampleController.php');
-require_once('./iPSOF/controllers/errorController.php');
+require_once('./iSNF/controllers/landingPageController.php');
+require_once('./iSNF/controllers/exampleController.php');
+require_once('./iSNF/controllers/errorController.php');
 //Definir rutas
 Http::get('/', ['controller' => 'LandingPage', 'method' => 'index']);
 #------------------------------------------------------------------
@@ -65,12 +65,15 @@ $host = getenv('DB_HOST');
   
 #=======================================================================================
 #=======================================================================================
-[🐍⚡ MY CODE]:
-## 🔴 quitar el string a un array de objetos::
+[🐍⚡ MY CODE PHP]:
+## 🔴 convertir un string a un array de objetos (petición recogida por db)::
+#------------------------------------------------------------------
 // $Tarea->Datos = "[{"ID":"554", ... }]";          # valor de la db o post
 $json = trim($Tarea->Datos);                        # Sin espacios al inicio y al final
-$json = str_replace(["\n", "\r"], '', $json);       # Elimina saltos de línea
+$json = str_replace(["\n", "\r"], '', $json);       # Elimina saltos de línea (si hay un salto de línea se rompe el JSON)
 $Permisos = json_decode($json);                     # Convierte Json en un objeto
 $PermisoUno = Permisos[0];
 echo $PermisoUno->ID;
+#------------------------------------------------------------------
+
 
