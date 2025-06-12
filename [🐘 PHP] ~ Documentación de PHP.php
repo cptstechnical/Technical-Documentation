@@ -1,11 +1,84 @@
 <?php
 #=======================================================================================
 #=======================================================================================
+[🐘⚙️ COMANDOS PHP PARA FLUJO DE TRABAJO CONTINUO]:
+# extrae una columna específica de un array multidimensional
+array_column($PedidosEnCurso, 'No');
+
+# omprueba si una variable está definida y no es null
+isset($Consumos)
+
+# convierto el numer en absoluto
+abs(-5)                                           # 5
+
+# para crear arrays
+array('manzana', 'naranja', 'pera');              # ['manzana', 'naranja', 'pera'];
+
+# convierte una cadena de texto que representa una fecha/hora en un timestamp Unix (entero)
+$timestamp = strtotime('2025-06-12 14:30:00');    # timestamp
+
+# fecha y hora actual formateada como cadena
+date('Y-m-d H:i:s')
+
+# se usa para escapar caracteres en strings, especialmente antes de insertar datos en bases SQL
+addslashes($str);                                  # $str = "O'Reilly"; || O\'Reilly
+
+# convierte un valor PHP (array, objeto) en una cadena JSON
+$data = ['user' => 'Elliot', 'role' => 'admin'];
+$json = json_encode($data);                        # '{"user":"Elliot","role":"admin"}'
+
+# convierte una cadena JSON en un valor PHP (objeto o array)
+# objeto:
+$obj = json_decode($json);
+echo $obj->user;
+# array:
+$arr = json_decode($json, true);
+echo $arr['user'];
+
+# decodifica una cadena codificada en Base64 a su forma original
+$encoded = 'SGVsbG8gd29ybGQ=';
+$decoded = base64_decode($encoded);
+
+# codifica datos a Base64
+$original = 'Hello world';
+$encoded = base64_encode($original);
+
+# realiza una búsqueda y reemplazo usando expresiones regulares (PCRE)
+$text = "User: Elliot, Email: elliot@example.com";
+preg_replace('/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}\b/i', '[email]', $text);
+
+# reemplaza todas las ocurrencias de una cadena por otra, sin usar expresiones regulares
+$text = "Hola mundo";
+$result = str_replace("mundo", "PHP", $text);        # Hola PHP
+
+# divide una cadena en un array usando un separador
+$array = explode(',', 'a,b,c');                      # ['a', 'b', 'c']
+
+# une elementos de un array en una cadena, usando un separador 
+implode('-', ['a', 'b', 'c']);
+
+# aplica una función a cada elemento de uno o más arrays y devuelve un array con los resultados
+$nums = [1, 2, 3, 4];
+$squares = array_map(fn($n) => $n * $n, $nums);       # nums se mapea según el argumento
+
+# filtra elementos de un array usando una función de callback que devuelve true o false
+$arr = [0, null, '', false, 'hello'];
+$filtered = array_filter($arr);                       # hello
+
+# genero un token único de md5
+md5(uniqid(rand(), true))
+
+# cuenta el número de elementos en un array o propiedades en un objeto que implementa Countable
+count($pedidos)
+
+    
+#=======================================================================================
+#=======================================================================================
 [🐘⚙️ MIS SOLUCIONES PHP]:
-## Para quitar el string a un array de objetos::
+## forma correcta de convertir un json en un objeto (para cuando tengo que trabajar con peticiones SQL)::
 // $Tarea->Datos = "[{"ID":"554", ... }]";
 $json = trim($Tarea->Datos);                        # Sin espacios al inicio y al final
-$json = str_replace(["\n", "\r"], '', $json);       # Elimina saltos de línea
+$json = str_replace(["\n", "\r"], '', $json);       # Elimina saltos de línea (si hay un salto de línea, el json se rompe y se interrumpe la ejecución dando error)
 $Permisos = json_decode($json);                     # Convierte Json en un objeto
 $PermisoUno = Permisos[0];
 echo $PermisoUno->ID;
@@ -163,7 +236,6 @@ $this->ModeloFichajes->Insert($Fichaje)
 #=======================================================================================
 #=======================================================================================
 [🐘⚙️ ADMINISTRADOR DE SISTEMAS EN PHP]:
-
 # exec(): ejecuta un comando, retorna la última línea de salida
 $output = exec("ls -la");
 
@@ -200,7 +272,6 @@ closelog();
 #=======================================================================================
 #=======================================================================================
 [🐘⚙️ MANEJO DE ARCHIVOS EN PHP]:
-
 # file_get_contents(): lee todo el contenido de un archivo (modo lectura simple)
 $contenido = file_get_contents("log.txt");
 
@@ -286,7 +357,6 @@ $zip->close();
 #=======================================================================================
 #=======================================================================================
 [🐘⚙️ SESIONES EN PHP]:
-
 # session_start(): inicia la sesión (debe ir antes de cualquier salida)
 session_start();
 
@@ -303,7 +373,6 @@ session_destroy();
 #=======================================================================================
 #=======================================================================================
 [🐘⚙️ COOKIES EN PHP]:
-
 # setcookie(): crea una cookie (debe ejecutarse antes de enviar salida al navegador)
 setcookie("usuario", "admin", time() + 3600, "/");
 
@@ -326,7 +395,6 @@ setcookie("secure_token", "valor", [
 #=======================================================================================
 #=======================================================================================
 [🐘⚙️ EMAILS EN PHP]:
-
 # mail(): envía un correo electrónico simple (requiere configuración en php.ini / sendmail/postfix)
 $to      = "destino@example.com";
 $subject = "Asunto";
@@ -341,7 +409,7 @@ mail($to, $subject, $message, $headers);
 #=======================================================================================
 #=======================================================================================
 [🐘⚙️ DB EN PHP]:
-
+# configuración con db
 $pdo = new PDO("mysql:host=localhost;dbname=mi_db", "user", "pass");
 $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = :email");
 $stmt->execute(["email" => $email]);
@@ -351,7 +419,6 @@ $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
 #=======================================================================================
 #=======================================================================================
 [🐘⚙️ VALIDAR/SANITIZAR EN PHP]:
-
 # filter_var() para sanitizar/validar datos
 $email = filter_var($input, FILTER_SANITIZE_EMAIL);
 if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -362,7 +429,6 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 #=======================================================================================
 #=======================================================================================
 [🐘⚙️ CRIPTOGRAFIA Y SEGURIDAD EN PHP]:
-
 # hash(): genera hash con algoritmo elegido (SHA256, etc.)
 $hash = hash("sha256", "mensaje");
 
@@ -381,7 +447,6 @@ $descifrado = openssl_decrypt($cifrado, "AES-128-CBC", $clave, 0, $iv);
 #=======================================================================================
 #=======================================================================================
 [🐘⚙️ FORMULARIOS Y SEGURIDAD EN PHP]:
-
 # $_GET / $_POST / $_REQUEST / $_SERVER
 $nombre = htmlspecialchars($_POST["nombre"] ?? "");
 
