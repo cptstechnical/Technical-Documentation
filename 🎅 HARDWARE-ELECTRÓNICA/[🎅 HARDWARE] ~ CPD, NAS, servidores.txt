@@ -6,19 +6,23 @@
 [🔥🧑‍🚀 TIPOS DE SERVIDORES]:
 ********************************
 Por arquitectura:
-    Servidor dedicado:          Un servidor físico que está completamente dedicado a un solo cliente o aplicación.
-    Servidor virtual:           Un servidor que se ejecuta en un entorno virtualizado, permitiendo múltiples servidores virtuales en un solo hardware físico (por ejemplo, VPS).
-    Servidor en la nube:        Un servidor que se aloja en la nube y se accede a través de Internet, ofreciendo escalabilidad y flexibilidad.
+    Servidor dedicado:              Un servidor físico que está completamente dedicado a un solo cliente o aplicación.
+    Servidor virtual:               Un servidor que se ejecuta en un entorno virtualizado, permitiendo múltiples servidores virtuales en un solo hardware físico (por ejemplo, VPS).
+    Servidor en la nube:            Un servidor que se aloja en la nube y se accede a través de Internet, ofreciendo escalabilidad y flexibilidad.
 Por ubicación:
-    Servidor local:             Un servidor que se encuentra en las instalaciones de una empresa o usuario.
-    Servidor remoto:            Un servidor que se encuentra en una ubicación diferente, a menudo en un centro de datos.
+    Servidor local:                 Un servidor que se encuentra en las instalaciones de una empresa o usuario.
+    Servidor remoto:                Un servidor que se encuentra en una ubicación diferente, a menudo en un centro de datos.
+    Servidor appliance:             Un dispositivo de hardware o software que está diseñado para proporcionar una funcionalidad específica de servidor de manera preconfigurada y optimizada. Puede ser un Servidor de Archivos, de Bases de Datos, Web, de Aplicaciones, de Impresión, de DNS, de Proxy...
+    Servidor Dedicado:              Un servidor físico que está alquilado y gestionado por un proveedor de servicios de hosting, pero que es utilizado exclusivamente por un solo cliente. Esto proporciona un alto nivel de control y recursos dedicados.
+    Servidor Virtual (VPS):         Un servidor virtual que se ejecuta en un servidor físico compartido, pero que actúa como un servidor independiente. Ofrece una mayor flexibilidad y control en comparación con el hosting compartido, pero a un costo menor que un servidor dedicado.
+    Servidor en la Nube (Cloud):    Un servidor que se ejecuta en una infraestructura de nube, proporcionando escalabilidad, flexibilidad y acceso desde cualquier lugar con una conexión a Internet. Ejemplos incluyen Amazon EC2, Google Cloud Platform, y Microsoft Azure.
 Por tipo de hardware:
-    Servidor rack:              Diseñado para ser montado en un rack de servidores, optimizando el espacio.
-    Servidor torre:             Tiene una forma similar a una computadora de escritorio y es adecuado para pequeñas empresas o uso doméstico.
-    Servidor blade:             Un tipo de servidor compacto que se inserta en un chasis, permitiendo una alta densidad de servidores en un espacio reducido.
+    Servidor rack:                  Diseñado para ser montado en un rack de servidores, optimizando el espacio.
+    Servidor torre:                 Tiene una forma similar a una computadora de escritorio y es adecuado para pequeñas empresas o uso doméstico.
+    Servidor blade:                 Un tipo de servidor compacto que se inserta en un chasis, permitiendo una alta densidad de servidores en un espacio reducido.
 Por sistema operativo:
-    Servidor Windows:           Utiliza un sistema operativo Windows Server.
-    Servidor Linux:             Utiliza una distribución de Linux (por ejemplo, Ubuntu Server, CentOS).
+    Servidor Windows:               Utiliza un sistema operativo Windows Server.
+    Servidor Linux:                 Utiliza una distribución de Linux (por ejemplo, Ubuntu Server, CentOS).
 
 
 ########################################################################################################
