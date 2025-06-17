@@ -4,7 +4,7 @@
 
 ------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------
-[🪟 COMANDOS DE REDES]::
+[🪟 COMANDOS POWERSHELL DE REDES]::
 # Desde CMD:
 ping -a <dirección_ip o host>                    # realiza un ping mostrando su hostname.
 nslookup <dirección_ip>                          # resuelve una dirección IP a un nombre de dominio (host), consultando el servidor DNS.
