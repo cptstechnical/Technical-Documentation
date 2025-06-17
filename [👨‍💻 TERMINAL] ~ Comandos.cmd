@@ -22,9 +22,29 @@ nslookup
 lsblk
 command -v <comando>
 
+------------------------------------------------------------------------------------------------------
+[COMPRESIÓN]:
+## los parámetros tienen que ir en orden, este comando hace de tar y de gzip
+tar -czvf prueba.tar.gz comprimir/
+tar -xzvf prueba.tar.gz
 
+  -c = crear
+  -z = gzip (comprimir)
+  -v = verbose (opcional)
+  -f prueba.tar.gz = archivo destino
 
+  -x = extraer
 
+-
+
+## tar: comando de linux para juntar varios archivos y carpetas en un solo archivo (sin compresión)
+tar -cvf prueba.tar comprimir/
+
+## gzip: para comprimir un único archivo
+gzip prueba.tar
+# prueba.tar.gz
+
+# con el primer comando me evito hacer estos dos últimos comandos, ya que lo hago todo en un único comando
 
 ------------------------------------------------------------------------------------------------------
 [SSL/TLS]:
