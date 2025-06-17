@@ -11,22 +11,38 @@ ipconfig /flushdns
 ======================================================================================================
 ======================================================================================================
 [👨‍💻 LINUX]::
-ln -s <RUTA_ARCHIVO> <RUTA_SIMBOLO>              # enlace simbólico (soft link): archivos simbolicos
-ln                                               # enlace duro (hard link): 
-top
-htop
-vmstat
-iostat
-dig
-nslookup
-lsblk
-command -v <comando>
+
+ln -s <RUTA_ARCHIVO> <RUTA_SIMBOLO>    # enlace simbólico (soft link): apunta a otro archivo o directorio
+ln <ORIGEN> <DESTINO>                  # enlace duro (hard link): enlace físico al mismo inode
+
+top                                    # Monitorizar procesos en tiempo real. Ej: top
+htop                                   # Monitorizar procesos (mejorado, interactivo). Ej: htop
+vmstat                                 # Estadísticas de memoria, procesos, I/O. Ej: vmstat 1
+iostat                                 # Estadísticas de CPU y discos. Ej: iostat -xz 1
+dig <DOMINIO>                          # Consultas DNS avanzadas. Ej: dig google.com
+nslookup <DOMINIO>                     # Consultas DNS básicas. Ej: nslookup google.com
+lsblk                                  # Mostrar discos y particiones. Ej: lsblk
+command -v <COMANDO>                   # Ver ruta o existencia de un comando. Ej: command -v bash
+
+netstat                                # Ver conexiones, puertos abiertos (deprecated). Ej: netstat -tuln
+ss                                     # Ver conexiones, puertos abiertos (moderno). Ej: ss -tunlp
+
+traceroute <HOST>                      # Rutas hacia un destino. Ej: traceroute google.com
+mtr <HOST>                             # Combina ping + traceroute. Ej: mtr 8.8.8.8
+
+wget <URL>                             # Descargar archivos. Ej: wget https://example.com
+ethtool <INTERFAZ>                     # Ver/gestionar parámetros de interfaces. Ej: ethtool eth0
+iperf3                                 # Medir ancho de banda entre 2 equipos. Ej: iperf3 -s / iperf3 -c <host>
+arp -a                                 # Ver tabla ARP. Ej: arp -a
+route                                  # Ver tabla de rutas (deprecated, usa ip route). Ej: route -n
+ip route                               # Mostrar rutas de red (reemplazo de route). Ej: ip route
+
 
 ------------------------------------------------------------------------------------------------------
 [COMPRESIÓN]:
 ## los parámetros tienen que ir en orden, este comando hace de tar y de gzip
-tar -czvf prueba.tar.gz comprimir/
-tar -xzvf prueba.tar.gz
+tar -czvf prueba.tar.gz comprimir/     # crea el archivo tar y lo comprime con gzip
+tar -xzvf prueba.tar.gz                # descomprime el archivo tar siempre que haya sido comprimido con gzip, (si no a sido comprimido utilizo -xvf para descomprimirlo)
 
   -c = crear
   -z = gzip (comprimir)
