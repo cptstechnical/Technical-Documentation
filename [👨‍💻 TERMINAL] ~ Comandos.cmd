@@ -49,6 +49,46 @@ arp -a                                 # Ver tabla ARP. Ej: arp -a
 route                                  # Ver tabla de rutas (deprecated, usa ip route). Ej: route -n
 ip route                               # Mostrar rutas de red (reemplazo de route). Ej: ip route
 
+hostnamectl                      # Ver o cambiar el hostname del sistema
+uname -a                         # Mostrar info completa del kernel/SO
+uptime                           # Tiempo encendido + carga del sistema
+df -h                            # Uso de espacio en disco (formato legible)
+du -sh <DIR>                     # Tamaño de un directorio específico
+ps aux                           # Ver procesos en ejecución
+kill <PID>                       # Terminar proceso por PID
+pkill <NOMBRE>                   # Terminar proceso por nombre
+journalctl                       # Ver logs del sistema (systemd)
+dmesg                            # Mensajes del kernel (útil para hardware)
+
+lsof -i                          # Ver procesos usando puertos/red
+who                              # Ver usuarios conectados
+id <USUARIO>                     # Ver UID/GID de usuario
+groups <USUARIO>                 # Grupos de un usuario
+adduser <USUARIO>                # Crear usuario (Debian)
+useradd <USUARIO>                # Crear usuario (RHEL)
+passwd <USUARIO>                 # Cambiar contraseña
+
+scp <archivo> user@host:/ruta/   # Copiar archivos por SSH (no copia los usuario, permisos etc)
+rsync -av <origen> <destino>     # Sincronizar directorios (copia y mantiene todo)
+ssh <user>@<host>                # Conectarse por SSH
+screen                           # Crear sesiones persistentes
+tmux                             # Multiplexor de terminal (mejor que screen)
+
+iptables -L                      # Ver reglas de firewall
+ufw status                       # Estado del firewall (Ubuntu)
+firewalld-cmd --list-all         # Estado de firewalld (CentOS/RHEL)
+
+nc -lvp <PUERTO>                 # Escuchar puerto TCP con netcat
+curl ifconfig.me                 # Ver IP pública
+
+ip link                          # Ver interfaces de red
+ip addr                          # Ver IPs asignadas
+ip r                             # Ver tabla de rutas
+
+file <archivo>                   # Ver tipo de archivo
+md5sum <archivo>                 # Calcular hash MD5
+sha256sum <archivo>              # Calcular hash SHA-256
+
 
 ------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------
