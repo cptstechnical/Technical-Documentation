@@ -1,6 +1,10 @@
 ======================================================================================================
 ======================================================================================================
 [👨‍💻 WINDOWS]::
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+[🪟 COMANDOS DE REDES]::
 # Desde CMD:
 ping -a <dirección_ip o host>                    # realiza un ping mostrando su hostname.
 nslookup <dirección_ip>                          # resuelve una dirección IP a un nombre de dominio (host), consultando el servidor DNS.
@@ -8,10 +12,18 @@ netstat                                          # muestra las conexiones de red
 arp -a                                           # muestra la tabla ARP (Address Resolution Protocol) que asocia direcciones IP con direcciones MAC en la red local.
 ipconfig /flushdns
 
+
+
+
+
+
 ======================================================================================================
 ======================================================================================================
 [👨‍💻 LINUX]::
 
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+[🐧 COMANDOS ÚTILES]::
 ln -s <RUTA_ARCHIVO> <RUTA_SIMBOLO>    # enlace simbólico (soft link): apunta a otro archivo o directorio
 ln <ORIGEN> <DESTINO>                  # enlace duro (hard link): enlace físico al mismo inode
 
@@ -39,7 +51,8 @@ ip route                               # Mostrar rutas de red (reemplazo de rout
 
 
 ------------------------------------------------------------------------------------------------------
-[COMPRESIÓN]:
+------------------------------------------------------------------------------------------------------
+[🐧 COMPRESIÓN]:
 ## los parámetros tienen que ir en orden, este comando hace de tar y de gzip
 tar -czvf prueba.tar.gz comprimir/     # crea el archivo tar y lo comprime con gzip
 tar -xzvf prueba.tar.gz                # descomprime el archivo tar siempre que haya sido comprimido con gzip, (si no a sido comprimido utilizo -xvf para descomprimirlo)
@@ -62,18 +75,23 @@ gzip prueba.tar
 
 # con el primer comando me evito hacer estos dos últimos comandos, ya que lo hago todo en un único comando
 
-------------------------------------------------------------------------------------------------------
-[SSL/TLS]:
-openssl s_client -connect <IP>:443               # muestra información sobre el SSL/TLS
 
 ------------------------------------------------------------------------------------------------------
-[Comandos de archivos]:
+------------------------------------------------------------------------------------------------------
+[🐧 SSL/TLS]:
+openssl s_client -connect <IP>:443               # muestra información sobre el SSL/TLS
+
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+[🐧 ARCHIVOS]:
 lsattr                                            # para buscar los archivos de un sistema de archivos (i: Inmutable, a: Adjuntable, d: No se puede eliminar, s: Seguridad).
 chattr -i Carpeta/                                # cambiar los atributos de los archivos en un sistema de archivos.
 lsof | grep "Gestión de clientes"                 # muestra una lista de archivos abiertoa.
 
 
-======================================================================================================
-[👨‍💻 PAQUETES DE INSTALACIÓN EN LINUX]::
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+[🐧 PAQUETES DE INSTALACIÓN EN LINUX]::
 Greenbone                                         # https://greenbone.github.io/ : Plataforma integral de gestión y escaneo de vulnerabilidades de red con base de datos propia y soporte para múltiples sistemas.
 Vuls                                              # https://vuls.io/ : Herramienta ligera y automatizada de escaneo de vulnerabilidades enfocada en sistemas Linux/Unix usando datos públicos externos.
