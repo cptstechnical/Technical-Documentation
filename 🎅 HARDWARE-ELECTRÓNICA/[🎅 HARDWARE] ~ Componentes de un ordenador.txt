@@ -171,7 +171,6 @@ Otras propiedades importantes:
 `FSR` = Super resolution. Tecnología de reescalado de imagen, prolonga la vida útil del producto.
 `Radeon Rays` = Tecnología de trazado de rayos AMD, permite gráficos realistas de luces, sombras y reflejos en videojuegos. Requiere serie 6 (6.000) o superior.
 
----
 
 ########################################################################################################################################
 #########################################[ ALMACENAMIENTO - DISCO DURO Y SSD ]##########################################################
@@ -287,6 +286,16 @@ SSD = Dispositivo de almacenamiento sin partes móviles, basado en tecnología f
 
 `TRIM` = Mantenimiento de la unidad SSD que optimiza el rendimiento y la durabilidad al limpiar bloques de memoria no utilizados.
 `TBW (Terabytes Escritos)` = Indicador de durabilidad de la unidad, relevante para usuarios que manejan grandes volúmenes de datos.
+
+
+Discos SSD (NVMe o SATA) externos (por USB):
+*************************************************************
+SATA SSD por USB 3.0/3.1 → Velocidad real: 400-500 MB/s aprox.
+NVMe por USB 3.2 Gen2 (10Gbps) → Velocidad real: 700-1000 MB/s.
+NVMe por Thunderbolt 3/4 o USB4 → Velocidad real: 1500-2800 MB/s o más (pero necesitas puerto compatible).
+
++ Si se va a usar con USB 3.0/3.1 normal, NO compensa pagar por NVMe → estarás limitado al ancho de banda del USB (~500 MB/s).
+
 
 ########################################################################################################################################
 #########################################[ RAM - MEMORIA DE ACCESO ALEATORIO ]##########################################################
