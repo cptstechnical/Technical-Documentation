@@ -72,7 +72,7 @@ scp <archivo> user@host:/ruta/   # Copiar archivos por SSH (no copia los usuario
 rsync -av <origen> <destino>     # Sincronizar directorios (copia y mantiene todo)
 ssh <user>@<host>                # Conectarse por SSH
 screen                           # Crear sesiones persistentes
-tmux                             # Multiplexor de terminal (mejor que screen)
+tmux                             # Multiplexor de terminal (mejor que screen, aconsejable utilizando interface grafica)
 
 iptables -L                      # Ver reglas de firewall
 ufw status                       # Estado del firewall (Ubuntu)
