@@ -1,0 +1,48 @@
+=======[❌ CREAR MÁQUINA VIRTUAL ]==================================================================
+# buena práctica para mejor visualización
+⚙️ > Sort Key: Name
+
+# creo una nueva máquina virtual
+sobre el Node indicado > Create VM
+
+# Ajustes al crear la máquina:
+---------------------------------------------------------
+- General:
+********************
+Name: ----
+
+- OS:
+********************
+Storage: Synology (para producción) | local (para pruebas o desarrollo)
+OS: (selecciono la última versión de cada S.O)
+
+- System:
+********************
+
+- Disk:
+********************
+[x] Avanced
+Bus/Devicec: SATA | 0
+Storage: Synology (para producción) | local (para pruebas o desarrollo)
+Disk Size: 40 GiB (o los necesarios)
+Cache: Write Back
+[x] SSD emulation
+
+- CPU:
+********************
+# es recomendable poner un socket y varios cores
+Sockets: 1 
+Cores: 4
+
+- Memory:
+********************
+Memory (MiB): 2048 (o los que sean necesarios) 
+
+- Network:
+********************
+Bridge: vmbr0
+VLAN Tag: (el tag de vlan correspondiente no la vlan de red)
+Model: 
+---------------------------------------------------------
+
+
