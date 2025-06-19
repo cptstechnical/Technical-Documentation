@@ -1,1 +1,36 @@
+=======================================================================================
+[📩COMANDOS UTILES]:
+
+# ver cola de correo pendiente
+postqueue -p
+
+# forzar envío de la cola de correo
+postqueue -f
+
+# test de entrega local
+sendmail -v usuario@localhost
+
+# comprobar configuración de Postfix
+postconf
+
+# eliminar un correo de la cola (usando el ID del mensaje)
+postsuper -d <ID_mensaje>
+
+# vaciar toda la cola de correos
+postsuper -d ALL
+
+# logs
+tail -f /var/log/mail.log
+
+# administra la cola de correo a bajo nivel (⚠️ cuidado al utilizarlo)
+postsuper -d <ID>       # eliminar mensaje
+postsuper -d ALL        # limpiar cola completa
+
+
+=======================================================================================
+[Filtros SPF/DKIM/DMARC]:
+
+# SPF       → ¿El servidor está autorizado a enviar?
+# DKIM      → ¿El correo fue manipulado?
+# DMARC     → ¿Qué hacer si falla SPF/DKIM?
 
