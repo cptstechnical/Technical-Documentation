@@ -48,7 +48,7 @@ Por sistema operativo:
         |							 |
         |							 |
         |							 |
-        |							 |
+        |                            |
         |							 |
         |							 |
         |							 |
