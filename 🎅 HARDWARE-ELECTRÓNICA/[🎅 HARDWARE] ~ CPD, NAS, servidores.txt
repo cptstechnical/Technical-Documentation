@@ -33,8 +33,8 @@ Por sistema operativo:
 (+) - Ethernet de gestión (PROXMOX)    : Esta conexión se utiliza para la gestión del servidor a través de la red. Permite a los administradores gestionar el servidor y sus recursos a través de herramientas de software de gestión, como sistemas de monitoreo y administración de redes.
 (+) - Ethernet de red                  : Este es el puerto de red principal que se utiliza para la comunicación normal del servidor con otros dispositivos en la red, como otros servidores, estaciones de trabajo y dispositivos de almacenamiento.
 
-# servidor de backups:
-se instalan las dos tomas ethernet en bounding.
+# Synology de backups:
+se instalan las dos tomas ethernet en bounding, para conseguir (HA o alta disponibilidad), (Load balancing o Distribuye el tráfico entre interfaces, mejorando el rendimiento), Mejor rendimiento en backups,  .
 
 # switch de CPD:
 se conecta la boca de ethernet a la primera y luego de manera ordenada cada ethernet a una distinta
