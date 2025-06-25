@@ -37,8 +37,15 @@ Por sistema operativo:
 se instalan las dos tomas ethernet en bounding, para conseguir (HA o alta disponibilidad), (Load balancing o Distribuye el tráfico entre interfaces, mejorando el rendimiento), Mejor rendimiento en backups,  .
 
 # switch de CPD:
-se conecta la boca de ethernet a la primera y luego de manera ordenada cada ethernet a una distinta
-
+# se conecta la boca de ethernet a la primera y luego de manera ordenada cada ethernet a una distinta
+2 - Servidor 1 (KVM)            10 - Servidor 3 (red)
+3 - Servidor 1 (PROXMOX)        11 - 
+4 - Servidor 1 (red)            12 - 
+5 - Servidor 2 (KVM)            13 - Ethernet red (Synology · backups)
+6 - Servidor 2 (PROXMOX)        14 - Ethernet red (Synology · backups)
+7 - Servidor 2 (red)            15 -
+8 - Servidor 3 (KVM)            16 -
+9 - Servidor 3 (PROXMOX)        17 - 
 
 ########################################################################################################
 ********************************************************************************************************
