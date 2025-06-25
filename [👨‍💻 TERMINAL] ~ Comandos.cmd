@@ -12,6 +12,11 @@ netstat                                          # muestra las conexiones de red
 arp -a                                           # muestra la tabla ARP (Address Resolution Protocol) que asocia direcciones IP con direcciones MAC en la red local.
 ipconfig /flushdns
 
+# ip | dns
+ipconfig /release                                # Libera la IP actual del adaptador. Úsalo para desconectar la red o resetear configuración de red.
+ipconfig /renew                                  # Solicita una nueva IP al servidor DHCP. Úsalo tras release o para forzar nueva IP.
+
+ipconfig /flushdns                               # Limpia la caché DNS local. Úsalo si hay errores de resolución de nombres.
 
 
 
