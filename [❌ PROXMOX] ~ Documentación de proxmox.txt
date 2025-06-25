@@ -5,6 +5,10 @@
 # creo una nueva máquina virtual
 sobre el Node indicado > Create VM
 
+# para crear una máquina virtual o contenedor es recomendable hacerlo desde:
+local-lvm
+
+
 # Ajustes al crear la máquina:
 ---------------------------------------------------------
 - General:
