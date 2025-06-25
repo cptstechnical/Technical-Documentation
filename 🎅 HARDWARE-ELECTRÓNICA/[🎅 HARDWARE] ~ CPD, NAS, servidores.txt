@@ -28,32 +28,16 @@ Por sistema operativo:
 =======================================================================================================
 [🔥🧑‍🚀 ETHERNET DE SERVIDORES]:
 ********************************
+# tiene tres tomas ethernet
 (+) - Ethernet de iDRAC (KVM)          : Para la gestión remota del servidor. Los administradores pueden acceder incluso si el sistema no funciona. Proporciona funciones como la monitorización del hardware, la gestión de energía y la capacidad de realizar actualizaciones de firmware.
 (+) - Ethernet de gestión (PROXMOX)    : Esta conexión se utiliza para la gestión del servidor a través de la red. Permite a los administradores gestionar el servidor y sus recursos a través de herramientas de software de gestión, como sistemas de monitoreo y administración de redes.
 (+) - Ethernet de red                  : Este es el puerto de red principal que se utiliza para la comunicación normal del servidor con otros dispositivos en la red, como otros servidores, estaciones de trabajo y dispositivos de almacenamiento.
 
+# servidor de backups:
+se instalan las dos tomas ethernet en bounding.
 
-[🔥🧑‍🚀 SERVIDOR]:
-********************************
-        
-                                
-        +----------------------------+
-        |					   + + + | 
-        +----------------------------+
-        |							 |
-        |							 |
-        |							 |
-        |							 |
-        |							 |
-        |							 |
-        |							 |
-        |							 |
-        |                            |
-        |							 |
-        |							 |
-        |							 |
-        +----------------------------+
-
+# switch de CPD:
+se conecta la boca de ethernet a la primera y luego de manera ordenada cada ethernet a una distinta
 
 
 ########################################################################################################
