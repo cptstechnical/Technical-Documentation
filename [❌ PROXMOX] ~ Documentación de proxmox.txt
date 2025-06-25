@@ -40,7 +40,7 @@ Cores: 4
 
 - Memory:
 ********************
-Memory (MiB): 2048 (o los que sean necesarios) 
+Memory (MiB): 2048 (o los que sean necesarios, en este caso 2GB) 
 
 - Network:
 ********************
