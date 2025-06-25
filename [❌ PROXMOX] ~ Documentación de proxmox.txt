@@ -12,18 +12,19 @@ local-lvm
 # Ajustes al crear la máquina:
 Create VM
 ------------------------------------------------------------------------------
-*********************************************************
-- General:
++ General:
 *********************************************************
 Name: ~
-*********************************************************
-- OS:
+_
++ OS:
 *********************************************************
 Storage: Synology (para producción) | local (para pruebas o desarrollo)
 OS: (selecciono la última versión de cada S.O)
-- System:
+_
++ System:
 *********************************************************
-- Disk:
+_
++ Disk:
 *********************************************************
 Bus/Devicec: SATA | 0
 Storage: Synology (para producción) | local (para pruebas o desarrollo)
@@ -32,18 +33,18 @@ Cache: Write Back
 [x] Avanced
 ~
 [x] SSD emulation
-*********************************************************
-- CPU:
+_
++ CPU:
 *********************************************************
 # es recomendable poner un socket y varios cores
 Sockets: 1 
 Cores: 4
-*********************************************************
-- Memory:
+_
++ Memory:
 *********************************************************
 Memory (MiB): 2048 (o los que sean necesarios, en este caso 2GB | 4096 = 4GB) 
-*********************************************************
-- Network:
+_
++ Network:
 *********************************************************
 Bridge: vmbr0
 VLAN Tag: (el tag de vlan correspondiente no la vlan de red)
