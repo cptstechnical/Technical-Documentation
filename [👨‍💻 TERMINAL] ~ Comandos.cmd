@@ -74,7 +74,7 @@ useradd <USUARIO>                # Crear usuario (RHEL)
 passwd <USUARIO>                 # Cambiar contraseña
 
 scp <archivo> user@host:/ruta/   # Copiar archivos por SSH (no copia los usuario, permisos etc)
-rsync -av <origen> <destino>     # Sincronizar directorios (copia y mantiene todo)
+rsync -av <origen> <destino>     # Sincronizar directorios (copia y mantiene todo), este es un ejemplo es mejor utilizar el comando de abajo
 ssh <user>@<host>                # Conectarse por SSH
 screen                           # Crear sesiones persistentes
 tmux                             # Multiplexor de terminal (mejor que screen, aconsejable utilizando interface grafica)
