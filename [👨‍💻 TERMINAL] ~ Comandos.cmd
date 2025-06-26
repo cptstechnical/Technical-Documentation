@@ -145,5 +145,4 @@ lsof | grep "Gestión de clientes"                 # muestra una lista de archiv
 ------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------
 [🐧 PAQUETES DE INSTALACIÓN EN LINUX]::
-Greenbone                                         # https://greenbone.github.io/ : Plataforma integral de gestión y escaneo de vulnerabilidades de red con base de datos propia y soporte para múltiples sistemas.
 Vuls                                              # https://vuls.io/ : Herramienta ligera y automatizada de escaneo de vulnerabilidades enfocada en sistemas Linux/Unix usando datos públicos externos.
