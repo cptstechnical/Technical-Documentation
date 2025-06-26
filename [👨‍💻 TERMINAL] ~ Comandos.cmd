@@ -94,6 +94,10 @@ file <archivo>                   # Ver tipo de archivo
 md5sum <archivo>                 # Calcular hash MD5
 sha256sum <archivo>                                                    # Calcular hash SHA-256
 
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+[🐧 MIGRAR CONTENIDO]:
 rsync -avzc /ruta/origen/ usuario@ip_destino:/ruta/destino/            # manera adecuada para mantener la integridad de los archvios respetando todas las opciones, usuario, permisos, hardlinks...
 scp -r /ruta/local/dir usuario@ip_destino:/ruta/remota/                # no preserva usuarios, grupos ni permisos... como lo hace rsync
 
