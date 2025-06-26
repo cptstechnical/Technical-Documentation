@@ -92,7 +92,9 @@ ip r                             # Ver tabla de rutas
 
 file <archivo>                   # Ver tipo de archivo
 md5sum <archivo>                 # Calcular hash MD5
-sha256sum <archivo>              # Calcular hash SHA-256
+sha256sum <archivo>                                                    # Calcular hash SHA-256
+
+rsync -avzc /ruta/origen/ usuario@ip_destino:/ruta/destino/            # manera adecuada para mantener la integridad de los archvios respetando todas las opciones, usuario, permisos, hardlinks...
 
 
 ------------------------------------------------------------------------------------------------------
