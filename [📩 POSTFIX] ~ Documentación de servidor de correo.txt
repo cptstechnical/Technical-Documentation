@@ -1,4 +1,11 @@
 =======================================================================================
+[📩Filtros SPF/DKIM/DMARC]:
+
+# SPF       → ¿El servidor está autorizado a enviar?
+# DKIM      → ¿El correo fue manipulado?
+# DMARC     → ¿Qué hacer si falla SPF/DKIM?
+
+=======================================================================================
 [📩COMANDOS UTILES]:
 
 # ver cola de correo pendiente
@@ -43,10 +50,5 @@ grep "JVBERi0xLjQKJdP0zOEKMSAwIG9iago8PAovQ3JlYXRpb25EYXRlKEQ6MjAyNTA2MjcwNDMwND
 # copio el archivo por el nombre otra vez a la carpeta /new "para volverlo a recibir"
 mv 1751014332.M583233P1218151.correo.dominio.es\,S\=2273911\,W\=2303772\:2\,S ../new/
 
-=======================================================================================
-[Filtros SPF/DKIM/DMARC]:
 
-# SPF       → ¿El servidor está autorizado a enviar?
-# DKIM      → ¿El correo fue manipulado?
-# DMARC     → ¿Qué hacer si falla SPF/DKIM?
 
