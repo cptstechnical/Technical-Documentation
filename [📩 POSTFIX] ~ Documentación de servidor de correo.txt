@@ -50,7 +50,10 @@ tail -100 1751014332.M583233P1218151.correo.dominio.es,S=2273911,W=2303772:2,S
 #    ....
 
 # copio el archivo por el nombre otra vez a la carpeta /new "para volverlo a recibir"
-mv 1751014332.M583233P1218151.correo.dominio.es\,S\=2273911\,W\=2303772\:2\,S ../new/
+# mv 1751014332.M583233P1218151.correo.dominio.es\,S\=2273911\,W\=2303772\:2\,S ../new/
+# lo muevo y le cambio el nombre para que lo lea como nuevo, aún así lo recibirá a la hora que lo envíoo el cliente
+mv 1751014332.M583233P1218151.correo.grafometal.es,S=2273911,W=2303772:2,S ../new/$(date +%s).M$$.manual:2,S
+
 
 # al copiar el archivo de nuevo a la carpeta /new se volverá a enviar pero no como nuevo correo si no como un correo enviado a la misma hora que la del correo corrupto
 
