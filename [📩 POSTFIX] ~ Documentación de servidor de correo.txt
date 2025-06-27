@@ -26,8 +26,14 @@ tail -f /var/log/mail.log
 postsuper -d <ID>       # eliminar mensaje
 postsuper -d ALL        # limpiar cola completa
 
+=======================================================================================
+[📩REENVIAR UN CORREO MAL ENCRIPTADO]:
+
 # ver correos en vivo sin entrar al webmail
-cd /var/vmail/grafometal.es/
+cd /var/vmail/grafometal.es/<usuario>/Maildir/
+#    ~ /cur   : [actuales] son los correos que han sido enviados.
+#    ~ /new   : [nuevos] son los correos que aún no han sido descargados desde el cliente (Enviar y Recibir correo).
+#    ~ /tmp   : [temporales] almacena archivos temporales durante la entrega del correo; si falla, se eliminan automáticamente.
 
 # busco el correo que es por archivo o por el inicio del correo
 cd /var/vmail/grafometal.es/<usuario>/Maildir/cur
