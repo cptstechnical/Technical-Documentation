@@ -1,0 +1,63 @@
+========================================================================================================
+[👺 Agregar un servidor]::
+## para editas los graficos referentes a cada Management:
+***********************************************************
+Management > Data Sources > Device: <NOMBRE_DEL_MANAGEMENT> > click > *Edit Graph: <Management>
+
+## para agregar un Management (Servidor):
+***********************************************************
+# 1 - creo el dispositivo
+# creo un dispositivo guiandome en otro parecido, lo importante es la IP y el SNMP  
+Managemente > Device > + 
+
+# 2 - vinculo los SNMP para poder monitorizar las particiones
+- Una vez creado lo busco por Managemente > Device
+- Entro en el dispositivo
+- busco "Associated Data Queries" y creo los siguientes:
+	+ SNMP - Get Mounted Partitions							# particiones montadas en un dispositivo
+	+ SNMP - Get Processor Information						# CPU, procesador, frecuencia, núcleos...
+	+ SNMP - Interface Statistics							# estadísticas de interfaces
+
+- save 
+
+# 3 - selecciono las particiones que quiero monitorizar
+- Pulso en SNMP - Interface Statistics 
+- selecciono las unidades que importan desde "Data Query [SNMP - Get Mounted Partitions]" en este caso: 
+	+ /
+	+ /var
+	+ /boot
+	+ Physical memory
+	+ Virtual memory
+
+- save
+	
+# 4 - agrego en los gráficos
+- Management > Trees 
+- selecciono el padre que quiero agregar el servidor en mi caso "servidores"
+- (desplazo los graficos creados)
+- save
+
+## para agregar un Management (esp):
+***********************************************************
+# 1 - creo el dispositivo
+# creo un dispositivo guiandome en otro parecido, lo importante es la IP y el SNMP  
+Managemente > Device > + 
+
+# 2 - vinculo los SNMP para poder monitorizar las particiones
+> Associated data queries > Data query name > SNMP - Interface Statistics
+> Create Graphs for this device
+
+# tengo un problema no planteado :
+# Mi ESP32 solo expone la MIB RFC1213 mínima (parte de .1.3.6.1.2.1.1.x) y una MIB custom bajo .1.3.6.1.4.1.8266..., pero NO implementa la tabla de interfaces SNMP (.1.3.6.1.2.1.2.2), que es la que Cacti usa por defecto para detectar dispositivos con el SNMP Query interface.xml
+
+# es por esto que tengo que agregar el gráfico a mano:
+> New Graph Template > SNMP - Generic OID Template > Create
+# relleno con los datos y muy importante rellenand el OID
+# para comprobar el OID voy al servidor de cacti y : snmpwalk -v2c -c <COMUNITY> <IP> <OID_SNMP>
+
+	COLORES::
+	------------------------------------
+	> Cyan:		Cacti Color (00BED9)
+	> Azul:		Cacti Color (2175D9)
+	> Verde:	Cacti Color (7EE600)
+	> Rojo:		Cacti Color (FF5576)
