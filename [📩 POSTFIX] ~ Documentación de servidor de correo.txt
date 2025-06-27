@@ -26,6 +26,15 @@ tail -f /var/log/mail.log
 postsuper -d <ID>       # eliminar mensaje
 postsuper -d ALL        # limpiar cola completa
 
+# ver correos en vivo sin entrar al webmail
+cd /var/vmail/grafometal.es/
+
+# busco el correo que es por archivo o por el inicio del correo
+cd /var/vmail/grafometal.es/<usuario>/Maildir/cur
+grep "JVBERi0xLjQKJdP0zOEKMSAwIG9iago8PAovQ3JlYXRpb25EYXRlKEQ6MjAyNTA2MjcwNDMwNDU" 175101*
+
+# copio el archivo otra vez a la cola de "para recibir"
+mv 1751014332.M583233P1218151.correo.grafometal.es\,S\=2273911\,W\=2303772\:2\,S ../new/
 
 =======================================================================================
 [Filtros SPF/DKIM/DMARC]:
