@@ -4,11 +4,34 @@
 # 1 - crea un nuevo dispositivo (limpio)
 # 2 - crea graficos
 # 3 - para crear graficos los hace a través de plantillas hay dos opciones:
-#	a ~ elegir una plantilla para el grafico: este caso se suele utilizar para crear un gráfico de un OID en concreto con 
+#	a ~ elegir una plantilla para el grafico: este caso se suele utilizar para crear un gráfico de un OID en concreto
 #	    🚨 [Devices > New Graph Template > SNMP - Generic OID Template > One Deciamls o Two Decimals > min:0 max:u OID:X.X.X.X]
-#	b ~ elegir una plantilla para el dispositivo: este caso se suele utilizar para monitorizar discos... etc. (crear y busca los automáticamente los espacios... etc)
+#	b ~ elegir una plantilla para el dispositivo: este caso se suele utilizar para monitorizar discos, particiones... etc. (crear y busca automáticamente los espacios... etc para luego asignar de qué quiero un grafico)
 #	    🚨 [Devices > Associated Data Queries > Net-SNMP - Get Monitored Partitions > add]
 
+
+# Esquema resumido de la lógica de Cacti: 
+
++-------------------+           +------------------+
+|                   |           |                  |
+|   Data Source     +---------->+ Associated       |			# Data Source: Es la entidad principal que define qué datos se monitorean.	
+|                   |           | Data Queries     |			# Associated Data Queries: Especifica cómo se obtienen los datos para una Data Source.
++-------------------+           +------------------+			# Graph Template: Define cómo se visualizan los datos en un gráfico.
+          |                               ^				# Associated Graph Templates: Asocia una plantilla de gráfico específica a una Data Source para la visualización de los datos.		
+          |                               |
+          v                               |
++-------------------+           +------------------+
+|                   |           |                  |
+|   Graph Template  +---------->+ Associated       |
+|                   |           | Graph Templates  |
++-------------------+           +------------------+
+
+# Interface web
+# Management - Desde aquí agrego todo lo necesario (dispositivos, arboles, sitios...).
+# Templates - Desde aquí configuro las necesidades generales del template utilizado.
+# Import/Export - Desde aquí voy a importar y exportar los templates que necesite del servidor antiguo al nuevo.
+# Configuration / Settings - Desde aquí voy a configurar las opciones que permanecen por sesion.
+# Logged is admin / Edit profile - Desde aquí voy a configurar las opciones del usuario. 
 
 ========================================================================================================
 [👺 Agregar un servidor]::
