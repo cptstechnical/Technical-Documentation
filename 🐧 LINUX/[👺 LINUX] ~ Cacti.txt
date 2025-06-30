@@ -16,7 +16,7 @@
 **************************************************************************
 Management > Data Sources > Device: <NOMBRE_DEL_MANAGEMENT> > click > *Edit Graph: <Management>
 
-## 🚨 para agregar un Servidor · [snmp preestablecidos]:
+## 🚨 a ~ para agregar un Servidor · [snmp preestablecidos]:
 **************************************************************************
 # 1 - creo el dispositivo
 # creo un dispositivo guiandome en otro parecido, lo importante es la IP y el SNMP  
@@ -49,7 +49,7 @@ Managemente > Device > +
 - (desplazo los graficos creados)
 - save
 
-## 🚨 para agregar un dispositivo (ej: esp) · [snmp único - OID directo]:
+## 🚨 b ~ para agregar un dispositivo (ej: esp32) · [snmp único - OID directo]:
 **************************************************************************
 # 1 - creo el dispositivo
 # creo un dispositivo guiandome en otro parecido, lo importante es la IP y el SNMP  
@@ -68,7 +68,7 @@ Managemente > Device > +
 # creo la gráfica
 > Create Graphs for this device
 
-# tengo un problema no planteado :
+# tengo un problema no planteado en esp:
 # Mi ESP32 solo expone la MIB RFC1213 mínima (parte de .1.3.6.1.2.1.1.x) y una MIB custom bajo .1.3.6.1.4.1.8266..., pero NO implementa la tabla de interfaces SNMP (.1.3.6.1.2.1.2.2), que es la que Cacti usa por defecto para detectar dispositivos con el SNMP Query interface.xml
 
 # agrego el gráfico de manera manual:
@@ -77,10 +77,14 @@ Managemente > Device > +
 > New Graph Template > SNMP - Generic OID Template > One Deciamls (ej: 500 o 500,0)
 > New Graph Template > SNMP - Generic OID Template > Two Deciamls (ej:500,07 o 500,90)
 
-# ⚠️ relleno con los datos y muy importante rellenand el OID
-Minimum Value ("U" for No Minimum): 0				# valor inicial 0
-Maximum Value ("U" for No Maximum): u				# valor inicial u
+# ⚠ relleno con los datos y muy importante rellenand el OID que quiero registrar
+⚠️ Minimum Value ("U" for No Minimum): 0			# valor inicial 0
+⚠️ Maximum Value ("U" for No Maximum): u			# valor inicial u, no le doy un máximo si no que lo registra de manera automática así no hay fallo...
 OID: .1.3.6.1.4.1.6...
+Data Source Type: GAUGE
+Vertical Label: Celsius
+Legend text: Temperature
+Auto scale options: Use --alt-autoscale (ignoring given limits)
 
 # para comprobar el OID voy al servidor de cacti y : 
 snmpwalk -v2c -c <COMMUNITY-SNMP> -Oneq <IP-SNMP> .1		# saca todos los snmp, [todos los que empiezan con 1.]. (cuidado con la memoria del servidor)
@@ -94,10 +98,11 @@ snmpwalk -v2c -c <COMUNITY> <IP> <OID_SNMP>			# saca el snmp del OID pasado por 
 	> Verde:	Cacti Color (7EE600)
 	> Rojo:		Cacti Color (FF5576)
 
-	COLORES iDRAC::
+	COLORES Temp iDRAC::
 	------------------------------------
-	> Cyan:		Cacti Color (00BED9)
-	> Azul:		Cacti Color (2175D9)
-	> Verde:	Cacti Color (7EE600)
-	> Rojo:		Cacti Color (FF5576)
+	> Rojo:		Chilli Pepper (C11B17)		# CPU Temp
+	> Naranja:	Cacti Color (FF9900)		# System Board Inlet Temp
+	> Rosa:		Cadillac Pink (E38AAE)		# System Board Exhaust Temp
+	
+	
 
