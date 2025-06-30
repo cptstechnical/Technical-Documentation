@@ -1,0 +1,114 @@
+========================================================================================================
+[👺 ¿como funciona?]::
+
+# 1 - Agregar host/ip :                           /etc/nagios/hosts
+# 2 - Agregar servicios/sripts :                  /etc/nagios/services
+# 3 - Archivos de configuración general :         
+#     a ~ archivo de scripts nagios               /etc/nagios/objects/commands.cfg
+#     b ~ archivo de contacto de notificaciones   /etc/nagios/objects/contacts.cfg
+#     c ~ archivo de tiempos                      /etc/nagios/objects/timeperiods.cfg
+
+========================================================================================================
+[👺 Agregar un hsot]::
+# cada grupo de host se almacena por archivo, en este caso servidores
+vim /etc/nagios/hosts/servidores.dfg
+---------------------------------------------------------------------
+# 🚨 agrego el host en define groups
+# Grupo de servidores
+define hostgroup{
+        hostgroup_name  servidores
+        alias           Servidores
+        members         servidor01, firewall01, <NOMBRE_HOST>
+        }
+
+...
+# 🚨 agrego el host
+ define host{
+        host_name               <NOMBRE_HOST>
+        alias                   <ALIAS_NUEVO_HOST>
+        address                 <IP_NUEVO_HOST>
+        check_command           check-host-alive
+        contact_groups          cpd-admins
+        max_check_attempts      5
+        notification_interval   60
+        notification_period     24x7
+        notification_options    d,u,r
+        }
+...
+---------------------------------------------------------------------
+
+========================================================================================================
+[👺 Agregar un servidor]::
+# una vez agregado el host del servicio qeu quiero monitorizar...
+# agrego los servicios que quiero gestionar en mi nuevo host
+vim /etc/nagios/hosts/servidores.dfg
+---------------------------------------------------------------------
+define service {
+        host_name                      <NOMBRE_HOST>
+        service_description            <NOMBRE_SERVICIO>    # SSH
+        check_command                  <SCRIPT_COMMANDS>    # check_tcp!22
+        max_check_attempts             3
+        check_interval                 5
+        retry_interval                 1
+        check_period                   24x7
+        notification_interval          60
+        notification_period            24x7
+        notification_options           w,u,c,r
+        contact_groups                 cpd-admins          # se define en /etc/nagios/objects/contacts.cfg
+        }
+
+define service {
+        host_name                      <NOMBRE_HOST>
+        service_description            <NOMBRE_SERVICIO>    # HDD ROOT
+        check_command                  <SCRIPT_COMMANDS>    # check_snmp_memory!<community_snmp>!/!80!90
+        max_check_attempts             3
+        check_interval                 5
+        retry_interval                 1
+        check_period                   24x7
+        notification_interval          60
+        notification_period            24x7
+        notification_options           w,u,c,r
+        contact_groups                 cpd-admins          # se define en /etc/nagios/objects/contacts.cfg
+        }
+---------------------------------------------------------------------
+
+========================================================================================================
+[👺 ver plugins disponibles o crear uno nuevo]::
+# los plugins se almacenan en la siguiente dirección
+cd /usr/lib/nagios/plugins
+ls
+
+# tambien puedo crear otro mismamente a través de .sh 
+# si creo uno nuevo tengo que asignarlo en commands
+
+# creo un nuevo "command nagios" a través del script que he desarrollado
+vim /etc/nagios/objects/commands.cfg
+---------------------------------------------------------------------
+...
+# 🚨 cuando vaya a definirlo tengo que pasarle todos los parámetros que puedo llegar a definir
+define command{
+        command_name    check_snmp_memory
+        command_line    $USER1$/check_snmp_memory.sh -H $HOSTADDRESS$ -C $ARG1$ -r $ARG2$ -w $ARG3$ -c $ARG4$
+        }
+...
+---------------------------------------------------------------------
+
+# ejecuto el script en services a través de los "command nagios" y no desde el propio script ya que no va a funcionar así... 
+vim /etc/nagios/services/servidores.cfg
+---------------------------------------------------------------------
+# 🚨 cuando lo asocio en check_command tengo que definir cada parámetro separandólo por "!"
+define service {
+        host_name                      <NOMBRE_HOST>
+        service_description            <NOMBRE_SERVICIO>    # MEMORY
+        check_command                  <SCRIPT_COMMANDS>    # check_snmp_memory!<community_snmp>!Virtual memory!80!90
+        max_check_attempts             3
+        check_interval                 5
+        retry_interval                 1
+        check_period                   24x7
+        notification_interval          60
+        notification_period            24x7
+        notification_options           w,u,c,r
+        contact_groups                 cpd-admins          # se define en /etc/nagios/objects/contacts.cfg
+        }
+---------------------------------------------------------------------
+
