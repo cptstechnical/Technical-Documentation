@@ -43,8 +43,8 @@ cd /var/vmail/grafometal.es/<usuario>/Maildir/
 #    ~ /tmp   : [temporales] almacena archivos temporales durante la entrega del correo; si falla, se eliminan automáticamente.
 
 # busco el correo que es por archivo o por el inicio del correo
-cd /var/vmail/grafometal.es/<usuario>/Maildir/cur
-grep "JVBERi0xLjQKJdP0zOEKMSAwIG9iago8PAovQ3JlYXRpb25EYXRlKEQ6MjAyNTA2MjcwNDMwNDU" 175101*
+cd cur
+grep "JVBERi0xLjQKJdP0zOEKMSAwIG9iago8PAovQ3JlYXRpb25EYXRlKEQ6MjAyNTA2MjcwNDMwNDU" 1751*
 #    1751014332.M583233P1218151.correo.dominio.es,S=2273911,W=2303772:2,S:JVBERi0xLjQKJdP0zOEKMSAwIG9iago8PAovQ3JlYXRpb25EYXRlKEQ6MjAyNTA2MjcwNDMwNDUt...
 tail -100 1751014332.M583233P1218151.correo.dominio.es,S=2273911,W=2303772:2,S
 #    ....
