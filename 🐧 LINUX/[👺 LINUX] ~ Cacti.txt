@@ -1,23 +1,23 @@
 ========================================================================================================
 [👺 ¿como funciona?]::
 
-# crear un nuevo dispositivo
-# desde aquí solo creo el dispositivo no la configuración
-Management > Devices > +
+# 1 - crea un nuevo dispositivo (limpio)
+# 2 - crea graficos
+# 3 - para crear graficos los hace a través de plantillas hay dos opciones:
+#	a ~ elegir una plantilla para el grafico: este caso se suele utilizar para crear un gráfico de un OID en concreto con 
+#	    🚨 [Devices > New Graph Template > SNMP - Generic OID Template > One Deciamls o Two Decimals > min:0 max:u OID:X.X.X.X]
+#	b ~ elegir una plantilla para el dispositivo: este caso se suele utilizar para monitorizar discos... etc. (crear y busca los automáticamente los espacios... etc)
+#	    🚨 [Devices > Associated Data Queries > Net-SNMP - Get Monitored Partitions > add]
 
-# para crear la configuración
-*Create Graphs for this Device
-
-# 
 
 ========================================================================================================
 [👺 Agregar un servidor]::
 ## para editas los graficos referentes a cada Management:
-***********************************************************************
+**************************************************************************
 Management > Data Sources > Device: <NOMBRE_DEL_MANAGEMENT> > click > *Edit Graph: <Management>
 
-## para agregar un Servidor · [snmp preestablecidos]:
-***********************************************************************
+## 🚨 para agregar un Servidor · [snmp preestablecidos]:
+**************************************************************************
 # 1 - creo el dispositivo
 # creo un dispositivo guiandome en otro parecido, lo importante es la IP y el SNMP  
 Managemente > Device > + 
@@ -49,8 +49,8 @@ Managemente > Device > +
 - (desplazo los graficos creados)
 - save
 
-## para agregar un dispositivo (ej: esp) · [snmp único - OID directo]:
-***********************************************************************
+## 🚨 para agregar un dispositivo (ej: esp) · [snmp único - OID directo]:
+**************************************************************************
 # 1 - creo el dispositivo
 # creo un dispositivo guiandome en otro parecido, lo importante es la IP y el SNMP  
 Managemente > Device > + 
