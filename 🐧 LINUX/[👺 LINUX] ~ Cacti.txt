@@ -12,26 +12,22 @@
 
 # Esquema resumido de la lógica de Cacti: 
 
-+-------------------+           +------------------+
-|                   |           |                  |
++-------------------+           +------------------+			# Definición de funcionalidad
+|                   |           |                  |			# --------------------------------------------------------------------------------------------------------------
 |   Data Source     +---------->+ Associated       |			# Data Source: Es la entidad principal que define qué datos se monitorean.	
 |                   |           | Data Queries     |			# Associated Data Queries: Especifica cómo se obtienen los datos para una Data Source.
 +-------------------+           +------------------+			# Graph Template: Define cómo se visualizan los datos en un gráfico.
           |                               ^				# Associated Graph Templates: Asocia una plantilla de gráfico específica a una Data Source para la visualización de los datos.		
           |                               |
           v                               |
-+-------------------+           +------------------+
-|                   |           |                  |
-|   Graph Template  +---------->+ Associated       |
-|                   |           | Graph Templates  |
-+-------------------+           +------------------+
++-------------------+           +------------------+			# Interface web
+|                   |           |                  |			# --------------------------------------------------------------------------------------------------------------
+|   Graph Template  +---------->+ Associated       |			# Management - Desde aquí agrego todo lo necesario (dispositivos, arboles, sitios...).
+|                   |           | Graph Templates  |			# Templates - Desde aquí configuro las necesidades generales del template utilizado.
++-------------------+           +------------------+			# Import/Export - Desde aquí voy a importar y exportar los templates que necesite del servidor antiguo al nuevo.
+									# Configuration / Settings - Desde aquí voy a configurar las opciones que permanecen por sesion.
+									# Logged is admin / Edit profile - Desde aquí voy a configurar las opciones del usuario. 
 
-# Interface web
-# Management - Desde aquí agrego todo lo necesario (dispositivos, arboles, sitios...).
-# Templates - Desde aquí configuro las necesidades generales del template utilizado.
-# Import/Export - Desde aquí voy a importar y exportar los templates que necesite del servidor antiguo al nuevo.
-# Configuration / Settings - Desde aquí voy a configurar las opciones que permanecen por sesion.
-# Logged is admin / Edit profile - Desde aquí voy a configurar las opciones del usuario. 
 
 ========================================================================================================
 [👺 Agregar un servidor]::
