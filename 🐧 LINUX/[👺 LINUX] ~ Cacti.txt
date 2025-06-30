@@ -1,11 +1,23 @@
 ========================================================================================================
+[👺 ¿como funciona?]::
+
+# crear un nuevo dispositivo
+# desde aquí solo creo el dispositivo no la configuración
+Management > Devices > +
+
+# para crear la configuración
+*Create Graphs for this Device
+
+# 
+
+========================================================================================================
 [👺 Agregar un servidor]::
 ## para editas los graficos referentes a cada Management:
-***********************************************************
+***********************************************************************
 Management > Data Sources > Device: <NOMBRE_DEL_MANAGEMENT> > click > *Edit Graph: <Management>
 
-## para agregar un Management (Servidor):
-***********************************************************
+## para agregar un Servidor · [snmp preestablecidos]:
+***********************************************************************
 # 1 - creo el dispositivo
 # creo un dispositivo guiandome en otro parecido, lo importante es la IP y el SNMP  
 Managemente > Device > + 
@@ -37,23 +49,43 @@ Managemente > Device > +
 - (desplazo los graficos creados)
 - save
 
-## para agregar un Management (esp):
-***********************************************************
+## para agregar un dispositivo (ej: esp) · [snmp único - OID directo]:
+***********************************************************************
 # 1 - creo el dispositivo
 # creo un dispositivo guiandome en otro parecido, lo importante es la IP y el SNMP  
 Managemente > Device > + 
+# en el caso de un iDRAC, lo configuro en modo ping (sin snmp)
+# > Availability/Reachability Options
+#	Downed Device Detection: Ping
+#	Ping Method: ICMP PING
+#	Ping Timeout Value: 400
+#	Ping Retry Count:1
 
 # 2 - vinculo los SNMP para poder monitorizar las particiones
-> Associated data queries > Data query name > SNMP - Interface Statistics
+# también puedo lanzar una plantilla para automatizar el proceso, pero si quiero agregar directamente un OID
+# > Associated data queries > Data query name > SNMP - Interface Statistics
+
+# creo la gráfica
 > Create Graphs for this device
 
 # tengo un problema no planteado :
 # Mi ESP32 solo expone la MIB RFC1213 mínima (parte de .1.3.6.1.2.1.1.x) y una MIB custom bajo .1.3.6.1.4.1.8266..., pero NO implementa la tabla de interfaces SNMP (.1.3.6.1.2.1.2.2), que es la que Cacti usa por defecto para detectar dispositivos con el SNMP Query interface.xml
 
-# es por esto que tengo que agregar el gráfico a mano:
+# agrego el gráfico de manera manual:
 > New Graph Template > SNMP - Generic OID Template > Create
-# relleno con los datos y muy importante rellenand el OID
-# para comprobar el OID voy al servidor de cacti y : snmpwalk -v2c -c <COMUNITY> <IP> <OID_SNMP>
+# con mis scritps
+> New Graph Template > SNMP - Generic OID Template > One Deciamls (ej: 500 o 500,0)
+> New Graph Template > SNMP - Generic OID Template > Two Deciamls (ej:500,07 o 500,90)
+
+# ⚠️ relleno con los datos y muy importante rellenand el OID
+Minimum Value ("U" for No Minimum): 0				# valor inicial 0
+Maximum Value ("U" for No Maximum): u				# valor inicial u
+OID: .1.3.6.1.4.1.6...
+
+# para comprobar el OID voy al servidor de cacti y : 
+snmpwalk -v2c -c <COMMUNITY-SNMP> -Oneq <IP-SNMP> .1		# saca todos los snmp, [todos los que empiezan con 1.]. (cuidado con la memoria del servidor)
+snmpwalk -v2c -c <COMMUNITY-SNMP> -On -Oeq <IP-SNMP> <OID>	# saca el snmp del OID pasado por parámetro
+snmpwalk -v2c -c <COMUNITY> <IP> <OID_SNMP>			# saca el snmp del OID pasado por parámetro
 
 	COLORES::
 	------------------------------------
@@ -61,3 +93,11 @@ Managemente > Device > +
 	> Azul:		Cacti Color (2175D9)
 	> Verde:	Cacti Color (7EE600)
 	> Rojo:		Cacti Color (FF5576)
+
+	COLORES iDRAC::
+	------------------------------------
+	> Cyan:		Cacti Color (00BED9)
+	> Azul:		Cacti Color (2175D9)
+	> Verde:	Cacti Color (7EE600)
+	> Rojo:		Cacti Color (FF5576)
+
