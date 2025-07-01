@@ -125,7 +125,24 @@ nat (src-nat, dst-nat):     Traducción de IP origen/destino (equivalente a SNAT
 mark:                       Marca paquetes para procesamiento posterior (similar a QUEUE o mangle en iptables).
 
 
+✅ punto de inicio o destino del tráfico:
+******************************************************************
+src-address: IP de origen del paquete (desde dónde viene).
+dst-address: IP de destino del paquete (a dónde va).
+# si las listas tienen el mismo nombre se complementan las reglas
+src-address-list: Lista de direcciones IP origen predefinidas por mi.        # ip firewall address-list
+dst-address-list: Lista de direcciones IP destino predefinidas por mi.       # ip firewall address-list
+
+
+
+
+
+
+
+
 
 
 =========================================================================================================================
-[✅ ]:
+[✅ df]:
+
+
