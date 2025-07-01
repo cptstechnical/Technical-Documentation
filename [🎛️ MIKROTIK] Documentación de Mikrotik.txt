@@ -135,14 +135,90 @@ dst-address-list: Lista de direcciones IP destino predefinidas por mi.       # i
 
 
 
-
-
-
-
-
-
-
 =========================================================================================================================
-[✅ df]:
+[✅ Configuración de Mikoritk]:
+[📌 Ejercicio 1 · (red básica) conseguir internet]:
+
+MMM      MMM       KKK                          TTTTTTTTTTT      KKK
+MMMM    MMMM       KKK                          TTTTTTTTTTT      KKK
+MMM MMMM MMM  III  KKK  KKK  RRRRRR     OOOOOO      TTT     III  KKK  KKK
+MMM  MM  MMM  III  KKKKK     RRR  RRR  OOO  OOO     TTT     III  KKKKK
+MMM      MMM  III  KKK KKK   RRRRRR    OOO  OOO     TTT     III  KKK KKK
+MMM      MMM  III  KKK  KKK  RRR  RRR   OOOOOO      TTT     III  KKK  KKK
+
+# resetear mikrotick
+System - reset configuration - chequear las  siguientes opciones:
+	- No default configuration
+  - Do not buckup
+
+# Instalar última versión 
+System -> Packages -> Check For Updates  -> (Seleccionamos la estable) Download&Install
+
+# explicación WAN/LAN
+# Internet (89.345.34.22) <---- WAN ----> [MikroTik] <---- LAN ----> PC (192.168.1.23)
+
+# -----Bridge-----
+# Creo un bridge para enlazar todos los eth de salida porque son 3, para eso vamos a brige (+) y lo nombro bridge_LAN
+# Luego vamos a la pestaña de (Ports) y asociamos los puertos eth salientes (LAN) con el bridge
+[eth2, eth3 y eth4]
+
+# ------interfefaces----- (bocas físicos)
+# se genera automáticamente lo que vamos creando
+# aquí veremos los puertos fisicos por ejemplo como tenemos 4 ether uno de entrada y tres de salida veremos los cuatro
+
+
+# ------IP--------
+Luego vamos a ip > address y agregamos en WAN la IP de entrada y en LAN la ip de salida (asociada al bridge, es decir, en LAN el bridge):
+WAN :           ADDRESS >  192.168.0.220/24       NETWORK > 192.168.0.0        INTERFACE > WAN
+bridge_LAN :    ADDRESS >  172.16.0.1/24          NETWORK > 172.16.0.0         INTERFACE > bridge_LAN
+
+
+------DNS--------
+# Esta DNS va a ser la del Mikrotik
+Luego vamos a ip > DNS, para darle un DNS, cambiamos en el apartado de Servers la DNS como por ejemplo 8.8.8.8
+
+
+# CONSEGUIR INTERNET: 
+# *********************************
+# -----NAT-----
+Para conseguir NAT hay que configurar el NAT de la siguiente forma, vamos a IP > Firewall > (+)
+En Chain la cambio a "srcnat", en out.interface le configuro la WAN que en mi caso es (ether1)
+y en la casilla action lo cambio a "masquerade", una vez hechos los cambios lo guardo. 
+-----------------------------------------------------------------------------------------------
+# NAT masquerade (enmascarada) 
+es una técnica utilizada en redes de computadoras para permitir que múltiples dispositivos en una red local compartan una única dirección IP pública para acceder a Internet.
+-----------------------------------------------------------------------------------------------
+
+# -----AGREGAR GATEWAY-----
+Me dirijo a IP > Routes > (+). 
+Una vez aqui la dist.address la dejo en 0.0.0.0/0
+En el Gateway le configuro la puerta de enlace de la WAN (192.168.0.1)
+
+
+[📌 Ejercicio 2 · configurar DHCP]:
+# -------POOL------
+# Primero configuro el Pool que sirve para poner un varemo de IPs con las que quiero trabajar: 
+# Este varemo va a servir solo para asignar las IP dinámicas las IP estáticas las vamos a poder coger fuera de ese varemo.
+IP > Pool > (+)
+le doy un nombre que en mi caso es > dhcp_pool()
+y seleccionamos el baremo de IPs que en mi caso es (18 ips) > 172.16.0.2-172.16.0.20
+
+# -------DHCP SERVER------
+IP > DHCP Server > (+)
+elegimos el bridge que hemos creado en el primer proyecto donde conectamos todas nuestras redes LAN: interface > bridge_LAN
+como tengo todo bien configurado le doy a siguiente en todo excepto la parte del tiempo que la he cambiado a 10 en vez de a 30, (este va a ser el tiempo en el que va a refrescar la IP dinámica)
+y en Address Pool selecciono el Pool que he creado anteriormente > dhcp_pool()
+
++ rellenar la parte de network
+
+# -------DHCP CLIENT------ -> (No hay que hacerlo si nuestro router esta configurado a otro porque la IP se asigna automáticamente).
+Como mi red sobre la que ya he trabajado recibo una IP automáticamente de la red del trabajo de otro router, no es necesario agregar el DHCP client 
+ya que es para recoger la IP principal de salida. Como de recoger esta señal se encarga otro router al que yo estoy conectado en DHCP client se deja en blanco.
+
+En el caso de que tendría que hacerlo: me dirijo a DHCP Client y le doy a (+), y agrego la interface de la WAN que en mi caso es la ethr1
+
+# -------DNS-------
+Vamos a DHCP Server -> Networks, y modificamos el DNS Server para modificar el DNS de las IP dinámicas 
+
 
 
