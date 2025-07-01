@@ -134,7 +134,21 @@ src-address-list: Lista de direcciones IP origen predefinidas por mi.        # i
 dst-address-list: Lista de direcciones IP destino predefinidas por mi.       # ip firewall address-list
 
 
+✅ connection-state:
+******************************************************************
+# En MikroTik, connection-state clasifica el estado del paquete en relación con conexiones previas. 
+new:			  Primer paquete de una nueva conexión (ej.: primer SYN de TCP).
+established:		  Paquete perteneciente a una conexión ya aceptada y activa.
+related:		  Nuevo flujo asociado a una conexión existente (ej.: FTP, ICMP error).
+invalid:		  Paquete que no pertenece a ninguna conexión válida (puede ser corrupto).
+untracked:		  Paquete no inspeccionado por el conntrack (tracking deshabilitado).
 
+
+
+=========================================================================================================================
+=========================================================================================================================
+				 		- EJERCICIOS - 
+=========================================================================================================================
 =========================================================================================================================
 [✅ Configuración de Mikoritk]:
 [📌 Ejercicio 1 · (red básica) conseguir internet]:
