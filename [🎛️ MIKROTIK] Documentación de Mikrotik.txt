@@ -1,10 +1,12 @@
 =========================================================================================================================
 [✅ IP > Firewall]:
 
+## sistema de input, output y forward
+
 Cadena (Chain)             ¿Qué filtra?	                              Ejemplo de uso
 -------------------------------------------------------------------------------------------------------------------------
 input                      Tráfico destinado al router                Permitir SSH/Winbox/ICMP al router.
-forward                    Tráfico que pasa a través del router       Filtrar tráfico LAN → WAN / WAN → LAN.
+forward                    Tráfico que pasa a través del router       Filtrar tráfico LAN → WAN / WAN → LAN.                    # no es para la máquina local, sino que el firewall está actuando como router o puente, reenviando paquetes entre redes. Controlar actualizaciones o pings del propio router
 output                     Tráfico generado por el router             Controlar actualizaciones o pings del propio router
                                                                       -(se suele utilizar para bloquear actualizaciones).
 
@@ -29,8 +31,78 @@ output                     Tráfico generado por el router             Controlar
 
 ✅ ejemplo de uso:
 ******************************************************************
-Usuario → Router → input
-Router → Usuario → output
-Red → Router → Red → forward
+Usuario → Router     # input
+Router → Usuario     # output
+Red → Router → Red   # forward
 
 
+✅ protocolos principales de redes:
+******************************************************************
++-------+----------------------+----------------------------------------+
+| Capa  | Nombre               | Función                                |
++-------+----------------------+----------------------------------------+
+| 7     | Aplicación           | Interfaz usuario y aplicaciones        |
+| 6     | Presentación         | Formato, cifrado y compresión          |
+| 5     | Sesión               | Control de diálogo y sesiones          |
+| 4     | Transporte           | Transporte fiable y control de errores |
+| 3     | Red                  | Enrutamiento y direccionamiento        |
+| 2     | Enlace de Datos      | Comunicación nodo a nodo, MAC          |
+| 1     | Física               | Transmisión de bits físicos            |
++-------+----------------------+----------------------------------------+
++------------+-------------------------+---------------------------------------------------+
+| Protocolo  | Capa OSI / TCP-IP       | Función                                           |
++------------+-------------------------+---------------------------------------------------+
+| IP         | Capa 3 (Red)            | Encaminamiento y direccionamiento                 |
+| ICMP       | Capa 3 (Red)            | Mensajes de control y error (ping, traceroute)    |
+| TCP        | Capa 4 (Transporte)     | Transporte confiable, conexión orientada          |
+| UDP        | Capa 4 (Transporte)     | Transporte no confiable, sin conexión             |
+| ARP        | Capa 2/3 (Enlace/Red)   | Resolución de direcciones IP a MAC                |
+| HTTP       | Capa 7 (Aplicación)     | Protocolo web, transferencia de hipertexto        |
+| HTTPS      | Capa 7 (Aplicación)     | HTTP sobre TLS/SSL, comunicación segura           |
+| FTP        | Capa 7 (Aplicación)     | Transferencia de archivos                         |
+| SMTP       | Capa 7 (Aplicación)     | Envío de correo electrónico                       |
+| DNS        | Capa 7 (Aplicación)     | Resolución de nombres de dominio                  |
+| DHCP       | Capa 7 (Aplicación)     | Asignación automática de IP                       |
+| SSH        | Capa 7 (Aplicación)     | Acceso remoto seguro                              |
+| SNMP       | Capa 7 (Aplicación)     | Gestión y monitorización de dispositivos          |
+| TLS/SSL    | Capa 6/7 (Presentación) | Cifrado y seguridad en comunicaciones             |
+| RTP        | Capa 7 (Aplicación)     | Transporte de datos en tiempo real (VoIP, video)  |
++------------+-------------------------+---------------------------------------------------+
+
+
+✅ puertos principales de redes:
+******************************************************************
++--------+-----------+---------------------------+
+| Puerto | Protocolo | Servicio común            |
++--------+-----------+---------------------------+
+| 20     | TCP       | FTP data transfer         |
+| 21     | TCP       | FTP control               |
+| 22     | TCP       | SSH                       |
+| 23     | TCP       | Telnet                    |
+| 25     | TCP       | SMTP                      |
+| 53     | TCP/UDP   | DNS                       |
+| 67     | UDP       | DHCP server               |
+| 68     | UDP       | DHCP client               |
+| 80     | TCP       | HTTP                      |
+| 110    | TCP       | POP3                      |
+| 123    | UDP       | NTP                       |
+| 143    | TCP       | IMAP                      |
+| 161    | UDP       | SNMP                      |
+| 194    | TCP       | IRC                       |
+| 443    | TCP       | HTTPS                     |
+| 445    | TCP       | SMB (Windows file share)  |
+| 514    | UDP       | Syslog                    |
+| 993    | TCP       | IMAPS                     |
+| 995    | TCP       | POP3S                     |
+| 1723   | TCP       | PPTP VPN                  |
+| 3306   | TCP       | MySQL                     |
+| 3389   | TCP       | RDP                       |
+| 5060   | UDP/TCP   | SIP (VoIP signaling)      |
+| 5432   | TCP       | PostgreSQL                |
+| 5900   | TCP       | VNC                       |
+| 8080   | TCP       | HTTP alternative / proxy  |
++--------+-----------+---------------------------+
+
+
+=========================================================================================================================
+[✅ IP > Firewall]:
