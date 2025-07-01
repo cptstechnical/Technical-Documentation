@@ -1,0 +1,16 @@
+# Descargar Proccess Explorer
+https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer
+
+# Pulsamos en 
+Options > VirusTotal.com > Check VirusTotal.com > Si
+
+
+## CARACTERISTICAS
+# Envia el hash del proceso para comprobar si es un virus o no (en la columna de la derecha del todo)
+# Esto también sirve para comprobar quien esta spawneando procesos
+# podemos ver conexiones abiertas, que procesos pertenecen a que programa
+
+
+## ¿PORQUE UTILIZARLO?
+# Esto sustituye de forma precisa el entrar al administrador de tareas e ir leyendo cada proceso ya que puede tener un nombre del sistema y pasar desapercibido y de esta forma pasa desapercibido. 
+# analizador de virus
