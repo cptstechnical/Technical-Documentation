@@ -1,42 +1,7 @@
 =========================================================================================================================
-[✅ IP > Firewall]:
+[✅TEORIA ENTENDIMIENTO]:
 
-## sistema de input, output y forward
-
-Cadena (Chain)             ¿Qué filtra?	                              Ejemplo de uso
--------------------------------------------------------------------------------------------------------------------------
-input                      Tráfico destinado al router                Permitir SSH/Winbox/ICMP al router.
-forward                    Tráfico que pasa a través del router       Filtrar tráfico LAN → WAN / WAN → LAN.                    # no es para la máquina local, sino que el firewall está actuando como router o puente, reenviando paquetes entre redes. Controlar actualizaciones o pings del propio router
-output                     Tráfico generado por el router             Controlar actualizaciones o pings del propio router
-                                                                      -(se suele utilizar para bloquear actualizaciones).
-
-
-✅ Ejemplos rápidos:
-******************************************************************
-✅ 1. INPUT → Tráfico AL router (servicios del router)
-📌 Ejemplo 1: Permitir acceso SSH al router desde una IP concreta
-📌 Ejemplo 2: Permitir Winbox desde red local
-💡📡 Es el que utilizo para permitir servicios al mikrotik 
-
-✅ 2. FORWARD → Tráfico que PASA a través del router
-📌 Ejemplo 1: Permitir que LAN navegue por Internet
-📌 Ejemplo 2: Bloquear que LAN acceda a una IP específica
-💡🧱 Es el que se utiliza como firewall de servicios en red 
-
-✅ 3. OUTPUT → Tráfico generado POR el router
-📌 Ejemplo 1: Bloquear que el router haga ping a Internet
-📌 Ejemplo 2: Bloquear actualizaciones del router
-💡 Es el menos utilizado, para permitir desde el mikrotik
-
-
-✅ ejemplo de uso:
-******************************************************************
-Usuario → Router     # input
-Router → Usuario     # output
-Red → Router → Red   # forward
-
-
-✅ protocolos principales de redes:
+✅ tipos de capas del modelo OSI y su función principa:
 ******************************************************************
 +-------+----------------------+----------------------------------------+
 | Capa  | Nombre               | Función                                |
@@ -49,6 +14,9 @@ Red → Router → Red   # forward
 | 2     | Enlace de Datos      | Comunicación nodo a nodo, MAC          |
 | 1     | Física               | Transmisión de bits físicos            |
 +-------+----------------------+----------------------------------------+
+
+✅ protocolos principales de redes:
+******************************************************************
 +------------+-------------------------+---------------------------------------------------+
 | Protocolo  | Capa OSI / TCP-IP       | Función                                           |
 +------------+-------------------------+---------------------------------------------------+
@@ -106,3 +74,58 @@ Red → Router → Red   # forward
 
 =========================================================================================================================
 [✅ IP > Firewall]:
+
+## sistema de input, output y forward
+
+Cadena (Chain)             ¿Qué filtra?	                              Ejemplo de uso
+-------------------------------------------------------------------------------------------------------------------------
+input                      Tráfico destinado al router                Permitir SSH/Winbox/ICMP al router.
+forward                    Tráfico que pasa a través del router       Filtrar tráfico LAN → WAN / WAN → LAN.                    # no es para la máquina local, sino que el firewall está actuando como router o puente, reenviando paquetes entre redes. Controlar actualizaciones o pings del propio router
+output                     Tráfico generado por el router             Controlar actualizaciones o pings del propio router
+                                                                      -(se suele utilizar para bloquear actualizaciones).
+
+
+✅ Ejemplos rápidos:
+******************************************************************
+✅ 1. INPUT → Tráfico AL router (servicios del router)
+📌 Ejemplo 1: Permitir acceso SSH al router desde una IP concreta
+📌 Ejemplo 2: Permitir Winbox desde red local
+💡📡 Es el que utilizo para permitir servicios al mikrotik 
+
+✅ 2. FORWARD → Tráfico que PASA a través del router
+📌 Ejemplo 1: Permitir que LAN navegue por Internet
+📌 Ejemplo 2: Bloquear que LAN acceda a una IP específica
+💡🧱 Es el que se utiliza como firewall de servicios en red 
+
+✅ 3. OUTPUT → Tráfico generado POR el router
+📌 Ejemplo 1: Bloquear que el router haga ping a Internet
+📌 Ejemplo 2: Bloquear actualizaciones del router
+💡 Es el menos utilizado, para permitir desde el mikrotik
+
+
+✅ ejemplo de uso:
+******************************************************************
+Usuario → Router     # input
+Router → Usuario     # output
+Red → Router → Red   # forward
+
+
+✅ acciones (targets) más comunes que puedes aplicar a las reglas:
+******************************************************************
+# más usadas:
+accept:                     Permite el paquete (equivalente a ACCEPT).
+drop:                       Descarta el paquete sin respuesta (equivalente a DROP).
+reject:                     Bloquea y envía respuesta ICMP o TCP reset (equivalente a REJECT).
+
+# otras opciones:
+log:                        Registra el paquete en logs.
+return:                     Sale de la regla o cadena actual.
+passthrough:                Deja continuar evaluación en siguientes reglas (similar a RETURN en iptables).
+nat (src-nat, dst-nat):     Traducción de IP origen/destino (equivalente a SNAT/DNAT).
+mark:                       Marca paquetes para procesamiento posterior (similar a QUEUE o mangle en iptables).
+
+
+
+
+=========================================================================================================================
+[✅ ]:
