@@ -57,6 +57,14 @@ mv 1751014332.M583233P1218151.correo.grafometal.es,S=2273911,W=2303772:2,S ../ne
 
 # al copiar el archivo de nuevo a la carpeta /new se volverá a enviar pero no como nuevo correo si no como un correo enviado a la misma hora que la del correo corrupto
 
+=======================================================================================
+[📩ALIAS]:
+
+# Cuando se recibe un correo, Postfix primero consulta este archivo para determinar si hay un alias correspondiente
+vim /etc/postfix/virtual-alias
+
+
+
 
 =======================================================================================
 [📩ESTRUCTURA DE POSTFIX]:
