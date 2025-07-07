@@ -80,7 +80,7 @@
 Cadena (Chain)             ¿Qué filtra?	                              Ejemplo de uso
 -------------------------------------------------------------------------------------------------------------------------
 input                      Tráfico destinado al router                Permitir SSH/Winbox/ICMP al router.
-forward                    Tráfico que pasa a través del router       Filtrar tráfico LAN → WAN / WAN → LAN.                    # no es para la máquina local, sino que el firewall está actuando como router o puente, reenviando paquetes entre redes. Controlar actualizaciones o pings del propio router
+forward                    Tráfico que pasa a través del router       Filtrar tráfico LAN → WAN / WAN → LAN.                    # no es para la máquina local, sino que el firewall está actuando como router o puente, reenviando paquetes entre redes.
 output                     Tráfico generado por el router             Controlar actualizaciones o pings del propio router
                                                                       -(se suele utilizar para bloquear actualizaciones).
 
