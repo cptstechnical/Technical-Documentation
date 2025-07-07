@@ -109,6 +109,32 @@ DAS        SCSI, SATA, SAS, NVMe local
 
 
 =======================================================================================================
+[TIPOS DE RAID]:
+
++----------+-------------+--------------------+------------------+--------------------+
+| Nivel    | 🧮 Discos   | 🚀 Rendimiento    | 🔒 Redundancia   | 💾 Capacidad útil |
++----------+-------------+--------------------+------------------+--------------------+
+| RAID 0   |     2       |    🔼 Alta        |   ❌ Ninguna     |    100%            |
+| RAID 1   |     2       |    🔼 Lectura     |   ✅ 1 disco     |    50%             |
+| RAID 5   |     3       |    🟰 Media       |   ✅ 1 disco     |    (N−1)/N         |
+| RAID 6   |     4       |    🟰 Media-baja  |   ✅ 2 discos    |    (N−2)/N         |
+| RAID 10  |     4       |    🔼 Alta        |   ✅ 1 por par   |    50%             |
++----------+-------------+--------------------+------------------+--------------------+
+
+RAID 0             → sin tolerancia a fallos.
+RAID 1             → copia exacta, ideal para SO o entornos críticos.
+RAID 5/6           → buena eficiencia + redundancia, usado en producción.
+RAID 10            → mejor IOPS y tolerancia.
+
+🧮 Discos         → Cantidad mínima de discos necesarios para implementar ese tipo de RAID.
+🚀 Rendimiento    → Describe cómo afecta el RAID al rendimiento de I/O (lectura/escritura).
+🔒 Redundancia    → Capacidad del RAID para tolerar fallos sin perder datos.
+💾 Capacidad útil → Cuánto espacio usable te queda respecto al total de discos.
+
+Calculador RAID: https://www.synology.com/es-es/support/RAID_calculator
+
+
+=======================================================================================================
 [INTERESANTES]:
 - JetKVM
 
