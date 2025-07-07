@@ -23,6 +23,25 @@ systemctl enable iptables
 
 
 ============================================================
+[📌 Estructura de iptables v4]:
+vim /etc/iptables/rules.v4
+------------------------------------------------------------
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+-A INPUT -p icmp -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+# SSH
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
+# Cerramos resto
+-A INPUT -j REJECT --reject-with icmp-host-prohibited
+-A FORWARD -j REJECT --reject-with icmp-host-prohibited
+COMMIT
+------------------------------------------------------------
+
+============================================================
 ============================================================
 [📌 Ejemplos sin tablas]:
 # Permite el acceso a SSH (puerto 22)
