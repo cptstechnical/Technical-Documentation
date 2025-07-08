@@ -24,6 +24,11 @@ Por sistema operativo:
     Servidor Windows:               Utiliza un sistema operativo Windows Server.
     Servidor Linux:                 Utiliza una distribución de Linux (por ejemplo, Ubuntu Server, CentOS).
 
+[🔥🧑‍🚀 OTROS RELACIONADOS]:
+********************************
+- UPS (técnico) o SAI (doméstico)   dispositivo que proporciona energía de respaldo a equipos electrónicos en caso de un corte de energía o fluctuaciones en la corriente eléctrica. NUT es software libre que habla con el UPS vía USB, puerto serie, SNMP, etc.
+                                    La función de UPS principal es mantener los dispositivos conectados en funcionamiento durante un tiempo limitado, permitiendo que los usuarios guarden su trabajo y apaguen los equipos de manera segura. 
+- 
 
 =======================================================================================================
 [🔥🧑‍🚀 ETHERNET DE SERVIDORES]:
@@ -132,6 +137,8 @@ RAID 10            → mejor IOPS y tolerancia.
 💾 Capacidad útil → Cuánto espacio usable te queda respecto al total de discos.
 
 Calculador RAID: https://www.synology.com/es-es/support/RAID_calculator
+
+
 
 
 =======================================================================================================
