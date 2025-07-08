@@ -1,3 +1,13 @@
+=======[❌ TEORIA ]=================================================================================
+Fundamento técnico vCPU:
+
+- El overcommit de CPU es posible porque Proxmox/KVM permite asignar más vCPUs que cores físicos.
+- Linux KVM/QEMU y el scheduler del host manejan la distribución del tiempo de CPU entre las VMs, gestionando el acceso concurrente.
+
+Fundamento técnico Cluster:
+
+- En Proxmox VE (que utiliza Corosync como capa de clustering), el “quorum” es el mecanismo que asegura que sólo un subconjunto mayoritario de nodos pueda tomar decisiones válidas sobre el estado del clúster y sus recursos. 
+
 =======[❌ CREAR MÁQUINA VIRTUAL ]==================================================================
 # buena práctica para mejor visualización
 ⚙️ > Sort Key: Name
