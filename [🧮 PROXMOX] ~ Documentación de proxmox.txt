@@ -2,6 +2,7 @@
 [🧮 Fundamento técnico vCPU]:
 - Overcommit: El overcommit de CPU es posible porque Proxmox/KVM permite asignar más vCPUs que cores físicos.
 - Linux KVM/QEMU y el scheduler del host manejan la distribución del tiempo de CPU entre las VMs, gestionando el acceso concurrente.
+- Cores asignados en Proxmox: pertenece a vCPUs (virtual CPU) que configuras para cada VM (máquina virtual).
 
 [🧮 Fundamento técnico Cluster]:
 - Quorum: En Proxmox VE (que utiliza Corosync como capa de clustering), el “quorum” es el mecanismo que asegura que sólo un subconjunto mayoritario de nodos pueda tomar decisiones válidas sobre el estado del clúster y sus recursos. 
@@ -25,11 +26,26 @@
 - La RAM se reserva de forma exclusiva para cada VM/CT.
 - Si tienes 4GB RAM físicas y restas ~1GB para el sistema (Proxmox + servicios), te quedan 3GB útiles. Si cada VM tiebe 1GB de RAM puedo crear hasta 3 VMs.
 🧩 No se recomienda consumir el 100% de la RAM disponible. Siempre deja margen para el sistema (~1GB mínimo en tu caso).
++--------------------+----------------------+------------------------+
+| RAM disponible     | RAM por VM/CT        | Máquinas posibles      |
++--------------------+----------------------+------------------------+
+| 4GB (total)        | 1GB sistema host      | ~3GB útiles           |
+| ~3GB para VMs/CTs  | 1GB por VM            | Hasta 3 VMs           |
+| ~3GB para VMs/CTs  | 512MB por VM          | Hasta 6 VMs           |
+| ~3GB para VMs/CTs  | 256MB por CT (LXC)    | Hasta 10–11 CTs       |
++--------------------+----------------------+------------------------+
 
 ⚙️ CPU – Asignación lógica (overcommit permitido):
 - Las vCPU son virtuales, puedes tener más vCPUs que cores físicos.
 - Generalmente se usa overcommit: por ejemplo, 4 cores físicos pueden soportar 6–8 vCPUs o más.
 - Lo importante es la carga real de uso.
++----------------+-----------------------------------+------------------------+
+| Cores físicos  | VMs ligeras posibles (con 1 vCPU) | Recomendación          |
++----------------+-----------------------------------+------------------------+
+| 4              | 6–8 VMs (light use)               | OK con bajo uso        |
+| 4              | 3–4 VMs (alta carga)              | Mejor rendimiento      |
++----------------+-----------------------------------+------------------------+
+
 
 -------------------------------------------------------------------------------------
 [🧮 Ejemplo con Hardware (1TB HDD, 4GB RAM, 4 CPU)]:
