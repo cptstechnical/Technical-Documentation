@@ -1,12 +1,60 @@
 =======[❌ TEORIA ]=================================================================================
-Fundamento técnico vCPU:
-
-- Overcommit:  El overcommit de CPU es posible porque Proxmox/KVM permite asignar más vCPUs que cores físicos.
+[🧮 Fundamento técnico vCPU]:
+- Overcommit: El overcommit de CPU es posible porque Proxmox/KVM permite asignar más vCPUs que cores físicos.
 - Linux KVM/QEMU y el scheduler del host manejan la distribución del tiempo de CPU entre las VMs, gestionando el acceso concurrente.
 
-Fundamento técnico Cluster:
+[🧮 Fundamento técnico Cluster]:
+- Quorum: En Proxmox VE (que utiliza Corosync como capa de clustering), el “quorum” es el mecanismo que asegura que sólo un subconjunto mayoritario de nodos pueda tomar decisiones válidas sobre el estado del clúster y sus recursos. 
 
-- Quorum:  En Proxmox VE (que utiliza Corosync como capa de clustering), el “quorum” es el mecanismo que asegura que sólo un subconjunto mayoritario de nodos pueda tomar decisiones válidas sobre el estado del clúster y sus recursos. 
+[🧮 Arquitectura Interna Proxmox]:
+- KVM (Kernel-based Virtual Machine):
+- LXC (Linux Containers):
+- Storage (ZFS, LVM, Ceph, ext4, etc): 
+  + Espacio asignado por disco virtual a cada VM/CT.
+  + Snapshots, backups y thin provisioning según el tipo de almacenamiento.
+- Gestión de recursos:
+  + CPU: Puedes asignar núcleos virtuales (vCPU). Proxmox permite overcommit.
+  + RAM: Limitada, puedes usar ballooning para ajustar dinámicamente.
+  + Disco: Asignado como almacenamiento virtual (raw, qcow2, LVM, ZVOL).
+  + Red: Interfaces virtuales puenteadas al host (bridge).
+
+
+[🧮 Forma técnica y directa según cómo Proxmox gestiona RAM y CPU]:
+
+🧠 RAM – Repartición física (sin overcommit):
+- La RAM se reserva de forma exclusiva para cada VM/CT.
+- Si tienes 4GB RAM físicas y restas ~1GB para el sistema (Proxmox + servicios), te quedan 3GB útiles. Si cada VM tiebe 1GB de RAM puedo crear hasta 3 VMs.
+🧩 No se recomienda consumir el 100% de la RAM disponible. Siempre deja margen para el sistema (~1GB mínimo en tu caso).
+
+⚙️ CPU – Asignación lógica (overcommit permitido):
+- Las vCPU son virtuales, puedes tener más vCPUs que cores físicos.
+- Generalmente se usa overcommit: por ejemplo, 4 cores físicos pueden soportar 6–8 vCPUs o más.
+- Lo importante es la carga real de uso.
+
+-------------------------------------------------------------------------------------
+[🧮 Ejemplo con Hardware (1TB HDD, 4GB RAM, 4 CPU)]:
+Supuestos:
+- Sistema base Proxmox requiere ~512MB – 1GB RAM y ~10-20GB de disco.
+- Asignamos 3GB RAM y ~950GB para VMs/CTs.
+- CPU puede sobreprovisionarse (ej: 6-8 vCPUs repartidas en 4 cores físicos).
+
++----------------+---------------+------------+----------------+--------------------+
+| Tipo           | RAM Asignada  | CPU (vCPU) | Disco Asignado | Máquinas posibles  |
++----------------+---------------+------------+----------------+--------------------+
+| VM ligera      | 512MB         | 1 vCPU     | 10GB           | 5–6 VMs            |
+| LXC básico     | 256MB         | 0.5 vCPU   | 2GB            | 8–10 CTs           |
+| VM media       | 1GB           | 1 vCPU     | 20GB           | 2–3 VMs            |
+| Mezcla VM+CT   | VMs: 2×1GB    | 2×1 vCPU   | 40GB total     | + 4 CTs con 512MB  |
++----------------+---------------+------------+----------------+--------------------+
+
+🧠 Recomendaciones:
+Usa LXC para servicios Linux siempre que puedas → mayor densidad.
+Activa RAM ballooning en VMs si el SO lo soporta.
+Usa ZFS si necesitas snapshots/flexibilidad, pero requiere más RAM.
+Mantén siempre RAM libre para el sistema (~1GB mínimo).
+Si vas a tener muchas VMs, considera ampliar la RAM del ejemplo.
+-------------------------------------------------------------------------------------
+
 
 =======[❌ CREAR MÁQUINA VIRTUAL ]==================================================================
 # buena práctica para mejor visualización
@@ -17,7 +65,6 @@ sobre el Node indicado > Create VM
 
 # para crear una máquina virtual o contenedor es recomendable hacerlo desde:
 local-lvm
-
 
 # Ajustes al crear la máquina:
 Create VM
