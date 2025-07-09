@@ -1,0 +1,92 @@
+===========================================================================================================
+[PowerShell o CMD]:
+# ipconfig
+Muestra la configuración de red de todos los adaptadores (dirección IP, máscara, puerta de enlace).
+Parámetros frecuentes:
+• /all → Detalle completo (DNS, DHCP, MAC, estado).
+• /release → Libera la concesión DHCP.
+• /renew → Renueva la concesión DHCP.
+• /flushdns → Vacía la caché de resolución DNS.
+
+# ping
+Envía paquetes ICMP a un host para comprobar su alcance y latencia.
+Uso básico: ping <host_o_IP>.
+Parámetros útiles:
+• -t → Ping continuo hasta interrumpirse con Ctrl+C.
+• -n → Número de paquetes a enviar.
+• -l → Tamaño de cada paquete en bytes.
+
+# tracert
+Muestra la ruta (saltos) que siguen los paquetes hasta un host.
+Uso: tracert <host_o_IP>.
+Parámetros:
+• -d → No resuelve nombres DNS (muestra sólo IPs).
+• -h <max_hops> → Máximo número de saltos.
+
+# nslookup
+Interroga a servidores DNS para resolver nombres a IP (y viceversa).
+Modo interactivo: solo nslookup abre consola donde puedes cambiar servidor DNS, tipo de registro (A, MX, TXT…), etc.
+Ejemplo rápido: nslookup ejemplo.com 8.8.8.8
+
+# netstat
+Muestra conexiones de red activas, puertos en escucha y estadísticas.
+Parámetros comunes:
+• -a → Todas las conexiones y puertos de escucha.
+• -n → Muestra direcciones y puertos en formato numérico.
+• -o → Incluye el PID del proceso asociado.
+• -s → Estadísticas por protocolo (TCP, UDP, ICMP).
+
+# arp
+Gestiona la tabla ARP (mapeo IP→MAC) local.
+arp -a → Lista todas las entradas ARP.
+arp -d <IP> → Borra la entrada de la IP especificada.
+route
+Muestra y modifica la tabla de rutas del sistema.
+route print → Lista rutas activas.
+route add <destino> mask <máscara> <puerta> → Añade una ruta.
+route delete <destino> → Elimina una ruta.
+
+# netsh
+Herramienta multifunción para la configuración avanzada de red (interfaces, firewall, Wi-Fi, NAT…).
+Ejemplos:
+• netsh interface ip show config → Configuración IP de interfaces.
+• netsh wlan show profiles → Perfiles Wi-Fi guardados.
+• netsh advfirewall firewall show rule name=all → Reglas del Firewall de Windows.
+
+# nbtstat
+Diagnóstico de NetBIOS sobre TCP/IP.
+nbtstat -n → Nombres NetBIOS locales.
+nbtstat -c → Caché de nombres NetBIOS remotos.
+nbtstat -R → Vacía y recarga la caché NetBIOS.
+
+# getmac
+Muestra las direcciones MAC de los adaptadores de red.
+Parámetros:
+• /v → Vista detallada.
+• /fo csv → Formato CSV para importación.
+
+# PathPing
+Combina las funciones de ping y tracert, midiendo pérdida de paquetes en cada salto.
+Uso: pathping <host_o_IP>.
+
+# telnet
+Cliente Telnet para probar conectividad a puertos TCP.
+Ejemplo: telnet <host> <puerto> (para ver si un servicio TCP responde).
+
+===========================================================================================================
+[PowerShell (alternativas modernas)]:
+# Test-Connection
+Equivalente a ping, pero con objetos PowerShell.
+Ejemplo: Test-Connection -ComputerName google.com -Count 4.
+
+# Get-NetIPAddress
+Muestra la configuración IP de todas las interfaces en formato estructurado.
+
+# Get-NetRoute
+Lista la tabla de rutas IP en PowerShell.
+
+# Get-NetTCPConnection
+Muestra las conexiones TCP activas (similar a netstat).
+
+# Resolve-DnsName
+Reemplazo moderno de nslookup para consultas DNS avanzadas.
