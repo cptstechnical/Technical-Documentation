@@ -1,1 +1,51 @@
+# Ver/Configurar interfaces
+/interface print
+/interface enable ether1
+/interface disable ether2
 
+# IPs en interfaces
+/ip address print
+/ip address add address=192.168.1.1/24 interface=ether1
+/ip address remove [find address="192.168.1.1/24"]
+
+# Tabla de rutas
+/ip route print
+/ip route add dst-address=0.0.0.0/0 gateway=192.168.1.254
+/ip route remove [find dst-address="0.0.0.0/0"]
+
+# ARP
+/ip arp print → Lista mapeos IP→MAC
+/ip arp add address=192.168.1.50 mac-address=AA:BB:CC:DD:EE:FF
+/ip arp remove [find address=192.168.1.50]
+
+# Ping & Traceroute
+/ping 8.8.8.8 count=5 → Comprueba conectividad
+/ping 8.8.8.8 size=1500 → Prueba MTU
+/tool traceroute 8.8.8.8 → Ruta hasta destino
+
+# DNS
+/ip dns print → Servidores y caché
+/ip dns set servers=8.8.8.8,1.1.1.1 allow-remote-requests=yes
+/ip dns cache flush → Vacía caché DNS
+
+# Vecinos (LLDP/CDP)
+/ip neighbor discovery print → Dispositivos conectados
+
+# Conexiones activas
+/ip firewall connection print → Flows actuales
+
+# Monitoreo de tráfico
+/tool torch interface=ether1 → Tráfico en tiempo real
+/tool sniffer interface=ether1 file-name=cap.pcap → Captura pcap
+
+# Servicios de acceso
+/ip service print → Telnet, SSH, Winbox…
+/ip service disable telnet → Deshabilita Telnet
+
+# Salud y recursos
+/system resource print → CPU, RAM, uptime
+/system health print → Temperatura, voltajes
+
+# Guardar/Exportar config
+/export file=backup → Configuración completa
+/import file=backup.rsc → Restaurar
