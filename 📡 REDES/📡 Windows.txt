@@ -4,8 +4,8 @@
 Muestra la configuración de red de todos los adaptadores (dirección IP, máscara, puerta de enlace).
 Parámetros frecuentes:
 • /all → Detalle completo (DNS, DHCP, MAC, estado).
-• /release → Libera la concesión DHCP.
-• /renew → Renueva la concesión DHCP.
+• /release → Libera la concexión DHCP.
+• /renew → Renueva la concexión DHCP.
 • /flushdns → Vacía la caché de resolución DNS.
 
 # ping
