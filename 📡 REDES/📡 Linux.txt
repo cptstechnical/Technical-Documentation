@@ -1,1 +1,125 @@
+# ifconfig (obsoleto en algunas distros)
+Muestra y configura interfaces de red.
+Ejemplos:
+• ifconfig → Lista interfaces activas.
+• ifconfig eth0 up/down → Activa/desactiva la interfaz.
+• ifconfig eth0 192.168.1.10 netmask 255.255.255.0 → Asigna IP y máscara.
 
+# ip (reemplazo moderno de ifconfig/route/arp)
+Comando versátil para interfaces, rutas, túneles, ARP…
+Ejemplos:
+• ip addr show → Muestra direcciones IP.
+• ip link set eth0 up → Activa interfaz.
+• ip route show → Lista rutas.
+• ip route add default via 192.168.1.1 → Añade ruta por defecto.
+• ip neigh show → Equivalente a arp -a.
+
+# ping
+Envía paquetes ICMP para probar conectividad y latencia.
+Ejemplos:
+• ping ejemplo.com → Hasta interrupción manual.
+• ping -c 4 ejemplo.com → Envía 4 paquetes.
+• ping -s 1000 ejemplo.com → Paquetes de 1000 bytes.
+
+# traceroute
+Muestra la ruta (saltos) hasta un destino.
+Ejemplos:
+• traceroute ejemplo.com
+• traceroute -n ejemplo.com → No resuelve nombres DNS.
+• traceroute -m 20 ejemplo.com → Hasta 20 saltos.
+
+# mtr (my traceroute)
+Combina ping y traceroute en tiempo real.
+Uso: mtr ejemplo.com o mtr -r -c 100 ejemplo.com (reporte tras 100 sondas).
+netstat (obsoleto en algunas distros)
+Muestra conexiones, puertos de escucha y estadísticas.
+Ejemplos:
+• netstat -tulpn → Puertos TCP/UDP en escucha con PID.
+• netstat -an → Conexiones y puertos en formato numérico.
+• netstat -s → Estadísticas por protocolo.
+
+# ss (reemplazo de netstat)
+Más rápido y detallado.
+Ejemplos:
+• ss -tulpn → Puertos en escucha con PIDs.
+• ss -s → Resumen de estadísticas.
+• ss dst 1.2.3.4 → Conexiones hacia 1.2.3.4.
+
+# arp
+Consulta y gestiona la caché ARP.
+Ejemplo:
+• arp -n → Lista caché ARP sin resolver DNS.
+• arp -d 192.168.1.5 → Elimina la entrada ARP.
+
+# route (obsoleto, usar ip route)
+Muestra y modifica la tabla de rutas.
+Ejemplos:
+• route -n → Lista rutas en formato numérico.
+• route add default gw 192.168.1.1 → Añade ruta por defecto.
+
+# dig
+Consulta DNS avanzada.
+Ejemplos:
+• dig ejemplo.com → Registro A por defecto.
+• dig MX ejemplo.com → Registros MX.
+• dig @8.8.8.8 ejemplo.com → Usando un DNS específico.
+
+# nslookup
+Equivalente clásico a dig, modo interactivo.
+Ejemplo:
+• nslookup → Entra en modo interactivo.
+• nslookup ejemplo.com 1.1.1.1
+
+# host
+Simpler interface DNS lookup.
+Ejemplo:
+• host ejemplo.com
+• host -t TXT ejemplo.com
+
+# tcpdump
+Captura y analiza paquetes en la red.
+Ejemplos:
+• tcpdump -i eth0 → Captura en eth0.
+• tcpdump -nn -s 0 -vvv port 80 → HTTP detallado sin resolver nombres.
+• tcpdump -w captura.pcap → Guarda en archivo pcap.
+
+# wireshark (interfaz gráfica) / tshark (CLI)
+Análisis avanzado de tráfico.
+Ejemplo CLI: tshark -i eth0 -w archivo.pcap
+
+# nmap
+Escáner de puertos y servicios.
+Ejemplos:
+• nmap 192.168.1.0/24 → Escaneo de red.
+• nmap -sS -p 1-65535 ejemplo.com → Escaneo TCP SYN de todos los puertos.
+
+# ethtool
+Consulta y ajusta características de interfaces Ethernet.
+Ejemplos:
+• ethtool eth0 → Estado y capacidades.
+• ethtool -s eth0 speed 100 duplex full autoneg off
+
+# iwconfig / iw
+Configura interfaces inalámbricas.
+Ejemplos:
+• iwconfig wlan0 → Muestra estado Wi-Fi.
+• iw dev wlan0 scan → Escanea redes disponibles.
+
+# nmcli / nmtui
+Cliente CLI (y UI basada en texto) para NetworkManager.
+Ejemplos:
+• nmcli device status → Estado de dispositivos.
+• nmcli connection show → Perfiles de conexión.
+• nmcli device wifi list → Redes Wi-Fi.
+
+# ping6 / traceroute6 / ip -6
+Versiones para IPv6.
+Ejemplos:
+• ping6 ipv6.google.com
+• ip -6 addr show → Direcciones IPv6.
+
+# curl / wget / httping
+Pruebas de conectividad HTTP/HTTPS.
+Ejemplo:
+• curl -I https://ejemplo.com → Cabeceras HTTP.
+• httping -g https://ejemplo.com → Ping sobre HTTP.
