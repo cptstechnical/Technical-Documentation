@@ -40,7 +40,8 @@ Parámetros comunes:
 Gestiona la tabla ARP (mapeo IP→MAC) local.
 arp -a → Lista todas las entradas ARP.
 arp -d <IP> → Borra la entrada de la IP especificada.
-route
+
+# route
 Muestra y modifica la tabla de rutas del sistema.
 route print → Lista rutas activas.
 route add <destino> mask <máscara> <puerta> → Añade una ruta.
