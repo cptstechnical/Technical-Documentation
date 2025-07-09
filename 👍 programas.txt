@@ -1,3 +1,5 @@
+[👍WINDOWS]:
+
 HWiNFO : sirve para monitorizar en tiempo real y obtener información detallada del hardware del sistema, incluyendo sensores, temperaturas, voltajes, frecuencias y especificaciones de CPU, GPU, RAM, discos y placa base.
 - https://www.hwinfo.com/download/
 
@@ -6,3 +8,7 @@ Crystal Disk Mark : sirve para medir el rendimiento de lectura y escritura secue
 
 OpenHardwareMonitor : Monitoriza sensores de temperatura, voltajes, velocidades de ventiladores y carga del sistema.
 - https://openhardwaremonitor.org/
+
+
+
+[👍LINUX]:
