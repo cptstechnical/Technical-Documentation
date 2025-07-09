@@ -103,6 +103,9 @@ Bus/Devicec: SATA | 0
 Storage: Synology (para producción) | local (para pruebas o desarrollo)
 Disk Size: 40 GiB (o los necesarios)
 Cache: Write Back
+         + Write back: mejor rendimiento, ideal para entornos donde la velocidad de I/O es prioritaria y hay respaldo eléctrico (UPS, almacenamiento con caché protegida). Riesgo de pérdida de datos en fallo.
+         + Write through: mayor seguridad y consistencia, mejor para datos críticos o producción donde la integridad es prioritaria, aunque con menor rendimiento.
+  
 [x] Avanced
 ~
 [x] SSD emulation
