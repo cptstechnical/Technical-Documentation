@@ -3,10 +3,11 @@ Sirve para centralizar y organizar las conexiones de red (o fibra) facilitando e
 https://www.youtube.com/watch?v=UgurSpigrtY
 
 # trasceptores
-dispositivo que integra en un mismo equipo funciones de transmisión y recepción de señales. Se emplea para comunicaciones por radiofrecuencia, fibra óptica o redes (por ejemplo, módulos SFP en switches y servidores). Su ventaja es simplificar el hardware y facilitar el intercambio bidireccional de datos en un solo puerto.
+Dispositivo que integra en un mismo equipo funciones de transmisión y recepción de señales. Se emplea para comunicaciones por radiofrecuencia, fibra óptica o redes (por ejemplo, módulos SFP en switches y servidores). Su ventaja es simplificar el hardware y facilitar el intercambio bidireccional de datos en un solo puerto.
 https://www.youtube.com/watch?v=wcm19Kkoz8c
 
 # SFP
 
 
 # failover
+Es un mecanismo de alta disponibilidad que, ante la caída o fallo de un componente crítico (servidor, servicio, enlace de red, base de datos, etc.), redirige automáticamente la carga de trabajo a un recurso de respaldo (standby) para mantener el servicio en funcionamiento con mínima o nula interrupción. (su funcionalidad es como la de un bridge pero en alta disponibilidad entre distintos servidores que comparten la misma ip, para que cuando falle uno se active el siguiente sin llegar a notar la caída en el servidor, como por ejemplo una cabina con dos tomas de red por cada servidor, con tres servidores "1a, 2a, 3a, 1b, 2b y 3b", crearía un failover por cada servidor con alta disponibilidad entre las dos tomas que vienen de la cabina, 1a - 2a, 1b - 2b y 3a - 3b)
