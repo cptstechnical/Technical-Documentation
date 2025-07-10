@@ -1,3 +1,4 @@
+# Proxmox VE (PVE) · Documentación 10/07/2025
 =======[❌ TEORIA ]=================================================================================
 [🧮 Arquitectura Interna Proxmox]:
 # KVM sirve para virtualizar máquinas completas en Linux, permitiéndote ejecutar múltiples sistemas operativos (VMs) aislados sobre un mismo host físico, Proxmox utiliza el KVM que ya viene en el kernel de Linux, integrándolo con:
