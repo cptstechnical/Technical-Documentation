@@ -7,3 +7,6 @@ dispositivo que integra en un mismo equipo funciones de transmisión y recepció
 https://www.youtube.com/watch?v=wcm19Kkoz8c
 
 # SFP
+
+
+# failover
