@@ -45,7 +45,7 @@
 
 - split-brain: Es cuando un cluster se divide por un fallo de red, y dos partes creen que son la válidas, actuando al mismo tiempo. Esto puede provocar: Corrupción de discos compartidos, Dos VMs corriendo con el mismo ID (una por nodo) e Inconsistencias.
 
-- Quorum: En Proxmox VE (que utiliza Corosync como capa de clustering), el “quorum” es el mecanismo que asegura que sólo un subconjunto mayoritario de nodos pueda tomar decisiones válidas sobre el estado del clúster y sus recursos. El quorum es un mecanismo de seguridad que garantiza que el cluster       tiene suficientes nodos comunicándose entre sí para operar con seguridad (sin perdida de datos). Sirve para evitar particiones cerebrales o split-brain.
+- Quorum: En Proxmox VE (que utiliza Corosync como capa de clustering), el “quorum” es el mecanismo que asegura que sólo un subconjunto mayoritario de nodos pueda tomar decisiones válidas sobre el estado del clúster y sus recursos. El quorum es un mecanismo de seguridad que garantiza que el cluster tiene suficientes nodos comunicándose entre sí para operar con seguridad (sin perdida de datos). Sirve para evitar particiones cerebrales o split-brain.
     Se basa en el número de nodos activos y visibles entre sí:
       quorum = (número de nodos / 2) + 1
     * Ejemplo Cluster de 3 nodos: Quorum mínimo: 2 nodos activos y conectados
@@ -55,7 +55,7 @@
     Con número impar: Siempre hay una mayoría clara y Menos probabilidad de empates
     Con número par: Si la red se parte 2 y 2 → ningún grupo tiene mayoría y Resultado: todo se bloquea
 
-- QDevice: Es un tercer votante neutral, que no ejecuta VMs, pero sirve para desempatar y ayudar al quorum.
+- QDevice: Se instala en una máquina física (con bajos recursos ya que solo corre un servicio llamado corosync-qnetd) cuando los nodos actuales son pares (ya que para que funcione el quorum tienen que ser impares). Es un tercer votante neutral de voto (solo vota), que no ejecuta VMs, pero sirve para desempatar y ayudar al quorum (se añade a un cluster Proxmox con nodos pares para ayudar a mantener quorum).
     Es útil cuando: Tienes solo 2 nodos físicos y No puedes añadir un tercer nodo completo
     Es ligero, solo vota en el cluster y Se configura con corosync + qnetd
     * Ejemplo Tienes 2 nodos (node1 y node2): Si node1 y node2 pierden conexión entre ellos → El qdevice vota por el que siga conectado a él y Solo ese nodo mantiene quorum, el otro se aísla.
