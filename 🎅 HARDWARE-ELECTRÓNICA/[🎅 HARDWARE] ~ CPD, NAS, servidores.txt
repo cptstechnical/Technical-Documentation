@@ -56,6 +56,9 @@ se instalan las dos tomas ethernet en bounding, para conseguir (HA o alta dispon
 Sirve para centralizar y organizar las conexiones de red (o fibra) facilitando el cableado y la gestión de puntos de conexión. Lo hace teniendo los cables de red (o fibra) entrantes terminados y fijos en puertos numerados del panel, y luego enlazándolos a switches o equipos mediante cortos cables de parcheo (patch cords). En un patch panel sólo ves los puertos RJ-45 “frontales” donde enchufas los patch cords; por detrás los cables de cada cable UTP van pelados y se crimpan o punzonan en unos bloques IDC/110 (no hay otro conector Ethernet).
 https://www.youtube.com/watch?v=UgurSpigrtY
 
+# trasceptores
+dispositivo que integra en un mismo equipo funciones de transmisión y recepción de señales. Se emplea para comunicaciones por radiofrecuencia, fibra óptica o redes (por ejemplo, módulos SFP en switches y servidores). Su ventaja es simplificar el hardware y facilitar el intercambio bidireccional de datos en un solo puerto.
+
 ########################################################################################################
 ********************************************************************************************************
 🚀 CPD::
