@@ -81,6 +81,8 @@
 - Las vCPU son virtuales, puedes tener más vCPUs que cores físicos.
 - Generalmente se usa overcommit: por ejemplo, 4 cores físicos pueden soportar 6–8 vCPUs o más.
 - Lo importante es la carga real de uso.
+⚠️ Estoy repartiendo tiempo de CPU, no creando potencia adicional real.  
+🧠 Overcommit con prudencia: evalación según la carga real que cada VM va a generar y los picos de ejecución en tiempos asignados, no solo el número de vCPUs.
 +----------------+-----------------------------------+------------------------+
 | Cores físicos  | VMs ligeras posibles (con 1 vCPU) | Recomendación          |
 +----------------+-----------------------------------+------------------------+
@@ -94,7 +96,13 @@ Asignar vCPU (por defecto )    | ❌ No                       | Lo más común. 
 CPU pinning                    | ✅ Parcialmente             | Asocia vCPUs a cores físicos específicos. Ejemplos: taskset, numactl, configuración en XML/QEMU args.
 CPU passthrough                | ✅ Sí, pero para PCI        | Passthrough para hardware PCI (GPU, etc.). No aplica para CPU.
 
-
+-------------------------------------------------------------------------------------
+Consejos técnicos:
+- Usa drivers **virtio** para disco y red, mejora rendimiento y compatibilidad.
+- Habilita **ballooning** para RAM en laboratorios para mejor gestión dinámica.
+- Para menos overhead, considera usar contenedores (LXC) en vez de VMs.
+- Aplica **CPU limits y CPU shares** para controlar recursos si varias VMs se activan a la vez.
+-------------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------------
 ❗ Ejemplo con Hardware (1TB HDD, 4GB RAM, 4 CPU):
@@ -277,61 +285,3 @@ Model:
 ------------------------------------------------------------------------------
 
 
-
-
-
-===============================================================================
-                                ASIGNACIÓN DE CPU EN PROXMOX
-===============================================================================
-# Cores asignados en Proxmox: vCPUs que configuras para cada VM
--------------------------------------------------------------------------------
-
--------------------------------------------------------------------------------
-
-Método             | ¿CPU física directa?         | Descripción técnica
--------------------|------------------------------|-------------------------------------------------------------
-Asignar vCPU       | ❌ No                       | Lo más común. El hipervisor distribuye el uso entre vCPUs.
-CPU pinning        | ✅ Parcialmente             | Asocia vCPUs a cores físicos específicos. Ejemplos: taskset, numactl, configuración en XML/QEMU args.
-CPU passthrough    | ✅ Sí, pero para PCI        | Passthrough para hardware PCI (GPU, etc.). No aplica para CPU.
-
-
--------------------------------------------------------------------------------
-Recomendación para un host con 4 cores físicos:
-+---------------------------------+---------------------------------+
-| Tipo de uso                     | Nº de VMs seguras (1 vCPU c/u)  |
-+---------------------------------+---------------------------------+
-| Carga baja (CLI, routers, logs) | 8 – 10                          |
-| Carga mixta                     | 5 – 6                           |
-| Carga alta (pentesting, GVM)    | 2 – 3 máximo simultáneas        |
-+---------------------------------+---------------------------------+
-
--------------------------------------------------------------------------------
-¿Cómo se ejecutan más vCPUs que cores físicos?
-
-- Cada vCPU es una porción de tiempo (time slice) de un core físico.
-- El scheduler del hipervisor intercala tareas en milisegundos.
-- Si varias VMs no usan CPU intensivamente al mismo tiempo, funciona sin problemas.
-- Si todas realizan carga pesada simultáneamente, se genera cola y latencia.
-
--------------------------------------------------------------------------------
-Resumen clave:
-
-✅ Puedes asignar tantas vCPUs como quieras.  
-⚠️ Estás repartiendo tiempo de CPU, no creando potencia adicional real.  
-🧠 Usa overcommit con prudencia: evalúa la carga, no solo el número de vCPUs.
-
--------------------------------------------------------------------------------
-Consejos técnicos:
-
-- Usa drivers **virtio** para disco y red, mejora rendimiento y compatibilidad.
-- Habilita **ballooning** para RAM en laboratorios para mejor gestión dinámica.
-- Para menos overhead, considera usar contenedores (LXC) en vez de VMs.
-- Aplica **CPU limits y CPU shares** para controlar recursos si varias VMs se activan a la vez.
-
--------------------------------------------------------------------------------
-Fundamento técnico:
-
-- El overcommit de CPU es posible porque Proxmox/KVM permite asignar más vCPUs que cores físicos.
-- Linux KVM/QEMU y el scheduler del host manejan la distribución del tiempo de CPU entre las VMs, gestionando el acceso concurrente.
-
-===============================================================================
