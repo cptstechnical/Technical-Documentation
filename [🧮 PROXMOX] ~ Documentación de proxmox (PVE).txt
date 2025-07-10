@@ -17,7 +17,7 @@
 +------------------------------------+
                   |
 +------------------------------------+
-|                KVM                 |
+|                KVM                 |      # Sistema principal de KVM del servidor Linux, del que va a utilizar Proxmox para virtualizar sus máquinas
 +------------------------------------+
                   |
 +------------------------------------+
