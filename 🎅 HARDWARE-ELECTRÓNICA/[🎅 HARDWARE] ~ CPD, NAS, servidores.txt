@@ -75,6 +75,7 @@ La cabina se divide en dos controladoras (que pueden ser más para redes más gr
   - El NAS (acceso a archivos) : se presenta como un dispositivo de almacenamiento conectado a la red y ofrece archivos a través de protocolos como NFS, SMB/CIFS, entre otros.
   - El SAN (acceso a bloques)  : es una red especializada que conecta dispositivos de almacenamiento a servidores, generalmente utilizando protocolos como Fibre Channel o iSCSI.
 
+# la cabina es  utilizada debido a que los servidores en la mayoría de los casos vienen sin almacenamiento y para conseguir alta disponibilidad (HA)
 
 =======================================================================================================
 [🔥🧑‍🚀 PROTOCOLOS Y ARQUITECTURA]:
