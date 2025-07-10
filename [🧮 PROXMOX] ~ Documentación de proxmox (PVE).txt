@@ -63,7 +63,7 @@
 
 
 [🧮 Forma técnica y directa según cómo Proxmox gestiona RAM y CPU]:
-
+# esto es una estimación peor siempre puede ser relativo según necesidades
 🧠 RAM – Repartición física (sin overcommit):
 - La RAM se reserva de forma exclusiva para cada VM/CT.
 - Si tienes 4GB RAM físicas y restas ~1GB para el sistema (Proxmox + servicios), te quedan 3GB útiles. Si cada VM tiebe 1GB de RAM puedo crear hasta 3 VMs.
