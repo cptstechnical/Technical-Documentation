@@ -33,15 +33,15 @@
                                             #   + Red: Interfaces virtuales puenteadas al host (bridge).                      
 
 [🧮 Fundamento técnico vCPU]:
-- Overcommit: Overcommit (o sobre-asignación) se refiere a la práctica de reservar más recursos virtuales (CPU, memoria, disco, etc.) de los que físicamente hay disponibles en el host. El overcommit de CPU es posible porque Proxmox/KVM permite asignar más vCPUs que cores físicos.ç
+- Overcommit: Overcommit (o sobre-asignación) se refiere a la práctica de reservar más recursos virtuales (CPU, memoria, disco, etc.) de los que físicamente hay disponibles en el host. El overcommit de CPU es posible porque Proxmox/KVM permite asignar más vCPUs que cores físicos.
 - Time-slicing: El scheduler (programador de procesos) reparte el tiempo de cada core físico en pequeñas rebanadas (“time slices”). Cada vCPU de cada VM entra en cola y recibe su rebanada cuando le toque turno, hasta que se agoten o pase el slice al siguiente hilo.
 - Linux KVM/QEMU y el scheduler (programador de procesos) del host manejan la distribución del tiempo de CPU entre las VMs, gestionando el acceso concurrente.
 - Cores asignados en Proxmox: pertenece a vCPUs (virtual CPU) que configuras para cada VM (máquina virtual), "esto quiere decir que no pertenece a los cores físicos reales si no a los virtuales".
 
-[🧮 Fundamento técnico Cluster]:
+[🧮 Fundamento técnico Cluster] HA (políticas de alta disponibilidad):
 # Un cluster es cuando tienes 2 o más nodos Proxmox trabajando juntos, compartiendo gestión de recursos, VMs, etc.
 
-- Nodo: va a ser cada uno de los espacios dentro del data center y reprensenta cada hardware (los servidores)
+- Nodo: va a ser cada uno de los espacios dentro del “Datacenter” y reprensenta cada hardware (los servidores)
 
 - split-brain: Es cuando un cluster se divide por un fallo de red, y dos partes creen que son la válidas, actuando al mismo tiempo. Esto puede provocar: Corrupción de discos compartidos, Dos VMs corriendo con el mismo ID (una por nodo) e Inconsistencias.
 
