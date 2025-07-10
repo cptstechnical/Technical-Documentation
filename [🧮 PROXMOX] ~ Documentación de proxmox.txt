@@ -1,23 +1,64 @@
 =======[❌ TEORIA ]=================================================================================
+[🧮 Arquitectura Interna Proxmox]:
+# KVM sirve para virtualizar máquinas completas en Linux, permitiéndote ejecutar múltiples sistemas operativos (VMs) aislados sobre un mismo host físico, Proxmox utiliza el KVM que ya viene en el kernel de Linux, integrándolo con:
+#     - QEMU (para emulación de hardware)
+#     - LXC (para contenedores)
+#     - libvirt y sus propias APIs para gestión
+#     - Su propia interfaz web y CLI (pve)
+
++-------------------+  +-------------+      
+|  virtual Machine  |  |  CONTAINER  |      # KVM (Kernel-based Virtual Machine): Es capaz de crear máquinas virtuales utilizando al KVM[QUEMU] del Linux principal (Proxmox)
+|        KVM        |  |     LXC     |      # LXC (Linux Containers): Es capaz de crear contenedores utilizando al KVM[LXC] del Linux principal (Proxmox)
++-------------------+  +-------------+
+          |                    |
++------------------------------------+
+|              PROXMOX VE            |
++------------------------------------+
+                  |
++------------------------------------+
+|                KVM                 |
++------------------------------------+
+                  |
++------------------------------------+
+|               LINUX                |      # Distribución por defecto de Proxmox: Debian
++------------------------------------+
+                  |
++------------------------------------+      # Storage (ZFS, LVM, Ceph, ext4, etc)
+|              HARDWARE              |      #   + Espacio asignado por disco virtual a cada VM/CT.
++------------------------------------+      #   + Snapshots, backups y thin provisioning según el tipo de almacenamiento.
++---------------+  +-----------------+      # Gestión de recursos
+|    STORAGE    |  |     NETWORK     |      #   + CPU: Puedes asignar núcleos virtuales (vCPU). Proxmox permite overcommit.
++---------------+  +-----------------+      #   + RAM: Limitada, puedes usar ballooning para ajustar dinámicamente.
+                                            #   + Disco: Asignado como almacenamiento virtual (raw, qcow2, LVM, ZVOL).
+                                            #   + Red: Interfaces virtuales puenteadas al host (bridge).                      
+
 [🧮 Fundamento técnico vCPU]:
-- Overcommit: El overcommit de CPU es posible porque Proxmox/KVM permite asignar más vCPUs que cores físicos.
-- Linux KVM/QEMU y el scheduler del host manejan la distribución del tiempo de CPU entre las VMs, gestionando el acceso concurrente.
-- Cores asignados en Proxmox: pertenece a vCPUs (virtual CPU) que configuras para cada VM (máquina virtual).
+- Overcommit: Overcommit (o sobre-asignación) se refiere a la práctica de reservar más recursos virtuales (CPU, memoria, disco, etc.) de los que físicamente hay disponibles en el host. El overcommit de CPU es posible porque Proxmox/KVM permite asignar más vCPUs que cores físicos.ç
+- Time-slicing: El scheduler (programador de procesos) reparte el tiempo de cada core físico en pequeñas rebanadas (“time slices”). Cada vCPU de cada VM entra en cola y recibe su rebanada cuando le toque turno, hasta que se agoten o pase el slice al siguiente hilo.
+- Linux KVM/QEMU y el scheduler (programador de procesos) del host manejan la distribución del tiempo de CPU entre las VMs, gestionando el acceso concurrente.
+- Cores asignados en Proxmox: pertenece a vCPUs (virtual CPU) que configuras para cada VM (máquina virtual), "esto quiere decir que no pertenece a los cores físicos reales si no a los virtuales".
 
 [🧮 Fundamento técnico Cluster]:
-- Quorum: En Proxmox VE (que utiliza Corosync como capa de clustering), el “quorum” es el mecanismo que asegura que sólo un subconjunto mayoritario de nodos pueda tomar decisiones válidas sobre el estado del clúster y sus recursos. 
+# Un cluster es cuando tienes 2 o más nodos Proxmox trabajando juntos, compartiendo gestión de recursos, VMs, etc.
 
-[🧮 Arquitectura Interna Proxmox]:
-- KVM (Kernel-based Virtual Machine):
-- LXC (Linux Containers):
-- Storage (ZFS, LVM, Ceph, ext4, etc): 
-  + Espacio asignado por disco virtual a cada VM/CT.
-  + Snapshots, backups y thin provisioning según el tipo de almacenamiento.
-- Gestión de recursos:
-  + CPU: Puedes asignar núcleos virtuales (vCPU). Proxmox permite overcommit.
-  + RAM: Limitada, puedes usar ballooning para ajustar dinámicamente.
-  + Disco: Asignado como almacenamiento virtual (raw, qcow2, LVM, ZVOL).
-  + Red: Interfaces virtuales puenteadas al host (bridge).
+- Nodo: va a ser cada uno de los espacios dentro del data center y reprensenta cada hardware (los servidores)
+
+- split-brain: Es cuando un cluster se divide por un fallo de red, y dos partes creen que son la válidas, actuando al mismo tiempo. Esto puede provocar: Corrupción de discos compartidos, Dos VMs corriendo con el mismo ID (una por nodo) e Inconsistencias.
+
+- Quorum: En Proxmox VE (que utiliza Corosync como capa de clustering), el “quorum” es el mecanismo que asegura que sólo un subconjunto mayoritario de nodos pueda tomar decisiones válidas sobre el estado del clúster y sus recursos. El quorum es un mecanismo de seguridad que garantiza que el cluster       tiene suficientes nodos comunicándose entre sí para operar con seguridad (sin perdida de datos). Sirve para evitar particiones cerebrales o split-brain.
+    Se basa en el número de nodos activos y visibles entre sí:
+      quorum = (número de nodos / 2) + 1
+    * Ejemplo Cluster de 3 nodos: Quorum mínimo: 2 nodos activos y conectados
+    * Ejemplo Cluster de 4 nodos: Quorum mínimo: 3 nodos activos
+    * Ejemplo Si no hay quorum: el nodo bloquea operaciones de gestión (crear/mover VMs, etc.)
+    ❗¿Por qué mejor número impar en quorum?
+    Con número impar: Siempre hay una mayoría clara y Menos probabilidad de empates
+    Con número par: Si la red se parte 2 y 2 → ningún grupo tiene mayoría y Resultado: todo se bloquea
+
+- QDevice: Es un tercer votante neutral, que no ejecuta VMs, pero sirve para desempatar y ayudar al quorum.
+    Es útil cuando: Tienes solo 2 nodos físicos y No puedes añadir un tercer nodo completo
+    Es ligero, solo vota en el cluster y Se configura con corosync + qnetd
+    * Ejemplo Tienes 2 nodos (node1 y node2): Si node1 y node2 pierden conexión entre ellos → El qdevice vota por el que siga conectado a él y Solo ese nodo mantiene quorum, el otro se aísla.
 
 
 [🧮 Forma técnica y directa según cómo Proxmox gestiona RAM y CPU]:
