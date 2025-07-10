@@ -8,7 +8,7 @@
 #     - Su propia interfaz web y CLI (pve)
 
 +-------------------+  +-------------+      
-|  virtual Machine  |  |  CONTAINER  |      # KVM (Kernel-based Virtual Machine): Es capaz de crear máquinas virtuales utilizando al KVM[QUEMU] del Linux principal (Proxmox)
+|  Virtual Machine  |  |  CONTAINER  |      # KVM (Kernel-based Virtual Machine): Es capaz de crear máquinas virtuales utilizando al KVM[QUEMU] del Linux principal (Proxmox)
 |        KVM        |  |     LXC     |      # LXC (Linux Containers): Es capaz de crear contenedores utilizando al KVM[LXC] del Linux principal (Proxmox)
 +-------------------+  +-------------+
           |                    |
@@ -46,7 +46,7 @@
 
 - split-brain: Es cuando un cluster se divide por un fallo de red, y dos partes creen que son la válidas, actuando al mismo tiempo. Esto puede provocar: Corrupción de discos compartidos, Dos VMs corriendo con el mismo ID (una por nodo) e Inconsistencias.
 
-- Quorum: En Proxmox VE (que utiliza Corosync como capa de clustering), el “quorum” es el mecanismo que asegura que sólo un subconjunto mayoritario de nodos pueda tomar decisiones válidas (como iniciar/migrar/apagar) sobre el estado del clúster y sus recursos. El quorum es un mecanismo de seguridad que garantiza que el cluster tiene suficientes nodos comunicándose entre sí para operar con seguridad (sin perdida de datos). Sirve para evitar particiones cerebrales o split-brain.
+- Quorum: En Proxmox VE (que utiliza Corosync como capa de clustering), el “quorum” es el mecanismo que asegura que sólo un subconjunto mayoritario de nodos pueda tomar decisiones válidas (como iniciar/migrar/apagar) sobre el estado del clúster y sus recursos. El quorum es un mecanismo de seguridad que garantiza que el cluster tiene suficientes nodos comunicándose entre sí para operar con seguridad (sin perdida de datos). Sirve para evitar particiones cerebrales o split-brain. El quorum por simplificarlo sirve para saber que nodo esta activo o desactivado, funciona por votos y los dispositivos tienen que ser de número impar. El quorum no va a permitir habilitar nuevos servicios o nuevas máquinas etc si el quorum esta desabilitado, en el caso de que el quorum este habilitado todo seguirá funcionando correctamente. Como el comando "pvecm" epertenece al cluster está directamente relacionado con el quorum.
     Se basa en el número de nodos activos y visibles entre sí:
       quorum = (número de nodos / 2) + 1
     * Ejemplo Cluster de 3 nodos: Quorum mínimo: 2 nodos activos y conectados
@@ -88,9 +88,16 @@
 | 4              | 3–4 VMs (alta carga)              | Mejor rendimiento      |
 +----------------+-----------------------------------+------------------------+
 
+Método                         | ¿CPU física directa?         | Descripción técnica
+-------------------------------|------------------------------|-------------------------------------------------------------
+Asignar vCPU (por defecto )    | ❌ No                       | Lo más común. El hipervisor distribuye el uso entre vCPUs.
+CPU pinning                    | ✅ Parcialmente             | Asocia vCPUs a cores físicos específicos. Ejemplos: taskset, numactl, configuración en XML/QEMU args.
+CPU passthrough                | ✅ Sí, pero para PCI        | Passthrough para hardware PCI (GPU, etc.). No aplica para CPU.
+
+
 
 -------------------------------------------------------------------------------------
-[🧮 Ejemplo con Hardware (1TB HDD, 4GB RAM, 4 CPU)]:
+❗ Ejemplo con Hardware (1TB HDD, 4GB RAM, 4 CPU):
 Supuestos:
 - Sistema base Proxmox requiere ~512MB – 1GB RAM y ~10-20GB de disco.
 - Asignamos 3GB RAM y ~950GB para VMs/CTs.
@@ -112,6 +119,106 @@ Usa ZFS si necesitas snapshots/flexibilidad, pero requiere más RAM.
 Mantén siempre RAM libre para el sistema (~1GB mínimo).
 Si vas a tener muchas VMs, considera ampliar la RAM del ejemplo.
 -------------------------------------------------------------------------------------
+
+
+=======[❌ PASOS A SEGUIR DE INSTALACIÓN ]==========================================================
+# sigo los pasos según la instalación requerida:
+
+          - Crear unidad ISO: Instalación de ISO Proxmox VE
+          - Configuración de red:
+          - Configuración de discos y unidades: (unidad ISOs)
+          - Configuración de scripts: Scripts de la comunidad (Post, hardening...)
+          - Crear cluster : En el caso de ser necesario HA → configuro y creo cluster
+                    + Configurar nodo como cluster (NTP activo y en hora)
+                    + Configurar Recursos Comunes del Cluster
+
+
+=======[❌ CREAR UNIDAD ISO ]=======================================================================
+# descargar iso
+https://www.proxmox.com/en/downloads
+
+## acceso proxmox instalación
+Proxmox Virtual Environment : https://www.proxmox.com/en/downloads [Proxmox VE 8.4 ISO Installer]
+- Disco en ext4 (el espacio es para la instalación de proxmox)
+- zona horaria
+- <password-root>
+- ip
+htts://<ip>:8006
+
+
+=======[❌ CONFIGURACIÓN DE RED ]===================================================================
+=======[❌ CONFIGURACIÓN DE DISCOS Y UNIDADES ]=====================================================
+=======[❌ CONFIGURACIÓN DE SCRIPTS ]===============================================================
+# cambio el tema
+usuario (arriba a la derecha) > Color Theme > Proxmox Dark
+
+# instalamos el script inicializador
+https://community-scripts.github.io/ProxmoxVE/scripts?id=post-pve-install
+(proxmox:selecciono el nodo) > Shell > (copio y pego el script)
+- y /all
+
+# instalo script para cambiar a powersave (elige como el CPU escala su frecuencia y consumo de los watts)
+https://community-scripts.github.io/ProxmoxVE/scripts?id=scaling-governor
+[*] powersave
+- y
+
+# instalo script para ver si el procesador tiene alguna actualización
+https://community-scripts.github.io/ProxmoxVE/scripts?id=microcode
+[*] intel-microcode_3.20240514.1_amd64.deb
+- y
+
+# ⚠️ de este último script no se si fiarme ya que es de alguien independiente y no oficial de proxmox, lo quiero dejar documentado por si agún día es útil para mí
+# instalo script proxmenux para tareas de administrador de servidor (drivers, máquinas virtuales...)
+# https://github.com/MacRimi/ProxMenux
+# en la pagina princial, donde muestra el readme solo tengo que copiar y pegar el instalador : bash -c "$(wget -qLO - https://raw.githubusercontent.com/MacRimi/ProxMenux/main/install_proxmenux.sh)"
+# - normal
+# - y
+#
+# para abrirlo "menu"
+# ahora desde proxmox puedo isntalar paquetes de proxmox sin tener que salir de proxmox, ahora en este ejemplo voy a instalar adguards sin salir de proxmox
+# > menu
+#   > Proxmox Helpers Script
+#   > search : adguards
+#   > yes
+#   > Desafult Settings
+
+# reinicio el servidor proxmox
+- reiniciar
+
+=======[❌ CREAR CLUSTER ]==========================================================================
+# antes de iniciar con los cluster hay que intentar que los dispositivos o servidores sean los más parecido posible a ser posible exactamente iguales
+
+[🧮 creo un cluster]::
+# Para migrar un nodo, el nodo que vamos a migrar como cluster no debe tener ninguna máquina virtual ni contenedor y además que contenga el mismo NTP "timedatectl status"
+# una vez tenga el nodo limpio me dirijo al otro nodo (al que vamos a migrar el nuevo nodo) y hago lo siguiente:
+# ejemplo proxmox pve1
+-----------------------------------------------------------------
+Datacenter > Cluster (pve1) > Create Cluster
+          Cluster Demo: <nombre>
+          Cluster Network: <asigno_la_ip_dentro_del_cluster>
+          > create
+# una vez creado
+Datacenter > Cluster (pve1) > Join Information > Copy Information
+-----------------------------------------------------------------
+
+# ejemplo proxmox pve2
+-----------------------------------------------------------------
+Datacenter > Cluster (pve2) > Join Information >           
+          > Information: <pego_información_copiada_anteriormente>
+          > Password: <contraseña>
+-----------------------------------------------------------------
+
+# ejemplo proxmox pve1
+# refresco página y ya debería ver el cluster creado son dos nodos pve1 y pve2
+# para comprobar su funcionamiento y en caso opcional puedo migrar una máquina del pve1 al pve2 
+Datacenter > Cluster (pve1) > VM (ejemplo: 101) > Sumary > Migrate       
+          > Target Mode: pve2
+          > Migrate
+
+[🧮 configuro quorum]::
+https://www.youtube.com/watch?v=t5yvfnFvQrU
+# en el caso de que tenga un número impar de dispositivos me aseguro que el quorum funciona correctamente
+Datacenter > HA > Quoruom:OK
 
 
 =======[❌ CREAR MÁQUINA VIRTUAL ]==================================================================
