@@ -151,6 +151,7 @@ Proxmox Virtual Environment : https://www.proxmox.com/en/downloads [Proxmox VE 8
 - zona horaria
 - <password-root>
 - ip
+- DNS Server: 255.255.255.0
 htts://<ip>:8006
 
 
