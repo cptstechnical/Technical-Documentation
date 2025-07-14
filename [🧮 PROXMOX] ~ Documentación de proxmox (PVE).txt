@@ -11,7 +11,7 @@
 |  Virtual Machine  |  |  CONTAINER  |      # KVM (Kernel-based Virtual Machine): Es capaz de crear máquinas virtuales utilizando al KVM[QUEMU] del Linux principal (Hipervisor) 
 |        KVM        |  |     LXC     |      # LXC (Linux Containers): Es capaz de crear contenedores utilizando al KVM[LXC] del Linux principal (sin hipervisor, es virtualización a nivel de sistema operativo) 
 +-------------------+  +-------------+
-          |                    |
+          |                   |
 +------------------------------------+
 |             PROXMOX VE             |
 +------------------------------------+
