@@ -16,11 +16,11 @@
 |             PROXMOX VE             |
 +------------------------------------+
                   |
-+------------------------------------+
++------------------------------------+      # Como Proxmox es un virtualización de tipo 1 el hipervisor y el S.O forman parte del mismo
 |             HIPERVISOR             |      # Sistema principal de KVM del servidor Linux Kernel, del que va a utilizar Proxmox para virtualizar sus máquinas
 +------------------------------------+      # El Hipervisor no es una parte separatoría si no que es el propio kernel del Linux de Proxmox, pero lo granulo para comprender mejor cada parte
 +------------------------------------+
-|               LINUX                |      # Distribución/Linux por defecto de Proxmox: Debian
+|               LINUX                |      # Distribución/Linux por defecto para Proxmox: Debian
 +------------------------------------+
                   |
 +------------------------------------+      # Storage (ZFS, LVM, Ceph, ext4, etc)
