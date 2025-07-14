@@ -9,17 +9,17 @@
 
 +-------------------+  +-------------+      
 |  Virtual Machine  |  |  CONTAINER  |      # KVM (Kernel-based Virtual Machine): Es capaz de crear máquinas virtuales utilizando al KVM[QUEMU] del Linux principal (Hipervisor) 
-|        KVM        |  |     LXC     |      # LXC (Linux Containers): Es capaz de crear contenedores utilizando al KVM[LXC] del Linux principal (sin hipervisor, es virtualización a nivel de sistema operativo) 
+|        KVM        |  |     LXC     |      # LXC (Linux Containers): Es capaz de crear contenedores utilizando al KVM[LXC] del Linux principal (aunque en realidad no utiliza el hipervisor, si no que es virtualización a nivel de sistema operativo, aprobechando el mismo kernel) 
 +-------------------+  +-------------+
           |                   |
 +------------------------------------+
 |             PROXMOX VE             |
 +------------------------------------+
                   |
-+------------------------------------+      # Como Proxmox es un virtualización de tipo 1 el hipervisor y el S.O forman parte del mismo
-|             HIPERVISOR             |      # Sistema principal de KVM del servidor Linux Kernel, del que va a utilizar Proxmox para virtualizar sus máquinas
++------------------------------------+      # Como Proxmox es una virtualización de tipo 1 el hipervisor y el S.O forman parte del mismo. En las virtualizaciones tipo 2 se separa el S.O del Hipervisor
+|             HIPERVISOR             |      # Sistema principal de KVM del servidor Linux Kernel, del que va a utilizar Proxmox para virtualizar sus máquinas y crear los contenedores
 +------------------------------------+      # El Hipervisor no es una parte separatoría si no que es el propio kernel del Linux de Proxmox, pero lo granulo para comprender mejor cada parte
-+------------------------------------+
++------------------------------------+      # El hipervisor utiliza el LXC y el KVM integrado en el propio Linux Kernel para luego desde Proxmox crear las máquinas virtuales y los contenedores
 |               LINUX                |      # Distribución/Linux por defecto para Proxmox: Debian
 +------------------------------------+
                   |
@@ -299,14 +299,30 @@ lvdisplay
 ----------------------------------------------------------
 
 
-# yo en mi caso en local (pve) que es mi unidad de almacenamiento de proxmox no quiero que contenga más de 20GB y por defecto le dá 100GB 
-# compruebo el almacenamiento (90GB)
-lvdisplay /dev/pve/root
-df -h /
-lsblk
-lvdisplay
-vgs
-df -hT
+## yo en mi caso en local (pve) que es mi unidad de almacenamiento de proxmox no quiero que contenga más de 20GB y por defecto le dá 100GB 
+
+# 1. Comprueba el tamaño actual
+lvdisplay /dev/pve/data                   # compruebo el almacenamiento (90GB)
+lvs                                       # Vista resumida
+
+# 2. Verifica si hay VMs o CTs en ejecución
+qm list                                   # Máquinas virtuales
+pct list                                  # Contenedores
+
+# 3. Asegúrate de que 'local-lvm' no tenga discos asignados
+ls /dev/pve/                              # Revisa qué volúmenes hay
+ls /var/lib/lvm                           # Si usas LVM directamente
+du -sh /dev/pve/data                      # Verifica espacio usado
+
+# ⚠️ Asegúrate que esté vacío o solo ocupado parcialmente
+
+# 4. Reducción del volumen
+lvresize -L 20G /dev/pve/data
+# o:
+lvreduce -L 20G /dev/pve/data             # Interactivo y más seguro
+
+# 5. Verifica
+lvs
 
 
 
@@ -386,7 +402,7 @@ Datacenter > HA > Quoruom:OK
 
 
 
-=======[❌ CREAR MÁQUINA VIRTUAL ]==================================================================
+=======[❌ CREAR UNA MÁQUINA VIRTUAL ]===============================================================
 # buena práctica para mejor visualización
 ⚙️ > Sort Key: Name
 
