@@ -8,20 +8,20 @@
 #     - Su propia interfaz web y CLI (pve)
 
 +-------------------+  +-------------+      
-|  Virtual Machine  |  |  CONTAINER  |      # KVM (Kernel-based Virtual Machine): Es capaz de crear máquinas virtuales utilizando al KVM[QUEMU] del Linux principal (Proxmox)
-|        KVM        |  |     LXC     |      # LXC (Linux Containers): Es capaz de crear contenedores utilizando al KVM[LXC] del Linux principal (Proxmox)
+|  Virtual Machine  |  |  CONTAINER  |      # KVM (Kernel-based Virtual Machine): Es capaz de crear máquinas virtuales utilizando al KVM[QUEMU] del Linux principal (Hipervisor) 
+|        KVM        |  |     LXC     |      # LXC (Linux Containers): Es capaz de crear contenedores utilizando al KVM[LXC] del Linux principal (sin hipervisor, es virtualización a nivel de sistema operativo) 
 +-------------------+  +-------------+
           |                    |
 +------------------------------------+
-|              PROXMOX VE            |
+|             PROXMOX VE             |
 +------------------------------------+
                   |
 +------------------------------------+
-|                KVM                 |      # Sistema principal de KVM del servidor Linux, del que va a utilizar Proxmox para virtualizar sus máquinas
-+------------------------------------+
+|             HIPERVISOR             |      # Sistema principal de KVM del servidor Linux Kernel, del que va a utilizar Proxmox para virtualizar sus máquinas
++------------------------------------+      # El Hipervisor no es una parte separatoría si no que es el propio kernel del Linux de Proxmox, pero lo granulo para comprender mejor cada parte
                   |
 +------------------------------------+
-|               LINUX                |      # Distribución por defecto de Proxmox: Debian
+|               LINUX                |      # Distribución/Linux por defecto de Proxmox: Debian
 +------------------------------------+
                   |
 +------------------------------------+      # Storage (ZFS, LVM, Ceph, ext4, etc)
@@ -129,6 +129,7 @@ Si vas a tener muchas VMs, considera ampliar la RAM del ejemplo.
 -------------------------------------------------------------------------------------
 
 
+
 =======[❌ PASOS A SEGUIR DE INSTALACIÓN ]==========================================================
 # sigo los pasos según la instalación requerida:
 
@@ -139,6 +140,7 @@ Si vas a tener muchas VMs, considera ampliar la RAM del ejemplo.
           - Crear cluster : En el caso de ser necesario HA → configuro y creo cluster
                     + Configurar nodo como cluster (NTP activo y en hora)
                     + Configurar Recursos Comunes del Cluster
+
 
 
 =======[❌ CREAR UNIDAD ISO ]=======================================================================
@@ -155,8 +157,157 @@ Proxmox Virtual Environment : https://www.proxmox.com/en/downloads [Proxmox VE 8
 htts://<ip>:8006
 
 
-=======[❌ CONFIGURACIÓN DE RED ]===================================================================
+
+=======[❌ CONFIGURACIÓN DE RED E INSTALACIÓN MÍNIMA ]==============================================
+# comprobar que la red está bien configurada
+vim /etc/network/interfaces
+
+# instalación mínima
+apt update && apt upgrade
+apt install btop vim -y
+
+## SSH
+# entro por ssh y modifico la terminal
+vim ~/.bashrc
+--------------------------------------------------------------
+## alias del servidor
+alias ls='ls -ha --color=auto --group-directories-first'
+alias la='ls  -lhai --group-directories-first'
+alias _liberarespacioram='sudo sync; echo 1 | sudo tee /proc/sys/vm/drop_caches | echo "pe    tición realizada correctamente." && echo "" && free -h'
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+alias grep='grep --color=auto'
+alias df='df --exclude-type=tmpfs'
+
+## Cambiar diseño del prompt (estilo cyberpunk)
+# **************************************
+PS1='\[\e[1;31m\]\u箱[\H] \w $: \[\e[0m\]'
+
+## cambiar colores para ls (estilo cyberpunk)
+# **************************************
+# Estilo técnico oscuro
+LS_COLORS=""
+LS_COLORS+="di=1;38;5;240:"     # directorios en gris oscuro técnico
+LS_COLORS+="fi=0;38;5;248:"     # archivos normales en gris medio
+LS_COLORS+="ln=1;33:"           # enlaces simbólicos en amarillo
+LS_COLORS+="so=1;38;5;94:"      # sockets en púrpura oscuro
+LS_COLORS+="pi=1;33:"           # pipes (tuberías) en amarillo
+LS_COLORS+="bd=1;38;5;236:"     # dispositivos de bloque en gris carbón
+LS_COLORS+="cd=1;38;5;238:"     # dispositivos de carácter en gris plomo
+LS_COLORS+="or=1;38;5;124:"     # archivos rotos en rojo sangre oscuro
+LS_COLORS+="mi=1;38;5;124:"     # archivos inexistentes en rojo sangre oscuro
+LS_COLORS+="ex=1;31"            # ejecutables en rojo brillante
+--------------------------------------------------------------
+
+# modifico el archivo vim
+cd /
+vim .vimrc
+--------------------------------------------------------------
+" ~/.vimrc simplificado estilo cyberpunk acorde a LS_COLORS
+set number                                    " Muestra números de línea
+set cursorline                                " Resalta línea actual
+set scrolloff=5                               " Mantiene 5 líneas arriba/abajo
+set incsearch                                 " Búsqueda incremental
+set hlsearch                                  " Resalta resultados búsqueda
+set ignorecase                                " Ignora mayúsculas/minúsculas
+set smartcase                                 " Caso sensible si hay mayúsculas
+set expandtab                                 " Usa espacios en lugar de tabs
+set tabstop=4
+set shiftwidth=4
+set wildmenu                                  " Mejor autocompletado en cmd
+syntax on
+set background=dark
+
+" Colores personalizados básicos para consola
+highlight Normal ctermfg=248 ctermbg=236      " Texto gris medio / fondo gris carbón
+highlight Comment ctermfg=33                  " Comentarios azul marino fuerte
+highlight LineNr ctermfg=240                  " Números gris oscuro
+highlight CursorLine ctermbg=238              " Fondo línea cursor gris plomo
+highlight Keyword ctermfg=61                  " Palabras clave azul cobalto apagado
+highlight Function ctermfg=94                 " Funciones púrpura oscuro
+highlight Statement ctermfg=124               " Sentencias rojo sangre oscuro
+highlight Visual ctermbg=240                  " Selección gris oscuro
+
+set laststatus=2                              " Siempre mostrar línea de estado
+set noerrorbells                              " Sin sonidos de error
+set clipboard=unnamedplus                     " Usa portapapeles del sistema
+--------------------------------------------------------------
+
+
+
 =======[❌ CONFIGURACIÓN DE DISCOS Y UNIDADES ]=====================================================
+# primero creo el Thinpool y lo añado como almacenamiento
+Thinpool : Permitir asignar más almacenamiento virtual del que realmente tienes disponible físicamente.
+
+# creo la partición mayor en modo LVM-Thin
+Nodo > Disk > LVM-Thin > Create Thinpool 
+  > [ ] add storage    # si lo seleccionas se agregará automáticamente al almacenamiento
+
+# crea un almacenamiento (para asociar el tipo de almacenamiento y agregarlo al nodo)
+Datacenter > Storage > Add > LVM-Thin > Selecciona "nombre-disco"
+# desde aquí configuro el tipo de unidad que voy a crear pudiendo ser por ejemplo en Directory (Disk Image, ISO Image, Container, Backup...)
+# según las opciones al clicar en el nodo > storage me dará unas selecciones u otras
+
++--------------+-----------------------------+----------------------------------------+
+| Tipo         | Uso adecuado                | Contenido a seleccionar (“Content”)    |
++--------------+-----------------------------+----------------------------------------+
+| LVM-Thin     | Discos para VM/CT           | Disk image, Container                  |
+| LVM          | Solo discos de VM           | Disk image                             |
+| Directory    | Ficheros: ISOs, backups...  | ISO image, Backup, Container, Disk img |
+| ZFS          | Similar a LVM-Thin + snaps  | Disk image, Container, ISO*            |
+| NFS / CIFS   | Almacenamiento en red       | ISO, Backup, Container, Disk image     |
+| Ceph         | Cluster distribuido         | Disk image, Container                  |
++--------------+-----------------------------+----------------------------------------+
+* ZFS solo permite ISO si se monta como dataset compatible
+
+
+## en el caso de necesitar más discos físicos 
+----------------------------------------------------------
+# 1. (Opcional) Verifica y limpia particiones del disco nuevo
+lsblk                     # Verifica el disco, por ejemplo /dev/sdb
+fdisk /dev/sdb
+  - d                     # Elimina particiones si existen
+  - n                     # Crear nueva partición (por defecto, usa todo el disco). Hay que hacerlo en el caso que se requieran particiones del disco, en el caso de que solo sea una no es necesario ya que vamos a crear un thinpool
+  - w                     # Guarda y sale
+
+# 2. (Opcional) Verifica estado del disco [Verifica salud SMART]
+# S.M.A.R.T = sistema integrado en discos duros y SSDs que permite auto-monitorear su salud y detectar fallos potenciales antes de que ocurran
+smartctl -iHA /dev/sdb
+
+# 3. Crear Thinpool desde Proxmox
+# Thinpool : Permitir asignar más almacenamiento virtual del que realmente tienes disponible físicamente.
+GUI: Node > Disks > LVM-Thin > Create: 
+  - Select disk: /dev/sdb
+  - Name: thinpool-disk2
+  - Opcional: eliminar particiones existentes (GUI lo hace)
+  - Esto crea automáticamente PV + VG + Thin Pool
+
+# 4. Añadir Thinpool como almacenamiento
+GUI: Datacenter > Storage > Add > LVM-Thin
+  - ID: lvm-disk2
+  - Volume Group: el creado (vg-thinpool-disk2, por ejemplo)
+  - Thin Pool: thinpool-disk2
+  - Content: Disk image, Container
+
+# 5. (Opcional) Verifica LVM
+pvdisplay
+vgdisplay
+lvdisplay
+----------------------------------------------------------
+
+
+# yo en mi caso en local (pve) que es mi unidad de almacenamiento de proxmox no quiero que contenga más de 20GB y por defecto le dá 100GB 
+# compruebo el almacenamiento (90GB)
+lvdisplay /dev/pve/root
+df -h /
+lsblk
+lvdisplay
+vgs
+df -hT
+
+
+
 =======[❌ CONFIGURACIÓN DE SCRIPTS ]===============================================================
 # cambio el tema
 usuario (arriba a la derecha) > Color Theme > Proxmox Dark
@@ -194,6 +345,8 @@ https://community-scripts.github.io/ProxmoxVE/scripts?id=microcode
 # reinicio el servidor proxmox
 - reiniciar
 
+
+
 =======[❌ CREAR CLUSTER ]==========================================================================
 # antes de iniciar con los cluster hay que intentar que los dispositivos o servidores sean los más parecido posible a ser posible exactamente iguales
 
@@ -228,6 +381,7 @@ Datacenter > Cluster (pve1) > VM (ejemplo: 101) > Sumary > Migrate
 https://www.youtube.com/watch?v=t5yvfnFvQrU
 # en el caso de que tenga un número impar de dispositivos me aseguro que el quorum funciona correctamente
 Datacenter > HA > Quoruom:OK
+
 
 
 =======[❌ CREAR MÁQUINA VIRTUAL ]==================================================================
