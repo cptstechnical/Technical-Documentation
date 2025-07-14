@@ -88,8 +88,8 @@
 +----------------+-----------------------------------+------------------------+
 | Cores físicos  | VMs ligeras posibles (con 1 vCPU) | Recomendación          |
 +----------------+-----------------------------------+------------------------+
-| 4              | 6–8 VMs (light use)               | OK con bajo uso        |
-| 4              | 3–4 VMs (alta carga)              | Mejor rendimiento      |
+| 4              | 6–8 VMs (light use) o 12–20 LXCs  | OK con bajo uso        |
+| 4              | 3–4 VMs (alta carga) o 8–10 LXCs  | Mejor rendimiento      |
 +----------------+-----------------------------------+------------------------+
 
 Método                         | ¿CPU física directa?         | Descripción técnica
