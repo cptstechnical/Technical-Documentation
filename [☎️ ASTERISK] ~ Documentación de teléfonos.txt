@@ -1,0 +1,71 @@
+=======================================================================================================
+[🔥 telefóno comunica al llamar pero sí puede recibir llamadas]::
+[🔥 los dos telefonos comunican (caso 2)]::
+
+# 🧑‍🎓 descarto fallos :
+# Lo primero voy a bajar a fábrica y cambio el cable de interfaz en el grandstream, de esta forma puedo saber si el problema es del telefóno o de las sesiones del grandstream
+# si sigue fallando el problema está en el telefóno [caso 1]
+# si no falla el problema está en las sesiones del grandstream [caso 2]
+
+# 🧑‍🎓 [caso 1] - reemplazar el telefonillo :
+	1 - el telefóno tiene en el lateral dos opciones (P - L), (pulso o línea). Tiene que estar siempre abajo (en línea)
+	2 - si aún así no funciona cambio el telefóno
+
+# 🧑‍🎓 [caso 2] - reinicio el grandstream :
+# antes de reiniciar el grandStream soltando y enchufando el conector de tensión, tengo que reiniciar desde el software del grandtream
+# esto ocurre porque si lo reinicio soltando el cable se va a crear una nueva sesión y no va a remplazarse hasta que se caduque la anterior (por lo que permanecerá mal)
+# para reiniciar el grandstream sigo estos pasos:
+	1 # entro al servidor
+	2 - _show-aors | grep <EXTENSION_DE_UNA_DE_LAS_INTERFACES_DEL_GRANDSTREAM>
+	3 - http://<IP_GRANDSTREAM>
+	4 - usuario:password
+	5 # Me fijo en status en la tabla "Port Options" que esté en yes el CID (identificación de llamadas)
+	5 - Basic setting > reboot
+
+# en el caso de haber realizado ese cambio y sigue fallando incluso habiendo esperado un día, puede que el problema esté en el grandstream
+
+
+
+
+=======================================================================================================
+[🔥 Agregar usuario telefonico]::
+
+-----------------------------------------------
+	SERVIDOR ASTERISK
+-----------------------------------------------
+1- entro en el servidor encargado de Asterisk
+
+2- entro en el siguiente archivo y modificar el usuario que queramos agregar
+	vim /etc/asterisk/pjsip.conf
+
+3- una vez lanazado ejecuto el servicio
+# No puedo hacer un systemrc reload porque desconecto las llamadas actuale:
+# entro en el modo asterisk
+asterisk -rvvvv
+# dentro del modo asterisk, recargo los datos
+	core reload
+	
+4- luego entro en la siguiente dirección 
+	cd /var/www/html/ 
+	  # para agregar la lista de telefonillos internos a internos.csv 
+		./generar-csv-internos.sh > internos.csv
+    # para agregar la lista de telefonillos internos a moviles.csv
+		./generar-csv-moviles.sh > moviles.csv
+    # para actualizar las listas en los teléfonos
+		./actualiza-agendas.sh
+
+	# compruebo los cambios en el servidor 
+	cd /var/www/html/fanvil
+	vim internos.xml
+
+	# compruebo los cambios de forma física
+	tlf físico > agenda
+
+
+-----------------------------------------------
+	CONFIGURACIÓN tlf físico
+-----------------------------------------------
+1- Desde el tlf físico le damos a Menú > Estado > ETH IP para ver la ip del tlf físico
+2- entro por https a través de la ip: https://<dirección_IP>
+3- agrego el usuario y contraseña que tenemos en la documentación
+4- dentro de la web pulso "en linea" y desde ahí busco el nombre que tengo que modificar (porque tendra la configuración y el nombre de otro usuario).
