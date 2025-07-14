@@ -19,7 +19,6 @@
 +------------------------------------+
 |             HIPERVISOR             |      # Sistema principal de KVM del servidor Linux Kernel, del que va a utilizar Proxmox para virtualizar sus máquinas
 +------------------------------------+      # El Hipervisor no es una parte separatoría si no que es el propio kernel del Linux de Proxmox, pero lo granulo para comprender mejor cada parte
-                  |
 +------------------------------------+
 |               LINUX                |      # Distribución/Linux por defecto de Proxmox: Debian
 +------------------------------------+
@@ -32,6 +31,9 @@
 +---------------+  +-----------------+      #   + RAM: Limitada, puedes usar ballooning para ajustar dinámicamente.
                                             #   + Disco: Asignado como almacenamiento virtual (raw, qcow2, LVM, ZVOL).
                                             #   + Red: Interfaces virtuales puenteadas al host (bridge).                      
+
+[🧮 Fundamento técnico discos]:
+Thinpool : Permitir asignar más almacenamiento virtual del que realmente tienes disponible físicamente.
 
 [🧮 Fundamento técnico vCPU]:
 - Overcommit: Overcommit (o sobre-asignación) se refiere a la práctica de reservar más recursos virtuales (CPU, memoria, disco, etc.) de los que físicamente hay disponibles en el host. El overcommit de CPU es posible porque Proxmox/KVM permite asignar más vCPUs que cores físicos.
