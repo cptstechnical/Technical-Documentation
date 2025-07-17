@@ -49,13 +49,15 @@ grep "JVBERi0xLjQKJdP0zOEKMSAwIG9iago8PAovQ3JlYXRpb25EYXRlKEQ6MjAyNTA2MjcwNDMwND
 tail -100 1751014332.M583233P1218151.correo.dominio.es,S=2273911,W=2303772:2,S
 #    ....
 
-# copio el archivo por el nombre otra vez a la carpeta /new "para volverlo a recibir"
-# mv 1751014332.M583233P1218151.correo.dominio.es\,S\=2273911\,W\=2303772\:2\,S ../new/
-# lo muevo y le cambio el nombre para que lo lea como nuevo, aún así lo recibirá a la hora que lo envíoo el cliente
-mv 1751014332.M583233P1218151.correo.grafometal.es,S=2273911,W=2303772:2,S ../new/$(date +%s).M$$.manual:2,S
+# lo primero pruebo a copiarme el correo a mi cuenta
+# esto manda el correo a mi cuenta y luego desde mi correo compruebo que pueda verlo
+cp '1751014332.M583233P1218151.correo.dominio.es\,S\=2273911\,W\=2303772\:2\,S' /var/vmail/dominio.es/<mi-cuenta>/Maildir/new/'1751014332.M583233P1218151.correo.dominio.es\,S\=2273911\,W\=2303772\:2\,S'
 
+# una vez comprobado el mensaje en mi correo y con una copia del mismo en mi bandeja lo vuelvo a mover a new de la cuenta del usuario para que se vuelva a enviar
+# copio el archivo por el nombre otra vez a la carpeta /new "para volverlo a recibir". (el correo no se enviará como nuevo, si no que se enviará con la misma fecha en la cola, sustituyendo al correo defectuoso)
+# ⚠️ cuidado al realizar esta operación que tenga la copia del mensaje por si se pierde o daña al moverlo de nuevo 
+mv 1751014332.M583233P1218151.correo.dominio.es\,S\=2273911\,W\=2303772\:2\,S ../new/
 
-# al copiar el archivo de nuevo a la carpeta /new se volverá a enviar pero no como nuevo correo si no como un correo enviado a la misma hora que la del correo corrupto
 
 =======================================================================================
 [📩ALIAS]:
