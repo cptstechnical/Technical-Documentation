@@ -62,6 +62,7 @@ dispositivo que integra en un mismo equipo funciones de transmisión y recepció
 # failover
 Es un mecanismo de alta disponibilidad que, ante la caída o fallo de un componente crítico (servidor, servicio, enlace de red, base de datos, etc.), redirige automáticamente la carga de trabajo a un recurso de respaldo (standby) para mantener el servicio en funcionamiento con mínima o nula interrupción. (su funcionalidad es como la de un bridge pero en alta disponibilidad entre distintos servidores que comparten la misma ip, para que cuando falle uno se active el siguiente sin llegar a notar la caída en el servidor, como por ejemplo una cabina con dos tomas de red por cada servidor, con tres servidores "1a, 2a, 3a, 1b, 2b y 3b", crearía un failover por cada servidor con alta disponibilidad entre las dos tomas que vienen de la cabina, 1a - 2a, 1b - 2b y 3a - 3b)
 
+
 ########################################################################################################
 ********************************************************************************************************
 🚀 CPD::
@@ -146,7 +147,6 @@ RAID 10            → mejor IOPS y tolerancia.
 Calculador RAID: https://www.synology.com/es-es/support/RAID_calculator
 
 
-
 =======================================================================================================
 [CABLES DE RED]:
 
@@ -177,14 +177,9 @@ Calculador RAID: https://www.synology.com/es-es/support/RAID_calculator
 +----------------+-------------------------------------+
 
 
-
-
-
-
 =======================================================================================================
 [INTERESANTES]:
 - JetKVM
-
 
 
 ########################################################################################################
@@ -194,7 +189,7 @@ Calculador RAID: https://www.synology.com/es-es/support/RAID_calculator
 =======================================================================================================
 [🔥🧑‍🚀 Tipos de NAS]:
 
-# marcas reconocidas
+## Marcas reconocidas:
 Ugreen : el más utilizado sin sistema operativo para instalar el S.O por encima
 Sinology : el más utilizado con sistema operativo acoplado
 
