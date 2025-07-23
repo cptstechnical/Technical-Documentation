@@ -161,6 +161,10 @@ Calculador RAID: https://www.synology.com/es-es/support/RAID_calculator
 =======================================================================================================
 [🔥🧑‍🚀 Tipos de NAS]:
 
+# marcas reconocidas
+Ugreen : el más utilizado sin sistema operativo para instalar el S.O por encima
+Sinology : el más utilizado con sistema operativo acoplado
+
 🧠 Tipos:
 ********************************
 +------------------------------+------------------------+-------------------------------+----------------------------------------------------------------------------------+---------------------------------------------+
