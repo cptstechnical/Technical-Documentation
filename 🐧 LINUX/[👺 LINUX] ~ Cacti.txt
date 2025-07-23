@@ -48,10 +48,12 @@ Managemente > Device > +
 	+ SNMP - Get Mounted Partitions							# particiones montadas en un dispositivo
 	+ SNMP - Get Processor Information						# CPU, procesador, frecuencia, núcleos...
 	+ SNMP - Interface Statistics							# estadísticas de interfaces
+	+ Net-SNMP - Sensors - Thermal Sensors
 
 - save 
 
 # 3 - selecciono las particiones que quiero monitorizar
+Create Graphs for this Device
 - Pulso en SNMP - Interface Statistics 
 - selecciono las unidades que importan desde "Data Query [SNMP - Get Mounted Partitions]" en este caso: 
 	+ /
@@ -59,14 +61,28 @@ Managemente > Device > +
 	+ /boot
 	+ Physical memory
 	+ Virtual memory
+	# si me equivocado al seleccionar alguno que no qería haber seleccionado:
+	Management > Graphs > -selecciono- > delete > Go
 
 - save
-	
+
 # 4 - agrego en los gráficos
 - Management > Trees 
 - selecciono el padre que quiero agregar el servidor en mi caso "servidores"
 - (desplazo los graficos creados)
 - save
+
+# 5 - ejeplo de monitorización (random server):
+# este apartado sirve solo de ejemplo no hay que realizarlo
+	Thermal Sensor Device : ───────────────────────────────	Package id 0
+			└────────────────────────────────────── temp1
+			└────────────────────────────────────── temp2
+	Data Query [SNMP - Get Mounted Partitions] : ────────── Physical memory
+			└────────────────────────────────────── Virtual memory
+			└──────────────────────────────────────	/
+	Data Query [SNMP - Get Processor Information] : ─────── Total
+	Data Query [SNMP - Interface Statistics] : ────────────	eno1
+
 
 ## 🚨 b ~ para agregar un dispositivo (ej: esp32) · [snmp único - OID directo]:
 **************************************************************************
