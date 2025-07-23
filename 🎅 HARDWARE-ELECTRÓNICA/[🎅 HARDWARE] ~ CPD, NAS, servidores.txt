@@ -147,6 +147,39 @@ Calculador RAID: https://www.synology.com/es-es/support/RAID_calculator
 
 
 
+=======================================================================================================
+[CABLES DE RED]:
+
+## opción 1:
+# cables de red según la función según convención práctica o guía de coloración usada en la mayoria de infraestructuras de centros de datos :
++----------------+-------------------------------------+
+| Color cable    | Uso típico en cableado CPD          |
++----------------+-------------------------------------+
+| Azul           | Cable de datos general (LAN)        |
+| Gris           | Cable de datos alternativo          |
+| Blanco         | Cable de datos, a veces WiFi        |
+| Verde          | Cable de voz (telefonía)            |
+| Rojo           | Cable de red crítica o enlace       |
+| Negro          | Cable de seguridad o CCTV           |
+| Amarillo       | Cable de gestión o PoE              |
+| Naranja        | Cable de backbone o enlaces         |
+| Morado         | Cable para sistemas especiales      |
++----------------+-------------------------------------+
+
+## opción 2:
+# alternativa personalizada, simple y sencilla (sin convenciones):
++----------------+-------------------------------------+
+| Color          | Función recomendada                 |
++----------------+-------------------------------------+
+| Negro          | Cable de datos LAN                  |
+| Amarillo       | Cable de gestión o PoE              |
+| Rosa           | Cable especial / emergencias        |
++----------------+-------------------------------------+
+
+
+
+
+
 
 =======================================================================================================
 [INTERESANTES]:
