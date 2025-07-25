@@ -26,9 +26,9 @@ Por sistema operativo:
 
 [🔥🧑‍🚀 OTROS RELACIONADOS]:
 ********************************
-- UPS (técnico) o SAI (doméstico)   dispositivo que proporciona energía de respaldo a equipos electrónicos en caso de un corte de energía o fluctuaciones en la corriente eléctrica. NUT es software libre que habla con el UPS vía USB, puerto serie, SNMP, etc.
+- UPS (técnico) o SAI (doméstico)    : dispositivo que proporciona energía de respaldo a equipos electrónicos en caso de un corte de energía o fluctuaciones en la corriente eléctrica. NUT es software libre que habla con el UPS vía USB, puerto serie, SNMP, etc.
                                     La función de UPS principal es mantener los dispositivos conectados en funcionamiento durante un tiempo limitado, permitiendo que los usuarios guarden su trabajo y apaguen los equipos de manera segura. 
-- 
+- USB dongle                         : dispositivo físico que se conecta por USB para verificar y asegurar la licencia de un software, funcionando como llave de autenticación para permitir su uso, se suele utilizar en servidores para licenciamientos de Windows u otros.
 
 =======================================================================================================
 [🔥🧑‍🚀 ETHERNET DE SERVIDORES]:
