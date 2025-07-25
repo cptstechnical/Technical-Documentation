@@ -72,6 +72,18 @@ define service {
         }
 ---------------------------------------------------------------------
 
+
+========================================================================================================
+[👺 desactivar notificaciones email]::
+## para desactivar las notificaciones de un servicio y seguir manteniendo los registros
+# en el caso de ser un servicio
+❌ Disable Notifications For This Service        # desactivar notificaciones
+✅ Enable Notifications For This Service         # activar notificaciones
+
+# en el caso de ser un host
+❌ Disable notifications for this host           # desactivar notificaciones
+✅ Enable Notifications For This host            # activar notificaciones
+
 ========================================================================================================
 [👺 ver plugins disponibles o crear uno nuevo]::
 # los plugins se almacenan en la siguiente dirección
