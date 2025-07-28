@@ -457,4 +457,5 @@ VLAN Tag: (el tag de vlan correspondiente no la vlan de red)
 Model: 
 ------------------------------------------------------------------------------
 
-
+# hay que recordar que si la máquina es un Windows tengo que instalar "virtio win"
+- para conseguir esto tengo que virtualizar desde proxmox en la máquina Windows a traves de la unidad virtual CD la ISO de "virtio win" y desde dentro del Windows ejecutarlo.
