@@ -276,6 +276,18 @@ putty > Serial > COM1 > Speed:
   COM: (puedo comprobarlo desde Administrador de dispositivos)
   SPEED: 115200
 
+
+#############[ CONSOLA ]########################################
+# Modificar SSH-2 a versión segura
+enable
+config
+show ip ssh
+#	ssh 1.99 (versión 1)
+ip ssh version 2
+#	ssh 2.0  (versión 2)
+write
+exit
+
 #############[ TFTP ]########################################
 # descargo el programa tftpd64 
 https://pjo2.github.io/tftpd64/
