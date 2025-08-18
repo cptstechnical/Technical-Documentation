@@ -1,0 +1,243 @@
+####[ INSTALACIÓN INICIAL ]###########################################################
+######################################################################################
+
+# Nunca entrar a los servidores desde los equipos como Administrador (excepto el departamento de IT)
+# Para documentación completa acceso a root.
+
+[Índice de instalación]:
+*****************************
+## 0. Antes de formatear
+## 1. Formateo del equipo
+## 2. Directorio activo	
+## 3. Acceso remoto	
+## 4. Servicio:a-medida	
+## 5. Impresoras
+## 6. Unidades de red
+## 7. Configurar Outlook|.pst	
+## 8. Backup de escritorio
+## 9. IP estática
+## 10. Otras configuraciones
+## 11. Instalar programas
+
+
+
+####[ PASO DE INSTALACIÓN ]###########################################################
+######################################################################################
+
+============[ 0. Antes de formatear ]=================================================
+
+Datos para guardar en un USB extraible:
+	🔥 Guarda una carpeta con el nombre de "Escritorio", con los archivos y carpetas del escritorio actual.
+	🔥 Haz un pantallazo al escritorio y a sus unidades de red.
+	🔥 Extrae el .pst (Outlook) y modificar el Outlook como indica el paso 7.
+	🔥 WindowsProductKey 	: Comprobar que tengo acceso a la clave de acceso antes de formatear
+	🔥 WindowsOfficeKey  	: Conseguir el key de office desde Licencias > Microsoft > Office
+	
+	
+============[ 1. Formateo del equipo ]=================================================
+
+# Para entrar en modo 
+	💡 F2, F10, F11, F12 o Esc para entrar en la Bios
+	Bios > Security > Secure Boot = Disable
+	# cambiar el orden del boot con prioridad del USB
+
+# Formateo el equipo desde la unidad Ventoy. Copiando la clave de producto
+	Personalizada:instalar solo Windows (avanzado)
+	Nombre del dispositivo: <NOMBRE-PC>
+	Configuración para uso profesional > opciones de inicio de sesión > Unirse a un dominio)
+	Nombre de usuario: Usuario
+	Contraseña: Grafo%88
+	Uso profesional
+		> Opciones de inicio sesión
+			> Unirse a dominio <CREDENCIALES DE USUARIO LOCAL>
+			- Las preguntas de recuperación de sesión tengo que meter valores inexistentes
+	Sin permisos de ubicación
+	Deniego los permisos:
+		obligatorios : Enviar datos 
+		no : Mejorar las entradas manuscritas y la escritura
+		no : Obtener experiencias personalizadas
+	[	
+		Sin permiso a Windows
+		No usar datos con Windows
+		Sin publicidad
+	]
+	
+
+============[ 2. Directorio activo ]===================================================
+
+[🔥 En el caso de portatil no hay que hacerlo.]
+# Una vez formateado: 
+	Este equipo (botón derecho) > Propiedades > Sistema - Dominio o grupo de trabajo
+	(Descripción vacía) - Cambiar:
+		Nombre de equipo: <NOMBRE-PC>
+		Dominio: <DOMINIO>
+			Aceptar >																			                        # Me registro con la cuenta de administrador (o cualquier otra) para comprobar el acceso
+	
+	# Se unió correctamente al dominio <DOMINIO>
+	# reiniciar
+	
+
+============[ 3. Acceso remoto ]=======================================================
+
+[🔥 En el caso de portatil no hay que hacerlo.]	
+# En el caso de que necesite acceder por acceso remoto
+	Panel de control > Sistema de seguridad > Opciones de energía >
+	Elegir el comportamiento de los botones de inicio/apagado
+	Cambiar la configuración actualmente no disponible   					  					# clicar
+		[ ] Hibernar                                        				  					# quitar el check de Hibernar
+		
+	Panel de control > Sistema de seguridad > Opciones de energía >
+	Cambiar frecuencia con la que el equipo entra en estado de suspensión
+	Canbiar la configuración del plan
+		Poner al equipo en estado de suspensión
+			[x] Nunca
+
+# Agregar el usuario al remoto del equipo
+	# Me dirijo a inicio 
+	Tecla Super + R 																			# (botón derecho) > ejecutar
+	Lusrmgr.msc                     										            		# Ctrl + Shift + Enter para abrirlo como Administrador
+		gRUPOS > Usuarios de escritorio remoto
+			Agregar : <NOMBRE_DE_USUARIO>
+				Comprobar nombre
+	Aceptar y guardar
+
+# segunda opción de agregar el usuario al remoto del equipo
+	Btoón derecho en inicio > Sistema > Sistema > Escritorio Remoto > Usuarios de escritorio remoto > 
+	Agregar > Opciones avanzadas > 
+		Desde esta ubicación: <DOMINIO>
+		Buscar ahora > "seleccionar usuario"
+	
+
+
+============[ 4. Servicio:a-medida ]======================================================
+
+# a-medida es un servicio que busca todas las características del equipo y las guarda en una base de datos desarrollado por mí 
+# El archivo de instalación en el Setup a-medida v22.001
+	> Siguiente
+
+# Comprobar servicio
+	Tecla Super + Servicios > a-medida > Propiedadaes
+
+
+============[ 5. Impresoras ]==========================================================
+
+# algunos drivers solo hace falta instalarlos
+[ ejecuto el driver ]:
+	[ ] When done unzipping open: ./install.exe								      				# opción desactivada
+	Unzip
+	
+[ configuro impresora ]:
+	Panel de control > Impresoras
+	Impresoras y escáneres > Agregar dispositivo > Agregar manualmente
+	[x] Agregar una impresora con una dirección IP o un nombre de host
+	Dispositivo TCP/IP | <IP de impresora>     	        					  					# agregar impresora con IP
+	# Instalar controlador de impresora: Usar disco...
+		C:\\<nombre-de-la-impresora>
+		# selecciono el primero y valido
+	Acepto la configuración
+	Nombre de la impresora: IMP-<rango de la impresora>						  					# IMP-OFICINAS
+		
+# Hay impresoras que se deben de configurar en escala de grises (por ejemplo las de oficinas):
+	Panel de control > Impresoras > #impresora-especifica > preferencias
+		> color > escala de grises
+	
+
+============[ 6. Unidades de red ]=====================================================	
+
+# Creo las unidades de red
+# desde una carpeta hago una búsqueda con:
+	\\<IP_O_HOST_DE_RED>
+	(botón derecho en una carpeta) > Conectar a unidad de red...
+
+
+============[ 7. Configurar Outlook|.pst ]=============================================	
+
+# ¡IMPORTANTE! 🔥Desde el equipo antiguo tengo que realizar los siguientes cambios:
+***************************************************************************************	
+	# Desactivar el mantener copia de seguridad:
+		- Panel de control > Mail > Cuentas de correo electrónico > (seleccionar cuenta) 
+		- Más configuración > Avanzadas:
+			+ [ ] Dejar una copia de los mensajes en el servidor			  					# opción desactivada 
+			+ [ ] Quitar el servidor después ... días						        		      # opción desactivada
+			> Aceptar
+
+	# Abro el Outlook para enviar y recibir (Actualizar mensajes): 
+		- Abro el Outlook
+		- Selección Bandeja de entrada en la cuenta elegida
+			> Enviar y Recibir > Enviar y Recibir todas las carpetas 							# pulsar varias veces
+		- C:\Usuarios\<Usuario>\Documentos\Archivos de Outlook\<nombredelusuario@nombredeldominio>.pst
+		# Duplico este archiv .pst en la unidad USB
+
+
+# ¡IMPORTANTE! 🔥La instalación de Outlook la hago despues de instalar Microssoft Officce
+# ¡IMPORTANTE! 🔥Instalo Microssoft Officce antes de instalar y configurar Outlook
+# ¡IMPORTANTE! 🔥Desde el equipo formateado (nuevo):
+**************************************************************************************
+
+# ¡IMPORTANTE! 🔥🔥🪵Instalar Microssoft:
+***************************************************************************************
+	# La clave de activación solo se activa una vez al comprar el producto, 
+	# siempre que este disponible se adjunta el product key
+	- Instalar una clave de producto en su lugar
+	- Enter an Office product key 
+		# ⚠️ Cuidado con escribirla correctamente
+		> ****-****-****-****
+		> Siguiente
+	- Officce Open XML formats
+
+	# Migrar correo 
+	********************************************************************************
+	# Panel de control > Mail 													# si no funciona abro Outlook por primera vez	
+	--------------------------------------------------------------------------------------
+			Su nombre: <nombre_apellido> - GRAFOMETAL	
+			Dirección de correo electrónico: <correo>
+			Servidor de correo entrante: <DOMINIO>
+			Servidor de correo saliente (SMTP): <DOMINIO>
+			Nombre de usuario: <correo>
+			Contraseña: *********
+			Servidor de salida:
+				+ [x] Miservidor de salida (SMTP) requiere autenficación
+				+ [x] Utilizar la misma configuración que mi servidor de correo de entrada
+			Avanzadas:
+				> POP3: 995 - SSL/TLS
+				> SMTP: 587 - STARTTLS/TLS
+					+ [x] Dejar una copia de los mensajes en el servidor		
+					+ [x] Quitar el servidor después ... 14 días
+	--------------------------------------------------------------------------------------
+	# en la misma pestaña donde configuro el correo tengo que importar el .pst 
+		> Archivo de datos desde Outlook existente
+	# la carpeta de "Archivos de Outlook" se genera despues de darle a "Examinar" > Copio dentro de esa ruta el archivo .pst
+	- C:\Usuarios\<Usuario>\Documentos\Archivos de Outlook\<nombredelusuario@nombredeldominio>.pst
+	# En caso de tener varios .pst para una misma cuenta lo hago desde: "Archivos de datos > Agregar"
+	
+	# El siguiente paso es configurar las firmas: 
+		Nuevo mensaje > Firma > Firmas...
+	# Tengo que meter una firma distinta para "Mensajes nuevos" y otra para "Respuestas"
+
+
+============[ 8. Backup de escritorio ]==============================================	
+
+# Creo una carpeta en el escritorio del equipo nuevo con todos sus archivos
+# Desplazo los pantallazos al escritorio de su nuevo equipo por si el usuario quiere ordenarlo igual 
+# Creo las mismas unidades de red que tenía
+
+
+============[ 9. IP estática ]=======================================================	
+
+# En caso de los portatiles lo dejo en DHCP y lo controlo desde el Mikrotik
+
+# Asigno una IP estática controlada para el Active Directory
+	Tecla Super + Ver Conexiones De Red
+	Ethernet > (botón derecho) > Propiedades > TCP/IPv4
+		Zona DNS: 
+			1º preferido   	: (ip del servidor de Active Directory)
+			2º alternativo 	: (puerta de enlace de la VLAN del equipo en red)
+	# Desconecto TCP/IPv6
+
+
+============[ 11. Instalar programas ]============================================	
+[🔥 Instalar programas]:
+# Instalación para todos los equipos:
+	[●] WinRAR
+	[●] Acrobat Reader
+	[●] Chrome
