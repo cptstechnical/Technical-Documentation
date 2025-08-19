@@ -189,7 +189,7 @@ Datos para guardar en un USB extraible:
 	********************************************************************************
 	# Panel de control > Mail 													# si no funciona abro Outlook por primera vez	
 	--------------------------------------------------------------------------------------
-			Su nombre: <nombre_apellido> - GRAFOMETAL	
+			Su nombre: <nombre_apellido>
 			Dirección de correo electrónico: <correo>
 			Servidor de correo entrante: <DOMINIO>
 			Servidor de correo saliente (SMTP): <DOMINIO>
