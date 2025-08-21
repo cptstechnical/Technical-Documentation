@@ -1,0 +1,25 @@
+# como solucionar USB falsos con memoría asignada inventada (tiene 1T cuand oen realidad su almacenamiento real es de 2GB):
+
+1️⃣ Verifica la capacidad real
+Windows: 
+  H2testw (escribirá y leerá datos para ver cuánto espacio es realmente utilizable).
+Linux: 
+  f3write y f3read.
+  Esto te dirá, por ejemplo, que un USB que dice 20 GB solo puede almacenar 1 GB de forma fiable.
+
+2️⃣ Formatea con el tamaño real
+Windows:
+  Conecta el USB.
+  Abre Disk Management (diskmgmt.msc).
+  Borra todas las particiones.
+  Crea una nueva partición del tamaño real (p. ej., 1 GB).
+  Formatea en FAT32 o NTFS según uso.
+Linux:
+  sudo fdisk /dev/sdX  # reemplaza sdX por tu USB
+  # borra particiones y crea una nueva con tamaño real
+  sudo mkfs.vfat -F32 /dev/sdX1  # formatea FAT32
+
+3️⃣ Opcional: reprogramar el firmware
+Algunos controladores de USB permiten reescribir la información de capacidad (con herramientas como AlcorMP, ChipGenius identifica el controlador).
+Riesgo alto: si fallas, el USB puede quedar inutilizable.
+Solo recomendable si quieres “resetearlo” para que reporte la capacidad real y no cause errores al copiar archivos.
