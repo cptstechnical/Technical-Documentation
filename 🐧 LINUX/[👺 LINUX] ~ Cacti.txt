@@ -17,7 +17,7 @@
 |   Data Source     +---------->+ Associated       |			# Data Source: Es la entidad principal que define qué datos se monitorean.	
 |                   |           | Data Queries     |			# Associated Data Queries: Especifica cómo se obtienen los datos para una Data Source.
 +-------------------+           +------------------+			# Graph Template: Define cómo se visualizan los datos en un gráfico.
-          |                               ^				# Associated Graph Templates: Asocia una plantilla de gráfico específica a una Data Source para la visualización de los datos.		
+          |                               ^						# Associated Graph Templates: Asocia una plantilla de gráfico específica a una Data Source para la visualización de los datos.		
           |                               |
           v                               |
 +-------------------+           +------------------+			# Interface web
