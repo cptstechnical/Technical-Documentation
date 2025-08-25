@@ -33,10 +33,18 @@ Por sistema operativo:
 =======================================================================================================
 [🔥🧑‍🚀 ETHERNET DE SERVIDORES]:
 ********************************
-# tiene tres tomas ethernet
-(+) - Ethernet de iDRAC (KVM)          : Para la gestión remota del servidor. Los administradores pueden acceder incluso si el sistema no funciona. Proporciona funciones como la monitorización del hardware, la gestión de energía y la capacidad de realizar actualizaciones de firmware.
-(+) - Ethernet de gestión (PROXMOX)    : Esta conexión se utiliza para la gestión del servidor a través de la red. Permite a los administradores gestionar el servidor y sus recursos a través de herramientas de software de gestión, como sistemas de monitoreo y administración de redes.
-(+) - Ethernet de red                  : Este es el puerto de red principal que se utiliza para la comunicación normal del servidor con otros dispositivos en la red, como otros servidores, estaciones de trabajo y dispositivos de almacenamiento.
+# tiene cinco tomas ethernet
+(+) - Ethernet de iDRAC (KVM)        : Para la gestión remota del servidor. Los administradores pueden acceder incluso si el sistema no funciona. Proporciona funciones como la monitorización del hardware, la gestión de energía y la capacidad de realizar actualizaciones de firmware (esta el sistema, por ejemplo proxmox, no es capaz de verla) [ethernet 8303].
+(+) - Ethernet de gestión (PROXMOX)  : Esta conexión se utiliza para la comunicación normal del servidor con otros dispositivos en la red, como otros servidores, estaciones de trabajo y dispositivos de almacenamiento, es la salida de las máquinas virtualizadas de proxmox por eso tiene que ir a un switch en trunk y gestionar sus vlan desde el network de cada máquina de proxmox [ethernet 8404].
+(+) - Ethernet de red                : Esta es la red que se utiliza para la comunicación con la cabina (ethernet dn0 y ethernet np1).
+-----------------------------------------------------------------------------------------------------------------------
+Ethernet 8303 ───── GESTIÓN iDRAC ───── SW VLAN                        // Gestión de Proxmox (para instalación)
+Ethernet 8404 ───── vmbr0 GESTIÓN ───── SW TRUNK                       // Tráfico de red de las máquinas virtuales
+Ethernet dn0 ──┐
+               ├─── vmbr1 ──────────── CABINA                          // Conexión al storage y HA de la cabina del CPD
+Ethernet np1 ──┘
+-----------------------------------------------------------------------------------------------------------------------
+
 
 # Synology de backups:
 se instalan las dos tomas ethernet en bounding, para conseguir (HA o alta disponibilidad), (Load balancing o Distribuye el tráfico entre interfaces, mejorando el rendimiento), Mejor rendimiento en backups,  .
