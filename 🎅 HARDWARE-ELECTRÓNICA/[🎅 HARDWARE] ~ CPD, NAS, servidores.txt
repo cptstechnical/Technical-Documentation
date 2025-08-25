@@ -34,14 +34,20 @@ Por sistema operativo:
 [🔥🧑‍🚀 ETHERNET DE SERVIDORES]:
 ********************************
 # tiene cinco tomas ethernet
-(+) - Ethernet de iDRAC (KVM)        : Para la gestión remota del servidor. Los administradores pueden acceder incluso si el sistema no funciona. Proporciona funciones como la monitorización del hardware, la gestión de energía y la capacidad de realizar actualizaciones de firmware (esta el sistema, por ejemplo proxmox, no es capaz de verla) [ethernet 8303].
-(+) - Ethernet de gestión (PROXMOX)  : Esta conexión se utiliza para la comunicación normal del servidor con otros dispositivos en la red, como otros servidores, estaciones de trabajo y dispositivos de almacenamiento, es la salida de las máquinas virtualizadas de proxmox por eso tiene que ir a un switch en trunk y gestionar sus vlan desde el network de cada máquina de proxmox [ethernet 8404].
-(+) - Ethernet de red                : Esta es la red que se utiliza para la comunicación con la cabina (ethernet dn0 y ethernet np1).
+(+) - Ethernet de iDRAC (KVM)::    
+    Para la gestión remota del servidor. Los administradores pueden acceder incluso si el sistema no funciona. Proporciona funciones como la monitorización del hardware, actualizaciones de firmware (en el sistema, por ejemplo proxmox, no es capaz de verla) [ethernet 8303].
+(+) - Ethernet de gestión (PROXMOX)::
+    Es el ethernet que voy a configurar en la instalación de Proxmox, y va a servir exclusivamente para identificar PROXMOX (o ese cluster en concreto).
+(+) - Ethernet de tráfico (trunk-switch)::
+    Esta conexión se utiliza para la comunicación normal del servidor con otros dispositivos en la red. Es la salida de las máquinas virtualizadas de proxmox por eso tiene que ir a un switch en trunk y gestionar sus vlan desde el network de cada máquina de proxmox [ethernet 8404].
+(+) - Ethernet de red::
+    Esta es la red que se utiliza para la comunicación con la cabina [ethernet dn0 y ethernet np1].
 -----------------------------------------------------------------------------------------------------------------------
-Ethernet 8303 ───── GESTIÓN iDRAC ───── SW VLAN                        // Gestión de Proxmox (para instalación)
-Ethernet 8404 ───── vmbr0 GESTIÓN ───── SW TRUNK                       // Tráfico de red de las máquinas virtuales
+Ethernet 8303 ───── iDRAC ───────────── SW VLAN                        // Utilización de servidor hardware iDRAC.
+Ethernet 8404 ───── GESTIÓN ─────────── SW VLAN                        // Gestión de Proxmox (como configuración de Proxmox).
+Ethernet 8405 ───── TRÁFICO ─────────── SW TRUNK                       // Tráfico de red de las máquinas virtuales.
 Ethernet dn0 ──┐
-               ├─── vmbr1 ──────────── CABINA                          // Conexión al storage y HA de la cabina del CPD
+               ├─── vmbr1 ───────────── CABINA                         // Conexión del storage y HA (alta disponibilidad) a la cabina del CPD.
 Ethernet np1 ──┘
 -----------------------------------------------------------------------------------------------------------------------
 
@@ -51,6 +57,7 @@ se instalan las dos tomas ethernet en bounding, para conseguir (HA o alta dispon
 
 # switch de CPD:
 # se conecta la boca de ethernet a la primera y luego de manera ordenada cada ethernet a una distinta
+# todos se configuran en la vlan de servidores o de vistualización a excepción de los "Ethernet de tráfico" y el "SW-PROXMOX -> SW-CPD" que tienen que ir configurados en modo trunk.
 2 - Servidor 1 (KVM)            10 - Servidor 3 (red)
 3 - Servidor 1 (PROXMOX)        11 - 
 4 - Servidor 1 (red)            12 - 
@@ -198,7 +205,7 @@ Calculador RAID: https://www.synology.com/es-es/support/RAID_calculator
 [🔥🧑‍🚀 Tipos de NAS]:
 
 ## Marcas reconocidas:
-Ugreen : el más utilizado sin sistema operativo para instalar el S.O por encima
+Ugreen : el más utilizado sin sistema operativo para instalar el S.O por encima (ahora también viene con un S.O parecido a Synology pero con muchos menos gadgets)
 Sinology : el más utilizado con sistema operativo acoplado
 
 🧠 Tipos:
