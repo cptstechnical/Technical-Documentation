@@ -1,4 +1,8 @@
-# la manera más útil (bajo mi opiniión), en comprobar las vulnerabilidades es apuntarlas todas en un .txt a parte, asignando la vulnerabilidad a todas las ip * vez que se repita 
+# la manera más útil (bajo mi opiniión), en comprobar las vulnerabilidades es apuntarlas todas en un .txt o .xls a parte, asignando la vulnerabilidad a todas las ip que se repitan
 
-# Rsults (8/44) = sisgnifica que de 44 escaners que ha hecho a encontrado 8 posibles vulnerabilidades
-Scan > Reports > (pulsas el reporte) > Rsults (8/44) > 
+# para ver todas las vulnerabildiades sin repeticiones
+Scans > Vulnerabilities
+
+# apunto cada uno de los nombres de las vulnerabilidades y para conocer las ips que afectan a estas vulnerabilidades (es posible que se repitan estas ips si se han hecho múltiples task)
+Scans > Vulnerabilities
+  Columna Results > (click en el número)
