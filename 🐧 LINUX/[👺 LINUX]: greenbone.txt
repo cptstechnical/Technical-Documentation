@@ -1,0 +1,4 @@
+# la manera más útil (bajo mi opiniión), en comprobar las vulnerabilidades es apuntarlas todas en un .txt a parte, asignando la vulnerabilidad a todas las ip * vez que se repita 
+
+# Rsults (8/44) = sisgnifica que de 44 escaners que ha hecho a encontrado 8 posibles vulnerabilidades
+Scan > Reports > (pulsas el reporte) > Rsults (8/44) > 
