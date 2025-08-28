@@ -25,8 +25,8 @@
 |   Graph Template  +---------->+ Associated       |			# Management - Desde aquí agrego todo lo necesario (dispositivos, arboles, sitios...).
 |                   |           | Graph Templates  |			# Templates - Desde aquí configuro las necesidades generales del template utilizado.
 +-------------------+           +------------------+			# Import/Export - Desde aquí voy a importar y exportar los templates que necesite del servidor antiguo al nuevo.
-									# Configuration / Settings - Desde aquí voy a configurar las opciones que permanecen por sesion.
-									# Logged is admin / Edit profile - Desde aquí voy a configurar las opciones del usuario. 
+																# Configuration / Settings - Desde aquí voy a configurar las opciones que permanecen por sesion.
+																# Logged is admin / Edit profile - Desde aquí voy a configurar las opciones del usuario. 
 
 
 ========================================================================================================
