@@ -45,9 +45,9 @@ Managemente > Device > +
 - Una vez creado lo busco por Managemente > Device
 - Entro en el dispositivo
 - busco "Associated Data Queries" y creo los siguientes:
-	+ SNMP - Get Mounted Partitions							# particiones montadas en un dispositivo
-	+ SNMP - Get Processor Information						# CPU, procesador, frecuencia, núcleos...
-	+ SNMP - Interface Statistics							# estadísticas de interfaces
+	+ SNMP - Get Mounted Partitions												# particiones montadas en un dispositivo
+	+ SNMP - Get Processor Information											# CPU, procesador, frecuencia, núcleos...
+	+ SNMP - Interface Statistics												# estadísticas de interfaces
 	+ Net-SNMP - Sensors - Thermal Sensors
 
 - save 
@@ -113,8 +113,8 @@ Managemente > Device > +
 > New Graph Template > SNMP - Generic OID Template > Two Deciamls (ej:500,07 o 500,90)
 
 # ⚠ relleno con los datos y muy importante rellenand el OID que quiero registrar
-⚠️ Minimum Value ("U" for No Minimum): 0			# valor inicial 0
-⚠️ Maximum Value ("U" for No Maximum): u			# valor inicial u, no le doy un máximo si no que lo registra de manera automática así no hay fallo...
+⚠️ Minimum Value ("U" for No Minimum): 0										# valor inicial 0
+⚠️ Maximum Value ("U" for No Maximum): u										# valor inicial u, no le doy un máximo si no que lo registra de manera automática así no hay fallo...
 OID: .1.3.6.1.4.1.6...
 Data Source Type: GAUGE
 Vertical Label: Celsius
@@ -122,10 +122,13 @@ Legend text: Temperature
 Auto scale options: Use --alt-autoscale (ignoring given limits)
 
 # para comprobar el OID voy al servidor de cacti y : 
-snmpwalk -v2c -c <COMMUNITY-SNMP> -Oneq <IP-SNMP> .1		# saca todos los snmp, [todos los que empiezan con 1.]. (cuidado con la memoria del servidor)
-snmpwalk -v2c -c <COMMUNITY-SNMP> -On -Oeq <IP-SNMP> <OID>	# saca el snmp del OID pasado por parámetro
-snmpwalk -v2c -c <COMUNITY> <IP> <OID_SNMP>			# saca el snmp del OID pasado por parámetro
+snmpwalk -v2c -c <COMMUNITY-SNMP> -Oneq <IP-SNMP> .1							# saca todos los snmp, [todos los que empiezan con 1.]. (cuidado con la memoria del servidor)
+snmpwalk -v2c -c <COMMUNITY-SNMP> -Oneq <IP-SNMP> .1 > dc1-kvm1.snmpwalk        # Exporta árbol SNMP completo al archivo dc1-kvm1.snmpwalk.
 
+snmpwalk -v2c -c <COMMUNITY-SNMP> -On -Oeq <IP-SNMP> <OID>						# saca el snmp del OID pasado por parámetro
+snmpwalk -v2c -c <COMUNITY> <IP> <OID_SNMP>										# saca el snmp del OID pasado por parámetro
+
+# colores preferidos
 	COLORES::
 	------------------------------------
 	> Cyan:		Cacti Color (00BED9)
@@ -135,9 +138,9 @@ snmpwalk -v2c -c <COMUNITY> <IP> <OID_SNMP>			# saca el snmp del OID pasado por 
 
 	COLORES Temp iDRAC::
 	------------------------------------
-	> Rojo:		Chilli Pepper (C11B17)		# CPU Temp
-	> Naranja:	Cacti Color (FF9900)		# System Board Inlet Temp
-	> Rosa:		Cadillac Pink (E38AAE)		# System Board Exhaust Temp
+	> Rojo:		Chilli Pepper (C11B17)											# CPU Temp
+	> Naranja:	Cacti Color (FF9900)											# System Board Inlet Temp
+	> Rosa:		Cadillac Pink (E38AAE)											# System Board Exhaust Temp
 	
 	
 
