@@ -49,12 +49,15 @@ grep "JVBERi0xLjQKJdP0zOEKMSAwIG9iago8PAovQ3JlYXRpb25EYXRlKEQ6MjAyNTA2MjcwNDMwND
 tail -100 1751014332.M583233P1218151.correo.dominio.es,S=2273911,W=2303772:2,S
 #    ....
 
-# lo primero pruebo a copiarme el correo a mi cuenta
+# lo primero pruebo a copiarme el correo a mi cuenta (es posible que no lo vea en mi cuenta de outlook porque no a sido enviado para mí)
 # esto manda el correo a mi cuenta y luego desde mi correo compruebo que pueda verlo
 cp '1751014332.M583233P1218151.correo.dominio.es\,S\=2273911\,W\=2303772\:2\,S' /var/vmail/dominio.es/<mi-cuenta>/Maildir/new/'1751014332.M583233P1218151.correo.dominio.es\,S\=2273911\,W\=2303772\:2\,S'
 
+# si no te fias puedes hacer una copia para tener el original en un servidor propio
+scp -r /var/vmail/dominio.es/<mi-cuenta>/Maildir/new/'1751014332.M583233P1218151.correo.dominio.es\,S\=2273911\,W\=2303772\:2\,S' usuario-destino@host-destino:/ruta/destino/
+
 # una vez comprobado el mensaje en mi correo y con una copia del mismo en mi bandeja lo vuelvo a mover a new de la cuenta del usuario para que se vuelva a enviar
-# copio el archivo por el nombre otra vez a la carpeta /new "para volverlo a recibir". (el correo no se enviará como nuevo, si no que se enviará con la misma fecha en la cola, sustituyendo al correo defectuoso)
+# copio el archivo por el nombre otra vez a la carpeta /new "para volverlo a recibir". (el correo no se enviará como nuevo en Outlook, si no que se enviará con la misma fecha en la cola, sustituyendo al correo defectuoso)
 # ⚠️ cuidado al realizar esta operación que tenga la copia del mensaje por si se pierde o daña al moverlo de nuevo 
 mv 1751014332.M583233P1218151.correo.dominio.es\,S\=2273911\,W\=2303772\:2\,S ../new/
 
@@ -64,8 +67,6 @@ mv 1751014332.M583233P1218151.correo.dominio.es\,S\=2273911\,W\=2303772\:2\,S ..
 
 # Cuando se recibe un correo, Postfix primero consulta este archivo para determinar si hay un alias correspondiente
 vim /etc/postfix/virtual-alias
-
-
 
 
 =======================================================================================
