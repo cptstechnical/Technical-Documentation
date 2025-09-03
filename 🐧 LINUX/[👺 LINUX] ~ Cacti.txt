@@ -119,7 +119,8 @@ Managemente > Device > +
 # agrego el gráfico de manera manual:
 > New Graph Template > SNMP - Generic OID Template > Create
 # con mis scritps
-> New Graph Template > SNMP - Generic OID Template > One Deciamls (ej: 500 o 500,0)
+> New Graph Template > SNMP - Generic OID Template > Deciamls (ej: 500 o 500,0)
+> New Graph Template > SNMP - Generic OID Template > One Deciamls (ej: 500 o 500,0)	# este nunca lo utilizo porque no está bien desarrollado, para eso utilizo el de arriba.
 > New Graph Template > SNMP - Generic OID Template > Two Deciamls (ej:500,07 o 500,90)
 
 # ⚠ relleno con los datos y muy importante rellenand el OID que quiero registrar
@@ -130,6 +131,14 @@ Data Source Type: GAUGE
 Vertical Label: Celsius
 Legend text: Temperature
 Auto scale options: Use --alt-autoscale (ignoring given limits)
+
+# ⚠ Si al guardar el grafico ya terminado ocurre que en la barra vertical no corresponde a la realidad, he seleccionado mal el template 
+#		+ cuando ocurre esto hay dos opciones 
+#		+ opción 1 : en el caso de que tenga un historial de datos (lleve tiempo recibiendo datos), tengo que seguir los siguiente pasos :
+#			- creo un data-sources nuevo con los nuevos valores (Templates > Data-sources > +).
+#			- (Management - Data-sources) busco el data-sources y le asocio en "Data Template Selection" - "Selected Data Template" el que he creado anteriormente.
+#			- aora queda sobrante un data-source (Template > Data source), selecciono checkbox y "delete".
+#		+ opción 2 : si lo acabo de crear lo borro y vuelvo a crear uno nuevo.
 
 # para comprobar el OID voy al servidor de cacti y : 
 snmpwalk -v2c -c <COMMUNITY-SNMP> -Oneq <IP-SNMP> .1							# saca todos los snmp, [todos los que empiezan con 1.]. (cuidado con la memoria del servidor)
@@ -151,6 +160,14 @@ snmpwalk -v2c -c <COMUNITY> <IP> <OID_SNMP>										# saca el snmp del OID pasa
 	> Rojo:		Chilli Pepper (C11B17)											# CPU Temp
 	> Naranja:	Cacti Color (FF9900)											# System Board Inlet Temp
 	> Rosa:		Cadillac Pink (E38AAE)											# System Board Exhaust Temp
-	
-	
+
+========================================================================================================
+[👺 Como crar un gráfico con muchas gráficas juntas]
+# para crear un grafico el cuál tenga varias graficas dentro de la misma como algunos templates que viene construidos hay que hacer lo sigueinte:
+#			- creo varios data-sources nuevo con los nuevos valores (Templates > Data-sources > +)
+#			- creo un nuevo graph (Templates > Graph > +), asocio los nuevos "Graph Item Inputs" al data sources que acabo de crear
+
+
+
+
 
