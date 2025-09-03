@@ -66,7 +66,15 @@ Create Graphs for this Device
 	# si me equivocado al seleccionar alguno que no qería haber seleccionado:
 	Management > Graphs > -selecciono- > delete > Go
 
+Data Query [Net-SNMP - Get Device I/O]
+- Selecciono los dispositivos principales
+	+ sda
+Data Query [SNMP - Interface Statistics]
+- Selecciono las interfaces más importantes
+	+ eth0
+
 - save
+# color por defecto : Cacti Color (00BD27)
 
 # 4 - agrego en los gráficos
 - Management > Trees 
