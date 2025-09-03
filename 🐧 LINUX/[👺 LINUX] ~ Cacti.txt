@@ -50,6 +50,8 @@ Managemente > Device > +
 	+ SNMP - Interface Statistics												# estadísticas de interfaces
 	+ Net-SNMP - Sensors - Thermal Sensors
 
+	- siempre que el servidor sea un Linux tengo que agregar en: Associated Graph Templates - Graaph Template Name 
+		+ Linux CPU Usage - Patricio 											# con agregarlo no hay que hacer más...
 - save 
 
 # 3 - selecciono las particiones que quiero monitorizar
