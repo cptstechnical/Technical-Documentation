@@ -161,6 +161,9 @@ snmpwalk -v2c -c <COMUNITY> <IP> <OID_SNMP>										# saca el snmp del OID pasa
 	> Naranja:	Cacti Color (FF9900)											# System Board Inlet Temp
 	> Rosa:		Cadillac Pink (E38AAE)											# System Board Exhaust Temp
 
+# ⚠️ si al terminar el gráfico los valores que obtengo en el medidor vertical son erroneos y no coinciden con lo que debería ser... el problema está en la elección del Two Decimals o One Decimals
+
+
 ========================================================================================================
 [👺 Como crar un gráfico con muchas gráficas juntas]
 # para crear un grafico el cuál tenga varias graficas dentro de la misma como algunos templates que viene construidos hay que hacer lo sigueinte:
