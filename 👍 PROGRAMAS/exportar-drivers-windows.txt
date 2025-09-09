@@ -1,0 +1,2 @@
+# https://learn.microsoft.com/en-us/powershell/module/dism/export-windowsdriver?view=windowsserver2025-ps
+Export-WindowsDriver -Online -Destination d:\drivers
