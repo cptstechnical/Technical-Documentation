@@ -49,8 +49,8 @@ Los switches suelen operar bajo diferentes niveles de privilegios. Estos niveles
 | write                                  |🟥 Privilegiado               | Guarda los cambios realizados en la configuración.             |
 | reload                                 |🟥 Privilegiado               | Reinicia el switch.                                            |
 | show logging                           |🟥 Privilegiado               | Muestra el registro de eventos y errores del sistema.          |
-| poe disable				 |🟪 Configuración de interfaz  | Desconectar el POE de la boca registrada.			 |
-| no poe disable			 |🟪 Configuración de interfaz  | Conectar el POE de la boca registrada.			 |
+| poe disable				 			 |🟪 Configuración de interfaz  | Desconectar el POE de la boca registrada.			 			 |
+| no poe disable			 			 |🟪 Configuración de interfaz  | Conectar el POE de la boca registrada.						 |
 
 
 ## Comandos para archivos:
