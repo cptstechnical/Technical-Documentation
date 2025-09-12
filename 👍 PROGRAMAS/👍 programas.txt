@@ -6,6 +6,8 @@ HWiNFO : sirve para monitorizar en tiempo real y obtener información detallada 
 Crystal Disk Mark : sirve para medir el rendimiento de lectura y escritura secuencial y aleatoria de discos duros, SSDs y otros dispositivos de almacenamiento.
 - https://crystalmark.info/en/software/crystaldiskmark/
 
+Crystal Disk Info :
+
 
 
 [👍LINUX]:
