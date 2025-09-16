@@ -130,13 +130,13 @@ mark:                       Marca paquetes para procesamiento posterior (similar
 src-address: IP de origen del paquete (desde dónde viene).
 dst-address: IP de destino del paquete (a dónde va).
 # las listas son enumeraciones varias de ips y se pueden crear desde menu → IP → Firewall → Address Lists
-src-address-list: Lista de direcciones IP origen predefinidas por mi.        # ip firewall address-list
-dst-address-list: Lista de direcciones IP destino predefinidas por mi.       # ip firewall address-list
-src-port: 
-dst-port:
+src-address-list: Lista de direcciones IP origen predefinidas por mi.
+dst-address-list: Lista de direcciones IP destino predefinidas por mi.
+src-port: Puerto de origen del paquete (desde qué puerto sale, útil para TCP/UDP).
+dst-port: Puerto de destino del paquete (hacia qué puerto se dirige, útil para TCP/UDP).
 # también se puede validar por interface, las interfaces se crean en menu → interfaces
-in-interface:
-out-interface:
+in-interface: Interfaz de entrada por la que llega el paquete (por dónde entra al router).
+out-interface: Interfaz de salida por la que se envía el paquete (por dónde sale del router).
 
 
 ✅ orden para agregar filas del firewall:
@@ -148,6 +148,7 @@ out-interface:
 
 Un ejemplo con una vlan 53: 
 -----------------------------------------------------------------------------------------------------
+## no hace falta permitir el tráfico dentro de la misma vlan ya que no pasa por el router cuando se trata de la misma vlan, cada interface la tengo asignada en una vlan
 ## EJEMPLO - Permirimos todo el tráfico a un servidor
 Chain:FORWARD   Src. Address:<IP-SERVIDOR> 	Action:ACCEPT 
 ## EJEMPLO - Permitimos gestion de los puertos necesarios de una lista de IT que enumera varias ips hacia la vlan
