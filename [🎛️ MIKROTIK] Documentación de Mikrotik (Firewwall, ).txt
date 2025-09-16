@@ -127,13 +127,18 @@ mark:                       Marca paquetes para procesamiento posterior (similar
 
 ✅ punto de inicio o destino del tráfico:
 ******************************************************************
+# definir origen o/y el destino del paquete
 src-address: IP de origen del paquete (desde dónde viene).
 dst-address: IP de destino del paquete (a dónde va).
+
 # las listas son enumeraciones varias de ips y se pueden crear desde menu → IP → Firewall → Address Lists
 src-address-list: Lista de direcciones IP origen predefinidas por mi.
 dst-address-list: Lista de direcciones IP destino predefinidas por mi.
+
+# para comprobar los puertos de una ip, desde otro servidor linux externo "nmap -p- <ip-a-escanear>"
 src-port: Puerto de origen del paquete (desde qué puerto sale, útil para TCP/UDP).
 dst-port: Puerto de destino del paquete (hacia qué puerto se dirige, útil para TCP/UDP).
+
 # también se puede validar por interface, las interfaces se crean en menu → interfaces
 in-interface: Interfaz de entrada por la que llega el paquete (por dónde entra al router).
 out-interface: Interfaz de salida por la que se envía el paquete (por dónde sale del router).
@@ -141,7 +146,7 @@ out-interface: Interfaz de salida por la que se envía el paquete (por dónde sa
 
 ✅ orden para agregar filas del firewall:
 ******************************************************************
-# para agregar reglas del firewall se sigue el siguiente orde
+# para agregar reglas del firewall se sigue el siguiente orden
 #	- primero se acepta toda la red
 #	- luego se van denegando los servicios, protocolos o redes que quiera aislar
 # en el comentario, es preferible porner un titulo simple en mayúsculas de la referencia de la regla, para interpretarlas más rápidamente
