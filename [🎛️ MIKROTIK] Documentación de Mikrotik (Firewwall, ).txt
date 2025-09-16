@@ -129,9 +129,34 @@ mark:                       Marca paquetes para procesamiento posterior (similar
 ******************************************************************
 src-address: IP de origen del paquete (desde dónde viene).
 dst-address: IP de destino del paquete (a dónde va).
-# si las listas tienen el mismo nombre se complementan las reglas
+# las listas son enumeraciones varias de ips y se pueden crear desde menu → IP → Firewall → Address Lists
 src-address-list: Lista de direcciones IP origen predefinidas por mi.        # ip firewall address-list
 dst-address-list: Lista de direcciones IP destino predefinidas por mi.       # ip firewall address-list
+src-port: 
+dst-port:
+# también se puede validar por interface, las interfaces se crean en menu → interfaces
+in-interface:
+out-interface:
+
+
+✅ orden para agregar filas del firewall:
+******************************************************************
+# para agregar reglas del firewall se sigue el siguiente orde
+#	- primero se acepta toda la red
+#	- luego se van denegando los servicios, protocolos o redes que quiera aislar
+# en el comentario, es preferible porner un titulo simple en mayúsculas de la referencia de la regla, para interpretarlas más rápidamente
+
+Un ejemplo con una vlan 53: 
+-----------------------------------------------------------------------------------------------------
+## EJEMPLO - Permirimos todo el tráfico a un servidor
+Chain:FORWARD   Src. Address:<IP-SERVIDOR> 	Action:ACCEPT 
+## EJEMPLO - Permitimos gestion de los puertos necesarios de una lista de IT que enumera varias ips hacia la vlan
+Chain:FORWARD 	Src. Address List:<LIST-IT> Protocol:TCP  Dst-Prot:53,80,5010  	Out. Interface:53 	Action:ACCEPT  
+## EJEMPLO - Permitimos gestion de los puertos necesarios de una ip hacia la vlan
+Chain:FORWARD 	Src Address:<IP-MANUEL> Protocol:TCP  Dst-Prot:53,80,5010  	Out. Interface:53 	Action:ACCEPT  
+## EJEMPLO - Bloquear acceso desde otras vlanes hacia la vlan-53 con monitorización de log
+Chain:FORWARD 	In. Interface:[!]53 	Out. Interface:53 	Action:DROP 	Log[x]
+-----------------------------------------------------------------------------------------------------
 
 
 ✅ connection-state:
