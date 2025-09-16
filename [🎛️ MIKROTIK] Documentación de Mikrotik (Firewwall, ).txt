@@ -40,6 +40,7 @@
 
 ✅ puertos principales de redes:
 ******************************************************************
+# para escanear todos los puertos: nmap -p- <ip-a-escanear>
 +--------+-----------+---------------------------+
 | Puerto | Protocolo | Servicio común            |
 +--------+-----------+---------------------------+
