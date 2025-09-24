@@ -1,4 +1,8 @@
 ===========================================================================================================
+[Tipos de Servidores]:
+• IIS  → Servidor Windows dedicado al almacenamiento web.
+
+===========================================================================================================
 [PowerShell o CMD]:
 # ipconfig
 Muestra la configuración de red de todos los adaptadores (dirección IP, máscara, puerta de enlace).
