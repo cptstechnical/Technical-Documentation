@@ -1,0 +1,246 @@
+#=======================================================================================
+#=======================================================================================
+[📌🛠️ FUNCIONES Y COMANDOS BÁSICOS EN POWERSHELL]:
+# imprimir texto
+Write-Output "Hola Mundo"
+# o más directo:
+"Hola Mundo"
+
+# leer entrada del usuario
+$nombre = Read-Host -Prompt "Nombre"
+Write-Output "Hola $nombre"
+
+# variables
+$var = "texto"
+$var
+
+# condicional if (archivo)
+if (Test-Path -Path "C:\Windows\System32\drivers\etc\hosts") {
+    "Archivo existe"
+}
+
+# if / else (directorio)
+if (Test-Path -Path "C:\Temp" -PathType Container) {
+    "Directorio tmp existe"
+} else {
+    "No existe"
+}
+
+# for clásico (índice)
+for ($i=1; $i -le 5; $i++) {
+    "Número $i"
+}
+
+# foreach (colección)
+1..5 | ForEach-Object { "Número $_" }
+
+# while
+$count = 0
+while ($count -lt 5) {
+    $count
+    $count++
+}
+
+# funciones (cmdlet-style)
+function Mi-Funcion {
+    param([string]$Mensaje = "Función ejecutada")
+    Write-Output $Mensaje
+}
+Mi-Funcion
+
+# salir con código (desde script)
+exit 0
+
+#=======================================================================================
+#=======================================================================================
+[📌🛠️ MANEJO DE ARCHIVOS Y DIRECTORIOS]:
+# listar archivos (detalle)
+Get-ChildItem -Path "C:\ruta" -Force
+
+# crear directorio (recursivo)
+New-Item -Path "C:\ruta\nuevo_dir" -ItemType Directory -Force
+
+# copiar archivo
+Copy-Item -Path "origen.txt" -Destination "destino.txt" -Force
+
+# mover/renombrar
+Move-Item -Path "archivo.txt" -Destination "C:\ruta\nuevo_nombre.txt" -Force
+
+# eliminar archivo
+Remove-Item -Path "archivo.txt" -Force
+
+# eliminar directorio recursivo
+Remove-Item -Path "C:\ruta\directorio" -Recurse -Force
+
+# verificar existencia
+if (Test-Path "archivo.txt") { "Existe" }
+
+# leer archivo línea a línea
+Get-Content -Path "archivo.txt" | ForEach-Object { $_ }
+
+# leer como stream (más eficiente en ficheros grandes)
+Get-Content -Path "archivo.txt" -ReadCount 0 | ForEach-Object { $_ }
+
+#=======================================================================================
+#=======================================================================================
+[📌🛠️ MANEJO DE PERMISOS Y USUARIOS (Windows / PowerShell)]:
+# ver ACL (permiso)
+Get-Acl -Path "archivo.txt" | Format-List
+
+# modificar ACL (ejemplo: dar FullControl a DOMAIN\User)
+$acl = Get-Acl "archivo.txt"
+$rule = New-Object System.Security.AccessControl.FileSystemAccessRule("DOMAIN\User","FullControl","Allow")
+$acl.AddAccessRule($rule)
+Set-Acl -Path "archivo.txt" -AclObject $acl
+
+# cambiar propietario
+takeown /F "archivo.txt"     # console util
+# o con .NET:
+$owner = [System.Security.Principal.NTAccount]"DOMAIN\User"
+$acl.SetOwner($owner)
+Set-Acl -Path "archivo.txt" -AclObject $acl
+
+# crear usuario local (Admin rights required)
+New-LocalUser -Name "nuevo_usuario" -NoPassword -Description "Cuenta temporal"
+Add-LocalGroupMember -Group "Users" -Member "nuevo_usuario"
+# establecer contraseña (securestring)
+$pw = Read-Host -AsSecureString "Nueva contraseña"
+Set-LocalUser -Name "nuevo_usuario" -Password $pw
+
+# ejecutar comando como otro usuario (credenciales)
+$cred = Get-Credential
+Start-Process -FilePath "powershell.exe" -Credential $cred
+
+#=======================================================================================
+#=======================================================================================
+[📌🛠️ REDES Y CONECTIVIDAD]:
+# ver IP y configuración de red
+Get-NetIPAddress
+Get-NetIPConfiguration
+
+# hacer ping
+Test-Connection -ComputerName google.com -Count 4
+
+# escanear puerto (simple)
+# usa .NET TcpClient para un solo puerto:
+$ip = "192.168.1.1"; $port = 22
+$tcp = New-Object System.Net.Sockets.TcpClient
+try {
+  $tcp.Connect($ip,$port); "Abierto"
+} catch { "Cerrado" } finally { $tcp.Close() }
+
+# usar nmap si está instalado (mejor opción para escaneo)
+nmap -sT 192.168.1.1
+
+# consultar DNS
+Resolve-DnsName example.com
+
+# prueba HTTP / APIs (GET, POST)
+Invoke-RestMethod -Method Get -Uri "https://api.example.com/data"
+Invoke-RestMethod -Method Post -Uri "https://api.example.com/post" -Body @{ param = 'valor' } 
+
+# simple socket TCP (telnet equivalente)
+# (Use Test-NetConnection para probe TCP)
+Test-NetConnection -ComputerName example.com -Port 80
+
+#=======================================================================================
+#=======================================================================================
+[📌🛠️ CONTROL DE PROCESOS]:
+# listar procesos
+Get-Process
+
+# buscar proceso por nombre
+Get-Process -Name "notepad" -ErrorAction SilentlyContinue
+
+# matar proceso por PID
+Stop-Process -Id 1234 -Force
+
+# matar por nombre
+Stop-Process -Name "notepad" -Force
+
+# ver uso CPU/Memory detallado
+Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10
+
+# procesos en tiempo real (actualiza)
+Get-Process | Out-GridView -Title "Procesos"   # GUI quick filter
+
+#=======================================================================================
+#=======================================================================================
+[📌🛠️ MANEJO DE LOGS]:
+# ver logs de Windows Event (últimos 50 errores del System)
+Get-WinEvent -LogName System -MaxEvents 50 | Where-Object { $_.LevelDisplayName -eq "Error" }
+
+# ver logs en tiempo real (suscripción)
+$subscription = Register-WmiEvent -Query "Select * from __InstanceCreationEvent Within 1 Where TargetInstance ISA 'Win32_NTLogEvent'" -Action { $event = $Event.SourceEventArgs.NewEvent; $event.TargetInstance.Message }
+
+# buscar texto en archivos de log
+Select-String -Path "C:\logs\*.log" -Pattern "error" -SimpleMatch
+
+# rotar logs simple: renombrar y crear nuevo
+Move-Item -Path "C:\logs\app.log" -Destination "C:\logs\app.log.old" -Force
+# enviar señal depende de la app: por ejemplo, reiniciar servicio
+Restart-Service -Name "MiServicio"
+
+#=======================================================================================
+#=======================================================================================
+[📌🛠️ SEGURIDAD Y BUENAS PRÁCTICAS EN POWERSHELL]:
+# validación / escapado para evitar inyección:
+# evita construir comandos con strings; usa parámetros y objetos
+# ejemplo seguro con Invoke-Command:
+Invoke-Command -ComputerName $host -ScriptBlock { Param($p) Get-ChildItem -Path $p } -ArgumentList "C:\Windows"
+
+# comprobar disponibilidad de cmdlet o ejecutable
+if (Get-Command curl -ErrorAction SilentlyContinue) { "curl instalado" } else { "no instalado" }
+
+# restringir ejecución de scripts (política)
+Get-ExecutionPolicy
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine   # requiere privilegios
+
+# manejo de secrets (no imprimir)
+$secret = Read-Host -AsSecureString "Introduce secreto"
+# convertir a plain solo si es estrictamente necesario y con control
+# [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($sec))
+
+# trap / finally para limpiar
+try {
+    # tarea
+} catch {
+    Write-Error $_
+} finally {
+    Write-Output "Limpiando..."
+}
+
+# firma de scripts para integridad (mejor práctica en infra)
+Set-AuthenticodeSignature -FilePath ".\script.ps1" -Certificate (Get-ChildItem Cert:\CurrentUser\My -CodeSigningCert)
+
+#=======================================================================================
+#=======================================================================================
+[📌🛠️ TAREAS PROGRAMADAS · EJECUCIÓN REMOTA Y AUTOMATIZACIÓN]:
+# ejecutar comando remoto (WinRM / PowerShell Remoting) - habilitar previamente
+Enable-PSRemoting -Force
+Invoke-Command -ComputerName host -ScriptBlock { Get-ChildItem C:\inetpub\wwwroot }
+
+# copiar archivo remoto (Copy-Item sobre session)
+$s = New-PSSession -ComputerName host
+Copy-Item -Path "archivo.txt" -Destination "C:\ruta\" -ToSession $s
+Remove-PSSession $s
+
+# programar tarea (Task Scheduler)
+$action = New-ScheduledTaskAction -Execute "PowerShell.exe" -Argument "-File C:\ruta\script.ps1"
+$trigger = New-ScheduledTaskTrigger -Daily -At 2am
+Register-ScheduledTask -TaskName "MiScriptDiario" -Action $action -Trigger $trigger -User "SYSTEM"
+
+# ejemplo con SSH (Windows OpenSSH)
+ssh usuario@host "Get-ChildItem C:\"
+scp archivo.txt usuario@host:C:\ruta\
+
+#=======================================================================================
+#=======================================================================================
+[📌🛠️ LIBRERÍAS / MÓDULOS ÚTILES EN POWERSHELL]:
+- PowerShellGet / PSGallery: instalar módulos (Install-Module)
+- Powershell Remoting (WinRM): administración remota segura
+- PnP.PowerShell: para SharePoint/Office365
+- AzureAD / Az: gestión cloud (Azure)
+- PSReadLine: edición avanzada shell
+- Invoke-IR / PowerSploit (solo para auditorías autorizadas): post-exploit / pentesting (usar con ética/legalidad)
+- Nmap / Wireshark / Sysinternals (PsExec, PsList, PsKill...): herramientas externas que complementan PowerShell
