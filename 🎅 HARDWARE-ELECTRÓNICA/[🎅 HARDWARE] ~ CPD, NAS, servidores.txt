@@ -5,24 +5,25 @@
 =======================================================================================================
 [🔥🧑‍🚀 TIPOS DE SERVIDORES]:
 ********************************
-Por arquitectura:
+- Por arquitectura:
     Servidor dedicado:              Un servidor físico que está completamente dedicado a un solo cliente o aplicación.
     Servidor virtual:               Un servidor que se ejecuta en un entorno virtualizado, permitiendo múltiples servidores virtuales en un solo hardware físico (por ejemplo, VPS).
     Servidor en la nube:            Un servidor que se aloja en la nube y se accede a través de Internet, ofreciendo escalabilidad y flexibilidad.
-Por ubicación:
+- Por ubicación:
     Servidor local:                 Un servidor que se encuentra en las instalaciones de una empresa o usuario.
     Servidor remoto:                Un servidor que se encuentra en una ubicación diferente, a menudo en un centro de datos.
     Servidor appliance:             Un dispositivo de hardware o software que está diseñado para proporcionar una funcionalidad específica de servidor de manera preconfigurada y optimizada. Puede ser un Servidor de Archivos, de Bases de Datos, Web, de Aplicaciones, de Impresión, de DNS, de Proxy...
     Servidor Dedicado:              Un servidor físico que está alquilado y gestionado por un proveedor de servicios de hosting, pero que es utilizado exclusivamente por un solo cliente. Esto proporciona un alto nivel de control y recursos dedicados.
     Servidor Virtual (VPS):         Un servidor virtual que se ejecuta en un servidor físico compartido, pero que actúa como un servidor independiente. Ofrece una mayor flexibilidad y control en comparación con el hosting compartido, pero a un costo menor que un servidor dedicado.
     Servidor en la Nube (Cloud):    Un servidor que se ejecuta en una infraestructura de nube, proporcionando escalabilidad, flexibilidad y acceso desde cualquier lugar con una conexión a Internet. Ejemplos incluyen Amazon EC2, Google Cloud Platform, y Microsoft Azure.
-Por tipo de hardware:
+- Por tipo de hardware:
     Servidor rack:                  Diseñado para ser montado en un rack de servidores, optimizando el espacio.
     Servidor torre:                 Tiene una forma similar a una computadora de escritorio y es adecuado para pequeñas empresas o uso doméstico.
     Servidor blade:                 Un tipo de servidor compacto que se inserta en un chasis, permitiendo una alta densidad de servidores en un espacio reducido.
-Por sistema operativo:
+- Por sistema operativo:
     Servidor Windows:               Utiliza un sistema operativo Windows Server.
     Servidor Linux:                 Utiliza una distribución de Linux (por ejemplo, Ubuntu Server, CentOS).
+    Servidor MacOS:                 Dejo de existir en el 2022 (OS X Server), versión de macOS con herramientas añadidas para convertir un Mac en un servidor multipropósito.
 
 [🔥🧑‍🚀 OTROS RELACIONADOS]:
 ********************************
@@ -215,13 +216,14 @@ Sinology : el más utilizado con sistema operativo acoplado
 +------------------------------+------------------------+-------------------------------+----------------------------------------------------------------------------------+---------------------------------------------+
 | Doméstico                    | ARM                    | Hogar                         | 1–2 bahías, RAM fija (0.5–1 GB), 1 GbE, sin RAID avanzado                        | DSM Lite (Synology), QTS básico (QNAP)      |
 | SOHO                         | x86 (Celeron/Pentium)  | Home Office / Pequeña oficina | 2–4 bahías, RAM ampliable, 1–2x 1/2.5 GbE, RAID 1/5, Docker/VMs ligeras          | DSM/QTS con apps, soporte Docker/VM         |
-| SMB (PyME)                   | x86 (Celeron/Pentium)  | Oficina pequeña/mediana       | 4–8 bahías, RAID 5/6, AES-NI, 2.5–10 GbE, snapshots avanzados                    | DSM/QTS/QuTS hero (algunos ZFS)             |    # SMB no es del protocolo si no de (Small and Medium Business).
+| SMB (PyME)                   | x86 (Celeron/Pentium)  | Oficina pequeña/mediana       | 4–8 bahías, RAID 5/6, AES-NI, 2.5–10 GbE, snapshots avanzados                    | DSM/QTS/QuTS hero (algunos ZFS)             | 
 | Enterprise                   | x86-64 (Xeon/EPYC)     | Centro TI empresarial         | ≥ 12 bahías, ECC, SAS, PSU redundante, 10–25 GbE/Fibre Channel, RAID HW          | DSM (Enterprise), QuTS hero, ONTAP (ZFS)    |
 | Datacenter / Hyperscale      | x86-64 (bare-metal)    | Data center                   | Racks 4U–6U, petabyte scale, InfiniBand/100 GbE, Ceph/S3, JBOD                   | Ceph, GlusterFS, MinIO, OpenStack           |
 | Industrial / Edge            | ARM / x86 fanless      | Industriales / Remotos        | Ultra-compacto, resistente, LTE/5G, GPU para CCTV                                | QTS Industrial, Linux embebido, DVA OS      |
 | All-Flash / Cache            | x86-64 alto rendimiento| Centros de datos exigentes    | SSD/NVMe, latencia baja, IOPS muy altas, 10–100 GbE                              | QuTS hero, ONTAP AFF, Purity OS (ZFS)       |
 | Appliance Virtualización     | x86-64 (i7/Xeon)       | TI con virtualización         | Hipervisores integrados, VMs, NFS/iSCSI, almacenamiento compartido               | DSM + VMM, QuTS + Virtualization Station    |
 +------------------------------+------------------------+-------------------------------+----------------------------------------------------------------------------------+---------------------------------------------+
+#! SMB no es del protocolo si no de (Small and Medium Business).
 
 🧠 Protocolos:
 ********************************
