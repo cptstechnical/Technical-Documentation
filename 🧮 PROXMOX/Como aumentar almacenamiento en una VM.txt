@@ -1,0 +1,40 @@
+===========================================================================================================
+===========================================================================================================
+## modificar almacenamiento de una VM
+---------------------------------------------------------------------------------------------------------
+# lo primero me logueo a PROXMOX 
+# entro en el nodo de la VM
+- selecciono la VM
+    - Hardware (selecciono Hard Disk)
+    - Disk Action > Resize (esto aumentará el almacenamiento que le pase + el que ya tiene actualmente)
+
+# una vez hecho esto el almacenamiento virtual de la máquina ya habrá cambiado
+# ahora falta agregar el almacenamiento a la unidad desde el servidor Linux
+lsblk      # con este comando puedo ver como la raíz es mayor que la unidad
+
+# vert las unidades y acordarte de la unidad que quieres modificar, yo en mi caso la 3 (sda3)
+df -h
+
+# con el siguiente comando asigno el almacenamiento
+sudo fdisk /dev/sda
+    - p     # para ver la tabla de particiones
+    - m     # para ver help
+    - e     # para resize
+    - # en este paso nos muestra la cantidad de almacenamiento que queremos asignarle si le damos al intro le asignamos todo el sobrante nuevo
+    - w
+
+# compruebo los cambios
+lsblk
+
+# sin embargo en el siguiente comando se verán los valores antiguos
+df -h
+
+# El filesystem montado en / es ext4 y df -h dice que sigue ocupando el almacenamiento anterior (sin cambios), por eso hay que agregar el siguiente comando con el nombre de la unidad, en mi caso la 3 (sda3)
+sudo resize2fs /dev/sda3
+
+# ahora si vuelvo a comprobar estará bien
+df -h
+
+
+===========================================================================================================
+===========================================================================================================
