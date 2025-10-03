@@ -12,7 +12,7 @@ Por arquitectura:
 Por ubicación:
     Servidor local:                 Un servidor que se encuentra en las instalaciones de una empresa o usuario.
     Servidor remoto:                Un servidor que se encuentra en una ubicación diferente, a menudo en un centro de datos.
-    Servidor appliance:             Un dispositivo de hardware o software que está diseñado para proporcionar una funcionalidad específica de servidor de manera preconfigurada y optimizada. Puede ser un Servidor de Archivos, de Bases de Datos, Web, de Aplicaciones, de servidor de Impresión, de DNS, de Proxy...
+    Servidor appliance:             Un dispositivo de hardware o software que está diseñado para proporcionar una funcionalidad específica de servidor de manera preconfigurada y optimizada. Puede ser un Servidor de Archivos, de Bases de Datos, Web, de Aplicaciones, de Impresión, de DNS, de Proxy...
     Servidor Dedicado:              Un servidor físico que está alquilado y gestionado por un proveedor de servicios de hosting, pero que es utilizado exclusivamente por un solo cliente. Esto proporciona un alto nivel de control y recursos dedicados.
     Servidor Virtual (VPS):         Un servidor virtual que se ejecuta en un servidor físico compartido, pero que actúa como un servidor independiente. Ofrece una mayor flexibilidad y control en comparación con el hosting compartido, pero a un costo menor que un servidor dedicado.
     Servidor en la Nube (Cloud):    Un servidor que se ejecuta en una infraestructura de nube, proporcionando escalabilidad, flexibilidad y acceso desde cualquier lugar con una conexión a Internet. Ejemplos incluyen Amazon EC2, Google Cloud Platform, y Microsoft Azure.
