@@ -195,7 +195,9 @@ Calculador RAID: https://www.synology.com/es-es/support/RAID_calculator
 
 =======================================================================================================
 [INTERESANTES]:
-- JetKVM
+- JetKVM: dispositivo KVM over IP de código abierto diseñado para la gestión remota de servidores y estaciones de trabajo, sirve en especial para mostrar ip y MAC.
+- KVM Drawer: Consola deslizante de rack con pantalla, teclado y ratón integrados, suelen utilizar un KVM switch para manejar varios servidores a la vez
+- Rackmount Console: Consola todo-en-uno montada en rack para administrar servidores, es más para una versión estándar de único servidor.
 
 
 ########################################################################################################
