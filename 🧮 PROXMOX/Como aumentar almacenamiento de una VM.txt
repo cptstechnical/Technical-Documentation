@@ -7,9 +7,9 @@ Hay que tener en cuenta que en Linux solo se puede ampliar de esta manera (direc
 Esto es debido a que el almacenamiento se guarda en serie y para ampliar el segundo tendriamos que limitar el tercero y luego ampliar el segundo
 ---------- ------ --------------------------
     sda1    sda2           sda3
----------- ------ --------------------------	
+---------- ----- ---------------------------	
 [====] 15% [=]5% [=====================] 80%
----------- ------ --------------------------
+---------- ----- ---------------------------
  
 🗂️ Tabla de particiones (fdisk)
 es un mapa del disco que indica al sistema dónde empiezan y terminan las particiones, qué tipo son y cuáles son arrancables. No contiene los datos de las particiones, solo su ubicación y estructura.
