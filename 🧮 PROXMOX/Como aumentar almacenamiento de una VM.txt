@@ -21,7 +21,7 @@ sudo fdisk /dev/sda
     - m     # para ver help
     - e     # para resize
     - # en este paso nos muestra la cantidad de almacenamiento que queremos asignarle si le damos al intro le asignamos todo el sobrante nuevo
-    - w
+    - w     # para guardar
 
 # compruebo los cambios
 lsblk
