@@ -1,6 +1,29 @@
 ===========================================================================================================
 ===========================================================================================================
-## modificar almacenamiento de una VM
+## teoria 
+---------------------------------------------------------------------------------------------------------
+🗂️ Sistema de almacenamiento
+Hay que tener en cuenta que en Linux solo se puede ampliar de esta manera (directamente) cuando es la ultima partición (en este caso he modificado la 3º proque solo tenía 3)
+Esto es debido a que el almacenamiento se guarda en serie y para ampliar el segundo tendriamos que limitar el tercero y luego ampliar el segundo
+---------- ------ --------------------------
+    sda1    sda2           sda3
+---------- ------ --------------------------	
+[====] 15% [=]5% [=====================] 80%
+---------- ------ --------------------------
+ 
+🗂️ Tabla de particiones (fdisk)
+es un mapa del disco que indica al sistema dónde empiezan y terminan las particiones, qué tipo son y cuáles son arrancables. No contiene los datos de las particiones, solo su ubicación y estructura.
+esto quiere decir que si creamos una, o la editamos o borramos, no estamos borrando el almacenamiento sino la tabla de particiones, es decir le estoy reasignando donde voy a colocar la tabla
+de esta manera puedo ampliar el almacenamiento
+La talba de particiones principales son la del principio y la del final, estas asignan donde empieza y termina cada unidad
+La firma de la tabla de particiones sirve para que el sistema operativo o la BIOS/UEFI reconozcan que el sector 0 contiene un MBR válido.
+
+- Comprendiendo estos dos conceptos entendemos como funciona cualquier sistema de tipo UNIX, como tarjetas.. etc.
+
+
+===========================================================================================================
+===========================================================================================================
+## modificar almacenamiento de una VM (versión fdisk con opción -e)
 ---------------------------------------------------------------------------------------------------------
 # lo primero me logueo a PROXMOX 
 # entro en el nodo de la VM
@@ -10,18 +33,18 @@
 
 # una vez hecho esto el almacenamiento virtual de la máquina ya habrá cambiado
 # ahora falta agregar el almacenamiento a la unidad desde el servidor Linux
-lsblk      # con este comando puedo ver como la raíz es mayor que la unidad
+lsblk      					# con este comando puedo ver como la raíz es mayor que la unidad
 
 # vert las unidades y acordarte de la unidad que quieres modificar, yo en mi caso la 3 (sda3)
 df -h
 
 # con el siguiente comando asigno el almacenamiento
-sudo fdisk /dev/sda
-    - p     # para ver la tabla de particiones
-    - m     # para ver help
-    - e     # para resize
+fdisk /dev/sda
+    - p     				# para ver la tabla de particiones
+    - m     				# para ver help
+    - e     				# para resize
     - # en este paso nos muestra la cantidad de almacenamiento que queremos asignarle si le damos al intro le asignamos todo el sobrante nuevo
-    - w     # para guardar
+    - w						# para guardar los cambios
 
 # compruebo los cambios
 lsblk
@@ -38,3 +61,41 @@ df -h
 
 ===========================================================================================================
 ===========================================================================================================
+## modificar almacenamiento de una VM (versión fdisk sin opción -e)
+---------------------------------------------------------------------------------------------------------
+# lo primero me logueo a PROXMOX 
+# entro en el nodo de la VM
+- selecciono la VM
+    - Hardware (selecciono Hard Disk)
+    - Disk Action > Resize (esto aumentará el almacenamiento que le pase + el que ya tiene actualmente)
+
+# una vez hecho esto el almacenamiento virtual de la máquina ya habrá cambiado
+# ahora falta agregar el almacenamiento a la unidad desde el servidor Linux
+lsblk      					# con este comando puedo ver como la raíz es mayor que la unidad
+
+# vert las unidades y acordarte de la unidad que quieres modificar, yo en mi caso la 3 (sda3)
+df -h
+
+# con el siguiente comando asigno el almacenamiento
+fdisk /dev/sda
+    - p     				# para ver la tabla de particiones
+    - d     				# para borrar una partición
+    - n     				# para crear una nueva partición
+	- 3						# selecciono la unidad que quiero ampliar
+	- First sector			# selecciono la misma que en start de /dev/sda3 de la solución anterior al pulsar p
+	- Last sector			# en este paso nos muestra la cantidad de almacenamiento que queremos asignarle si le damos al intro le asignamos todo el sobrante nuevo
+    - N						# para decirle que no quiero borrar la firma
+    - p						# para volver a comprobar los cambios	
+	- w						# para guardar los cambios
+
+# compruebo los cambios
+lsblk
+
+# sin embargo en el siguiente comando se verán los valores antiguos
+df -h
+
+# El filesystem montado en / es ext4 y df -h dice que sigue ocupando el almacenamiento anterior (sin cambios), por eso hay que agregar el siguiente comando con el nombre de la unidad, en mi caso la 3 (sda3)
+sudo resize2fs /dev/sda3
+
+# ahora si vuelvo a comprobar estará bien
+df -h
