@@ -1,0 +1,130 @@
+=====================================================================
+[🚀REDES]:
+
+# ONT (Optical Network Terminal)::
+Es un dispositivo utilizado en redes de fibra óptica, especialmente en arquitecturas de red como FTTH (Fiber To The Home). Su función principal es convertir viajan a través de la fibra en señales eléctricas utilizadas por otros equipos de red.
+
+
+
+=====================================================================
+[🚀PROTOCOLOS]:
+
+# TCP/IP 
+El protocolo TCP/IP (Transmission Control Protocol/Internet Protocol) es la base de la comunicación en Internet. Permite la transmisión confiable de datos entre dispositivos a través de una red.
+Número de Puerto: 80 (HTTP), 443 (HTTPS)
+Aceptación: Windows, macOS, Linux.
+Ejemplo de Uso: TCP/IP es fundamental para la navegación web y la comunicación entre dispositivos en redes locales y en Internet.
+
+# HTTP 
+El protocolo HTTP (Hypertext Transfer Protocol) se utiliza para la transferencia de información en la web. Permite la comunicación entre navegadores y servidores web.
+Número de Puerto: 80
+Aceptación: Windows, macOS, Linux.
+Ejemplo de Uso: Los navegadores utilizan HTTP para cargar sitios web. Para mayor seguridad, se recomienda usar HTTPS.
+
+# HTTPS 
+HTTPS (Hypertext Transfer Protocol Secure) es una versión segura de HTTP que utiliza SSL/TLS para cifrar la información transmitida. Es esencial para la seguridad en la navegación web.
+Número de Puerto: 443
+Aceptación: Windows, macOS, Linux.
+Ejemplo de Uso: Utilizado en sitios web que requieren la transmisión segura de información, como servicios bancarios y de pago.
+
+# FTP 
+El protocolo FTP (File Transfer Protocol) se utiliza para la transferencia de archivos entre un cliente y un servidor. Permite subir y bajar archivos de manera eficiente.
+Número de Puerto: 21
+Aceptación: Windows, macOS, Linux.
+Ejemplo de Uso: Herramientas como FileZilla permiten la transferencia de archivos mediante FTP.
+
+# SFTP 
+SFTP (SSH File Transfer Protocol) es un protocolo de transferencia de archivos que utiliza SSH para una transmisión segura. Proporciona autenticación y cifrado de datos.
+Número de Puerto: 22
+Aceptación: Windows, macOS, Linux.
+Ejemplo de Uso: Utilizado para transferencias de archivos seguras, especialmente en entornos de desarrollo y producción.
+
+# SMTP 
+El protocolo SMTP (Simple Mail Transfer Protocol) se utiliza para enviar correos electrónicos entre servidores. Es fundamental para la comunicación por correo electrónico.
+Número de Puerto: 25
+Aceptación: Windows, macOS, Linux.
+Ejemplo de Uso: Los servidores de correo utilizan SMTP para enviar mensajes a otros servidores de correo.
+
+# IMAP 
+IMAP (Internet Message Access Protocol) permite a los clientes de correo acceder y gestionar correos electrónicos almacenados en un servidor. A diferencia de POP3, permite la sincronización de correos.
+Número de Puerto: 143 (sin SSL), 993 (con SSL)
+Aceptación: Windows, macOS, Linux.
+Ejemplo de Uso: Usado por clientes de correo electrónico para acceder a correos electrónicos almacenados en un servidor de forma remota.
+
+# POP3 
+POP3 (Post Office Protocol version 3) es un protocolo utilizado para descargar correos electrónicos de un servidor a un cliente de correo. Se utiliza principalmente para acceder a correos de manera local.
+Número de Puerto: 110 (sin SSL), 995 (con SSL)
+Aceptación: Windows, macOS, Linux.
+Ejemplo de Uso: Los clientes de correo pueden descargar correos del servidor y almacenarlos localmente.
+
+# DHCP 
+El protocolo DHCP (Dynamic Host Configuration Protocol) asigna dinámicamente direcciones IP y otros parámetros de configuración de red a los dispositivos en una red, facilitando su conexión.
+Número de Puerto: 67 (servidor), 68 (cliente)
+Aceptación: Windows, macOS, Linux.
+Ejemplo de Uso: Routers utilizan DHCP para asignar direcciones IP automáticamente a dispositivos conectados.
+
+# DNS 
+El protocolo DNS (Domain Name System) traduce nombres de dominio legibles por humanos en direcciones IP. Es esencial para la navegación web y la identificación de recursos en Internet.
+Número de Puerto: 53
+Aceptación: Windows, macOS, Linux.
+Ejemplo de Uso: Los navegadores consultan servidores DNS para resolver nombres de dominio.
+
+# SSH 
+SSH (Secure Shell) es un protocolo de red que permite el acceso seguro y la administración de dispositivos de red a través de una conexión encriptada.
+Número de Puerto: 22
+Aceptación: Windows (con herramientas como PuTTY), macOS, Linux.
+Ejemplo de Uso: Utilizado para acceder de forma remota a servidores y dispositivos de red de manera segura.
+
+# SNMP 
+SNMP (Simple Network Management Protocol) se utiliza para la gestión y supervisión de dispositivos de red. Permite la recolección de información y la gestión de configuraciones de red.
+Número de Puerto: 161
+Aceptación: Windows (con herramientas específicas), macOS, Linux.
+Ejemplo de Uso: Administradores de red utilizan SNMP para monitorear y gestionar dispositivos de red.
+
+# LDAP 
+LDAP (Lightweight Directory Access Protocol) es un protocolo para acceder y gestionar servicios de directorio, permitiendo la autenticación y autorización en redes.
+Número de Puerto: 389 (sin SSL), 636 (con SSL)
+Aceptación: Windows, macOS, Linux.
+Ejemplo de Uso: Utilizado para autenticar usuarios en aplicaciones y servicios mediante un directorio centralizado.
+
+# RDP 
+RDP (Remote Desktop Protocol) permite la conexión remota a escritorios de Windows, facilitando la administración remota de sistemas.
+Número de Puerto: 3389
+Aceptación: Windows (nativo), macOS (con cliente RDP), Linux (con clientes como Remmina).
+Ejemplo de Uso: Administradores utilizan RDP para acceder y gestionar servidores Windows de forma remota.
+
+# NTP 
+NTP (Network Time Protocol) sincroniza los relojes de los dispositivos en una red, asegurando que todos tengan la misma hora y mejorando la precisión en las transacciones.
+Número de Puerto: 123
+Aceptación: Windows, macOS, Linux.
+Ejemplo de Uso: Utilizado para asegurar que todos los dispositivos en la red tengan la misma hora, lo cual es crucial para registros de eventos y transacciones.
+
+# VPN 
+Una VPN (Virtual Private Network) permite crear una conexión segura y cifrada a través de Internet. Se utiliza para acceder a redes privadas de manera segura, protegiendo la información en tránsito.
+Número de Puerto: Varía (usualmente 500 y 4500 para IPSec, 1194 para OpenVPN)
+Aceptación: Windows, macOS, Linux.
+Ejemplo de Uso: Utilizado para acceder a redes corporativas de forma segura desde ubicaciones remotas.
+
+# SYSLOG 
+El protocolo SYSLOG se utiliza para enviar mensajes de registro de eventos desde dispositivos y aplicaciones a un servidor centralizado. Facilita la monitorización y el análisis de logs.
+Número de Puerto: 514
+Aceptación: Windows (con software de log), macOS, Linux.
+Ejemplo de Uso: Servidores y dispositivos envían logs a un servidor SYSLOG para centralizar el monitoreo de eventos.
+
+# RADIUS 
+RADIUS (Remote Authentication Dial-In User Service) es un protocolo de autenticación, autorización y contabilidad. Se utiliza para gestionar el acceso a redes y servicios.
+Número de Puerto: 1812 (autenticación), 1813 (contabilidad)
+Aceptación: Windows, macOS, Linux.
+Ejemplo de Uso: Utilizado en redes empresariales para autenticar usuarios antes de permitir el acceso a la red.
+
+# TFTP 
+TFTP (Trivial File Transfer Protocol) es un protocolo simple para la transferencia de archivos. Se utiliza a menudo para transferencias rápidas y es común en la configuración de dispositivos de red.
+Número de Puerto: 69
+Aceptación: Windows, macOS, Linux.
+Ejemplo de Uso: Usado para transferir archivos de configuración a dispositivos de red como routers y switches.
+
+# ICMP 
+ICMP (Internet Control Message Protocol) se utiliza para enviar mensajes de error y de diagnóstico en una red, siendo fundamental para la gestión de la red y la resolución de problemas.
+Número de Puerto: No aplica (protocolo de red)
+Aceptación: Windows, macOS, Linux.
+Ejemplo de Uso: Utilizado en comandos de red como `ping` para comprobar la conectividad de la red.
