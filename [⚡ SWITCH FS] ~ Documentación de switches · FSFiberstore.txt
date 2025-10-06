@@ -275,7 +275,7 @@ putty > Serial > COM1 > Speed:
 # si el speed esta mal configurado se verán carácteres raros
   COM: (puedo comprobarlo desde Administrador de dispositivos)
   SPEED: 115200
-
+	admin:admin
 
 #############[ CONSOLA ]########################################
 # Modificar SSH-2 a versión segura
