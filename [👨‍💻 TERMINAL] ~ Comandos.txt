@@ -36,6 +36,7 @@
   dig <DOMINIO>                          # Consultas DNS avanzadas. Ej: dig google.com
   nslookup <DOMINIO>                     # Consultas DNS básicas. Ej: nslookup google.com
   lsblk                                  # Mostrar discos y particiones. Ej: lsblk
+  fdisk <dispositivo>                    # Herramienta para gestionar particiones de disco (borrar, crear...). Ej: fdisk /dev/sda
   command -v <COMANDO>                   # Ver ruta o existencia de un comando. Ej: command -v bash
   
   netstat                                # Ver conexiones, puertos abiertos (deprecated). Ej: netstat -tuln
