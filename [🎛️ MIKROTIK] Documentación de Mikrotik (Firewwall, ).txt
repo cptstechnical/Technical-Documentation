@@ -176,6 +176,22 @@ invalid:			Paquete que no pertenece a ninguna conexión válida (puede ser corru
 untracked:			Paquete no inspeccionado por el conntrack (tracking deshabilitado).
 
 
+✅ jump-chain:
+******************************************************************
+## Un Jump-Chain lo que hace es algo así como un Go-To, es decir te lleva a otras
+## esto es útil cuando quieres que salte otras reglas que por ejemplo cancelen la lectura
+## para crear un jump-chain se hace de la siguiente manera, dentro de la regla a la que quieres saltar 
+
+# le asigno un nombre en vez de selecionar forward, input u output, así como tantas reglas de salto quiera que ejecute al iniciarse el salto
+<regla-asaltada> > General > Chain: <nombre-jump-chain>
+
+# luego creo la regla inicializadora del salto, en el caso de ejecutarse es la que va a dar luegar a iniciarse el salto (en caso de que no se inicialice no se ejecutará el salto y la lectura será mucho más rápida)
+<regla-inicializadora-del-salto> > Action > Jump Target > (selecciono el jump-chain que he creado anteriormente)
+
+# es un poco rara la configuración porque primero se crea hacia donde se va a salta y luego el salto
+# esta forma de trabajar que no es común verla, pero a veces es la única salida, funciona mucho más fluida y más rápida el mikrotik lo que requiere un menor rendimiento
+
+
 
 =========================================================================================================================
 =========================================================================================================================
