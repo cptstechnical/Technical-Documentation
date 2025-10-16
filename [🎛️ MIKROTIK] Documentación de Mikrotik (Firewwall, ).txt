@@ -169,11 +169,11 @@ Chain:FORWARD 	In. Interface:[!]53 	Out. Interface:53 	Action:DROP 	Log[x]
 ✅ connection-state:
 ******************************************************************
 # En MikroTik, connection-state clasifica el estado del paquete en relación con conexiones previas. 
-new:			  Primer paquete de una nueva conexión (ej.: primer SYN de TCP).
-established:		  Paquete perteneciente a una conexión ya aceptada y activa.
-related:		  Nuevo flujo asociado a una conexión existente (ej.: FTP, ICMP error).
-invalid:		  Paquete que no pertenece a ninguna conexión válida (puede ser corrupto).
-untracked:		  Paquete no inspeccionado por el conntrack (tracking deshabilitado).
+new:				Primer paquete de una nueva conexión (ej.: primer SYN de TCP).
+established:		Paquete perteneciente a una conexión ya aceptada y activa.
+related:			Nuevo flujo asociado a una conexión existente (ej.: FTP, ICMP error).
+invalid:			Paquete que no pertenece a ninguna conexión válida (puede ser corrupto).
+untracked:			Paquete no inspeccionado por el conntrack (tracking deshabilitado).
 
 
 
