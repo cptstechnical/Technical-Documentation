@@ -1,7 +1,7 @@
 #=========================================================================================================================
 [🐧INSTALAR CERTIFICADO - certificado autofirmado (self-signed certificate)]::
 # certificado con dominio local
-⚠️ Para un dominio local como el mio necesito un certificado autofirmado
+⚠️ Para un dominio local como el mio (.local) necesito un certificado autofirmado para que la autoridad sea el mismo servidor... 
 ❌ Esto creará en el certificado una x porque no puede comprobar que el certificado sea valido, porque puede ser suplantado
 	# Hay una forma de crear un autofirmado en local y que sea valido a traves de la red de active directory:
 	# "La solución correcta para un entorno corporativo con Active Directory es implementar una Infraestructura de Clave Pública (PKI) interna, donde nuestra propia empresa actúa como su Autoridad Certificadora (CA) Raíz."
