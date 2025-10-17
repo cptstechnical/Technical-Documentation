@@ -27,7 +27,7 @@
 
 # -
 # doy permisos 
-sudo chown -R root:root /etc/letsencrypt/pruebas.local/
+sudo chown -R root:root /etc/letsencrypt/
 sudo chmod 700 /etc/letsencrypt/pruebas.local
 sudo chmod 600 /etc/letsencrypt/pruebas.local/pruebas.local.key
 sudo chmod 644 /etc/letsencrypt/pruebas.local/pruebas.local.crt
@@ -41,6 +41,7 @@ DocumentRoot /var/www/php
 SSLEngine on
 SSLCertificateFile /etc/letsencrypt/pruebas.local/pruebas.local.crt
 SSLCertificateKeyFile /etc/letsencrypt/pruebas.local/pruebas.local.key
+# con un certificado autofirmado no necesitas CSR porque no existe la Autoridad Certificadora (CA)
 ...
 --------------------------------------------------------------------------------------
 
