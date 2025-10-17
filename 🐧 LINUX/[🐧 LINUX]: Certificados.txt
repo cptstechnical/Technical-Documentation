@@ -3,6 +3,8 @@
 # certificado con dominio local
 ⚠️ Para un dominio local como el mio necesito un certificado autofirmado
 ❌ Esto creará en el certificado una x porque no puede comprobar que el certificado sea valido, porque puede ser suplantado
+# Hay una forma de crear un autofirmado en local y que sea valido a traves de la red de active directory:
+# "La solución correcta para un entorno corporativo con Active Directory es implementar una Infraestructura de Clave Pública (PKI) interna, donde nuestra propia empresa actúa como su Autoridad Certificadora (CA) Raíz."
 
 ## .key :: (clave privada)
 # Genero una clave privada
