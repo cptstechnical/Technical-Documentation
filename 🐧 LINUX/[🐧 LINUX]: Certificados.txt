@@ -77,3 +77,48 @@ sudo systemctl restart apache2
 # SSLCertificateChainFile /etc/letsencrypt/pruebas.local/ca-bundle.crt  	# si la CA entrega cadena
 # ----------------------------------------------------------------------
 # 6. Reiniciar Apache
+
+
+
+#=========================================================================================================================
+[🐧ACTUALIZAR CERTIFICADO - modificar certificado caducado]::
+# Un certificado tiene fecha de expiración fija (X días desde su emisión).
+# Cuando caduca, debes generar uno nuevo, ya sea:
+#	- Autofirmado: generar nueva clave + CSR + certificado (x509).
+	# ----------------------------------------------------------------------
+	# 1. Ir al directorio
+	cd /etc/letsencrypt/pruebas.local/
+	# 2. Generar nueva clave privada
+	openssl genpkey -algorithm RSA -out pruebas.local.key -aes256
+	# 3. Generar nuevo CSR
+	openssl req -new -key pruebas.local.key -out pruebas.local.csr
+	# 4. Generar nuevo certificado autofirmado (válido 1 año)
+	openssl x509 -req -days 365 -in pruebas.local.csr -signkey pruebas.local.key -out pruebas.local.crt
+
+	# 6. Reiniciar Apache
+	sudo systemctl reload apache2
+	sudo systemctl restart apache2
+	# ----------------------------------------------------------------------
+#	- Emitido por CA: generar nueva CSR (puedes usar la misma clave o generar otra), enviarla a la CA y que te emitan un nuevo .crt.
+	# ----------------------------------------------------------------------
+	# 1. Ir al directorio
+	cd /etc/letsencrypt/pruebas.local/
+	# 2. (Opcional) generar nueva clave privada
+	openssl genpkey -algorithm RSA -out pruebas.local.key -aes256
+	# 3. Generar nueva CSR
+	openssl req -new -key pruebas.local.key -out pruebas.local.csr
+	# 4. Volver a enviar CSR a la CA → recibirás:
+	#    - pruebas.local.crt
+	#    - ca-bundle.crt (opcional, cadena de certificados)
+	# 5. Actualizar Apache con los nuevos archivos
+	#    SSLCertificateFile /etc/letsencrypt/pruebas.local/pruebas.local.crt
+	#    SSLCertificateKeyFile /etc/letsencrypt/pruebas.local/pruebas.local.key
+	#    SSLCertificateChainFile /etc/letsencrypt/pruebas.local/ca-bundle.crt
+	
+	# 6. Reiniciar Apache
+	sudo systemctl reload apache2
+	sudo systemctl restart apache2
+	# ----------------------------------------------------------------------
+
+#🔹 Resumen práctico: caducó → nuevo certificado. No hay atajo para “renovar” el existente sin reemitirlo.
+
