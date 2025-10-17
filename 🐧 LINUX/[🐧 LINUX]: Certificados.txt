@@ -2,6 +2,7 @@
 [🐧INSTALAR CERTIFICADO - certificado autofirmado (self-signed certificate)]::
 # certificado con dominio local
 ⚠️ Para un dominio local como el mio necesito un certificado autofirmado
+❌ Esto creará en el certificado una x porque no puede comprobar que el certificado sea valido, porque puede ser suplantado
 
 ## .key :: (clave privada)
 # Genero una clave privada
@@ -68,6 +69,7 @@ sudo systemctl restart apache2
 #		La CA te devuelve:
 #		- pruebas.local.crt → tu certificado
 #		- ca-bundle.crt → cadena de certificados (opcional)
+#	 * Recuerda que en 'Common Name (CN)', hay que introducir el FQDN exacto del servidor web.
 # 5. Actualizar Apache
 # ----------------------------------------------------------------------
 # SSLCertificateFile /etc/letsencrypt/pruebas.local/pruebas.local.crt
