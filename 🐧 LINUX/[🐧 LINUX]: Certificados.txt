@@ -3,24 +3,31 @@
 # certificado con dominio local
 ⚠️ Para un dominio local como el mio necesito un certificado autofirmado
 
+# agrego una carpeta externa al proyecto para no crear un agujero de seguridad y que no puedan vulnerar mi certificado
 # creo la carpeta
-mkdir /var/www/php/letsencrypt
+mkdir /etc/letsencrypt/
 cd /var/www/php/letsencrypt
+
+## si quiero generar las claves sin contraseñas simplemente quito de los comandos (-aes256)
 
 ## .key :: (clave privada)
 # Genero una clave privada
+	cd /etc/letsencrypt/
+	mkdir 
 	openssl genpkey -algorithm RSA -out pruebas.local.key -aes256
 	> **********
 
 ## .csr :: (Solicitud de firma de certificado)
 # Genero un archivo de solicitud de firma de certificado (CSR)
 # En un entorno real, una vez generado mi CSR desde mi servidor lo tengo que enviar a la empresa de venta de dominio (como Namecheap) o Autoridad Certificadora (CA) y ellos me lo validan y me devuelven un .crt
+	cd /etc/letsencrypt/
 	openssl req -new -key pruebas.local.key -out pruebas.local.csr
 	> **********
 
 ## .crt o .pfx o .pem :: (clave pública)
 # Genero el certificado autofirmado con caducidad de 1 año (solo lo genero en el caso que sean pruebas, los "certificados autofirmados" se hacen cuando el dominio no es real)
 # En un entorno real, debería enviar la CSR a una Autoridad de Certificación (CA) y utilizar el certificado que me proporcionarían.
+	cd /etc/letsencrypt/
 	openssl x509 -req -days 365 -in pruebas.local.csr -signkey pruebas.local.key -out pruebas.local.crt
 	> **********
 
