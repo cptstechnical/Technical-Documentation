@@ -238,6 +238,6 @@ Datos para guardar en un USB extraible:
 ============[ 11. Instalar programas ]============================================	
 [🔥 Instalar programas]:
 # Instalación para todos los equipos:
-	[●] WinRAR
-	[●] Acrobat Reader
+	[●] WinRAR:				https://www.rarlab.com/download.htm
+	[●] Acrobat Reader:		https://get.adobe.com/es/reader/enterprise/
 	[●] Chrome
