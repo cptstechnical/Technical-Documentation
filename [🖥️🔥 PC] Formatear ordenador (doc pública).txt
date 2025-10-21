@@ -45,8 +45,8 @@ Datos para guardar en un USB extraible:
 	Personalizada:instalar solo Windows (avanzado)
 	Nombre del dispositivo: <NOMBRE-PC>
 	Configuración para uso profesional > opciones de inicio de sesión > Unirse a un dominio)
-	Nombre de usuario: Usuario
-	Contraseña: Grafo%88
+	Nombre de usuario: <usuario-local>
+	Contraseña: <contraseña-usuario-local>
 	Uso profesional
 		> Opciones de inicio sesión
 			> Unirse a dominio <CREDENCIALES DE USUARIO LOCAL>
