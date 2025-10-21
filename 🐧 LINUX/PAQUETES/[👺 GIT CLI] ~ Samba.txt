@@ -1,1 +1,0 @@
-# en samba si se modifican los cambios en smb.conf no es necesario reiniciar el servicio porque va aplicando los cambios mediante los usuarios vayan dejando libres sus sesiones.

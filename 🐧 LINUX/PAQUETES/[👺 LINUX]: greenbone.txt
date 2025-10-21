@@ -1,7 +1,0 @@
-# para ver todas las vulnerabildiades sin repeticiones
-Scans > Vulnerabilities
-
-# flujo para combatir vulnerabilidades
-# apunto cada uno de los nombres de las vulnerabilidades y para conocer las ips que afectan a estas vulnerabilidades (es posible que se repitan estas ips si se han hecho múltiples task)
-Scans > Vulnerabilities
-  Columna Results > (click en el número)
