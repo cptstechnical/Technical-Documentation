@@ -76,15 +76,22 @@
 =========================================================================================================================
 [✅ IP > Firewall]:
 
-## sistema de input, output y forward
+## 📣 sistema de gestión/orden de reglas
+- Como por lo general es trabajar con muchas VLAN, la mejor práctica y más utilizada es:
+	1º - permitir los protocolos de entrada que voy a permitir
+	2º - bloquear todo el resto de red (o vlans) que intenten conectarse
+	3º - tengo que tener en cuenta como dato que los equipos de la misma vlan no pasan por el mikrotik por lo que no tiene sentido crear reglas entre equipos de la misma vlan porque no van a funcionar
 
+
+
+✅ Sistema de input, output y forward:
+******************************************************************
 Cadena (Chain)             ¿Qué filtra?	                              Ejemplo de uso
 -------------------------------------------------------------------------------------------------------------------------
 input                      Tráfico destinado al router                Permitir SSH/Winbox/ICMP al router.
 forward                    Tráfico que pasa a través del router       Filtrar tráfico LAN → WAN / WAN → LAN.                    # no es para la máquina local, sino que el firewall está actuando como router o puente, reenviando paquetes entre redes.
 output                     Tráfico generado por el router             Controlar actualizaciones o pings del propio router
-                                                                      -(se suele utilizar para bloquear actualizaciones).
-
+                                                                      -(se suele utilizar para bloquear actualizaciones)
 
 ✅ Ejemplos rápidos:
 ******************************************************************
