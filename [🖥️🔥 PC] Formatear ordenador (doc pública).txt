@@ -31,7 +31,7 @@ Datos para guardar en un USB extraible:
 	🔥 Haz un pantallazo al escritorio y a sus unidades de red.
 	🔥 Extrae el .pst (Outlook) y modificar el Outlook como indica el paso 7.
 	🔥 WindowsProductKey 	: Comprobar que tengo acceso a la clave de acceso antes de formatear
-	🔥 WindowsOfficeKey  	: Conseguir el key de office desde Licencias > Microsoft > Office
+	🔥 WindowsOfficeKey  	: Conseguir el key de office
 	
 	
 ============[ 1. Formateo del equipo ]=================================================
