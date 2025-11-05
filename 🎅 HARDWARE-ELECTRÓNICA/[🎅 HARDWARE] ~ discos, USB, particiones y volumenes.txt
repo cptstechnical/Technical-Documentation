@@ -17,7 +17,7 @@
 | Límite de disco    | 2 TB                             | > 9 ZB                 |
 | Nº de particiones  | 4 primarias (o 3 + 1 extendida)  | 128 o más              |
 | Redundancia        | No                               | Sí (tabla de respaldo) |
-| Tipo de arranque   | BIOS (Legacy)                    | UEFI                   |
+| Tipo de arranque   | BIOS (Legacy)                    | UEFI                   |  # como UEFI es utilizada con GPT siempre es mejor y más actualizada.
 | Identificación     | Tipo + offset                    | GUID único             |
 | Compatibilidad     | Alta (antiguo)                   | Alta (moderno)         |
 | Fiabilidad         | Baja (sin backup)                | Alta (con CRC y copia) |
