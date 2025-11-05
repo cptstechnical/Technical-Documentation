@@ -5,8 +5,8 @@
 +----------------+------------------------+------------------------+-------------------------------------------+
 | exFAT          | Lectura/Escritura ✅   | Lectura/Escritura ✅   | Mejor opción multiplataforma.            |  # dedicado para memorias o discos extraibles. Compatible con Windows, Linux y macOS; sin límite de 4 GB.
 | NTFS           | Lectura/Escritura ✅   | Lectura/Escritura ⚠️   | Requiere driver (ntfs-3g), estable.      |  # dedicado para discos internos de Windows. Soporta permisos, cifrado, journaling y mejor integridad.
-| FAT32          | Lectura/Escritura ✅   | Lectura/Escritura ✅   | Archivos ≤ 4 GB. Muy compatible.         |  # no recomendado por el máximo de archivos de 4GB
-| ext4           | ❌ No nativo           | Lectura/Escritura ✅   | Necesita driver externo en Windows.      |  # solo en Linux
+| FAT32          | Lectura/Escritura ✅   | Lectura/Escritura ✅   | Archivos ≤ 4 GB. Muy compatible.         |  # no recomendado por el máximo de archivos de 4GB.
+| ext4           | ❌ No nativo           | Lectura/Escritura ✅   | Necesita driver externo en Windows.      |  # solo en Linux.
 +----------------+------------------------+------------------------+-------------------------------------------+
 
 # Esquema de particiones (MBR o GPT)
