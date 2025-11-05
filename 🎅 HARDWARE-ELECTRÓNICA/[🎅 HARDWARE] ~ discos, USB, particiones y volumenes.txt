@@ -12,7 +12,7 @@
 # Esquema de particiones (MBR o GPT)
 ************************************
 +--------------------+----------------------------------+------------------------+
-| Característica     | MBR (Master Boot)                | GPT (GUID Partition)   |  
+| Característica     | MBR (Master Boot)                | GPT (GUID Partition)   |  # GPT = más capacidad, más seguridad y más moderno. Usar MBR solo si el PC no puede arrancar con GPT.
 +--------------------+----------------------------------+------------------------+
 | Límite de disco    | 2 TB                             | > 9 ZB                 |
 | Nº de particiones  | 4 primarias (o 3 + 1 extendida)  | 128 o más              |
