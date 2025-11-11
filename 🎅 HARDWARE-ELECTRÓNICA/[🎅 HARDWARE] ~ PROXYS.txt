@@ -38,9 +38,9 @@ Proxy usados para pruebas de seguridad, debugging y anonimato extremo.
 
 | Tipo de proxy                        | Ubicación / Nivel                     | Ejemplo                          | Función principal                                                       |
 |--------------------------------------|---------------------------------------|----------------------------------|-------------------------------------------------------------------------|
-| 🐞🐞 Intercepting debugging proxy      | Pentest / Dev                        | Burp Suite / mitmproxy           | Capturar y editar peticiones para debugging y pruebas de seguridad       |
+| 🐞🐞 Intercepting debugging proxy   | Pentest / Dev                         | Burp Suite / mitmproxy           | Capturar y editar peticiones para debugging y pruebas de seguridad      |
 | 🐞🔒 Man-in-the-middle (MITM) proxy | Pentest / Forense                     | mitmproxy / Burp en intercept    | Modificar tráfico para pentesting o inspección forense (uso controlado) |
-| 🌐🌐 Tor (SOCKS5 local / Anon)         | Cliente / Anonimato                   | Tor + torsocks                   | Navegación anónima distribuida y evasión de rastreo                     |
+| 🌐🌐 Tor (SOCKS5 local / Anon)      | Cliente / Anonimato                   | Tor + torsocks                   | Navegación anónima distribuida y evasión de rastreo                     |
 
 
 [mail & files]::
@@ -49,8 +49,8 @@ Proxy para correo y transferencias de archivos.
 
 | Tipo de proxy                       | Ubicación / Nivel                     | Ejemplo                          | Función principal                                         |
 |-------------------------------------|---------------------------------------|----------------------------------|-----------------------------------------------------------|
-| 📧📧 SMTP/POP3/IMAP proxy             | Mail gateway                          | MailScanner / Amavis             | Escaneo antispam/antivirus y policy enforcement en email  |
-| 📂📂 FTP proxy                        | File transfer                         | Proxies FTP / módulos Squid      | Control y logging de transferencias FTP                   |
+| 📧📧 SMTP/POP3/IMAP proxy          | Mail gateway                          | MailScanner / Amavis             | Escaneo antispam/antivirus y policy enforcement en email  |
+| 📂📂 FTP proxy                     | File transfer                         | Proxies FTP / módulos Squid      | Control y logging de transferencias FTP                   |
 
 
 [dns & infra]::
@@ -59,7 +59,7 @@ Proxy para servicios de infraestructura y DNS.
 
 | Tipo de proxy                       | Ubicación / Nivel                     | Ejemplo                           | Función principal                                     |
 |-------------------------------------|---------------------------------------|-----------------------------------|-------------------------------------------------------|
-| 🌐🌐 DNS proxy / DNS forwarder        | Infra DNS                             | Dnsmasq / Bind con forwarders     | Filtrado DNS, registro y reescritura de resoluciones  |
+| 🌐🌐 DNS proxy / DNS forwarder     | Infra DNS                             | Dnsmasq / Bind con forwarders     | Filtrado DNS, registro y reescritura de resoluciones  |
 
 
 [application & infra]::
@@ -68,14 +68,14 @@ Proxy a nivel de aplicación y servicios de backend.
 
 | Tipo de proxy                       | Ubicación / Nivel                     | Ejemplo                           | Función principal                                                       |
 |-------------------------------------|---------------------------------------|-----------------------------------|-------------------------------------------------------------------------|
-| 🔒🔒 Application-level proxy          | Layer 7 / App                         | Envoy / Nginx / HAProxy (L7)      | Políticas por endpoint, transformación de payloads y auth centralizada  |
+| 🔒🔒 Application-level proxy       | Layer 7 / App                         | Envoy / Nginx / HAProxy (L7)      | Políticas por endpoint, transformación de payloads y auth centralizada  |
 
 
 [config & deployment]::
 **************************************************************************
 Proxy relacionados con configuración y anonimato.
 
-| Tipo de proxy                              | Ubicación / Nivel                   | Ejemplo                          | Función principal                                                                          |
-|--------------------------------------------|-------------------------------------|----------------------------------|--------------------------------------------------------------------------------------------|
-| ⚙️⚙️ Proxy Auto-Config (PAC) / WPAD         | Configuración cliente                | PAC files / WPAD DHCP/DNS        | Automatizar selección de proxy por URL/política en clientes                                |
-| 🌐🌐 Anonymous / Elite / Transparent proxy  | Cliente / Red                        | Varía según servicio/proxy       | Niveles de anonimato que determinan si se oculta la IP cliente y/o la existencia del proxy |
+| Tipo de proxy                               | Ubicación / Nivel                    | Ejemplo                          | Función principal                                                                          |
+|---------------------------------------------|--------------------------------------|----------------------------------|--------------------------------------------------------------------------------------------|
+| ⚙️⚙️ Proxy Auto-Config (PAC) / WPAD        | Configuración cliente                | PAC files / WPAD DHCP/DNS        | Automatizar selección de proxy por URL/política en clientes                                |
+| 🌐🌐 Anonymous / Elite / Transparent proxy | Cliente / Red                        | Varía según servicio/proxy       | Niveles de anonimato que determinan si se oculta la IP cliente y/o la existencia del proxy |
