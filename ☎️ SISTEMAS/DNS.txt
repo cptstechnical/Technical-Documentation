@@ -67,6 +67,6 @@ _sip._tcp IN SRV 10 5 5060 sipserver.ejemplo.com. ; Servicio SIP TCP puerto 5060
 
 ; ----------------------------------------
 ; NAPTR (ejemplo para ENUM/SIP)
-; NPTR : Traducción de servicios para aplicaciones como SIP o ENUM.
+; NAPTR : Traducción de servicios para aplicaciones como SIP o ENUM.
 ; ----------------------------------------
 @       IN NAPTR 100 10 "U" "E2U+sip" "!^.*$!sip:info@ejemplo.com!" .
