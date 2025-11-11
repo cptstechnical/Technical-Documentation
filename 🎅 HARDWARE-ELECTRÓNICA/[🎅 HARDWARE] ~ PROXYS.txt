@@ -1,6 +1,7 @@
 1️⃣ Para qué sirve un proxy
 Un proxy intermedia el tráfico entre cliente y servidor. Sus usos dependen de si estás del lado del cliente o del servidor. Cada tipo tiene herramientas recomendadas y funciones específicas.
 
+
 [web]::
 **************************************************************************
 Proxy usados para servidores y aplicaciones web. Incluyen balanceo, caching y protección de seguridad.
@@ -13,6 +14,7 @@ Proxy usados para servidores y aplicaciones web. Incluyen balanceo, caching y pr
 | ⚡ Transparent caching CDN          | Servidor / Edge                       | Cloudflare / Akamai               | Distribuir contenido globalmente y mitigar picos/latencia        |
 | ⚡ Load balancer (L4/L7)            | Infra / Red                           | HAProxy / F5                      | Balanceo de sesiones, health checks y alta disponibilidad        |
 | ⚡ Caching proxy                    | Servidor / Edge                       | Squid / Varnish                   | Reducir latencia y carga en backends para contenido estático     |
+
 
 [network]::
 **************************************************************************
@@ -29,6 +31,7 @@ Proxy usados en la red o del lado del cliente para filtrado, anonimato y redirec
 | 🌐 Residential / Datacenter / Mobile proxies  | Cliente / IP origen                   | Proveedores de proxies residenciales   | Evadir bloqueos geo/antibot o probar geolocalización                           |
 | ⚡ Hardware appliance proxy                   | Appliance / Enterprise                | Blue Coat ProxySG / F5                 | Alto rendimiento e inspección a escala empresarial                             |
 
+
 [debugging & pentest]::
 **************************************************************************
 Proxy usados para pruebas de seguridad, debugging y anonimato extremo.
@@ -39,6 +42,7 @@ Proxy usados para pruebas de seguridad, debugging y anonimato extremo.
 | 🐞🔒 Man-in-the-middle (MITM) proxy | Pentest / Forense                     | mitmproxy / Burp en intercept    | Modificar tráfico para pentesting o inspección forense (uso controlado) |
 | 🌐 Tor (SOCKS5 local / Anon)         | Cliente / Anonimato                   | Tor + torsocks                   | Navegación anónima distribuida y evasión de rastreo                     |
 
+
 [mail & files]::
 **************************************************************************
 Proxy para correo y transferencias de archivos.
@@ -48,6 +52,7 @@ Proxy para correo y transferencias de archivos.
 | 📧 SMTP/POP3/IMAP proxy             | Mail gateway                          | MailScanner / Amavis             | Escaneo antispam/antivirus y policy enforcement en email  |
 | 📂 FTP proxy                        | File transfer                         | Proxies FTP / módulos Squid      | Control y logging de transferencias FTP                   |
 
+
 [dns & infra]::
 **************************************************************************
 Proxy para servicios de infraestructura y DNS.
@@ -56,6 +61,7 @@ Proxy para servicios de infraestructura y DNS.
 |-------------------------------------|---------------------------------------|-----------------------------------|-------------------------------------------------------|
 | 🌐 DNS proxy / DNS forwarder        | Infra DNS                             | Dnsmasq / Bind con forwarders     | Filtrado DNS, registro y reescritura de resoluciones  |
 
+
 [application & infra]::
 **************************************************************************
 Proxy a nivel de aplicación y servicios de backend.
@@ -63,6 +69,7 @@ Proxy a nivel de aplicación y servicios de backend.
 | Tipo de proxy                       | Ubicación / Nivel                     | Ejemplo                           | Función principal                                                       |
 |-------------------------------------|---------------------------------------|-----------------------------------|-------------------------------------------------------------------------|
 | 🔒 Application-level proxy          | Layer 7 / App                         | Envoy / Nginx / HAProxy (L7)      | Políticas por endpoint, transformación de payloads y auth centralizada  |
+
 
 [config & deployment]::
 **************************************************************************
