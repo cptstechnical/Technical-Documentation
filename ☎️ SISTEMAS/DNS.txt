@@ -1,0 +1,72 @@
+; ----------------------------------------
+; Start of Authority
+; SOA : información principal de la zona, serial, TTL, etc.
+; ----------------------------------------
+$TTL 86400
+@   IN  SOA ns1.ejemplo.com. admin.ejemplo.com. (
+        2025111101 ; Serial
+        3600       ; Refresh
+        1800       ; Retry
+        604800     ; Expire
+        86400      ; Minimum TTL
+)
+
+; ----------------------------------------
+; Servidores de nombres
+; NS : Define servidores de nombres autoritativos para la zona
+; ----------------------------------------
+@   IN  NS  ns1.ejemplo.com.   ; NS record primario
+@   IN  NS  ns2.ejemplo.com.   ; NS record secundario
+
+; ----------------------------------------
+; Direcciones IPv4 y IPv6
+; A :   Apunta un nombre de dominio a una dirección IPv4.
+; AAA : Apunta un nombre de dominio a una dirección IPv6.
+; ----------------------------------------
+www     IN  A     192.0.2.20       ; IPv4
+www     IN  AAAA  2001:db8::20     ; IPv6
+mail    IN  A     192.0.2.30
+mail    IN  AAAA  2001:db8::30
+
+; ----------------------------------------
+; Alias / CNAME
+; CNAME : Alias de otro dominio; redirige a otro nombre de dominio.
+; ----------------------------------------
+ftp     IN  CNAME www              ; ftp → www
+
+; ----------------------------------------
+; Servidores de correo
+; MX : Indica los servidores de correo para un dominio.
+; ----------------------------------------
+@       IN  MX  10 mail.ejemplo.com. ; MX con prioridad 10
+
+; ----------------------------------------
+; Resolución inversa (PTR)
+; PTR : Apunta una IP a un nombre de dominio (resolución inversa).
+; ----------------------------------------
+10      IN  PTR  ns1.ejemplo.com.   ; IP 192.0.2.10 → ns1
+11      IN  PTR  ns2.ejemplo.com.   ; IP 192.0.2.11 → ns2
+
+; ----------------------------------------
+; Texto arbitrario (TXT)
+; TXT : Almacena texto arbitrario, usado en SPF, DKIM, verificación de dominio, etc.
+; ----------------------------------------
+@       IN  TXT "v=spf1 include:spf.ejemplo.com ~all" ; SPF para email
+
+; ----------------------------------------
+; Registro de servicio (SRV)
+; SRV : Define servicios específicos y sus puertos (ej. VoIP, XMPP).
+; ----------------------------------------
+_sip._tcp IN SRV 10 5 5060 sipserver.ejemplo.com. ; Servicio SIP TCP puerto 5060
+
+; ----------------------------------------
+; Certificación (CAA)
+; CAA : Controla qué autoridades de certificación pueden emitir certificados para el dominio.
+; ----------------------------------------
+@       IN CAA 0 issue "letsencrypt.org" ; Permite LetsEncrypt emitir certificados
+
+; ----------------------------------------
+; NAPTR (ejemplo para ENUM/SIP)
+; NPTR : Traducción de servicios para aplicaciones como SIP o ENUM.
+; ----------------------------------------
+@       IN NAPTR 100 10 "U" "E2U+sip" "!^.*$!sip:info@ejemplo.com!" .
