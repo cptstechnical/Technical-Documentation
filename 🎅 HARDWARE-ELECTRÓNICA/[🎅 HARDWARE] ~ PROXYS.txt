@@ -1,0 +1,74 @@
+1️⃣ Para qué sirve un proxy
+Un proxy intermedia el tráfico entre cliente y servidor. Sus usos dependen de si estás del lado del cliente o del servidor. Cada tipo tiene herramientas recomendadas y funciones específicas.
+
+[web]::
+**************************************************************************
+Proxy usados para servidores y aplicaciones web. Incluyen balanceo, caching y protección de seguridad.
+
+| Tipo de proxy                        | Ubicación / Nivel                     | Ejemplo                           | Función principal                                               |
+|--------------------------------------|---------------------------------------|-----------------------------------|-----------------------------------------------------------------|
+| 🔒⚡ Reverse proxy                  | Servidor / Web                        | Nginx                             | Proteger, balancear, acelerar y monitorizar aplicaciones web    |
+| 🔒 Reverse proxy + WAF              | Servidor / Web                        | Nginx + ModSecurity / Cloudflare  | Bloquear inyección, XSS y mitigar ataques a la app               |
+| 🔒 API gateway                      | Servidor / API                        | Kong / APIGee                     | Rate limiting, autenticación, versioning y routing por endpoint  |
+| ⚡ Transparent caching CDN          | Servidor / Edge                       | Cloudflare / Akamai               | Distribuir contenido globalmente y mitigar picos/latencia        |
+| ⚡ Load balancer (L4/L7)            | Infra / Red                           | HAProxy / F5                      | Balanceo de sesiones, health checks y alta disponibilidad        |
+| ⚡ Caching proxy                    | Servidor / Edge                       | Squid / Varnish                   | Reducir latencia y carga en backends para contenido estático     |
+
+[network]::
+**************************************************************************
+Proxy usados en la red o del lado del cliente para filtrado, anonimato y redirección de tráfico.
+
+| Tipo de proxy                                 | Ubicación / Nivel                     | Ejemplo                                 | Función principal                                                             |
+|-----------------------------------------------|---------------------------------------|----------------------------------------|--------------------------------------------------------------------------------|
+| 🌐 Forward proxy                              | Cliente / Gateway                     | Squid                                  | Filtrar, registrar y anonimizar tráfico saliente desde una red interna         |
+| 🌐 HTTP proxy                                 | Cliente / App HTTP                    | Squid                                  | Inspección y caching de tráfico web no cifrado                                 |
+| 🔒 HTTPS / SSL proxy                          | Cliente / TLS                         | Squid con SSL-bump / Blue Coat ProxySG | Inspección de HTTPS para DLP, debugging o filtrado corporativo                 |
+| 🌐 SOCKS5                                     | Cliente / Túnel TCP/UDP               | Dante / ssh -D                         | Redirigir tráfico TCP/UDP; usar con apps que no soportan HTTP proxy            |
+| 🌐 Circuit-level proxy                        | Cliente / Conexión                    | Implementaciones SOCKS                 | Mantener túneles persistentes y separar sesión de aplicación                   |
+| 🌐 Proxy chaining                             | Cliente / Red                         | Cadena SOCKS/HTTP                      | Encadenar proxies para mayor anonimato o pasar por múltiples controles/regiones|
+| 🌐 Residential / Datacenter / Mobile proxies  | Cliente / IP origen                   | Proveedores de proxies residenciales   | Evadir bloqueos geo/antibot o probar geolocalización                           |
+| ⚡ Hardware appliance proxy                   | Appliance / Enterprise                | Blue Coat ProxySG / F5                 | Alto rendimiento e inspección a escala empresarial                             |
+
+[debugging & pentest]::
+**************************************************************************
+Proxy usados para pruebas de seguridad, debugging y anonimato extremo.
+
+| Tipo de proxy                        | Ubicación / Nivel                     | Ejemplo                          | Función principal                                                       |
+|--------------------------------------|---------------------------------------|----------------------------------|-------------------------------------------------------------------------|
+| 🐞 Intercepting debugging proxy      | Pentest / Dev                        | Burp Suite / mitmproxy           | Capturar y editar peticiones para debugging y pruebas de seguridad       |
+| 🐞🔒 Man-in-the-middle (MITM) proxy | Pentest / Forense                     | mitmproxy / Burp en intercept    | Modificar tráfico para pentesting o inspección forense (uso controlado) |
+| 🌐 Tor (SOCKS5 local / Anon)         | Cliente / Anonimato                   | Tor + torsocks                   | Navegación anónima distribuida y evasión de rastreo                     |
+
+[mail & files]::
+**************************************************************************
+Proxy para correo y transferencias de archivos.
+
+| Tipo de proxy                       | Ubicación / Nivel                     | Ejemplo                          | Función principal                                         |
+|-------------------------------------|---------------------------------------|----------------------------------|-----------------------------------------------------------|
+| 📧 SMTP/POP3/IMAP proxy             | Mail gateway                          | MailScanner / Amavis             | Escaneo antispam/antivirus y policy enforcement en email  |
+| 📂 FTP proxy                        | File transfer                         | Proxies FTP / módulos Squid      | Control y logging de transferencias FTP                   |
+
+[dns & infra]::
+**************************************************************************
+Proxy para servicios de infraestructura y DNS.
+
+| Tipo de proxy                       | Ubicación / Nivel                     | Ejemplo                           | Función principal                                     |
+|-------------------------------------|---------------------------------------|-----------------------------------|-------------------------------------------------------|
+| 🌐 DNS proxy / DNS forwarder        | Infra DNS                             | Dnsmasq / Bind con forwarders     | Filtrado DNS, registro y reescritura de resoluciones  |
+
+[application & infra]::
+**************************************************************************
+Proxy a nivel de aplicación y servicios de backend.
+
+| Tipo de proxy                       | Ubicación / Nivel                     | Ejemplo                           | Función principal                                                       |
+|-------------------------------------|---------------------------------------|-----------------------------------|-------------------------------------------------------------------------|
+| 🔒 Application-level proxy          | Layer 7 / App                         | Envoy / Nginx / HAProxy (L7)      | Políticas por endpoint, transformación de payloads y auth centralizada  |
+
+[config & deployment]::
+**************************************************************************
+Proxy relacionados con configuración y anonimato.
+
+| Tipo de proxy                              | Ubicación / Nivel                   | Ejemplo                          | Función principal                                                                          |
+|--------------------------------------------|-------------------------------------|----------------------------------|--------------------------------------------------------------------------------------------|
+| ⚙️ Proxy Auto-Config (PAC) / WPAD         | Configuración cliente                | PAC files / WPAD DHCP/DNS        | Automatizar selección de proxy por URL/política en clientes                                |
+| 🌐 Anonymous / Elite / Transparent proxy  | Cliente / Red                        | Varía según servicio/proxy       | Niveles de anonimato que determinan si se oculta la IP cliente y/o la existencia del proxy |
