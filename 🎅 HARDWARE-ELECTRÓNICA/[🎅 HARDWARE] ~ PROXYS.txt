@@ -79,3 +79,5 @@ Proxy relacionados con configuración y anonimato.
 |---------------------------------------------|--------------------------------------|----------------------------------|--------------------------------------------------------------------------------------------|
 | ⚙️⚙️ Proxy Auto-Config (PAC) / WPAD        | Configuración cliente                | PAC files / WPAD DHCP/DNS        | Automatizar selección de proxy por URL/política en clientes                                |
 | 🌐🌐 Anonymous / Elite / Transparent proxy | Cliente / Red                        | Varía según servicio/proxy       | Niveles de anonimato que determinan si se oculta la IP cliente y/o la existencia del proxy |
+
+
