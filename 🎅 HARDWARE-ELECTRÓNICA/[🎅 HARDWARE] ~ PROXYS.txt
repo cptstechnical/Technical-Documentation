@@ -1,6 +1,18 @@
+======================================================================================================================================================================================================================
+[DEFINICIÓN SIMPLE]::
 1️⃣ Para qué sirve un proxy
 Un proxy intermedia el tráfico entre cliente y servidor. Sus usos dependen de si estás del lado del cliente o del servidor. Cada tipo tiene herramientas recomendadas y funciones específicas.
 
+# Proxies más usados:
+  - Reverse proxy [Nginx]: protege, balancea y acelera aplicaciones web.  
+  - Forward proxy [Squid]: filtra o anonimiza tráfico saliente de clientes.  
+  - HTTPS/SSL proxy [Squid/Blue Coat]: inspecciona tráfico cifrado para seguridad o debugging.  
+  - Intercepting debugging proxy [Burp Suite / mitmproxy]: captura y modifica peticiones para pruebas o debugging.  
+  - API gateway [Kong / APIGee]: gestiona, autentica y enruta tráfico de APIs.
+
+
+======================================================================================================================================================================================================================
+[TODOS LOS PROXIES UTILIZADOS]::
 
 [web]::
 **************************************************************************
