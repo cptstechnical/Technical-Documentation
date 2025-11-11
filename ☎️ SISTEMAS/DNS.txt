@@ -70,3 +70,34 @@ _sip._tcp IN SRV 10 5 5060 sipserver.ejemplo.com. ; Servicio SIP TCP puerto 5060
 ; NAPTR : Traducción de servicios para aplicaciones como SIP o ENUM.
 ; ----------------------------------------
 @       IN NAPTR 100 10 "U" "E2U+sip" "!^.*$!sip:info@ejemplo.com!" .
+
+; ----------------------------------------
+; DNSSEC: Claves y firmas
+; DNSKEY : Contiene la clave pública usada para firmar la zona DNS.
+; RRSIG  : Firma criptográfica de los registros de la zona.
+; DS     : Delegation Signer, usado para validar subzonas firmadas.
+; NSEC   : Indica qué nombres no existen en la zona (para DNSSEC).
+; NSEC3  : Variante de NSEC que protege contra enumeración de nombres.
+; ----------------------------------------
+; Ejemplo:
+; dnskey   IN DNSKEY 256 3 8 AwEAAcV...  ; clave pública
+; www      IN RRSIG A 8 2 3600 2025111101 2025101110 12345 ejemplo.com. ... 
+; @        IN DS 12345 8 2 ABCDEF...  
+
+; ----------------------------------------
+; TLSA - DANE: Vincula certificados TLS con registros DNS
+; TLSA : Especifica certificados o hashes permitidos para un servicio TLS.
+; ----------------------------------------
+; _443._tcp.www IN TLSA 3 1 1 ABCDEF1234567890... ; ejemplo HTTPS
+
+; ----------------------------------------
+; SPF - Antiguo registro específico para email
+; SPF : Definía qué servidores pueden enviar correo para el dominio.
+; ----------------------------------------
+; @ IN SPF "v=spf1 include:spf.ejemplo.com ~all"
+
+; ----------------------------------------
+; RP - Responsible Person
+; RP : Contacto responsable del dominio, correo y nombre.
+; ----------------------------------------
+; @ IN RP admin.ejemplo.com. hostmaster.ejemplo.com.
