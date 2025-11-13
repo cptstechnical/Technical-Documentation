@@ -20,7 +20,7 @@ $stmt = $pdo->prepare("INSERT INTO usuarios (nombre, email, edad) VALUES (:nombr
 $stmt->execute(get_object_vars($usuario));
 -----------------------------------------------------------------------------------------------------
 
-#ejemplos de utilización
+# ejemplos de utilización
 -----------------------------------------------------------------------------------------------------
 1️⃣ Insertar nuevos registros
 $usuario = new Usuario($_POST);
