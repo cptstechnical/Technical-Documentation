@@ -1,13 +1,13 @@
 ====================================================================================================================================================
 [Utilizando clases PDO]:
 
-# código antiguo
- $Pedido = new stdClass();
-        $Pedido->NoPedido = $NoPedido;
-        $Pedido->HojasFabricadas = $Recalculado->NoHojas;
-        $Pedido->Estado = $Recalculado->Estado;
-        // Actualizo Pedido
-        return $this->Actualizar($Pedido);
+   # código antiguo
+    $Pedido = new stdClass();
+           $Pedido->NoPedido = $NoPedido;
+           $Pedido->HojasFabricadas = $Recalculado->NoHojas;
+           $Pedido->Estado = $Recalculado->Estado;
+           // Actualizo Pedido
+           return $this->Actualizar($Pedido);
 
 # solución para rellenar muchos parámetros de manera automática en vez de declararlos uno a uno
 // Valores que vienen dinámicamente (ej: POST, o resultado de otro proceso)
