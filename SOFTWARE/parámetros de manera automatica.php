@@ -1,7 +1,7 @@
 ====================================================================================================================================================
 [Utilizando clases PDO]:
 
-   # código antiguo
+   # código antiguo (esta forma es la que suelo utilizar pero se queda muy mal en el caso de que existan muchas columnas en la tabla)
     $Pedido = new stdClass();
            $Pedido->NoPedido = $NoPedido;
            $Pedido->HojasFabricadas = $Recalculado->NoHojas;
@@ -10,25 +10,18 @@
            return $this->Actualizar($Pedido);
 
 # solución para rellenar muchos parámetros de manera automática en vez de declararlos uno a uno
-// Valores que vienen dinámicamente (ej: POST, o resultado de otro proceso)
-$datosDinamicos = (array) $Recalculado; // convertir a array si es objeto
-// Valores controlados que quieres forzar
+// Datos dinámicos
+$Recalculado = (object) $_POST;
+//$datosDinamicos = (array) $_POST;
+// Datos controlados que quieres forzar
 $controlados = [
     'NoPedido' => $NoPedido,
-    'Estado' => $Recalculado->Estado
+    'Estado' => 'Confirmado' // sobrescribimos el estado original
 ];
-// Creo objeto vacío
-$Pedido = new stdClass();
-// Mapear automáticamente todos los campos dinámicos
-foreach ($datosDinamicos as $key => $value) {
-    $Pedido->$key = $value;
-}
-// Sobrescribir con valores controlados
-foreach ($controlados as $key => $value) {
-    $Pedido->$key = $value;
-}
-// Actualizo Pedido
-return $this->Actualizar($Pedido);
+// Combino dinámicos + controlados en un solo paso
+$Pedido = (object) array_merge($datosDinamicos, $controlados);
+// Resultado listo para guardar
+print_r($Pedido);
 
 
 
