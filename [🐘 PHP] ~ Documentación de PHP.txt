@@ -1,4 +1,20 @@
 <?php
+
+        1  - COMANDOS PHP PARA FLUJO DE TRABAJO CONTINUO
+        2  - MIS SOLUCIONES PHP
+        3  - FUNCIONES Y MÉTODOS COMUNES
+        4  - CREAR OBJETO PHP
+        5  - ADMINISTRADOR DE SISTEMAS EN PHP
+        6  - MANEJO DE ARCHIVOS EN PHP
+        7  - SESIONES EN PHP
+        8  - COOKIES EN PHP
+        9  - EMAILS EN PHP
+        10 - DB EN PHP
+        11 - VALIDAR/SANITIZAR EN PHP
+        12 - CRIPTOGRAFIA Y SEGURIDAD EN PHP
+        13 - FORMULARIOS Y SEGURIDAD EN PHP
+        14 - PHP EN SCRIPTS DE LÍNEA DE COMANDOS LINUX
+
 #=======================================================================================
 #=======================================================================================
 [🐘⚙️ COMANDOS PHP PARA FLUJO DE TRABAJO CONTINUO]:
@@ -83,6 +99,28 @@ $Permisos = json_decode($json);                     # Convierte Json en un objet
 $PermisoUno = Permisos[0];
 echo $PermisoUno->ID;
 
+## creo un nuevo objeto
+$Pedido = new stdClass();
+$Pedido->NoPedido = $NoPedido;
+$Pedido->Hojas = $Recalculado->NoHojas;
+$Pedido->Estado = $Recalculado->Estado;
+// Actualizo Pedido
+return $this->Actualizar($Pedido);
+
+## cuando se envía un nuevo objeto a la base de datos tengo que mapear todas las columnas de la base de datos
+## para automatizar este proceso, realizo el siguiente código, incluyendo datos controlados de manera directa
+$Recalculado = (object) $_POST;                    # Datos dinámicos en objeto
+//$datosDinamicos = (array) $_POST;                # Datos dinámicos en array
+// Datos controlados que quieres forzar
+$controlados = [
+    'NoPedido' => $NoPedido,
+    'Estado' => 'Confirmado' // sobrescribimos el estado original
+];
+// Combino dinámicos + controlados en un solo paso, respetando cada dato de manera independiente
+$Pedido = (object) array_merge($datosDinamicos, $controlados);
+// Resultado listo para guardar
+// print_r($Pedido);
+return $this->Enviar($Pedido);
 
 #=======================================================================================
 #=======================================================================================
@@ -534,3 +572,4 @@ echo $output;
 # ./mi_script.php
 
 # Esto permite ejecutar el script PHP como un binario más en Linux
+
