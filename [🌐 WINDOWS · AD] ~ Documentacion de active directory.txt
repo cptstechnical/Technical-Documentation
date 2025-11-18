@@ -1,5 +1,5 @@
 ==================================================  
-[🌐 aCTIVACIÓN DE PRODUCT KEY]:
+[🌐 Activación de Product KEY]:
 # El siguiente paso hay que realizarlo con versiones >2019 que no se puede activar la licencia desde la interface, hay que hacerlo desde PowerShell con permisos de usuario
 # Hay que cambiar la versión pasando una clave
    dism /Online /set-edition:ServerStandard /productkey:<WINDOWS-KEY> /AcceptEula
