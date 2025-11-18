@@ -4,7 +4,7 @@
 # Hay que cambiar la versión pasando una clave
    dism /Online /set-edition:ServerStandard /productkey:<WINDOWS-KEY> /AcceptEula
 
-# A continuación, ejecuta este comando para activar el sistema:
+# A continuación, ejecuta este comando para activar el sistema (El sistema se conectará a los servidores de activación de Microsoft y se activará automáticamente):
 	slmgr /ato
 
 ==================================================  
