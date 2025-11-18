@@ -1,5 +1,5 @@
 ==================================================  
-[🌐 Activación de Product KEY]:
+[🌐 Activación de Product Key en Windows Server > 2019]:
 # El siguiente paso hay que realizarlo con versiones >2019 que no se puede activar la licencia desde la interface, hay que hacerlo desde PowerShell con permisos de usuario
 # Cambia la edición del Windows Server instalado a “Server Standard” aplicando la clave indicada sin interacción:
    dism /Online /set-edition:ServerStandard /productkey:<WINDOWS-KEY> /AcceptEula
