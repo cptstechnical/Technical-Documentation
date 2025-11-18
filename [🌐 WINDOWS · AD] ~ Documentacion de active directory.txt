@@ -1,4 +1,13 @@
 ==================================================  
+[🌐 aCTIVACIÓN DE PRODUCT KEY]:
+# A partir de la versión de 2025 no se puede activar la licencia desde la interface, hay que hacerlo desde PowerShell con permisos de usuario
+# Hay que cambiar la versión pasando una clave
+   dism /Online /set-edition:ServerStandard /productkey:<WINDOWS-KEY> /AcceptEula
+
+# A continuación, ejecuta este comando para activar el sistema:
+	slmgr /ato
+
+==================================================  
 [🌐 Introducción a Active Directory]:
 # Active Directory (AD) es un servicio de directorio de Microsoft usado para administrar redes, usuarios, equipos, permisos y políticas en un dominio.
 
