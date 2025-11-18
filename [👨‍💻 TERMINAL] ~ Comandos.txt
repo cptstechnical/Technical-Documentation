@@ -17,6 +17,13 @@
 
   ipconfig /flushdns                               # Limpia la caché DNS local. Úsalo si hay errores de resolución de nombres.
 
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+  [🪟 COMANDOS POWERSHELL DE SERVIDORES]::  
+  # activación de licencia Windows Server >2019
+  dism /Online /set-edition:ServerStandard /productkey:<WINDOWS-KEY> /AcceptEula
+  slmgr /ato
+
 
 ======================================================================================================
 ======================================================================================================
