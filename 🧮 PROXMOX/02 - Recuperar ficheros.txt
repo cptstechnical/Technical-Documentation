@@ -1,0 +1,14 @@
+Teoria:
+***********
+# ⚠️ Cuidado no pulsar "Restore" porque reescribe todo el servidor
+# En vez de restore hay que pulsar en "File Restore" para recuperar un solo archivo
+
+Practica:
+***********
+# Una vez tengamos bien configurado el servidor de backup con todos los cambios bien realizados
+      CPD1 > nodo > máquina 
+        > Backup (me fijo en la columna "Date" para saber la fecha del backup) 
+        > File Restore > (selecciono a partir de la segunda partición porque la primera pertenece al servidor)
+        > (seleciono a través de las carpetas hasta llegar al archivo) 
+        > Download 
+        > Comparto el archivo en algún servidor de archivos conjunto
